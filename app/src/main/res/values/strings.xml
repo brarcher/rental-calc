@@ -5,10 +5,12 @@
 
     <string name="add">Add</string>
     <string name="about">About</string>
+    <string name="delete">Delete</string>
 
     <string name="ok">OK</string>
     <string name="save">Save</string>
     <string name="cancel">Cancel</string>
+    <string name="confirm">Confirm</string>
 
     <string name="app_copyright_fmt">Copyright 2017-<xliff:g>%d</xliff:g> Branden Archer</string>
     <string name="app_license">Licensed under the GPLv3.</string>
@@ -34,5 +36,8 @@
     <string name="onstreet">On-Street</string>
     <string name="none">None</string>
     <string name="privatelot">Private Lot</string>
+
+    <string name="deletePropertyTitle">Remove Property</string>
+    <string name="deletePropertyConfirmation">Please confirm that you want to delete this property.</string>
 
 </resources>

@@ -23,5 +23,9 @@
             android:name=".PropertyViewActivity"
             android:label="Add Property"
             android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".PropertyOverviewActivity"
+            android:label="Overview"
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 </manifest>
