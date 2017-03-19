@@ -11,13 +11,13 @@ import org.robolectric.android.controller.ActivityController;
 
 
 @RunWith(RobolectricTestRunner.class)
-@Config(constants = BuildConfig.class, sdk = 25)
+@Config(constants = BuildConfig.class, sdk = 23)
 public class ExampleUnitTest
 {
     @Test
     public void testHelloWorld()
     {
-        ActivityController activityController = Robolectric.buildActivity(MainActivity.class).create();
+        ActivityController activityController = Robolectric.buildActivity(PropertiesListActivity.class).create();
         Activity activity = (Activity)activityController.get();
 
         activityController.start();

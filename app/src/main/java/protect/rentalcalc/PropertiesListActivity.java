@@ -1,8 +1,10 @@
 package protect.rentalcalc;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.database.Cursor;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,14 +12,18 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.webkit.WebView;
+import android.widget.AdapterView;
+import android.widget.ListView;
+import android.widget.TextView;
 
 import com.google.common.collect.ImmutableMap;
 
 import java.util.Calendar;
 import java.util.Map;
 
-public class MainActivity extends AppCompatActivity
+public class PropertiesListActivity extends AppCompatActivity
 {
     private static final String TAG = "RentalCalc";
 
@@ -33,7 +39,7 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu)
     {
-        getMenuInflater().inflate(R.menu.properties_menu, menu);
+        getMenuInflater().inflate(R.menu.properties_list_menu, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
