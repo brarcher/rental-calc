@@ -19,5 +19,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".PropertyViewActivity"
+            android:label="Add Property"
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 </manifest>

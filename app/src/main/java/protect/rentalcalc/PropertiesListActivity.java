@@ -72,6 +72,12 @@ public class PropertiesListActivity extends AppCompatActivity
     {
         int id = item.getItemId();
 
+        if(id == R.id.action_add)
+        {
+            Intent i = new Intent(getApplicationContext(), PropertyViewActivity.class);
+            startActivity(i);
+        }
+
         if(id == R.id.action_about)
         {
             displayAboutDialog();
