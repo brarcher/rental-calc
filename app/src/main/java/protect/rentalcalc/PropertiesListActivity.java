@@ -63,6 +63,27 @@ public class PropertiesListActivity extends AppCompatActivity
         final PropertyCursorAdapter adapter = new PropertyCursorAdapter(this, properties);
         propertyList.setAdapter(adapter);
 
+        propertyList.setOnItemClickListener(new AdapterView.OnItemClickListener()
+        {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id)
+            {
+                Cursor selected = (Cursor)parent.getItemAtPosition(position);
+                if(selected == null)
+                {
+                    Log.w(TAG, "Clicked transaction at position " + position + " is null");
+                    return;
+                }
+
+                Property property = Property.toProperty(selected);
+
+                Intent i = new Intent(view.getContext(), PropertyOverviewActivity.class);
+                final Bundle b = new Bundle();
+                b.putInt("id", property.id);
+                i.putExtras(b);
+                startActivity(i);
+            }
+        });
     }
 
     @Override
