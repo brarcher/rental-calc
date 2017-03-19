@@ -1,8 +1,10 @@
 package protect.rentalcalc;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.database.Cursor;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,16 +12,22 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.webkit.WebView;
+import android.widget.AdapterView;
+import android.widget.ListView;
+import android.widget.TextView;
 
 import com.google.common.collect.ImmutableMap;
 
 import java.util.Calendar;
 import java.util.Map;
 
-public class MainActivity extends AppCompatActivity
+public class PropertiesListActivity extends AppCompatActivity
 {
     private static final String TAG = "RentalCalc";
+
+    private DBHelper _db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -28,12 +36,60 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        _db = new DBHelper(this);
+    }
+
+    @Override
+    public void onResume()
+    {
+        super.onResume();
+
+        final ListView propertyList = (ListView) findViewById(R.id.list);
+        final TextView helpText = (TextView) findViewById(R.id.helpText);
+
+        if (_db.getPropertyCount() > 0)
+        {
+            propertyList.setVisibility(View.VISIBLE);
+            helpText.setVisibility(View.GONE);
+        }
+        else
+        {
+            propertyList.setVisibility(View.GONE);
+            helpText.setVisibility(View.VISIBLE);
+        }
+
+        final Cursor properties = _db.getProperties();
+        final PropertyCursorAdapter adapter = new PropertyCursorAdapter(this, properties);
+        propertyList.setAdapter(adapter);
+
+        propertyList.setOnItemClickListener(new AdapterView.OnItemClickListener()
+        {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id)
+            {
+                Cursor selected = (Cursor)parent.getItemAtPosition(position);
+                if(selected == null)
+                {
+                    Log.w(TAG, "Clicked transaction at position " + position + " is null");
+                    return;
+                }
+
+                Property property = Property.toProperty(selected);
+
+                Intent i = new Intent(view.getContext(), PropertyOverviewActivity.class);
+                final Bundle b = new Bundle();
+                b.putInt("id", property.id);
+                i.putExtras(b);
+                startActivity(i);
+            }
+        });
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu)
     {
-        getMenuInflater().inflate(R.menu.properties_menu, menu);
+        getMenuInflater().inflate(R.menu.properties_list_menu, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -41,6 +97,12 @@ public class MainActivity extends AppCompatActivity
     public boolean onOptionsItemSelected(MenuItem item)
     {
         int id = item.getItemId();
+
+        if(id == R.id.action_add)
+        {
+            Intent i = new Intent(getApplicationContext(), PropertyViewActivity.class);
+            startActivity(i);
+        }
 
         if(id == R.id.action_about)
         {
@@ -58,12 +120,24 @@ public class MainActivity extends AppCompatActivity
             "Guava", "https://github.com/google/guava"
         );
 
+        final Map<String, String> USED_ASSETS = ImmutableMap.of
+        (
+            "House by Mani Amini", "https://thenounproject.com/term/house/41030/"
+        );
+
         StringBuilder libs = new StringBuilder().append("<ul>");
         for (Map.Entry<String, String> entry : USED_LIBRARIES.entrySet())
         {
             libs.append("<li><a href=\"").append(entry.getValue()).append("\">").append(entry.getKey()).append("</a></li>");
         }
         libs.append("</ul>");
+
+        StringBuilder resources = new StringBuilder().append("<ul>");
+        for (Map.Entry<String, String> entry : USED_ASSETS.entrySet())
+        {
+            resources.append("<li><a href=\"").append(entry.getValue()).append("\">").append(entry.getKey()).append("</a></li>");
+        }
+        resources.append("</ul>");
 
         String appName = getString(R.string.app_name);
         int year = Calendar.getInstance().get(Calendar.YEAR);
@@ -110,7 +184,9 @@ public class MainActivity extends AppCompatActivity
                         "</p><hr/><p>" +
                         getString(R.string.app_license) +
                         "</p><hr/><p>" +
-                        String.format(getString(R.string.app_libraries), appName, libs.toString());
+                        String.format(getString(R.string.app_libraries), appName, libs.toString() +
+                        "</p><hr/><p>" +
+                        String.format(getString(R.string.app_resources), appName, resources.toString()));
 
 
         wv.loadDataWithBaseURL("file:///android_res/drawable/", html, "text/html", "utf-8", null);
@@ -125,5 +201,12 @@ public class MainActivity extends AppCompatActivity
                     }
                 })
                 .show();
+    }
+
+    @Override
+    protected void onDestroy()
+    {
+        _db.close();
+        super.onDestroy();
     }
 }

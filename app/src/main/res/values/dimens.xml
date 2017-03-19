@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <dimen name="no_data_textSize">16sp</dimen>
+    <dimen name="no_data_padding">22dp</dimen>
+
     <dimen name="inputBorderThickness">2dip</dimen>
     <dimen name="inputPadding">20dip</dimen>
-
+    <dimen name="inputButtonPadding">5dip</dimen>
+    <dimen name="titlePaddingHorizontal">10dip</dimen>
+    <dimen name="titlePaddingTop">20dip</dimen>
     <dimen name="inputSize">18sp</dimen>
     <dimen name="inputTitleSize">15sp</dimen>
 
-    <dimen name="no_data_textSize">16sp</dimen>
-    <dimen name="no_data_padding">22dp</dimen>
+    <dimen name="propertySummaryTitleSize">18sp</dimen>
+    <dimen name="propertySummaryDetailSize">15sp</dimen>
+
+    <dimen name="propertyOverviewEntryPadding">10dp</dimen>
 </resources>
