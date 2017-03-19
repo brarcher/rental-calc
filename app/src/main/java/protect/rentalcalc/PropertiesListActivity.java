@@ -58,6 +58,11 @@ public class PropertiesListActivity extends AppCompatActivity
             propertyList.setVisibility(View.GONE);
             helpText.setVisibility(View.VISIBLE);
         }
+
+        final Cursor properties = _db.getProperties();
+        final PropertyCursorAdapter adapter = new PropertyCursorAdapter(this, properties);
+        propertyList.setAdapter(adapter);
+
     }
 
     @Override
