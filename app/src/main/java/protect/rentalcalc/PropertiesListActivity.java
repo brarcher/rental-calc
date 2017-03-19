@@ -27,6 +27,8 @@ public class PropertiesListActivity extends AppCompatActivity
 {
     private static final String TAG = "RentalCalc";
 
+    private DBHelper _db;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -34,6 +36,28 @@ public class PropertiesListActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        _db = new DBHelper(this);
+    }
+
+    @Override
+    public void onResume()
+    {
+        super.onResume();
+
+        final ListView propertyList = (ListView) findViewById(R.id.list);
+        final TextView helpText = (TextView) findViewById(R.id.helpText);
+
+        if (_db.getPropertyCount() > 0)
+        {
+            propertyList.setVisibility(View.VISIBLE);
+            helpText.setVisibility(View.GONE);
+        }
+        else
+        {
+            propertyList.setVisibility(View.GONE);
+            helpText.setVisibility(View.VISIBLE);
+        }
     }
 
     @Override
@@ -145,5 +169,12 @@ public class PropertiesListActivity extends AppCompatActivity
                     }
                 })
                 .show();
+    }
+
+    @Override
+    protected void onDestroy()
+    {
+        _db.close();
+        super.onDestroy();
     }
 }
