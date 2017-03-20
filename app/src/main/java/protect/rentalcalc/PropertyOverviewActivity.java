@@ -98,7 +98,11 @@ public class PropertyOverviewActivity extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
-                Toast.makeText(PropertyOverviewActivity.this, "Not implemented", Toast.LENGTH_LONG).show();
+                Intent i = new Intent(getApplicationContext(), PropertyWorksheetActivity.class);
+                final Bundle b = new Bundle();
+                b.putInt("id", _property.id);
+                i.putExtras(b);
+                startActivity(i);
             }
         });
 
