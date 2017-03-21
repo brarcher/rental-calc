@@ -371,8 +371,14 @@
                             android:labelFor="@+id/sqft"
                             android:layout_height="wrap_content"
                             android:layout_width="wrap_content"
+                            android:layout_weight="0"
                             android:padding="@dimen/inputPadding"
                             android:textSize="@dimen/inputSize"/>
+
+                        <Space
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"/>
 
                         <EditText
                             android:id="@+id/sqft"
@@ -380,7 +386,10 @@
                             android:hint="Square Feet"
                             android:gravity="end"
                             android:layout_height="wrap_content"
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
+                            android:layout_weight="0"
+                            android:maxLength="13"
+                            android:minWidth="160sp"
                             android:padding="@dimen/inputPadding"
                             android:textSize="@dimen/inputSize" />
                     </LinearLayout>
@@ -417,8 +426,14 @@
                             android:labelFor="@+id/lot"
                             android:layout_height="wrap_content"
                             android:layout_width="wrap_content"
+                            android:layout_weight="0"
                             android:padding="@dimen/inputPadding"
                             android:textSize="@dimen/inputSize"/>
+
+                        <Space
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"/>
 
                         <EditText
                             android:id="@+id/lot"
@@ -426,7 +441,10 @@
                             android:hint="Lot Size"
                             android:gravity="end"
                             android:layout_height="wrap_content"
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
+                            android:layout_weight="0"
+                            android:maxLength="13"
+                            android:minWidth="160sp"
                             android:padding="@dimen/inputPadding"
                             android:textSize="@dimen/inputSize" />
                     </LinearLayout>
@@ -463,8 +481,14 @@
                             android:labelFor="@+id/year"
                             android:layout_height="wrap_content"
                             android:layout_width="wrap_content"
+                            android:layout_weight="0"
                             android:padding="@dimen/inputPadding"
                             android:textSize="@dimen/inputSize"/>
+
+                        <Space
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"/>
 
                         <EditText
                             android:id="@+id/year"
@@ -472,7 +496,10 @@
                             android:hint="Year Built"
                             android:gravity="end"
                             android:layout_height="wrap_content"
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
+                            android:layout_weight="0"
+                            android:maxLength="13"
+                            android:minWidth="160sp"
                             android:padding="@dimen/inputPadding"
                             android:textSize="@dimen/inputSize" />
                     </LinearLayout>
