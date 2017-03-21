@@ -58,6 +58,22 @@ public class PropertyWorksheetActivity extends AppCompatActivity
     }
 
     @Override
+    public void onResume()
+    {
+        super.onResume();
+
+        final Button cancelButton = (Button)findViewById(R.id.cancelButton);
+        cancelButton.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                finish();
+            }
+        });
+    }
+
+    @Override
     public boolean onOptionsItemSelected(MenuItem item)
     {
         int id = item.getItemId();
