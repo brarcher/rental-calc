@@ -118,23 +118,26 @@ public class PropertyWorksheetActivity extends AppCompatActivity
         };
         _financing.setOnCheckedChangeListener(listener);
 
-        _price.setText(Integer.toString(_property.purchasePrice));
-        _afterRepairsValue.setText(Integer.toString(_property.afterRepairsValue));
+
+
+        _price.setText(String.format(Locale.US, "%d", _property.purchasePrice));
+        _afterRepairsValue.setText(String.format(Locale.US, "%d", _property.afterRepairsValue));
         _financing.setChecked(_property.useLoan);
         listener.onCheckedChanged(_financing, _property.useLoan);
-        _downPayment.setText(Integer.toString(_property.downPayment));
+        _downPayment.setText(String.format(Locale.US, "%d", _property.downPayment));
         _interestRate.setText(String.format(Locale.US, "%.2f", _property.interestRate));
-        _loanDuration.setText(Integer.toString(_property.loanDuration));
-        _purchaseCost.setText(Integer.toString(_property.purchasePrice));
-        _repairCost.setText(Integer.toString(_property.repairRemodelCosts));
-        _rent.setText(Integer.toString(_property.grossRent));
-        _otherIncome.setText(Integer.toString(_property.otherIncome));
-        _totalExpenses.setText(Integer.toString(_property.expenses));
-        _vacancy.setText(Integer.toString(_property.vacancy));
-        _incomeIncrease.setText(Integer.toString(_property.incomeIncrease));
-        _expensesIncrease.setText(Integer.toString(_property.expenseIncrease));
-        _sellingCosts.setText(Integer.toString(_property.sellingCosts));
-        _landValue.setText(Integer.toString(_property.landValue));
+        _loanDuration.setText(String.format(Locale.US, "%d", _property.loanDuration));
+        _purchaseCost.setText(String.format(Locale.US, "%d", _property.purchaseCosts));
+        _repairCost.setText(String.format(Locale.US, "%d", _property.repairRemodelCosts));
+        _rent.setText(String.format(Locale.US, "%d", _property.grossRent));
+        _otherIncome.setText(String.format(Locale.US, "%d", _property.otherIncome));
+        _totalExpenses.setText(String.format(Locale.US, "%d", _property.expenses));
+        _vacancy.setText(String.format(Locale.US, "%d", _property.vacancy));
+        _appreciation.setText(String.format(Locale.US, "%d", _property.appreciation));
+        _incomeIncrease.setText(String.format(Locale.US, "%d", _property.incomeIncrease));
+        _expensesIncrease.setText(String.format(Locale.US, "%d", _property.expenseIncrease));
+        _sellingCosts.setText(String.format(Locale.US, "%d", _property.sellingCosts));
+        _landValue.setText(String.format(Locale.US, "%d", _property.landValue));
     }
 
     @Override
