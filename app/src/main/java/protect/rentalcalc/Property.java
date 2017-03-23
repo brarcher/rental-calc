@@ -36,6 +36,7 @@ class Property
     int expenseIncrease;
     int sellingCosts;
     int landValue;
+    String notes;
 
     private static String toBlankIfNull(final String string)
     {
@@ -141,6 +142,7 @@ class Property
         property.expenseIncrease = cursor.getInt(cursor.getColumnIndexOrThrow(DBHelper.PropertyDbIds.EXPENSE_INCREASE));
         property.sellingCosts = cursor.getInt(cursor.getColumnIndexOrThrow(DBHelper.PropertyDbIds.SELLING_COSTS));
         property.landValue = cursor.getInt(cursor.getColumnIndexOrThrow(DBHelper.PropertyDbIds.LAND_VALUE));
+        property.notes = cursor.getString(cursor.getColumnIndexOrThrow(DBHelper.PropertyDbIds.NOTES));
 
         return property;
     }

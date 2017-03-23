@@ -31,5 +31,9 @@
             android:name=".PropertyWorksheetActivity"
             android:label="Overview"
             android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".PropertyNotesActivity"
+            android:label="Notes"
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 </manifest>

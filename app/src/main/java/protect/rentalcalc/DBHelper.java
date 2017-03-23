@@ -63,6 +63,8 @@ class DBHelper extends SQLiteOpenHelper
         static final String EXPENSE_INCREASE = "expenseIncrease";
         static final String SELLING_COSTS = "sellingCosts";
         static final String LAND_VALUE = "landValue";
+
+        static final String NOTES = "notes";
     }
 
     DBHelper(Context context)
@@ -107,7 +109,8 @@ class DBHelper extends SQLiteOpenHelper
                 PropertyDbIds.INCOME_INCREASE + " INTEGER," +
                 PropertyDbIds.EXPENSE_INCREASE + " INTEGER," +
                 PropertyDbIds.SELLING_COSTS + " INTEGER," +
-                PropertyDbIds.LAND_VALUE + " INTEGER)");
+                PropertyDbIds.LAND_VALUE + " INTEGER," +
+                PropertyDbIds.NOTES + " TEXT)");
     }
 
     @Override
@@ -150,6 +153,7 @@ class DBHelper extends SQLiteOpenHelper
         contentValues.put(PropertyDbIds.EXPENSE_INCREASE, property.expenseIncrease);
         contentValues.put(PropertyDbIds.SELLING_COSTS, property.sellingCosts);
         contentValues.put(PropertyDbIds.LAND_VALUE, property.landValue);
+        contentValues.put(PropertyDbIds.NOTES, property.notes);
 
         return contentValues;
     }

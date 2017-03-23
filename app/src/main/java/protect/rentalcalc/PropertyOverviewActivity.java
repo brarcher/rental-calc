@@ -110,7 +110,9 @@ public class PropertyOverviewActivity extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
-                Toast.makeText(PropertyOverviewActivity.this, "Not implemented", Toast.LENGTH_LONG).show();
+                Intent i = new Intent(getApplicationContext(), PropertyNotesActivity.class);
+                i.putExtras(argBundle);
+                startActivity(i);
             }
         });
 
