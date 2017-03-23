@@ -6,7 +6,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CompoundButton;
+import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import com.google.common.collect.ImmutableList;
@@ -18,6 +20,8 @@ public class PropertyWorksheetActivity extends AppCompatActivity
 {
     private static final String TAG = "RentalCalc";
     private DBHelper _db;
+
+    private Property _property;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -33,6 +37,25 @@ public class PropertyWorksheetActivity extends AppCompatActivity
         }
 
         _db = new DBHelper(this);
+
+        final Bundle b = getIntent().getExtras();
+
+        if(b == null || b.containsKey("id") == false)
+        {
+            Toast.makeText(this, "No property found", Toast.LENGTH_LONG).show();
+            finish();
+            return;
+        }
+
+        final int propertyId = b.getInt("id");
+        _property = _db.getProperty(propertyId);
+
+        if(_property == null)
+        {
+            Toast.makeText(this, "No property found", Toast.LENGTH_LONG).show();
+            finish();
+            return;
+        }
 
         ToggleButton financing = (ToggleButton)findViewById(R.id.financing);
         financing.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
