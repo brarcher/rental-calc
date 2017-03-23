@@ -116,14 +116,7 @@ class DBHelper extends SQLiteOpenHelper
         // For now, nothing to do, only one database version
     }
 
-    /**
-     * Insert a property into the database. The ID of the
-     * property will be ignored, as it will be auto-assigned.
-     *
-     * @return the index of the new value if successful,
-     * -1 otherwise
-     */
-    long insertProperty(final Property property)
+    private ContentValues toContentValues(Property property)
     {
         ContentValues contentValues = new ContentValues();
         contentValues.put(PropertyDbIds.NICKNAME, property.nickname);
@@ -157,6 +150,20 @@ class DBHelper extends SQLiteOpenHelper
         contentValues.put(PropertyDbIds.EXPENSE_INCREASE, property.expenseIncrease);
         contentValues.put(PropertyDbIds.SELLING_COSTS, property.sellingCosts);
         contentValues.put(PropertyDbIds.LAND_VALUE, property.landValue);
+
+        return contentValues;
+    }
+
+    /**
+     * Insert a property into the database. The ID of the
+     * property will be ignored, as it will be auto-assigned.
+     *
+     * @return the index of the new value if successful,
+     * -1 otherwise
+     */
+    long insertProperty(final Property property)
+    {
+        ContentValues contentValues = toContentValues(property);
 
         SQLiteDatabase db = getWritableDatabase();
         long newId = db.insert(PropertyDbIds.TABLE, null, contentValues);
@@ -179,39 +186,7 @@ class DBHelper extends SQLiteOpenHelper
      */
     long insertProperty(final SQLiteDatabase writableDb, final Property property)
     {
-        ContentValues contentValues = new ContentValues();
-        contentValues.put(PropertyDbIds.ID, property.id);
-        contentValues.put(PropertyDbIds.NICKNAME, property.nickname);
-        contentValues.put(PropertyDbIds.ADDRESS_STREET, property.addressStreet);
-        contentValues.put(PropertyDbIds.ADDRESS_CITY, property.addressCity);
-        contentValues.put(PropertyDbIds.ADDRESS_STATE, property.addressState);
-        contentValues.put(PropertyDbIds.ADDRESS_ZIP, property.addressZip);
-        contentValues.put(PropertyDbIds.PROPERTY_TYPE, property.propertyType);
-        contentValues.put(PropertyDbIds.PROPERTY_BEDS, property.propertyBeds);
-        contentValues.put(PropertyDbIds.PROPERTY_BATHS, property.propertyBaths);
-        contentValues.put(PropertyDbIds.PROPERTY_SQUARE_FOOTAGE, property.propertySqft);
-        contentValues.put(PropertyDbIds.PROPERTY_LOT, property.propertyLot);
-        contentValues.put(PropertyDbIds.PROPERTY_YEAR, property.propertyYear);
-        contentValues.put(PropertyDbIds.PROPERTY_PARKING, property.propertyParking);
-        contentValues.put(PropertyDbIds.PROPERTY_ZONING, property.propertyZoning);
-        contentValues.put(PropertyDbIds.PROPERTY_MLS, property.propertyMls);
-        contentValues.put(PropertyDbIds.PURCHASE_PRICE, property.purchasePrice);
-        contentValues.put(PropertyDbIds.AFTER_REPAIRS_VALUE, property.afterRepairsValue);
-        contentValues.put(PropertyDbIds.USE_LOAN, property.useLoan);
-        contentValues.put(PropertyDbIds.DOWN_PAYMENT, property.downPayment);
-        contentValues.put(PropertyDbIds.INTEREST_RATE, property.interestRate);
-        contentValues.put(PropertyDbIds.LOAN_DURATION, property.loanDuration);
-        contentValues.put(PropertyDbIds.PURCHASE_COSTS, property.purchaseCosts);
-        contentValues.put(PropertyDbIds.REPAIR_REMODEL_COSTS, property.repairRemodelCosts);
-        contentValues.put(PropertyDbIds.GROSS_RENT, property.grossRent);
-        contentValues.put(PropertyDbIds.OTHER_INCOME, property.otherIncome);
-        contentValues.put(PropertyDbIds.EXPENSES, property.expenses);
-        contentValues.put(PropertyDbIds.VACANCY, property.vacancy);
-        contentValues.put(PropertyDbIds.APPRECIATION, property.appreciation);
-        contentValues.put(PropertyDbIds.INCOME_INCREASE, property.incomeIncrease);
-        contentValues.put(PropertyDbIds.EXPENSE_INCREASE, property.expenseIncrease);
-        contentValues.put(PropertyDbIds.SELLING_COSTS, property.sellingCosts);
-        contentValues.put(PropertyDbIds.LAND_VALUE, property.landValue);
+        ContentValues contentValues = toContentValues(property);
 
         long newId = writableDb.insert(PropertyDbIds.TABLE, null, contentValues);
 
@@ -228,38 +203,7 @@ class DBHelper extends SQLiteOpenHelper
      */
     boolean updateProperty(final Property property)
     {
-        ContentValues contentValues = new ContentValues();
-        contentValues.put(PropertyDbIds.NICKNAME, property.nickname);
-        contentValues.put(PropertyDbIds.ADDRESS_STREET, property.addressStreet);
-        contentValues.put(PropertyDbIds.ADDRESS_CITY, property.addressCity);
-        contentValues.put(PropertyDbIds.ADDRESS_STATE, property.addressState);
-        contentValues.put(PropertyDbIds.ADDRESS_ZIP, property.addressZip);
-        contentValues.put(PropertyDbIds.PROPERTY_TYPE, property.propertyType);
-        contentValues.put(PropertyDbIds.PROPERTY_BEDS, property.propertyBeds);
-        contentValues.put(PropertyDbIds.PROPERTY_BATHS, property.propertyBaths);
-        contentValues.put(PropertyDbIds.PROPERTY_SQUARE_FOOTAGE, property.propertySqft);
-        contentValues.put(PropertyDbIds.PROPERTY_LOT, property.propertyLot);
-        contentValues.put(PropertyDbIds.PROPERTY_YEAR, property.propertyYear);
-        contentValues.put(PropertyDbIds.PROPERTY_PARKING, property.propertyParking);
-        contentValues.put(PropertyDbIds.PROPERTY_ZONING, property.propertyZoning);
-        contentValues.put(PropertyDbIds.PROPERTY_MLS, property.propertyMls);
-        contentValues.put(PropertyDbIds.PURCHASE_PRICE, property.purchasePrice);
-        contentValues.put(PropertyDbIds.AFTER_REPAIRS_VALUE, property.afterRepairsValue);
-        contentValues.put(PropertyDbIds.USE_LOAN, property.useLoan);
-        contentValues.put(PropertyDbIds.DOWN_PAYMENT, property.downPayment);
-        contentValues.put(PropertyDbIds.INTEREST_RATE, property.interestRate);
-        contentValues.put(PropertyDbIds.LOAN_DURATION, property.loanDuration);
-        contentValues.put(PropertyDbIds.PURCHASE_COSTS, property.purchaseCosts);
-        contentValues.put(PropertyDbIds.REPAIR_REMODEL_COSTS, property.repairRemodelCosts);
-        contentValues.put(PropertyDbIds.GROSS_RENT, property.grossRent);
-        contentValues.put(PropertyDbIds.OTHER_INCOME, property.otherIncome);
-        contentValues.put(PropertyDbIds.EXPENSES, property.expenses);
-        contentValues.put(PropertyDbIds.VACANCY, property.vacancy);
-        contentValues.put(PropertyDbIds.APPRECIATION, property.appreciation);
-        contentValues.put(PropertyDbIds.INCOME_INCREASE, property.incomeIncrease);
-        contentValues.put(PropertyDbIds.EXPENSE_INCREASE, property.expenseIncrease);
-        contentValues.put(PropertyDbIds.SELLING_COSTS, property.sellingCosts);
-        contentValues.put(PropertyDbIds.LAND_VALUE, property.landValue);
+        ContentValues contentValues = toContentValues(property);
 
         SQLiteDatabase db = getWritableDatabase();
         int rowsUpdated = db.update(PropertyDbIds.TABLE, contentValues,
