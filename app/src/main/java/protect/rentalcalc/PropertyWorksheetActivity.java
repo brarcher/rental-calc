@@ -5,6 +5,13 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.CompoundButton;
+import android.widget.ToggleButton;
+
+import com.google.common.collect.ImmutableList;
+
+import java.util.List;
 
 
 public class PropertyWorksheetActivity extends AppCompatActivity
@@ -26,6 +33,28 @@ public class PropertyWorksheetActivity extends AppCompatActivity
         }
 
         _db = new DBHelper(this);
+
+        ToggleButton financing = (ToggleButton)findViewById(R.id.financing);
+        financing.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
+        {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked)
+            {
+                List<View> views = ImmutableList.of(
+                    findViewById(R.id.loanBorder),
+                    findViewById(R.id.loanRow),
+                    findViewById(R.id.interestBorder),
+                    findViewById(R.id.interestRow),
+                    findViewById(R.id.purchaseBorder),
+                    findViewById(R.id.purchaseRow)
+                );
+
+                for(View view : views)
+                {
+                    view.setVisibility(isChecked ? View.VISIBLE : View.GONE);
+                }
+            }
+        });
     }
 
     @Override

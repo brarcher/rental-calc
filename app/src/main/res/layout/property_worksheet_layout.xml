@@ -247,10 +247,12 @@
 
                 <!-- Purchase Price -->
                 <View
+                    android:id="@+id/purchaseBorder"
                     android:layout_height="@dimen/inputBorderThickness"
                     android:layout_width="match_parent"
                     android:background="@color/inputBorder" />
                 <TableRow
+                    android:id="@+id/purchaseRow"
                     android:background="@color/inputBackground"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
@@ -310,10 +312,12 @@
 
                 <!-- Interest rate -->
                 <View
+                    android:id="@+id/interestBorder"
                     android:layout_height="@dimen/inputBorderThickness"
                     android:layout_width="match_parent"
                     android:background="@color/inputBorder" />
                 <TableRow
+                    android:id="@+id/interestRow"
                     android:background="@color/inputBackground"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
@@ -373,10 +377,12 @@
 
                 <!-- Loan Duration -->
                 <View
+                    android:id="@+id/loanBorder"
                     android:layout_height="@dimen/inputBorderThickness"
                     android:layout_width="match_parent"
                     android:background="@color/inputBorder" />
                 <TableRow
+                    android:id="@+id/loanRow"
                     android:background="@color/inputBackground"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
