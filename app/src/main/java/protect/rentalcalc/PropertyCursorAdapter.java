@@ -69,6 +69,6 @@ class PropertyCursorAdapter extends CursorAdapter
             holder.shortAddressField.setText("");
         }
 
-        holder.priceField.setText(String.format(Locale.US, "%dK", property.propertyPrice/1000));
+        holder.priceField.setText(String.format(Locale.US, "%dK", property.purchasePrice/1000));
     }
 }

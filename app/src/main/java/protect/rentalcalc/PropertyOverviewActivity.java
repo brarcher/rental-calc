@@ -75,7 +75,7 @@ public class PropertyOverviewActivity extends AppCompatActivity
                 _property.addressCity, _property.addressState, _property.addressZip));
 
         final TextView price = (TextView)findViewById(R.id.price);
-        price.setText(String.format(Locale.US, "%dK", _property.propertyPrice/1000));
+        price.setText(String.format(Locale.US, "%dK", _property.purchasePrice/1000));
 
 
         final View propertyView = findViewById(R.id.propertyView);
