@@ -197,7 +197,7 @@ class DBHelper extends SQLiteOpenHelper
     {
         SQLiteDatabase db = getReadableDatabase();
         Cursor data = db.rawQuery("select * from " + PropertyDbIds.TABLE +
-                " where " + PropertyDbIds.ID + "=?", new String[]{String.format("%d", id)});
+                " where " + PropertyDbIds.ID + "=?", new String[]{Integer.toString(id)});
 
         Property property = null;
 
