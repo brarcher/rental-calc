@@ -77,6 +77,8 @@ public class PropertyOverviewActivity extends AppCompatActivity
         final TextView price = (TextView)findViewById(R.id.price);
         price.setText(String.format(Locale.US, "%dK", _property.purchasePrice/1000));
 
+        final Bundle argBundle = new Bundle();
+        argBundle.putInt("id", _property.id);
 
         final View propertyView = findViewById(R.id.propertyView);
         propertyView.setOnClickListener(new View.OnClickListener()
@@ -85,9 +87,7 @@ public class PropertyOverviewActivity extends AppCompatActivity
             public void onClick(View v)
             {
                 Intent i = new Intent(getApplicationContext(), PropertyViewActivity.class);
-                final Bundle b = new Bundle();
-                b.putInt("id", _property.id);
-                i.putExtras(b);
+                i.putExtras(argBundle);
                 startActivity(i);
             }
         });
@@ -99,9 +99,7 @@ public class PropertyOverviewActivity extends AppCompatActivity
             public void onClick(View v)
             {
                 Intent i = new Intent(getApplicationContext(), PropertyWorksheetActivity.class);
-                final Bundle b = new Bundle();
-                b.putInt("id", _property.id);
-                i.putExtras(b);
+                i.putExtras(argBundle);
                 startActivity(i);
             }
         });
