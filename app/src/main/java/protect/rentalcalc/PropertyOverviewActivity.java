@@ -71,8 +71,12 @@ public class PropertyOverviewActivity extends AppCompatActivity
         street.setText(_property.addressStreet);
 
         final TextView stateZip = (TextView)findViewById(R.id.stateZip);
-        stateZip.setText(String.format(Locale.US, "%s, %s %s",
-                _property.addressCity, _property.addressState, _property.addressZip));
+        stateZip.setText(String.format(Locale.US, "%s%s%s%s%s",
+                _property.addressCity,
+                (_property.addressCity .isEmpty() == false) && (_property.addressState.isEmpty() == false ||  _property.addressZip.isEmpty() == false) ? ", " : "",
+                _property.addressState,
+                (_property.addressState .isEmpty() == false) && (_property.addressZip.isEmpty() == false) ? " " : "",
+                _property.addressZip));
 
         final TextView price = (TextView)findViewById(R.id.price);
         price.setText(String.format(Locale.US, "%dK", _property.purchasePrice/1000));
