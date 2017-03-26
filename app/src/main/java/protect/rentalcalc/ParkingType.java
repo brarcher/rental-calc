@@ -25,11 +25,14 @@ enum ParkingType
 
     static ParkingType fromString(Context context, String string)
     {
-        for(ParkingType type : ParkingType.values())
+        if(string != null)
         {
-            if(string.equals(context.getString(type.stringId)))
+            for(ParkingType type : ParkingType.values())
             {
-                return type;
+                if(string.equals(context.getString(type.stringId)))
+                {
+                    return type;
+                }
             }
         }
 

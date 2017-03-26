@@ -26,11 +26,14 @@ enum PropertyType
 
     static PropertyType fromString(Context context, String string)
     {
-        for(PropertyType type : PropertyType.values())
+        if(string != null)
         {
-            if(string.equals(context.getString(type.stringId)))
+            for(PropertyType type : PropertyType.values())
             {
-                return type;
+                if(string.equals(context.getString(type.stringId)))
+                {
+                    return type;
+                }
             }
         }
 
