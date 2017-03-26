@@ -4,7 +4,7 @@ import android.database.Cursor;
 
 class Property
 {
-    int id;
+    long id;
     String nickname;
     String addressStreet;
     String addressCity;
@@ -110,7 +110,7 @@ class Property
     static Property toProperty(Cursor cursor)
     {
         Property property = new Property();
-        property.id = cursor.getInt(cursor.getColumnIndexOrThrow(DBHelper.PropertyDbIds.ID));
+        property.id = cursor.getLong(cursor.getColumnIndexOrThrow(DBHelper.PropertyDbIds.ID));
         property.nickname = toBlankIfNull(cursor.getString(cursor.getColumnIndexOrThrow(DBHelper.PropertyDbIds.NICKNAME)));
         property.addressStreet = toBlankIfNull(cursor.getString(cursor.getColumnIndexOrThrow(DBHelper.PropertyDbIds.ADDRESS_STREET)));
         property.addressCity  = toBlankIfNull(cursor.getString(cursor.getColumnIndexOrThrow(DBHelper.PropertyDbIds.ADDRESS_CITY)));

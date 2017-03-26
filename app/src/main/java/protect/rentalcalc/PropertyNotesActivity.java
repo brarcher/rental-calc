@@ -44,7 +44,7 @@ public class PropertyNotesActivity extends AppCompatActivity
             return;
         }
 
-        final int propertyId = b.getInt("id");
+        final long propertyId = b.getLong("id");
         _property = _db.getProperty(propertyId);
 
         if (_property == null)

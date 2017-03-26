@@ -74,7 +74,7 @@ public class PropertyViewActivity extends AppCompatActivity
         _mlsField = (EditText)findViewById(R.id.mls);
 
         final Bundle b = getIntent().getExtras();
-        _existingProperty = (b != null && b.containsKey("id")) ? _db.getProperty(b.getInt("id")) : null;
+        _existingProperty = (b != null && b.containsKey("id")) ? _db.getProperty(b.getLong("id")) : null;
 
         final List<String> typeValues = ImmutableList.of(
                 getString(PropertyType.BLANK.stringId),
@@ -232,7 +232,7 @@ public class PropertyViewActivity extends AppCompatActivity
                 final String zoning = _zoningField.getText().toString();
                 final String mls = _mlsField.getText().toString();
 
-                final int id = (_existingProperty != null) ? _existingProperty.id : 0;
+                final long id = (_existingProperty != null) ? _existingProperty.id : 0;
 
                 Property newProperty = (_existingProperty != null) ? new Property(_existingProperty) : new Property();
                 newProperty.id = id;

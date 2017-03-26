@@ -53,7 +53,7 @@ public class PropertyOverviewActivity extends AppCompatActivity
             return;
         }
 
-        int propertyId = b.getInt("id");
+        long propertyId = b.getLong("id");
         _property = _db.getProperty(propertyId);
 
         if(_property == null)
@@ -78,7 +78,7 @@ public class PropertyOverviewActivity extends AppCompatActivity
         price.setText(String.format(Locale.US, "%dK", _property.purchasePrice/1000));
 
         final Bundle argBundle = new Bundle();
-        argBundle.putInt("id", _property.id);
+        argBundle.putLong("id", _property.id);
 
         final View propertyView = findViewById(R.id.propertyView);
         propertyView.setOnClickListener(new View.OnClickListener()

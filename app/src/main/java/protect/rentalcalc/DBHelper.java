@@ -212,7 +212,7 @@ class DBHelper extends SQLiteOpenHelper
         SQLiteDatabase db = getWritableDatabase();
         int rowsUpdated = db.update(PropertyDbIds.TABLE, contentValues,
                 PropertyDbIds.ID + "=?",
-                new String[]{Integer.toString(property.id)});
+                new String[]{Long.toString(property.id)});
         db.close();
 
         return (rowsUpdated == 1);
@@ -226,11 +226,11 @@ class DBHelper extends SQLiteOpenHelper
      * @return Property object representing the named property,
      * or null if it could not be queried
      */
-    Property getProperty(final int id)
+    Property getProperty(final long id)
     {
         SQLiteDatabase db = getReadableDatabase();
         Cursor data = db.rawQuery("select * from " + PropertyDbIds.TABLE +
-                " where " + PropertyDbIds.ID + "=?", new String[]{Integer.toString(id)});
+                " where " + PropertyDbIds.ID + "=?", new String[]{Long.toString(id)});
 
         Property property = null;
 
@@ -280,12 +280,12 @@ class DBHelper extends SQLiteOpenHelper
      * @return if the property was successfully deleted,
      * false otherwise
      */
-    boolean deleteProperty(final int id)
+    boolean deleteProperty(final long id)
     {
         SQLiteDatabase db = getWritableDatabase();
         int rowsDeleted =  db.delete(PropertyDbIds.TABLE,
                 PropertyDbIds.ID + " = ? ",
-                new String[]{Integer.toString(id)});
+                new String[]{Long.toString(id)});
         db.close();
 
         return (rowsDeleted == 1);
