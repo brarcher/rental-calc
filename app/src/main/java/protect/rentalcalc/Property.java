@@ -2,6 +2,8 @@ package protect.rentalcalc;
 
 import android.database.Cursor;
 
+import java.lang.reflect.Field;
+
 class Property
 {
     long id;
@@ -52,8 +54,26 @@ class Property
 
     Property()
     {
+        // Default all strings to "" instead of null
+        for(Field field : Property.class.getDeclaredFields())
+        {
+            if(field.getType() == String.class)
+            {
+                try
+                {
+                    field.set(this, "");
+                }
+                catch (IllegalAccessException e)
+                {
+                    // Unable to set the field
+                }
+            }
+        }
+
         // Fill in default values
 
+        propertyBeds = "1";
+        propertyBaths = "1";
         useLoan = true;
         downPayment = 20; // 20%
         interestRate = 5; // 5%
