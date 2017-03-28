@@ -37,7 +37,6 @@ class DBHelper extends SQLiteOpenHelper
         static final String ADDRESS_STATE = "addressState";
         static final String ADDRESS_ZIP = "addressZip";
         static final String PROPERTY_TYPE = "propertyType";
-
         static final String PROPERTY_BEDS = "propertyBeds";
         static final String PROPERTY_BATHS = "propertyBaths";
         static final String PROPERTY_SQUARE_FOOTAGE = "propertySqft";
@@ -46,6 +45,26 @@ class DBHelper extends SQLiteOpenHelper
         static final String PROPERTY_PARKING = "propertyParking";
         static final String PROPERTY_ZONING = "propertyZoning";
         static final String PROPERTY_MLS = "propertyMls";
+
+        static final String PURCHASE_PRICE = "purchasePrice";
+        static final String AFTER_REPAIRS_VALUE = "afterRepairsValue";
+        static final String USE_LOAN = "useLoan";
+        static final String DOWN_PAYMENT = "downPayment";
+        static final String INTEREST_RATE = "interestRate";
+        static final String LOAN_DURATION = "loanDuration";
+        static final String PURCHASE_COSTS = "purchaseCosts";
+        static final String REPAIR_REMODEL_COSTS = "repairRemodelCosts";
+        static final String GROSS_RENT = "grossRent";
+        static final String OTHER_INCOME = "otherIncome";
+        static final String EXPENSES = "expenses";
+        static final String VACANCY = "vacancy";
+        static final String APPRECIATION = "appreciation";
+        static final String INCOME_INCREASE = "incomeIncrease";
+        static final String EXPENSE_INCREASE = "expenseIncrease";
+        static final String SELLING_COSTS = "sellingCosts";
+        static final String LAND_VALUE = "landValue";
+
+        static final String NOTES = "notes";
     }
 
     DBHelper(Context context)
@@ -73,7 +92,25 @@ class DBHelper extends SQLiteOpenHelper
                 PropertyDbIds.PROPERTY_YEAR + " INTEGER," +
                 PropertyDbIds.PROPERTY_PARKING + " INTEGER," +
                 PropertyDbIds.PROPERTY_ZONING + " INTEGER," +
-                PropertyDbIds.PROPERTY_MLS + " TEXT)");
+                PropertyDbIds.PROPERTY_MLS + " TEXT," +
+                PropertyDbIds.PURCHASE_PRICE + " INTEGER," +
+                PropertyDbIds.AFTER_REPAIRS_VALUE + " INTEGER," +
+                PropertyDbIds.USE_LOAN + " INTEGER," +
+                PropertyDbIds.DOWN_PAYMENT + " INTEGER," +
+                PropertyDbIds.INTEREST_RATE + " REAL," +
+                PropertyDbIds.LOAN_DURATION + " INTEGER," +
+                PropertyDbIds.PURCHASE_COSTS + " INTEGER," +
+                PropertyDbIds.REPAIR_REMODEL_COSTS + " INTEGER," +
+                PropertyDbIds.GROSS_RENT + " INTEGER," +
+                PropertyDbIds.OTHER_INCOME + " INTEGER," +
+                PropertyDbIds.EXPENSES + " INTEGER," +
+                PropertyDbIds.VACANCY + " INTEGER," +
+                PropertyDbIds.APPRECIATION + " INTEGER," +
+                PropertyDbIds.INCOME_INCREASE + " INTEGER," +
+                PropertyDbIds.EXPENSE_INCREASE + " INTEGER," +
+                PropertyDbIds.SELLING_COSTS + " INTEGER," +
+                PropertyDbIds.LAND_VALUE + " INTEGER," +
+                PropertyDbIds.NOTES + " TEXT)");
     }
 
     @Override
@@ -82,14 +119,7 @@ class DBHelper extends SQLiteOpenHelper
         // For now, nothing to do, only one database version
     }
 
-    /**
-     * Insert a property into the database. The ID of the
-     * property will be ignored, as it will be auto-assigned.
-     *
-     * @return the index of the new value if successful,
-     * -1 otherwise
-     */
-    long insertProperty(final Property property)
+    private ContentValues toContentValues(Property property)
     {
         ContentValues contentValues = new ContentValues();
         contentValues.put(PropertyDbIds.NICKNAME, property.nickname);
@@ -106,6 +136,38 @@ class DBHelper extends SQLiteOpenHelper
         contentValues.put(PropertyDbIds.PROPERTY_PARKING, property.propertyParking);
         contentValues.put(PropertyDbIds.PROPERTY_ZONING, property.propertyZoning);
         contentValues.put(PropertyDbIds.PROPERTY_MLS, property.propertyMls);
+        contentValues.put(PropertyDbIds.PURCHASE_PRICE, property.purchasePrice);
+        contentValues.put(PropertyDbIds.AFTER_REPAIRS_VALUE, property.afterRepairsValue);
+        contentValues.put(PropertyDbIds.USE_LOAN, property.useLoan);
+        contentValues.put(PropertyDbIds.DOWN_PAYMENT, property.downPayment);
+        contentValues.put(PropertyDbIds.INTEREST_RATE, property.interestRate);
+        contentValues.put(PropertyDbIds.LOAN_DURATION, property.loanDuration);
+        contentValues.put(PropertyDbIds.PURCHASE_COSTS, property.purchaseCosts);
+        contentValues.put(PropertyDbIds.REPAIR_REMODEL_COSTS, property.repairRemodelCosts);
+        contentValues.put(PropertyDbIds.GROSS_RENT, property.grossRent);
+        contentValues.put(PropertyDbIds.OTHER_INCOME, property.otherIncome);
+        contentValues.put(PropertyDbIds.EXPENSES, property.expenses);
+        contentValues.put(PropertyDbIds.VACANCY, property.vacancy);
+        contentValues.put(PropertyDbIds.APPRECIATION, property.appreciation);
+        contentValues.put(PropertyDbIds.INCOME_INCREASE, property.incomeIncrease);
+        contentValues.put(PropertyDbIds.EXPENSE_INCREASE, property.expenseIncrease);
+        contentValues.put(PropertyDbIds.SELLING_COSTS, property.sellingCosts);
+        contentValues.put(PropertyDbIds.LAND_VALUE, property.landValue);
+        contentValues.put(PropertyDbIds.NOTES, property.notes);
+
+        return contentValues;
+    }
+
+    /**
+     * Insert a property into the database. The ID of the
+     * property will be ignored, as it will be auto-assigned.
+     *
+     * @return the index of the new value if successful,
+     * -1 otherwise
+     */
+    long insertProperty(final Property property)
+    {
+        ContentValues contentValues = toContentValues(property);
 
         SQLiteDatabase db = getWritableDatabase();
         long newId = db.insert(PropertyDbIds.TABLE, null, contentValues);
@@ -128,22 +190,7 @@ class DBHelper extends SQLiteOpenHelper
      */
     long insertProperty(final SQLiteDatabase writableDb, final Property property)
     {
-        ContentValues contentValues = new ContentValues();
-        contentValues.put(PropertyDbIds.ID, property.id);
-        contentValues.put(PropertyDbIds.NICKNAME, property.nickname);
-        contentValues.put(PropertyDbIds.ADDRESS_STREET, property.addressStreet);
-        contentValues.put(PropertyDbIds.ADDRESS_CITY, property.addressCity);
-        contentValues.put(PropertyDbIds.ADDRESS_STATE, property.addressState);
-        contentValues.put(PropertyDbIds.ADDRESS_ZIP, property.addressZip);
-        contentValues.put(PropertyDbIds.PROPERTY_TYPE, property.propertyType);
-        contentValues.put(PropertyDbIds.PROPERTY_BEDS, property.propertyBeds);
-        contentValues.put(PropertyDbIds.PROPERTY_BATHS, property.propertyBaths);
-        contentValues.put(PropertyDbIds.PROPERTY_SQUARE_FOOTAGE, property.propertySqft);
-        contentValues.put(PropertyDbIds.PROPERTY_LOT, property.propertyLot);
-        contentValues.put(PropertyDbIds.PROPERTY_YEAR, property.propertyYear);
-        contentValues.put(PropertyDbIds.PROPERTY_PARKING, property.propertyParking);
-        contentValues.put(PropertyDbIds.PROPERTY_ZONING, property.propertyZoning);
-        contentValues.put(PropertyDbIds.PROPERTY_MLS, property.propertyMls);
+        ContentValues contentValues = toContentValues(property);
 
         long newId = writableDb.insert(PropertyDbIds.TABLE, null, contentValues);
 
@@ -160,26 +207,12 @@ class DBHelper extends SQLiteOpenHelper
      */
     boolean updateProperty(final Property property)
     {
-        ContentValues contentValues = new ContentValues();
-        contentValues.put(PropertyDbIds.NICKNAME, property.nickname);
-        contentValues.put(PropertyDbIds.ADDRESS_STREET, property.addressStreet);
-        contentValues.put(PropertyDbIds.ADDRESS_CITY, property.addressCity);
-        contentValues.put(PropertyDbIds.ADDRESS_STATE, property.addressState);
-        contentValues.put(PropertyDbIds.ADDRESS_ZIP, property.addressZip);
-        contentValues.put(PropertyDbIds.PROPERTY_TYPE, property.propertyType);
-        contentValues.put(PropertyDbIds.PROPERTY_BEDS, property.propertyBeds);
-        contentValues.put(PropertyDbIds.PROPERTY_BATHS, property.propertyBaths);
-        contentValues.put(PropertyDbIds.PROPERTY_SQUARE_FOOTAGE, property.propertySqft);
-        contentValues.put(PropertyDbIds.PROPERTY_LOT, property.propertyLot);
-        contentValues.put(PropertyDbIds.PROPERTY_YEAR, property.propertyYear);
-        contentValues.put(PropertyDbIds.PROPERTY_PARKING, property.propertyParking);
-        contentValues.put(PropertyDbIds.PROPERTY_ZONING, property.propertyZoning);
-        contentValues.put(PropertyDbIds.PROPERTY_MLS, property.propertyMls);
+        ContentValues contentValues = toContentValues(property);
 
         SQLiteDatabase db = getWritableDatabase();
         int rowsUpdated = db.update(PropertyDbIds.TABLE, contentValues,
                 PropertyDbIds.ID + "=?",
-                new String[]{Integer.toString(property.id)});
+                new String[]{Long.toString(property.id)});
         db.close();
 
         return (rowsUpdated == 1);
@@ -193,11 +226,11 @@ class DBHelper extends SQLiteOpenHelper
      * @return Property object representing the named property,
      * or null if it could not be queried
      */
-    Property getProperty(final int id)
+    Property getProperty(final long id)
     {
         SQLiteDatabase db = getReadableDatabase();
         Cursor data = db.rawQuery("select * from " + PropertyDbIds.TABLE +
-                " where " + PropertyDbIds.ID + "=?", new String[]{String.format("%d", id)});
+                " where " + PropertyDbIds.ID + "=?", new String[]{Long.toString(id)});
 
         Property property = null;
 
@@ -247,12 +280,12 @@ class DBHelper extends SQLiteOpenHelper
      * @return if the property was successfully deleted,
      * false otherwise
      */
-    boolean deleteProperty(final int id)
+    boolean deleteProperty(final long id)
     {
         SQLiteDatabase db = getWritableDatabase();
         int rowsDeleted =  db.delete(PropertyDbIds.TABLE,
                 PropertyDbIds.ID + " = ? ",
-                new String[]{Integer.toString(id)});
+                new String[]{Long.toString(id)});
         db.close();
 
         return (rowsDeleted == 1);

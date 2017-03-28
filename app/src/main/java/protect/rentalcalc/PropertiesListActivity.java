@@ -79,7 +79,7 @@ public class PropertiesListActivity extends AppCompatActivity
 
                 Intent i = new Intent(view.getContext(), PropertyOverviewActivity.class);
                 final Bundle b = new Bundle();
-                b.putInt("id", property.id);
+                b.putLong("id", property.id);
                 i.putExtras(b);
                 startActivity(i);
             }

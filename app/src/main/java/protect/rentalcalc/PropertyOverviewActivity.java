@@ -53,7 +53,7 @@ public class PropertyOverviewActivity extends AppCompatActivity
             return;
         }
 
-        int propertyId = b.getInt("id");
+        long propertyId = b.getLong("id");
         _property = _db.getProperty(propertyId);
 
         if(_property == null)
@@ -71,12 +71,18 @@ public class PropertyOverviewActivity extends AppCompatActivity
         street.setText(_property.addressStreet);
 
         final TextView stateZip = (TextView)findViewById(R.id.stateZip);
-        stateZip.setText(String.format(Locale.US, "%s, %s %s",
-                _property.addressCity, _property.addressState, _property.addressZip));
+        stateZip.setText(String.format(Locale.US, "%s%s%s%s%s",
+                _property.addressCity,
+                (_property.addressCity .isEmpty() == false) && (_property.addressState.isEmpty() == false ||  _property.addressZip.isEmpty() == false) ? ", " : "",
+                _property.addressState,
+                (_property.addressState .isEmpty() == false) && (_property.addressZip.isEmpty() == false) ? " " : "",
+                _property.addressZip));
 
         final TextView price = (TextView)findViewById(R.id.price);
-        price.setText(String.format(Locale.US, "%dK", _property.propertyPrice/1000));
+        price.setText(String.format(Locale.US, "%dK", _property.purchasePrice/1000));
 
+        final Bundle argBundle = new Bundle();
+        argBundle.putLong("id", _property.id);
 
         final View propertyView = findViewById(R.id.propertyView);
         propertyView.setOnClickListener(new View.OnClickListener()
@@ -85,9 +91,7 @@ public class PropertyOverviewActivity extends AppCompatActivity
             public void onClick(View v)
             {
                 Intent i = new Intent(getApplicationContext(), PropertyViewActivity.class);
-                final Bundle b = new Bundle();
-                b.putInt("id", _property.id);
-                i.putExtras(b);
+                i.putExtras(argBundle);
                 startActivity(i);
             }
         });
@@ -98,7 +102,9 @@ public class PropertyOverviewActivity extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
-                Toast.makeText(PropertyOverviewActivity.this, "Not implemented", Toast.LENGTH_LONG).show();
+                Intent i = new Intent(getApplicationContext(), PropertyWorksheetActivity.class);
+                i.putExtras(argBundle);
+                startActivity(i);
             }
         });
 
@@ -108,7 +114,9 @@ public class PropertyOverviewActivity extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
-                Toast.makeText(PropertyOverviewActivity.this, "Not implemented", Toast.LENGTH_LONG).show();
+                Intent i = new Intent(getApplicationContext(), PropertyNotesActivity.class);
+                i.putExtras(argBundle);
+                startActivity(i);
             }
         });
 
