@@ -24,6 +24,23 @@ class TestHelper
     }
 
     /**
+     * Check that a String matches a double value
+     */
+    static void checkDoubleField(double expected, String actual)
+    {
+        final double DELTA = 0.01;
+
+        if(actual.isEmpty())
+        {
+            assertEquals(expected, 0, DELTA);
+        }
+        else
+        {
+            assertEquals(expected, Double.parseDouble(actual), DELTA);
+        }
+    }
+
+    /**
      * Assign values to a property so that they are valid but not
      * default values. Presumable each field is also unique.
      */
@@ -64,6 +81,32 @@ class TestHelper
                 else if(fieldName.equals("propertyParking"))
                 {
                     value = value % ParkingType.values().length;
+                }
+
+                Map<String, Integer> maxLengths = new HashMap<>();
+                maxLengths.put("purchasePrice", 13);
+                maxLengths.put("afterRepairsValue", 13);
+                maxLengths.put("downPayment", 3);
+                maxLengths.put("interestRate", 3);
+                maxLengths.put("loanDuration", 2);
+                maxLengths.put("purchaseCosts", 3);
+                maxLengths.put("repairRemodelCosts", 13);
+                maxLengths.put("grossRent", 7);
+                maxLengths.put("otherIncome", 7);
+                maxLengths.put("expenses", 6);
+                maxLengths.put("vacancy", 3);
+                maxLengths.put("appreciation", 3);
+                maxLengths.put("incomeIncrease", 3);
+                maxLengths.put("expenseIncrease", 3);
+                maxLengths.put("sellingCosts", 3);
+                maxLengths.put("landValue", 13);
+
+                if(maxLengths.containsKey(fieldName))
+                {
+                    String strValue = Integer.toString(value);
+                    int maxLength = maxLengths.get(fieldName);
+                    strValue = strValue.substring(0, Math.min(strValue.length(), maxLength));
+                    value = Integer.parseInt(strValue);
                 }
 
                 field.set(property, value);
