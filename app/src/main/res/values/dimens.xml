@@ -4,6 +4,7 @@
     <dimen name="no_data_padding">22dp</dimen>
 
     <dimen name="inputBorderThickness">2dip</dimen>
+    <dimen name="inputBorderDividerThickness">4dip</dimen>
     <dimen name="inputPadding">20dip</dimen>
     <dimen name="inputButtonPadding">5dip</dimen>
     <dimen name="titlePaddingHorizontal">10dip</dimen>
