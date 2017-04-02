@@ -29,7 +29,7 @@ class PropertyCursorAdapter extends CursorAdapter
     @Override
     public View newView(Context context, Cursor cursor, ViewGroup parent)
     {
-        View view = LayoutInflater.from(context).inflate(R.layout.property_summary_layout, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.property_cursor_layout, parent, false);
 
         ViewHolder holder = new ViewHolder();
         holder.nicknameField = (TextView) view.findViewById(R.id.nickname);

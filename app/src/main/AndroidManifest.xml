@@ -35,5 +35,9 @@
             android:name=".PropertyNotesActivity"
             android:label="Notes"
             android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".PropertySummaryActivity"
+            android:label="Summary"
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 </manifest>

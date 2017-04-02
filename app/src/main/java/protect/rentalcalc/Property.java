@@ -1,6 +1,7 @@
 package protect.rentalcalc;
 
 import android.database.Cursor;
+import android.util.Log;
 
 import java.lang.reflect.Field;
 
@@ -65,7 +66,7 @@ class Property
                 }
                 catch (IllegalAccessException e)
                 {
-                    // Unable to set the field
+                    Log.e("RentalCal", "Failed to assign field", e);
                 }
             }
         }
@@ -93,38 +94,18 @@ class Property
 
     Property(final Property original)
     {
-        id = original.id;
-        nickname = original.nickname;
-        addressStreet = original.addressStreet;
-        addressCity = original.addressCity;
-        addressState = original.addressStreet;
-        addressZip = original.addressZip;
-        propertyType = original.propertyType;
-        propertyBeds = original.propertyBeds;
-        propertyBaths = original.propertyBaths;
-        propertySqft = original.propertySqft;
-        propertyLot = original.propertyLot;
-        propertyYear = original.propertyYear;
-        propertyParking = original.propertyParking;
-        propertyZoning = original.propertyZoning;
-        propertyMls = original.propertyMls;
-        purchasePrice = original.purchasePrice;
-        afterRepairsValue = original.afterRepairsValue;
-        useLoan = original.useLoan;
-        downPayment = original.downPayment;
-        interestRate = original.interestRate;
-        loanDuration = original.loanDuration;
-        purchaseCosts = original.purchaseCosts;
-        repairRemodelCosts = original.repairRemodelCosts;
-        grossRent = original.grossRent;
-        otherIncome = original.otherIncome;
-        expenses = original.expenses;
-        vacancy = original.vacancy;
-        appreciation = original.appreciation;
-        incomeIncrease = original.incomeIncrease;
-        expenseIncrease = original.expenseIncrease;
-        sellingCosts = original.sellingCosts;
-        landValue = original.landValue;
+        for(Field field : Property.class.getDeclaredFields())
+        {
+            try
+            {
+                Object data = field.get(original);
+                field.set(this, data);
+            }
+            catch (IllegalAccessException e)
+            {
+                Log.e("RentalCal", "Failed to assign field", e);
+            }
+        }
     }
 
     static Property toProperty(Cursor cursor)

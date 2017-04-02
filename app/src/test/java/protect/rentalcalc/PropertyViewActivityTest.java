@@ -22,6 +22,8 @@ import org.robolectric.shadows.ShadowToast;
 import java.lang.reflect.Field;
 import java.util.Locale;
 
+import static protect.rentalcalc.TestHelper.checkIntField;
+import static protect.rentalcalc.TestHelper.preloadProperty;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
@@ -64,18 +66,6 @@ public class PropertyViewActivityTest
         controller.pause();
         controller.stop();
         controller.destroy();
-    }
-
-    private void checkIntField(int expected, String actual)
-    {
-        if(actual.isEmpty())
-        {
-            assertEquals(expected, 0);
-        }
-        else
-        {
-            assertEquals(expected, Integer.parseInt(actual));
-        }
     }
 
     private void checkFields(Activity activity, Property property)
@@ -230,54 +220,6 @@ public class PropertyViewActivityTest
         cancelButton.performClick();
 
         assertTrue(activity.isFinishing());
-    }
-
-    /**
-     * Assign values to a property so that they are valid but not
-     * default values. Presumable each field is also unique.
-     */
-    private void preloadProperty(Property property) throws IllegalAccessException
-    {
-        // Set the fields to some non-default value which should be
-        // different for every field
-        for(Field field : property.getClass().getDeclaredFields())
-        {
-            if(field.getType() == String.class)
-            {
-                String fieldName = field.getName();
-                String value = fieldName;
-
-                // These are spinners and the possible values are limited
-                if(fieldName.equals("propertyBeds"))
-                {
-                    value = "5";
-                }
-                else if(fieldName.equals("propertyBaths"))
-                {
-                    value = "5.5";
-                }
-
-                field.set(property, value);
-            }
-
-            if(field.getType() == Integer.TYPE)
-            {
-                String fieldName = field.getName();
-                int value = Math.abs(fieldName.hashCode());
-
-                // These are spinners and the possible values are limited
-                if(fieldName.equals("propertyType"))
-                {
-                    value = value % PropertyType.values().length;
-                }
-                else if(fieldName.equals("propertyParking"))
-                {
-                    value = value % ParkingType.values().length;
-                }
-
-                field.set(property, value);
-            }
-        }
     }
 
     @Test
