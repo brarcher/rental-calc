@@ -39,5 +39,9 @@
             android:name=".PropertySummaryActivity"
             android:label="@string/summaryTitle"
             android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".DictionaryActivity"
+            android:label=""
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 </manifest>
