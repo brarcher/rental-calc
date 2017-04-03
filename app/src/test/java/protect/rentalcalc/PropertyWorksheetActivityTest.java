@@ -53,13 +53,14 @@ public class PropertyWorksheetActivityTest
     @Test
     public void clickBackFinishes()
     {
-        ActivityController controller = Robolectric.buildActivity(PropertyWorksheetActivity.class).create();
+        ActivityController controller = startWithProperty(new Property());
         Activity activity = (Activity)controller.get();
 
         controller.start();
         controller.visible();
         controller.resume();
 
+        assertTrue(shadowOf(activity).isFinishing() == false);
         shadowOf(activity).clickMenuItem(android.R.id.home);
         assertTrue(shadowOf(activity).isFinishing());
 

@@ -47,13 +47,14 @@ public class PropertyNotesActivityTest
     @Test
     public void clickBackFinishes()
     {
-        ActivityController controller = Robolectric.buildActivity(PropertyNotesActivity.class).create();
+        ActivityController controller = startWithNotes("");
         Activity activity = (Activity)controller.get();
 
         controller.start();
         controller.visible();
         controller.resume();
 
+        assertTrue(shadowOf(activity).isFinishing() == false);
         shadowOf(activity).clickMenuItem(android.R.id.home);
         assertTrue(shadowOf(activity).isFinishing());
 

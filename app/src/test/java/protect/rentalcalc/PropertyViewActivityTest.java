@@ -59,6 +59,7 @@ public class PropertyViewActivityTest
         controller.visible();
         controller.resume();
 
+        assertTrue(shadowOf(activity).isFinishing() == false);
         shadowOf(activity).clickMenuItem(android.R.id.home);
         assertTrue(shadowOf(activity).isFinishing());
 
