@@ -3,6 +3,12 @@
 
     <string name="app_name">Rental Calc</string>
 
+    <string name="addPropertyTitle">Add Property</string>
+    <string name="overviewTitle">Overview</string>
+    <string name="worksheetTitle">Overview</string>
+    <string name="notesTitle">Notes</string>
+    <string name="summaryTitle">Summary</string>
+
     <string name="add">Add</string>
     <string name="about">About</string>
     <string name="delete">Delete</string>
@@ -39,5 +45,78 @@
 
     <string name="deletePropertyTitle">Remove Property</string>
     <string name="deletePropertyConfirmation">Please confirm that you want to delete this property.</string>
+
+    <string name="purchasePriceField">Purchase Price:</string>
+    <string name="afterRepairsValueField">After Repairs Value:</string>
+    <string name="afterRepairsValueHelp">If no repairs are required, then this is the same as the purchase price.</string>
+    <string name="financingTitle">FINANCING</string>
+    <string name="useALoanField">Using a loan:</string>
+    <string name="downPaymentField">Down Payment:</string>
+    <string name="percentSymbol" translatable="false">%</string>
+    <string name="interestRateField">Interest Rate:</string>
+    <string name="loanDurationField">Loan Duration:</string>
+    <string name="yearsUnit">Years</string>
+    <string name="purchaseCostsTitle">PURCHASE COSTS</string>
+    <string name="totalField">Total:</string>
+    <string name="percentOfPriceUnit">% of Price</string>
+    <string name="repairRemodelCostsTitle">REPAIR/REMODEL COSTS</string>
+    <string name="incomeTitle">INCOME</string>
+    <string name="grossRentField">Gross Rent:</string>
+    <string name="perMonthUnit">Per Month</string>
+    <string name="otherIncomeField">Other Income:</string>
+    <string name="expensesTitle">EXPENSES</string>
+    <string name="percentOfRentUnit">% of Rent</string>
+    <string name="assumptionsTitle">ASSUMPTIONS</string>
+    <string name="vacancyField">Vacancy:</string>
+    <string name="appreciationField">Appreciation:</string>
+    <string name="percentPerYearUnit">% Per Year</string>
+    <string name="incomeIncreaseField">Income Increase:</string>
+    <string name="expensesIncreaseField">Expenses Increase:</string>
+    <string name="sellingCostsField">Selling Costs:</string>
+    <string name="percentOfSalePriceUnit">% of Sale Price</string>
+    <string name="landValueField">Land Value:</string>
+    <string name="nickname">Nickname</string>
+    <string name="addressTitle">ADDRESS</string>
+    <string name="street">Street</string>
+    <string name="city">City</string>
+    <string name="stateOrRegion">State/Region</string>
+    <string name="zip">Zip</string>
+    <string name="detailsTitle">DETAILS</string>
+    <string name="propertyTypeField">Property Type:</string>
+    <string name="bedsField">Beds:</string>
+    <string name="bathsField">Baths:</string>
+    <string name="squareFootageField">Square Footage:</string>
+    <string name="squareFeet">Square Feet</string>
+    <string name="lotSizeField">Lot Size:</string>
+    <string name="lotSize">Lot Size</string>
+    <string name="yearBuiltField">Year Built:</string>
+    <string name="yearBuilt">Year Built</string>
+    <string name="parkingField">Parking:</string>
+    <string name="zoningField">Zoning:</string>
+    <string name="zoning">Zoning</string>
+    <string name="mlsNumberField">MLS Number:</string>
+    <string name="mlsNumber">MLS Number</string>
+    <string name="worksheet">Worksheet</string>
+    <string name="notes">Notes</string>
+    <string name="analysisTitle">ANALYSIS</string>
+    <string name="summary">Summary</string>
+    <string name="projections">Projections</string>
+    <string name="purchaseRepairRemodelTitle">PURCHASE, REPAIR, REMODEL</string>
+    <string name="financedField">Financed:</string>
+    <string name="totalCashNeededField">Total Cash Needed:</string>
+    <string name="valuationTitle">VALUATION</string>
+    <string name="pricePerSquareFootField">Price Per Square Foot:</string>
+    <string name="operationTitle">OPERATION</string>
+    <string name="operatingIncomeField">Operating Income:</string>
+    <string name="operatingExpensesField">Operating Expenses:</string>
+    <string name="netOperatingIncomeField">Net Operating Income:</string>
+    <string name="mortgageField">Mortgage:</string>
+    <string name="cashFlowField">Cash Flow:</string>
+    <string name="returnsTitle">RETURNS</string>
+    <string name="capitalizationRateField">Capitalization Rate:</string>
+    <string name="cashOnCashField">Cash On Cash:</string>
+    <string name="rentToValueField">Rent To Value:</string>
+    <string name="grossRentMultiplierField">Gross Rent Multiplier:</string>
+    <string name="NAME">VALUE</string>
 
 </resources>

@@ -150,7 +150,7 @@
 
                         <TextView
                             android:textSize="@dimen/inputSize"
-                            android:text="Worksheet"
+                            android:text="@string/worksheet"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:layout_weight="1"/>
@@ -196,7 +196,7 @@
 
                         <TextView
                             android:textSize="@dimen/inputSize"
-                            android:text="Notes"
+                            android:text="@string/notes"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:layout_weight="1"/>
@@ -230,7 +230,7 @@
                         android:paddingRight="@dimen/titlePaddingHorizontal"
                         android:paddingStart="@dimen/titlePaddingHorizontal"
                         android:paddingTop="@dimen/titlePaddingTop"
-                        android:text="ANALYSIS"
+                        android:text="@string/analysisTitle"
                         android:textSize="@dimen/inputTitleSize"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"/>
@@ -263,7 +263,7 @@
 
                         <TextView
                             android:textSize="@dimen/inputSize"
-                            android:text="Summary"
+                            android:text="@string/summary"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:layout_weight="1"/>
@@ -309,7 +309,7 @@
 
                         <TextView
                             android:textSize="@dimen/inputSize"
-                            android:text="Projections"
+                            android:text="@string/projections"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:layout_weight="1"/>

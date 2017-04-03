@@ -52,7 +52,7 @@
                     <EditText
                         android:id="@+id/nickname"
                         android:inputType="text"
-                        android:hint="Nickname"
+                        android:hint="@string/nickname"
                         android:layout_height="wrap_content"
                         android:layout_width="match_parent"
                         android:padding="@dimen/inputPadding"
@@ -80,7 +80,7 @@
                         android:paddingRight="@dimen/titlePaddingHorizontal"
                         android:paddingStart="@dimen/titlePaddingHorizontal"
                         android:paddingTop="@dimen/titlePaddingTop"
-                        android:text="ADDRESS"
+                        android:text="@string/addressTitle"
                         android:textSize="@dimen/inputTitleSize"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"/>
@@ -105,7 +105,7 @@
                     <EditText
                         android:id="@+id/street"
                         android:inputType="text"
-                        android:hint="Street"
+                        android:hint="@string/street"
                         android:layout_height="wrap_content"
                         android:layout_width="match_parent"
                         android:padding="@dimen/inputPadding"
@@ -136,7 +136,7 @@
                     <EditText
                         android:id="@+id/city"
                         android:inputType="text"
-                        android:hint="City"
+                        android:hint="@string/city"
                         android:layout_height="wrap_content"
                         android:layout_width="match_parent"
                         android:padding="@dimen/inputPadding"
@@ -173,7 +173,7 @@
                             android:id="@+id/state"
                             android:inputType="text"
                             android:layout_weight="1"
-                            android:hint="State/Region"
+                            android:hint="@string/stateOrRegion"
                             android:layout_height="wrap_content"
                             android:layout_width="match_parent"
                             android:padding="@dimen/inputPadding"
@@ -189,7 +189,7 @@
                             android:id="@+id/zip"
                             android:inputType="text"
                             android:layout_weight="1"
-                            android:hint="Zip"
+                            android:hint="@string/zip"
                             android:layout_height="wrap_content"
                             android:layout_width="match_parent"
                             android:padding="@dimen/inputPadding"
@@ -218,7 +218,7 @@
                         android:paddingRight="@dimen/titlePaddingHorizontal"
                         android:paddingStart="@dimen/titlePaddingHorizontal"
                         android:paddingTop="@dimen/titlePaddingTop"
-                        android:text="DETAILS"
+                        android:text="@string/detailsTitle"
                         android:textSize="@dimen/inputTitleSize"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"/>
@@ -245,7 +245,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
                         <TextView
-                            android:text="Property Type:"
+                            android:text="@string/propertyTypeField"
                             android:labelFor="@+id/type"
                             android:layout_height="wrap_content"
                             android:layout_width="wrap_content"
@@ -295,7 +295,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
                             <TextView
-                                android:text="Beds:"
+                                android:text="@string/bedsField"
                                 android:labelFor="@+id/beds"
                                 android:layout_height="wrap_content"
                                 android:layout_width="wrap_content"
@@ -321,7 +321,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
                             <TextView
-                                android:text="Baths:"
+                                android:text="@string/bathsField"
                                 android:labelFor="@+id/baths"
                                 android:layout_height="wrap_content"
                                 android:layout_width="wrap_content"
@@ -367,7 +367,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
                         <TextView
-                            android:text="Square Footage:"
+                            android:text="@string/squareFootageField"
                             android:labelFor="@+id/sqft"
                             android:layout_height="wrap_content"
                             android:layout_width="wrap_content"
@@ -383,7 +383,7 @@
                         <EditText
                             android:id="@+id/sqft"
                             android:inputType="number"
-                            android:hint="Square Feet"
+                            android:hint="@string/squareFeet"
                             android:gravity="end"
                             android:layout_height="wrap_content"
                             android:layout_width="wrap_content"
@@ -422,7 +422,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
                         <TextView
-                            android:text="Lot Size:"
+                            android:text="@string/lotSizeField"
                             android:labelFor="@+id/lot"
                             android:layout_height="wrap_content"
                             android:layout_width="wrap_content"
@@ -438,7 +438,7 @@
                         <EditText
                             android:id="@+id/lot"
                             android:inputType="number"
-                            android:hint="Lot Size"
+                            android:hint="@string/lotSize"
                             android:gravity="end"
                             android:layout_height="wrap_content"
                             android:layout_width="wrap_content"
@@ -477,7 +477,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
                         <TextView
-                            android:text="Year Built:"
+                            android:text="@string/yearBuiltField"
                             android:labelFor="@+id/year"
                             android:layout_height="wrap_content"
                             android:layout_width="wrap_content"
@@ -493,7 +493,7 @@
                         <EditText
                             android:id="@+id/year"
                             android:inputType="number"
-                            android:hint="Year Built"
+                            android:hint="@string/yearBuilt"
                             android:gravity="end"
                             android:layout_height="wrap_content"
                             android:layout_width="wrap_content"
@@ -532,7 +532,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
                         <TextView
-                            android:text="Parking:"
+                            android:text="@string/parkingField"
                             android:labelFor="@+id/parking"
                             android:layout_height="wrap_content"
                             android:layout_width="wrap_content"
@@ -577,7 +577,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
                         <TextView
-                            android:text="Zoning:"
+                            android:text="@string/zoningField"
                             android:labelFor="@+id/zoning"
                             android:layout_height="wrap_content"
                             android:layout_width="wrap_content"
@@ -587,7 +587,7 @@
                         <EditText
                             android:id="@+id/zoning"
                             android:inputType="text"
-                            android:hint="Zoning"
+                            android:hint="@string/zoning"
                             android:gravity="end"
                             android:layout_height="wrap_content"
                             android:layout_width="match_parent"
@@ -623,7 +623,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
                         <TextView
-                            android:text="MLS Number:"
+                            android:text="@string/mlsNumberField"
                             android:labelFor="@+id/mls"
                             android:layout_height="wrap_content"
                             android:layout_width="wrap_content"
@@ -633,7 +633,7 @@
                         <EditText
                             android:id="@+id/mls"
                             android:inputType="text"
-                            android:hint="MLS Number"
+                            android:hint="@string/mlsNumber"
                             android:gravity="end"
                             android:layout_height="wrap_content"
                             android:layout_width="match_parent"

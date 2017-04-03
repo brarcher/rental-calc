@@ -21,23 +21,23 @@
         </activity>
         <activity
             android:name=".PropertyViewActivity"
-            android:label="Add Property"
+            android:label="@string/addPropertyTitle"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".PropertyOverviewActivity"
-            android:label="Overview"
+            android:label="@string/overviewTitle"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".PropertyWorksheetActivity"
-            android:label="Overview"
+            android:label="@string/worksheetTitle"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".PropertyNotesActivity"
-            android:label="Notes"
+            android:label="@string/notesTitle"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".PropertySummaryActivity"
-            android:label="Summary"
+            android:label="@string/summaryTitle"
             android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 </manifest>
