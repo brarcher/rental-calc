@@ -123,7 +123,8 @@ public class PropertiesListActivity extends AppCompatActivity
 
         final Map<String, String> USED_ASSETS = ImmutableMap.of
         (
-            "House by Mani Amini", "https://thenounproject.com/term/house/41030/"
+            "House by Mani Amini", "https://thenounproject.com/term/house/41030/",
+            "Save by Bernar Novalyi", "https://thenounproject.com/term/save/716011"
         );
 
         StringBuilder libs = new StringBuilder().append("<ul>");

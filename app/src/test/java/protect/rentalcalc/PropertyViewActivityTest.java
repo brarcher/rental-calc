@@ -3,7 +3,8 @@ package protect.rentalcalc;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Button;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.Spinner;
 
@@ -19,9 +20,9 @@ import org.robolectric.annotation.Config;
 import org.robolectric.shadows.ShadowLog;
 import org.robolectric.shadows.ShadowToast;
 
-import java.lang.reflect.Field;
 import java.util.Locale;
 
+import static org.junit.Assert.assertNotNull;
 import static protect.rentalcalc.TestHelper.checkIntField;
 import static protect.rentalcalc.TestHelper.preloadProperty;
 import static org.junit.Assert.assertEquals;
@@ -67,6 +68,42 @@ public class PropertyViewActivityTest
         controller.pause();
         controller.stop();
         controller.destroy();
+    }
+
+    @Test
+    public void startAsAddCheckActionBar() throws Exception
+    {
+        ActivityController controller = Robolectric.buildActivity(PropertyViewActivity.class).create();
+        Activity activity = (Activity)controller.get();
+
+        controller.start();
+        controller.visible();
+        controller.resume();
+
+        final Menu menu = shadowOf(activity).getOptionsMenu();
+        assertNotNull(menu);
+
+        assertEquals(menu.size(), 1);
+
+        MenuItem item = menu.findItem(R.id.action_save);
+        assertNotNull(item);
+        assertEquals("Save", item.getTitle().toString());
+    }
+
+    @Test
+    public void startWithPropertyCheckActionBar() throws Exception
+    {
+        ActivityController controller = startWithProperty(new Property());
+        Activity activity = (Activity)controller.get();
+
+        final Menu menu = shadowOf(activity).getOptionsMenu();
+        assertNotNull(menu);
+
+        assertEquals(menu.size(), 1);
+
+        MenuItem item = menu.findItem(R.id.action_save);
+        assertNotNull(item);
+        assertEquals("Save", item.getTitle().toString());
     }
 
     private void checkFields(Activity activity, Property property)
@@ -202,6 +239,7 @@ public class PropertyViewActivityTest
         Activity activity = (Activity)controller.get();
 
         controller.start();
+        controller.visible();
         controller.resume();
         assertTrue(activity.isFinishing() == false);
 
@@ -209,18 +247,6 @@ public class PropertyViewActivityTest
         assertNull(latestToast);
 
         return controller;
-    }
-
-    @Test
-    public void clickCancelFinishes()
-    {
-        ActivityController controller = startWithProperty(new Property());
-        Activity activity = (Activity)controller.get();
-
-        Button cancelButton = (Button)activity.findViewById(R.id.cancelButton);
-        cancelButton.performClick();
-
-        assertTrue(activity.isFinishing());
     }
 
     @Test
@@ -287,9 +313,8 @@ public class PropertyViewActivityTest
         setFields(activity, property);
         checkFields(activity, property);
 
-        Button saveButton = (Button)activity.findViewById(R.id.saveButton);
-        saveButton.performClick();
-
+        assertNotNull(shadowOf(activity).getOptionsMenu().findItem(R.id.action_save));
+        shadowOf(activity).clickMenuItem(R.id.action_save);
         assertTrue(activity.isFinishing());
 
         Property updatedProperty = db.getProperty(DatabaseTestHelper.FIRST_ID);

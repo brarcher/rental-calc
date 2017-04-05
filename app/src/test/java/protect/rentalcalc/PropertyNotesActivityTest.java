@@ -3,6 +3,8 @@ package protect.rentalcalc;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -50,10 +52,6 @@ public class PropertyNotesActivityTest
         ActivityController controller = startWithNotes("");
         Activity activity = (Activity)controller.get();
 
-        controller.start();
-        controller.visible();
-        controller.resume();
-
         assertTrue(shadowOf(activity).isFinishing() == false);
         shadowOf(activity).clickMenuItem(android.R.id.home);
         assertTrue(shadowOf(activity).isFinishing());
@@ -62,6 +60,22 @@ public class PropertyNotesActivityTest
         controller.pause();
         controller.stop();
         controller.destroy();
+    }
+
+    @Test
+    public void checkActionBar() throws Exception
+    {
+        ActivityController controller = startWithNotes("");
+        Activity activity = (Activity)controller.get();
+
+        final Menu menu = shadowOf(activity).getOptionsMenu();
+        assertNotNull(menu);
+
+        assertEquals(menu.size(), 1);
+
+        MenuItem item = menu.findItem(R.id.action_save);
+        assertNotNull(item);
+        assertEquals("Save", item.getTitle().toString());
     }
 
     @Test
@@ -137,18 +151,6 @@ public class PropertyNotesActivityTest
     }
 
     @Test
-    public void clickCancelFinishes()
-    {
-        ActivityController controller = startWithNotes(null);
-        Activity activity = (Activity)controller.get();
-
-        Button cancelButton = (Button)activity.findViewById(R.id.cancelButton);
-        cancelButton.performClick();
-
-        assertTrue(activity.isFinishing());
-    }
-
-    @Test
     public void startWithNullNotes()
     {
         ActivityController controller = startWithNotes(null);
@@ -190,8 +192,8 @@ public class PropertyNotesActivityTest
         final String NEW_MESSAGE = "This is the new message";
         notes.setText(NEW_MESSAGE);
 
-        Button saveButton = (Button)activity.findViewById(R.id.saveButton);
-        saveButton.performClick();
+        assertNotNull(shadowOf(activity).getOptionsMenu().findItem(R.id.action_save));
+        shadowOf(activity).clickMenuItem(R.id.action_save);
 
         assertTrue(activity.isFinishing());
 
@@ -211,8 +213,7 @@ public class PropertyNotesActivityTest
         final String NEW_MESSAGE = "This is the new message";
         notes.setText(NEW_MESSAGE);
 
-        Button cancelButton = (Button)activity.findViewById(R.id.cancelButton);
-        cancelButton.performClick();
+        shadowOf(activity).clickMenuItem(android.R.id.home);
 
         assertTrue(activity.isFinishing());
 
