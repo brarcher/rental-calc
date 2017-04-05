@@ -129,7 +129,7 @@ public class PropertyWorksheetActivity extends AppCompatActivity
         _financing.setChecked(_property.useLoan);
         listener.onCheckedChanged(_financing, _property.useLoan);
         _downPayment.setText(String.format(Locale.US, "%d", _property.downPayment));
-        _interestRate.setText(String.format(Locale.US, "%.2f", _property.interestRate));
+        _interestRate.setText(String.format(Locale.US, "%.3f", _property.interestRate));
         _loanDuration.setText(String.format(Locale.US, "%d", _property.loanDuration));
         _purchaseCost.setText(String.format(Locale.US, "%d", _property.purchaseCosts));
         _repairCost.setText(String.format(Locale.US, "%d", _property.repairRemodelCosts));
