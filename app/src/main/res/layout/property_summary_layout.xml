@@ -285,7 +285,7 @@
                         android:paddingRight="@dimen/inputPadding"
                         android:paddingEnd="@dimen/inputPadding">
                         <TextView
-                            android:text="@string/purchaseCostsTitle"
+                            android:text="@string/purchaseCostsField"
                             android:labelFor="@+id/purchaseCostsValue"
                             android:layout_height="wrap_content"
                             android:layout_width="wrap_content"
@@ -363,7 +363,7 @@
                         android:paddingRight="@dimen/inputPadding"
                         android:paddingEnd="@dimen/inputPadding">
                         <TextView
-                            android:text="@string/repairRemodelCostsTitle"
+                            android:text="@string/repairRemodelCostsField"
                             android:labelFor="@+id/repairRemodelCostsValue"
                             android:layout_height="wrap_content"
                             android:layout_width="wrap_content"
