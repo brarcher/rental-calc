@@ -142,6 +142,45 @@ public class PropertyWorksheetActivity extends AppCompatActivity
         _expensesIncrease.setText(String.format(Locale.US, "%d", _property.expenseIncrease));
         _sellingCosts.setText(String.format(Locale.US, "%d", _property.sellingCosts));
         _landValue.setText(String.format(Locale.US, "%d", _property.landValue));
+
+        // Setup help texts
+        Map<Integer, DictionaryItem> dictionaryLookups = new ImmutableMap.Builder<Integer, DictionaryItem>()
+            .put(R.id.purchasePriceHelp, new DictionaryItem(R.string.purchasePriceHelpTitle, R.string.purchasePriceDefinition))
+            .put(R.id.afterRepairsHelp, new DictionaryItem(R.string.afterRepairsValueHelpTitle, R.string.afterRepairsValueDefinition))
+            .put(R.id.purchaseCostsHelp, new DictionaryItem(R.string.purchaseCostsHelpTitle, R.string.purchaseCostsDefinition))
+            .put(R.id.repairRemodelCostsHelp, new DictionaryItem(R.string.repairRemodelHelpTitle, R.string.repairRemodelDefinition))
+            .put(R.id.grossRentHelp, new DictionaryItem(R.string.grossRentHelpTitle, R.string.grossRentDefinition))
+            .put(R.id.expensesHelp, new DictionaryItem(R.string.operatingExpensesHelpTitle, R.string.operatingExpensesDefinition))
+            .put(R.id.vacancyHelp, new DictionaryItem(R.string.vacancyHelpTitle, R.string.vacancyDefinition, R.string.vacancyFormula))
+            .put(R.id.appreciationHelp, new DictionaryItem(R.string.appreciationHelpTitle, R.string.appreciationDefinition))
+            .put(R.id.incomeIncreaseHelp, new DictionaryItem(R.string.incomeIncreaseHelpTitle, R.string.incomeIncreaseDefinition))
+            .put(R.id.expensesIncreaseHelp, new DictionaryItem(R.string.expensesIncreaseHelpTitle, R.string.expensesIncreaseDefinition))
+            .put(R.id.sellingCostsHelp, new DictionaryItem(R.string.sellingCostsHelpTitle, R.string.sellingCostsDefinition))
+            .put(R.id.landValueHelp, new DictionaryItem(R.string.landValueHelpTitle, R.string.landValueDefinition))
+            .build();
+
+        for(final Map.Entry<Integer, DictionaryItem> entry : dictionaryLookups.entrySet())
+        {
+            View view = findViewById(entry.getKey());
+            view.setOnClickListener(new View.OnClickListener()
+            {
+                @Override
+                public void onClick(View v)
+                {
+                    DictionaryItem info = entry.getValue();
+                    final Bundle bundle = new Bundle();
+                    bundle.putInt("title", info.titleId);
+                    bundle.putInt("definition", info.definitionId);
+                    if(info.formulaId != null)
+                    {
+                        bundle.putInt("formula", info.formulaId);
+                    }
+                    Intent i = new Intent(getApplicationContext(), DictionaryActivity.class);
+                    i.putExtras(bundle);
+                    startActivity(i);
+                }
+            });
+        }
     }
 
     private void doSave()

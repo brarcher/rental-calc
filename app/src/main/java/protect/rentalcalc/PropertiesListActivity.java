@@ -124,6 +124,7 @@ public class PropertiesListActivity extends AppCompatActivity
         final Map<String, String> USED_ASSETS = ImmutableMap.of
         (
             "House by Mani Amini", "https://thenounproject.com/term/house/41030/",
+            "Chat Question by Shmidt Sergey", "https://thenounproject.com/term/question/562370/",
             "Save by Bernar Novalyi", "https://thenounproject.com/term/save/716011"
         );
 

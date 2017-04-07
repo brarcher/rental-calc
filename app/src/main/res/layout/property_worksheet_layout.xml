@@ -56,14 +56,27 @@
                         android:layout_height="wrap_content"
                         android:paddingRight="@dimen/inputPadding"
                         android:paddingEnd="@dimen/inputPadding">
-                        <TextView
-                            android:text="@string/purchasePriceField"
-                            android:labelFor="@+id/price"
-                            android:layout_height="wrap_content"
+
+                        <LinearLayout
                             android:layout_width="wrap_content"
-                            android:layout_weight="0"
-                            android:padding="@dimen/inputPadding"
-                            android:textSize="@dimen/inputSize"/>
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:padding="@dimen/inputPadding">
+                            <TextView
+                                android:text="@string/purchasePriceField"
+                                android:labelFor="@+id/price"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_weight="0"
+                                android:textSize="@dimen/inputSize"/>
+                            <ImageView
+                                android:id="@+id/purchasePriceHelp"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_weight="0"
+                                android:src="@drawable/chat_question_16dp"
+                                android:tint="@color/helpChatBox"/>
+                        </LinearLayout>
 
                         <Space
                             android:layout_width="match_parent"
@@ -120,14 +133,27 @@
                         android:layout_height="wrap_content"
                         android:paddingRight="@dimen/inputPadding"
                         android:paddingEnd="@dimen/inputPadding">
-                        <TextView
-                            android:text="@string/afterRepairsValueField"
-                            android:labelFor="@+id/afterRepairsValue"
-                            android:layout_height="wrap_content"
+
+                        <LinearLayout
                             android:layout_width="wrap_content"
-                            android:layout_weight="0"
-                            android:padding="@dimen/inputPadding"
-                            android:textSize="@dimen/inputSize"/>
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:padding="@dimen/inputPadding">
+                            <TextView
+                                android:text="@string/afterRepairsValueField"
+                                android:labelFor="@+id/afterRepairsValue"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_weight="0"
+                                android:textSize="@dimen/inputSize"/>
+                            <ImageView
+                                android:id="@+id/afterRepairsHelp"
+                                android:layout_weight="0"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:src="@drawable/chat_question_16dp"
+                                android:tint="@color/helpChatBox"/>
+                        </LinearLayout>
 
                         <Space
                             android:layout_width="match_parent"
@@ -449,16 +475,28 @@
                     android:background="@color/inputContrastBackground"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
-                    <TextView
+                    <LinearLayout
+                        android:orientation="horizontal"
                         android:layout_column="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:paddingLeft="@dimen/titlePaddingHorizontal"
                         android:paddingRight="@dimen/titlePaddingHorizontal"
                         android:paddingStart="@dimen/titlePaddingHorizontal"
-                        android:paddingTop="@dimen/titlePaddingTop"
-                        android:text="@string/purchaseCostsTitle"
-                        android:textSize="@dimen/inputTitleSize"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        android:paddingTop="@dimen/titlePaddingTop">
+                        <TextView
+                            android:text="@string/purchaseCostsTitle"
+                            android:textSize="@dimen/inputTitleSize"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                        <ImageView
+                            android:id="@+id/purchaseCostsHelp"
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:src="@drawable/chat_question_16dp"
+                            android:tint="@color/helpChatBox"/>
+                    </LinearLayout>
+
                 </TableRow>
 
                 <!-- Total purchase costs -->
@@ -533,16 +571,27 @@
                     android:background="@color/inputContrastBackground"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
-                    <TextView
+                    <LinearLayout
+                        android:orientation="horizontal"
                         android:layout_column="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:paddingLeft="@dimen/titlePaddingHorizontal"
                         android:paddingRight="@dimen/titlePaddingHorizontal"
                         android:paddingStart="@dimen/titlePaddingHorizontal"
-                        android:paddingTop="@dimen/titlePaddingTop"
-                        android:text="@string/repairRemodelCostsTitle"
-                        android:textSize="@dimen/inputTitleSize"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        android:paddingTop="@dimen/titlePaddingTop">
+                        <TextView
+                            android:text="@string/repairRemodelCostsTitle"
+                            android:textSize="@dimen/inputTitleSize"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                        <ImageView
+                            android:id="@+id/repairRemodelCostsHelp"
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:src="@drawable/chat_question_16dp"
+                            android:tint="@color/helpChatBox"/>
+                    </LinearLayout>
                 </TableRow>
 
                 <!-- Repair/Remodel total -->
@@ -653,14 +702,26 @@
                         android:paddingRight="@dimen/inputPadding"
                         android:paddingEnd="@dimen/inputPadding">
 
-                        <TextView
-                            android:text="@string/grossRentField"
-                            android:labelFor="@+id/rent"
-                            android:layout_height="wrap_content"
+                        <LinearLayout
                             android:layout_width="wrap_content"
-                            android:layout_weight="0"
-                            android:padding="@dimen/inputPadding"
-                            android:textSize="@dimen/inputSize"/>
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:padding="@dimen/inputPadding">
+                            <TextView
+                                android:text="@string/grossRentField"
+                                android:labelFor="@+id/rent"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_weight="0"
+                                android:textSize="@dimen/inputSize"/>
+                            <ImageView
+                                android:id="@+id/grossRentHelp"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_weight="0"
+                                android:src="@drawable/chat_question_16dp"
+                                android:tint="@color/helpChatBox"/>
+                        </LinearLayout>
 
                         <Space
                             android:layout_width="match_parent"
@@ -786,16 +847,27 @@
                     android:background="@color/inputContrastBackground"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
-                    <TextView
+                    <LinearLayout
+                        android:orientation="horizontal"
                         android:layout_column="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:paddingLeft="@dimen/titlePaddingHorizontal"
                         android:paddingRight="@dimen/titlePaddingHorizontal"
                         android:paddingStart="@dimen/titlePaddingHorizontal"
-                        android:paddingTop="@dimen/titlePaddingTop"
-                        android:text="@string/expensesTitle"
-                        android:textSize="@dimen/inputTitleSize"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        android:paddingTop="@dimen/titlePaddingTop">
+                        <TextView
+                            android:text="@string/expensesTitle"
+                            android:textSize="@dimen/inputTitleSize"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                        <ImageView
+                            android:id="@+id/expensesHelp"
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:src="@drawable/chat_question_16dp"
+                            android:tint="@color/helpChatBox"/>
+                    </LinearLayout>
                 </TableRow>
 
                 <!-- Total Expenses -->
@@ -906,14 +978,26 @@
                         android:paddingRight="@dimen/inputPadding"
                         android:paddingEnd="@dimen/inputPadding">
 
-                        <TextView
-                            android:text="@string/vacancyField"
-                            android:labelFor="@+id/totalExpenses"
-                            android:layout_height="wrap_content"
+                        <LinearLayout
                             android:layout_width="wrap_content"
-                            android:layout_weight="0"
-                            android:padding="@dimen/inputPadding"
-                            android:textSize="@dimen/inputSize"/>
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:padding="@dimen/inputPadding">
+                            <TextView
+                                android:text="@string/vacancyField"
+                                android:labelFor="@+id/totalExpenses"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_weight="0"
+                                android:textSize="@dimen/inputSize"/>
+                            <ImageView
+                                android:id="@+id/vacancyHelp"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_weight="0"
+                                android:src="@drawable/chat_question_16dp"
+                                android:tint="@color/helpChatBox"/>
+                        </LinearLayout>
 
                         <Space
                             android:layout_width="match_parent"
@@ -969,14 +1053,26 @@
                         android:paddingRight="@dimen/inputPadding"
                         android:paddingEnd="@dimen/inputPadding">
 
-                        <TextView
-                            android:text="@string/appreciationField"
-                            android:labelFor="@+id/totalExpenses"
-                            android:layout_height="wrap_content"
+                        <LinearLayout
                             android:layout_width="wrap_content"
-                            android:layout_weight="0"
-                            android:padding="@dimen/inputPadding"
-                            android:textSize="@dimen/inputSize"/>
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:padding="@dimen/inputPadding">
+                            <TextView
+                                android:text="@string/appreciationField"
+                                android:labelFor="@+id/appreciation"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_weight="0"
+                                android:textSize="@dimen/inputSize"/>
+                            <ImageView
+                                android:id="@+id/appreciationHelp"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_weight="0"
+                                android:src="@drawable/chat_question_16dp"
+                                android:tint="@color/helpChatBox"/>
+                        </LinearLayout>
 
                         <Space
                             android:layout_width="match_parent"
@@ -1032,14 +1128,26 @@
                         android:paddingRight="@dimen/inputPadding"
                         android:paddingEnd="@dimen/inputPadding">
 
-                        <TextView
-                            android:text="@string/incomeIncreaseField"
-                            android:labelFor="@+id/incomeIncrease"
-                            android:layout_height="wrap_content"
+                        <LinearLayout
                             android:layout_width="wrap_content"
-                            android:layout_weight="0"
-                            android:padding="@dimen/inputPadding"
-                            android:textSize="@dimen/inputSize"/>
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:padding="@dimen/inputPadding">
+                            <TextView
+                                android:text="@string/incomeIncreaseField"
+                                android:labelFor="@+id/incomeIncrease"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_weight="0"
+                                android:textSize="@dimen/inputSize"/>
+                            <ImageView
+                                android:id="@+id/incomeIncreaseHelp"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_weight="0"
+                                android:src="@drawable/chat_question_16dp"
+                                android:tint="@color/helpChatBox"/>
+                        </LinearLayout>
 
                         <Space
                             android:layout_width="match_parent"
@@ -1095,14 +1203,26 @@
                         android:paddingRight="@dimen/inputPadding"
                         android:paddingEnd="@dimen/inputPadding">
 
-                        <TextView
-                            android:text="@string/expensesIncreaseField"
-                            android:labelFor="@+id/expensesIncrease"
-                            android:layout_height="wrap_content"
+                        <LinearLayout
                             android:layout_width="wrap_content"
-                            android:layout_weight="0"
-                            android:padding="@dimen/inputPadding"
-                            android:textSize="@dimen/inputSize"/>
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:padding="@dimen/inputPadding">
+                            <TextView
+                                android:text="@string/expensesIncreaseField"
+                                android:labelFor="@+id/expensesIncrease"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_weight="0"
+                                android:textSize="@dimen/inputSize"/>
+                            <ImageView
+                                android:id="@+id/expensesIncreaseHelp"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_weight="0"
+                                android:src="@drawable/chat_question_16dp"
+                                android:tint="@color/helpChatBox"/>
+                        </LinearLayout>
 
                         <Space
                             android:layout_width="match_parent"
@@ -1158,14 +1278,26 @@
                         android:paddingRight="@dimen/inputPadding"
                         android:paddingEnd="@dimen/inputPadding">
 
-                        <TextView
-                            android:text="@string/sellingCostsField"
-                            android:labelFor="@+id/expensesIncrease"
-                            android:layout_height="wrap_content"
+                        <LinearLayout
                             android:layout_width="wrap_content"
-                            android:layout_weight="0"
-                            android:padding="@dimen/inputPadding"
-                            android:textSize="@dimen/inputSize"/>
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:padding="@dimen/inputPadding">
+                            <TextView
+                                android:text="@string/sellingCostsField"
+                                android:labelFor="@+id/expensesIncrease"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_weight="0"
+                                android:textSize="@dimen/inputSize"/>
+                            <ImageView
+                                android:id="@+id/sellingCostsHelp"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_weight="0"
+                                android:src="@drawable/chat_question_16dp"
+                                android:tint="@color/helpChatBox"/>
+                        </LinearLayout>
 
                         <Space
                             android:layout_width="match_parent"
@@ -1221,14 +1353,26 @@
                         android:paddingRight="@dimen/inputPadding"
                         android:paddingEnd="@dimen/inputPadding">
 
-                        <TextView
-                            android:text="@string/landValueField"
-                            android:labelFor="@+id/landValue"
-                            android:layout_height="wrap_content"
+                        <LinearLayout
                             android:layout_width="wrap_content"
-                            android:layout_weight="0"
-                            android:padding="@dimen/inputPadding"
-                            android:textSize="@dimen/inputSize"/>
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:padding="@dimen/inputPadding">
+                            <TextView
+                                android:text="@string/landValueField"
+                                android:labelFor="@+id/landValue"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_weight="0"
+                                android:textSize="@dimen/inputSize"/>
+                            <ImageView
+                                android:id="@+id/landValueHelp"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_weight="0"
+                                android:src="@drawable/chat_question_16dp"
+                                android:tint="@color/helpChatBox"/>
+                        </LinearLayout>
 
                         <Space
                             android:layout_width="match_parent"

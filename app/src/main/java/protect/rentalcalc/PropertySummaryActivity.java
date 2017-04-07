@@ -1,15 +1,20 @@
 package protect.rentalcalc;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.common.collect.ImmutableMap;
+
 import java.util.Locale;
+import java.util.Map;
 
 public class PropertySummaryActivity extends AppCompatActivity
 {
@@ -160,6 +165,48 @@ public class PropertySummaryActivity extends AppCompatActivity
             grossRentMultiplier = (double)property.purchasePrice / (property.grossRent * 12.0);
         }
         grossRentMultiplierValue.setText(String.format(Locale.US, "%.1f", grossRentMultiplier));
+
+
+        // Setup help texts
+        Map<Integer, DictionaryItem> dictionaryLookups = new ImmutableMap.Builder<Integer, DictionaryItem>()
+            .put(R.id.purchasePriceHelp, new DictionaryItem(R.string.purchasePriceHelpTitle, R.string.purchasePriceDefinition))
+            .put(R.id.purchaseCostsHelp, new DictionaryItem(R.string.purchaseCostsHelpTitle, R.string.purchaseCostsDefinition))
+            .put(R.id.repairRemodelCostsHelp, new DictionaryItem(R.string.repairRemodelHelpTitle, R.string.repairRemodelDefinition))
+            .put(R.id.totalCashNeededHelp, new DictionaryItem(R.string.totalCashNeededTitle, R.string.totalCashNeededDefinition, R.string.totalCashNeededFormula))
+            .put(R.id.grossRentHelp, new DictionaryItem(R.string.grossRentHelpTitle, R.string.grossRentDefinition))
+            .put(R.id.vacancyHelp, new DictionaryItem(R.string.vacancyHelpTitle, R.string.vacancyDefinition, R.string.vacancyFormula))
+            .put(R.id.operatingIncomeHelp, new DictionaryItem(R.string.operatingIncomeHelpTitle, R.string.operatingIncomeDefinition, R.string.operatingIncomeFormula))
+            .put(R.id.operatingExpensesHelp, new DictionaryItem(R.string.operatingExpensesHelpTitle, R.string.operatingExpensesDefinition))
+            .put(R.id.netOperatingIncomeHelp, new DictionaryItem(R.string.netOperatingIncomeHelpTitle, R.string.netOperatingIncomeDefinition, R.string.netOperatingIncomeFormula))
+            .put(R.id.cashFlowHelp, new DictionaryItem(R.string.cashFlowHelpTitle, R.string.cashFlowDefinition, R.string.cashFlowFormula))
+            .put(R.id.capitalizationRateHelp, new DictionaryItem(R.string.capitalizationRateHelpTitle, R.string.capitalizationRateDefinition, R.string.capitalizationRateFormula))
+            .put(R.id.cashOnCashHelp, new DictionaryItem(R.string.cashOnCashHelpTitle, R.string.cashOnCashDefinition, R.string.cashOnCashFormula))
+            .put(R.id.rentToValueHelp, new DictionaryItem(R.string.rentToValueHelpTitle, R.string.rentToValueDefinition, R.string.rentToValueFormula))
+            .put(R.id.grossRentMultiplierHelp, new DictionaryItem(R.string.grossRentMultiplierHelpTitle, R.string.grossRentMultiplierDefinition, R.string.grossRentMultiplierFormula))
+            .build();
+
+        for(final Map.Entry<Integer, DictionaryItem> entry : dictionaryLookups.entrySet())
+        {
+            View view = findViewById(entry.getKey());
+            view.setOnClickListener(new View.OnClickListener()
+            {
+                @Override
+                public void onClick(View v)
+                {
+                    DictionaryItem info = entry.getValue();
+                    final Bundle bundle = new Bundle();
+                    bundle.putInt("title", info.titleId);
+                    bundle.putInt("definition", info.definitionId);
+                    if(info.formulaId != null)
+                    {
+                        bundle.putInt("formula", info.formulaId);
+                    }
+                    Intent i = new Intent(getApplicationContext(), DictionaryActivity.class);
+                    i.putExtras(bundle);
+                    startActivity(i);
+                }
+            });
+        }
     }
 
     @Override
