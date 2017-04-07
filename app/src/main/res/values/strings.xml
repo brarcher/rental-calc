@@ -3,6 +3,12 @@
 
     <string name="app_name">Rental Calc</string>
 
+    <string name="addPropertyTitle">Add Property</string>
+    <string name="overviewTitle">Overview</string>
+    <string name="worksheetTitle">Overview</string>
+    <string name="notesTitle">Notes</string>
+    <string name="summaryTitle">Summary</string>
+
     <string name="add">Add</string>
     <string name="about">About</string>
     <string name="delete">Delete</string>
@@ -39,5 +45,133 @@
 
     <string name="deletePropertyTitle">Remove Property</string>
     <string name="deletePropertyConfirmation">Please confirm that you want to delete this property.</string>
+
+    <string name="purchasePriceField">Purchase Price:</string>
+    <string name="afterRepairsValueField">After Repairs Value:</string>
+    <string name="afterRepairsValueHelp">If no repairs are required, then this is the same as the purchase price.</string>
+    <string name="financingTitle">FINANCING</string>
+    <string name="useALoanField">Using a loan:</string>
+    <string name="downPaymentField">Down Payment:</string>
+    <string name="percentSymbol" translatable="false">%</string>
+    <string name="interestRateField">Interest Rate:</string>
+    <string name="loanDurationField">Loan Duration:</string>
+    <string name="yearsUnit">Years</string>
+    <string name="purchaseCostsTitle">PURCHASE COSTS</string>
+    <string name="purchaseCostsField">Purchase Costs:</string>
+    <string name="totalField">Total:</string>
+    <string name="percentOfPriceUnit">% of Price</string>
+    <string name="repairRemodelCostsTitle">REPAIR/REMODEL COSTS</string>
+    <string name="repairRemodelCostsField">Repair/Remodel Costs:</string>
+    <string name="incomeTitle">INCOME</string>
+    <string name="grossRentField">Gross Rent:</string>
+    <string name="perMonthUnit">Per Month</string>
+    <string name="otherIncomeField">Other Income:</string>
+    <string name="expensesTitle">EXPENSES</string>
+    <string name="percentOfRentUnit">% of Rent</string>
+    <string name="assumptionsTitle">ASSUMPTIONS</string>
+    <string name="vacancyField">Vacancy:</string>
+    <string name="appreciationField">Appreciation:</string>
+    <string name="percentPerYearUnit">% Per Year</string>
+    <string name="incomeIncreaseField">Income Increase:</string>
+    <string name="expensesIncreaseField">Expenses Increase:</string>
+    <string name="sellingCostsField">Selling Costs:</string>
+    <string name="percentOfSalePriceUnit">% of Sale Price</string>
+    <string name="landValueField">Land Value:</string>
+    <string name="nickname">Nickname</string>
+    <string name="addressTitle">ADDRESS</string>
+    <string name="street">Street</string>
+    <string name="city">City</string>
+    <string name="stateOrRegion">State/Region</string>
+    <string name="zip">Zip</string>
+    <string name="detailsTitle">DETAILS</string>
+    <string name="propertyTypeField">Property Type:</string>
+    <string name="bedsField">Beds:</string>
+    <string name="bathsField">Baths:</string>
+    <string name="squareFootageField">Square Footage:</string>
+    <string name="squareFeet">Square Feet</string>
+    <string name="lotSizeField">Lot Size:</string>
+    <string name="lotSize">Lot Size</string>
+    <string name="yearBuiltField">Year Built:</string>
+    <string name="yearBuilt">Year Built</string>
+    <string name="parkingField">Parking:</string>
+    <string name="zoningField">Zoning:</string>
+    <string name="zoning">Zoning</string>
+    <string name="mlsNumberField">MLS Number:</string>
+    <string name="mlsNumber">MLS Number</string>
+    <string name="worksheet">Worksheet</string>
+    <string name="notes">Notes</string>
+    <string name="analysisTitle">ANALYSIS</string>
+    <string name="summary">Summary</string>
+    <string name="projections">Projections</string>
+    <string name="purchaseRepairRemodelTitle">PURCHASE, REPAIR, REMODEL</string>
+    <string name="financedField">Financed:</string>
+    <string name="totalCashNeededField">Total Cash Needed:</string>
+    <string name="valuationTitle">VALUATION</string>
+    <string name="pricePerSquareFootField">Price Per Square Foot:</string>
+    <string name="operationTitle">OPERATION</string>
+    <string name="operatingIncomeField">Operating Income:</string>
+    <string name="operatingExpensesField">Operating Expenses:</string>
+    <string name="netOperatingIncomeField">Net Operating Income:</string>
+    <string name="mortgageField">Mortgage:</string>
+    <string name="cashFlowField">Cash Flow:</string>
+    <string name="returnsTitle">RETURNS</string>
+    <string name="capitalizationRateField">Capitalization Rate:</string>
+    <string name="cashOnCashField">Cash On Cash:</string>
+    <string name="rentToValueField">Rent To Value:</string>
+    <string name="grossRentMultiplierField">Gross Rent Multiplier:</string>
+    <string name="NAME">VALUE</string>
+
+
+
+    <!-- Dictionary lookups -->
+    <string name="purchasePriceHelpTitle">Purchase Price</string>
+    <string name="purchasePriceDefinition">The price of the property.\n\nThis does not include the purchase costs or costs to repair or update the property.</string>
+    <string name="afterRepairsValueHelpTitle">After Repairs Value</string>
+    <string name="afterRepairsValueDefinition">The estimated market value of the property after repairs and updates.</string>
+    <string name="purchaseCostsHelpTitle">Purchase Costs</string>
+    <string name="purchaseCostsDefinition">The costs and fees associated with purchasing the property. These are also called closing costs.\n\nExamples of purchasing costs include: appraisal, property inspection, pest inspection, and homeowners’ insurance for the first year.</string>
+    <string name="repairRemodelHelpTitle">Repair/Remodel Costs</string>
+    <string name="repairRemodelDefinition">The costs for repairing and updating the property.\n\nExamples include paint, flooring, appliances, and cleaning.</string>
+    <string name="grossRentHelpTitle">Gross Rent</string>
+    <string name="grossRentDefinition">The total values of all rents collected from tenants. Does not consider vacancy or expenses.</string>
+    <string name="operatingExpensesHelpTitle">Operating Expenses</string>
+    <string name="operatingExpensesDefinition">All the expenses paid while renting a property.\n\nExamples include insurance, 3rd party warranties, maintenance, property taxes, and utilities.</string>
+    <string name="vacancyHelpTitle">Vacancy</string>
+    <string name="vacancyDefinition">The percentage of time the property is expected to not being rented.\n\nIdeally the property will always be rented. However, the property may be vacant between tenants or while repairing or updating it.\n\nExample: if the property is expected to  be vacant one month out of the year, this is 1/12=8.3%</string>
+    <string name="vacancyFormula">$$\\text{Vacancy} = \\frac{\\text{time not rented}}{\\text{total time}}$$</string>
+    <string name="appreciationHelpTitle">Appreciation</string>
+    <string name="appreciationDefinition">The yearly increase of the property\'s value.\n\nThis can be due to a number of reasons, which include increased demand or reduced supply, or inflation.</string>
+    <string name="incomeIncreaseHelpTitle">Income Increase</string>
+    <string name="incomeIncreaseDefinition">The yearly increase of the income generated by the property.\n\nInflation is the typical cause of the increase. This affects both the rent and other income from the property.</string>
+    <string name="expensesIncreaseHelpTitle">Expenses Increase</string>
+    <string name="expensesIncreaseDefinition">The yearly increase of the expenses paid while renting the property.\n\nInflation is the typical cause of the increase, and affects all expenses.</string>
+    <string name="sellingCostsHelpTitle">Selling Costs</string>
+    <string name="sellingCostsDefinition">The costs and fees associated with selling the property. This is also called closing costs.\n\nExamples include real estate agent commissions, transfer taxes, home warranty, and escrow fees.</string>
+    <string name="landValueHelpTitle">Land Value</string>
+    <string name="landValueDefinition">The value of the land alone, i.e. the value of the property less the value of the dwelling and other structures.\n\nThis is used in calculating the depreciation deduction of the property.</string>
+    <string name="totalCashNeededTitle">Total Cash Needed</string>
+    <string name="totalCashNeededDefinition">The total amount of cash needed to purchase the property, repair, and update it.</string>
+    <string name="totalCashNeededFormula">$$\\text{Total Cash Needed} = \\text{Down Payment} + \\text{Purchase Costs} + \\text{Repair and Update Costs}$$</string>
+    <string name="operatingIncomeHelpTitle">Operating Income</string>
+    <string name="operatingIncomeDefinition">All the income generated by renting a property, less vacancies.</string>
+    <string name="operatingIncomeFormula">$$\\text{Operating Income} = \\text{Gross Rent} + \\text{Other Income} - \\text{Vacancies}$$</string>
+    <string name="netOperatingIncomeHelpTitle">Net Operating Income</string>
+    <string name="netOperatingIncomeDefinition">All the income generated by renting a property, less Operating Expenses.\n\nThis does not take into account loan payments. Because of this, Net Operating Income can be used to compare properties independent of financing.</string>
+    <string name="netOperatingIncomeFormula">$$\\text{Net Operating Income} = \\text{Operating Income} - \\text{Operating Expenses}$$</string>
+    <string name="cashFlowHelpTitle">Cash Flow</string>
+    <string name="cashFlowDefinition">The amount of money received from a rental property as income.\n\nThis accounts for all income sources and all expenses, including loan payments.</string>
+    <string name="cashFlowFormula">$$\\text{Cash Flow} = \\text{Net Operating Income} - \\text{Loan Payment}$$</string>
+    <string name="capitalizationRateHelpTitle">Capitalization Rate</string>
+    <string name="capitalizationRateDefinition">A rate of return on a rental property that compares the yearly Net Operating Income and the Purchase Price.\n\nThis does not take into account loan payments. Because of this, the Capitalization Rate can be used to compare properties independent of financing.</string>
+    <string name="capitalizationRateFormula">$$\\text{Capitalization Rate} = \\frac{\\text{Yearly Net Operating Income}}{\\text{Purchase Price}}$$</string>
+    <string name="cashOnCashHelpTitle">Cash On Cash</string>
+    <string name="cashOnCashDefinition">A rate of return on a rental property that compares the yearly Cash Flow and Total Invested Cash.\n\nThis represents the yearly return on the invested cash.</string>
+    <string name="cashOnCashFormula">$$\\text{Cash On Cash} = \\frac{\\text{Yearly Cash Flow}}{\\text{Total Invested Cash}}$$</string>
+    <string name="rentToValueHelpTitle">Rent To Value</string>
+    <string name="rentToValueDefinition">A rate of return on a rental property that compares the monthly Gross Rent and the property\'s Market Value.</string>
+    <string name="rentToValueFormula">$$\\text{Rent To Value} = \\frac{\\text{Monthly Gross Rent}}{\\text{Market Value}}$$</string>
+    <string name="grossRentMultiplierHelpTitle">Gross Rent Multipliers</string>
+    <string name="grossRentMultiplierDefinition">A rate of return on a rental property that compares the property\'s Purchase Price and the monthly Gross Rent.\n\nThis represents the number of years it will take for the yearly Gross Rent to add to the purchase price.</string>
+    <string name="grossRentMultiplierFormula">$$\\text{Gross Rent Multiplier} = \\frac{\\text{Purchase Price}}{\\text{Monthly Gross Rent}}$$</string>
 
 </resources>

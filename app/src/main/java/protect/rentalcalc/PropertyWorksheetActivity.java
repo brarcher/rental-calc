@@ -1,10 +1,12 @@
 package protect.rentalcalc;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -14,9 +16,11 @@ import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
 
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 
 
 public class PropertyWorksheetActivity extends AppCompatActivity
@@ -125,7 +129,7 @@ public class PropertyWorksheetActivity extends AppCompatActivity
         _financing.setChecked(_property.useLoan);
         listener.onCheckedChanged(_financing, _property.useLoan);
         _downPayment.setText(String.format(Locale.US, "%d", _property.downPayment));
-        _interestRate.setText(String.format(Locale.US, "%.2f", _property.interestRate));
+        _interestRate.setText(String.format(Locale.US, "%.3f", _property.interestRate));
         _loanDuration.setText(String.format(Locale.US, "%d", _property.loanDuration));
         _purchaseCost.setText(String.format(Locale.US, "%d", _property.purchaseCosts));
         _repairCost.setText(String.format(Locale.US, "%d", _property.repairRemodelCosts));
@@ -138,54 +142,72 @@ public class PropertyWorksheetActivity extends AppCompatActivity
         _expensesIncrease.setText(String.format(Locale.US, "%d", _property.expenseIncrease));
         _sellingCosts.setText(String.format(Locale.US, "%d", _property.sellingCosts));
         _landValue.setText(String.format(Locale.US, "%d", _property.landValue));
+
+        // Setup help texts
+        Map<Integer, DictionaryItem> dictionaryLookups = new ImmutableMap.Builder<Integer, DictionaryItem>()
+            .put(R.id.purchasePriceHelp, new DictionaryItem(R.string.purchasePriceHelpTitle, R.string.purchasePriceDefinition))
+            .put(R.id.afterRepairsHelp, new DictionaryItem(R.string.afterRepairsValueHelpTitle, R.string.afterRepairsValueDefinition))
+            .put(R.id.purchaseCostsHelp, new DictionaryItem(R.string.purchaseCostsHelpTitle, R.string.purchaseCostsDefinition))
+            .put(R.id.repairRemodelCostsHelp, new DictionaryItem(R.string.repairRemodelHelpTitle, R.string.repairRemodelDefinition))
+            .put(R.id.grossRentHelp, new DictionaryItem(R.string.grossRentHelpTitle, R.string.grossRentDefinition))
+            .put(R.id.expensesHelp, new DictionaryItem(R.string.operatingExpensesHelpTitle, R.string.operatingExpensesDefinition))
+            .put(R.id.vacancyHelp, new DictionaryItem(R.string.vacancyHelpTitle, R.string.vacancyDefinition, R.string.vacancyFormula))
+            .put(R.id.appreciationHelp, new DictionaryItem(R.string.appreciationHelpTitle, R.string.appreciationDefinition))
+            .put(R.id.incomeIncreaseHelp, new DictionaryItem(R.string.incomeIncreaseHelpTitle, R.string.incomeIncreaseDefinition))
+            .put(R.id.expensesIncreaseHelp, new DictionaryItem(R.string.expensesIncreaseHelpTitle, R.string.expensesIncreaseDefinition))
+            .put(R.id.sellingCostsHelp, new DictionaryItem(R.string.sellingCostsHelpTitle, R.string.sellingCostsDefinition))
+            .put(R.id.landValueHelp, new DictionaryItem(R.string.landValueHelpTitle, R.string.landValueDefinition))
+            .build();
+
+        for(final Map.Entry<Integer, DictionaryItem> entry : dictionaryLookups.entrySet())
+        {
+            View view = findViewById(entry.getKey());
+            view.setOnClickListener(new View.OnClickListener()
+            {
+                @Override
+                public void onClick(View v)
+                {
+                    DictionaryItem info = entry.getValue();
+                    final Bundle bundle = new Bundle();
+                    bundle.putInt("title", info.titleId);
+                    bundle.putInt("definition", info.definitionId);
+                    if(info.formulaId != null)
+                    {
+                        bundle.putInt("formula", info.formulaId);
+                    }
+                    Intent i = new Intent(getApplicationContext(), DictionaryActivity.class);
+                    i.putExtras(bundle);
+                    startActivity(i);
+                }
+            });
+        }
     }
 
-    @Override
-    public void onResume()
+    private void doSave()
     {
-        super.onResume();
+        Property updatedProperty = new Property(_property);
+        updatedProperty.purchasePrice = extractInt(_price, 0);
+        updatedProperty.afterRepairsValue = extractInt(_afterRepairsValue, 0);
+        updatedProperty.useLoan = _financing.isChecked();
+        updatedProperty.downPayment = extractInt(_downPayment, 0);
+        updatedProperty.interestRate = extractDouble(_interestRate, 0);
+        updatedProperty.loanDuration = extractInt(_loanDuration, 0);
+        updatedProperty.purchaseCosts = extractInt(_purchaseCost, 0);
+        updatedProperty.repairRemodelCosts = extractInt(_repairCost, 0);
+        updatedProperty.grossRent = extractInt(_rent, 0);
+        updatedProperty.otherIncome = extractInt(_otherIncome, 0);
+        updatedProperty.expenses = extractInt(_totalExpenses, 0);
+        updatedProperty.vacancy = extractInt(_vacancy, 0);
+        updatedProperty.appreciation = extractInt(_appreciation, 0);
+        updatedProperty.incomeIncrease = extractInt(_incomeIncrease, 0);
+        updatedProperty.expenseIncrease = extractInt(_expensesIncrease, 0);
+        updatedProperty.sellingCosts = extractInt(_sellingCosts, 0);
+        updatedProperty.landValue = extractInt(_landValue, 0);
 
-        final Button saveButton = (Button)findViewById(R.id.saveButton);
-        saveButton.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(final View v)
-            {
-                Property updatedProperty = new Property(_property);
-                updatedProperty.purchasePrice = extractInt(_price, 0);
-                updatedProperty.afterRepairsValue = extractInt(_afterRepairsValue, 0);
-                updatedProperty.useLoan = _financing.isChecked();
-                updatedProperty.downPayment = extractInt(_downPayment, 0);
-                updatedProperty.interestRate = extractDouble(_interestRate, 0);
-                updatedProperty.loanDuration = extractInt(_loanDuration, 0);
-                updatedProperty.purchaseCosts = extractInt(_purchaseCost, 0);
-                updatedProperty.repairRemodelCosts = extractInt(_repairCost, 0);
-                updatedProperty.grossRent = extractInt(_rent, 0);
-                updatedProperty.otherIncome = extractInt(_otherIncome, 0);
-                updatedProperty.expenses = extractInt(_totalExpenses, 0);
-                updatedProperty.vacancy = extractInt(_vacancy, 0);
-                updatedProperty.appreciation = extractInt(_appreciation, 0);
-                updatedProperty.incomeIncrease = extractInt(_incomeIncrease, 0);
-                updatedProperty.expenseIncrease = extractInt(_expensesIncrease, 0);
-                updatedProperty.sellingCosts = extractInt(_sellingCosts, 0);
-                updatedProperty.landValue = extractInt(_landValue, 0);
+        Log.i(TAG, "Updating property " + updatedProperty.id);
+        _db.updateProperty(updatedProperty);
 
-                Log.i(TAG, "Updating property " + updatedProperty.id);
-                _db.updateProperty(updatedProperty);
-
-                finish();
-            }
-        });
-
-        final Button cancelButton = (Button)findViewById(R.id.cancelButton);
-        cancelButton.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
-            {
-                finish();
-            }
-        });
+        finish();
     }
 
     private int extractInt(EditText view, int defaultValue)
@@ -225,6 +247,13 @@ public class PropertyWorksheetActivity extends AppCompatActivity
     }
 
     @Override
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
+        getMenuInflater().inflate(R.menu.save_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
     public boolean onOptionsItemSelected(MenuItem item)
     {
         int id = item.getItemId();
@@ -232,6 +261,12 @@ public class PropertyWorksheetActivity extends AppCompatActivity
         if(id == android.R.id.home)
         {
             finish();
+            return true;
+        }
+
+        if(id == R.id.action_save)
+        {
+            doSave();
             return true;
         }
 

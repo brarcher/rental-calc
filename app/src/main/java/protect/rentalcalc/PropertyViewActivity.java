@@ -5,6 +5,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -149,128 +150,114 @@ public class PropertyViewActivity extends AppCompatActivity
         }
     }
 
-    @Override
-    protected void onResume()
+    private void doSave()
     {
-        super.onResume();
-
-        final Button saveButton = (Button)findViewById(R.id.saveButton);
-        saveButton.setOnClickListener(new View.OnClickListener()
+        final String nickname = _nicknameField.getText().toString();
+        if(nickname.isEmpty())
         {
-            @Override
-            public void onClick(final View v)
-            {
-                final String nickname = _nicknameField.getText().toString();
-                if(nickname.isEmpty())
-                {
-                    Toast.makeText(PropertyViewActivity.this, "Nickname missing but required", Toast.LENGTH_LONG).show();
-                    return;
-                }
+            Toast.makeText(PropertyViewActivity.this, "Nickname missing but required", Toast.LENGTH_LONG).show();
+            return;
+        }
 
-                final String street = _streetField.getText().toString();
-                final String city = _cityField.getText().toString();
-                final String state = _stateField.getText().toString();
-                final String zip = _zipField.getText().toString();
+        final String street = _streetField.getText().toString();
+        final String city = _cityField.getText().toString();
+        final String state = _stateField.getText().toString();
+        final String zip = _zipField.getText().toString();
 
-                final PropertyType proopertyType = PropertyType.fromString(PropertyViewActivity.this, (String)_typeSpinner.getSelectedItem());
-                final int propertyTypePosition = proopertyType.ordinal();
+        final PropertyType proopertyType = PropertyType.fromString(PropertyViewActivity.this, (String)_typeSpinner.getSelectedItem());
+        final int propertyTypePosition = proopertyType.ordinal();
 
-                final String beds = (String)_bedsSpinner.getSelectedItem();
-                final String baths = (String)_bathsSpinner.getSelectedItem();
-                final String sqftStr = _sqftField.getText().toString();
-                int sqft = 0;
-                if(sqftStr.isEmpty() == false)
-                {
-                    try
-                    {
-                        sqft = Integer.parseInt(sqftStr);
-                    }
-                    catch(NumberFormatException e)
-                    {
-                        Toast.makeText(PropertyViewActivity.this, "Square footage not an number: " + sqftStr, Toast.LENGTH_LONG).show();
-                        return;
-                    }
-                }
-
-                final String lotStr = _lotField.getText().toString();
-                int lot = 0;
-                if(lotStr.isEmpty() == false)
-                {
-                    try
-                    {
-                        lot = Integer.parseInt(lotStr);
-                    }
-                    catch(NumberFormatException e)
-                    {
-                        Toast.makeText(PropertyViewActivity.this, "Lot size not an number: " + lotStr, Toast.LENGTH_LONG).show();
-                        return;
-                    }
-                }
-
-                final String yearStr = _yearField.getText().toString();
-                int year = 0;
-                if(yearStr.isEmpty() == false)
-                {
-                    try
-                    {
-                        year = Integer.parseInt(yearStr);
-                    }
-                    catch(NumberFormatException e)
-                    {
-                        Toast.makeText(PropertyViewActivity.this, "Year not an number: " + yearStr, Toast.LENGTH_LONG).show();
-                        return;
-                    }
-                }
-
-                final ParkingType parkingType = ParkingType.fromString(PropertyViewActivity.this, (String)_parkingSpinner.getSelectedItem());
-                final int parkingPosition = parkingType.ordinal();
-
-                final String zoning = _zoningField.getText().toString();
-                final String mls = _mlsField.getText().toString();
-
-                final long id = (_existingProperty != null) ? _existingProperty.id : 0;
-
-                Property newProperty = (_existingProperty != null) ? new Property(_existingProperty) : new Property();
-                newProperty.id = id;
-                newProperty.nickname = nickname;
-                newProperty.addressStreet = street;
-                newProperty.addressCity = city;
-                newProperty.addressState = state;
-                newProperty.addressZip = zip;
-                newProperty.propertyType = propertyTypePosition;
-                newProperty.propertyBeds = beds;
-                newProperty.propertyBaths = baths;
-                newProperty.propertySqft = sqft;
-                newProperty.propertyLot = lot;
-                newProperty.propertyYear = year;
-                newProperty.propertyParking = parkingPosition;
-                newProperty.propertyZoning = zoning;
-                newProperty.propertyMls = mls;
-
-                if(_existingProperty == null)
-                {
-                    Log.i(TAG, "Adding property");
-                    _db.insertProperty(newProperty);
-                }
-                else
-                {
-                    Log.i(TAG, "Updating property " + newProperty.id);
-                    _db.updateProperty(newProperty);
-                }
-
-                finish();
-            }
-        });
-
-        final Button cancelButton = (Button)findViewById(R.id.cancelButton);
-        cancelButton.setOnClickListener(new View.OnClickListener()
+        final String beds = (String)_bedsSpinner.getSelectedItem();
+        final String baths = (String)_bathsSpinner.getSelectedItem();
+        final String sqftStr = _sqftField.getText().toString();
+        int sqft = 0;
+        if(sqftStr.isEmpty() == false)
         {
-            @Override
-            public void onClick(View v)
+            try
             {
-                finish();
+                sqft = Integer.parseInt(sqftStr);
             }
-        });
+            catch(NumberFormatException e)
+            {
+                Toast.makeText(PropertyViewActivity.this, "Square footage not an number: " + sqftStr, Toast.LENGTH_LONG).show();
+                return;
+            }
+        }
+
+        final String lotStr = _lotField.getText().toString();
+        int lot = 0;
+        if(lotStr.isEmpty() == false)
+        {
+            try
+            {
+                lot = Integer.parseInt(lotStr);
+            }
+            catch(NumberFormatException e)
+            {
+                Toast.makeText(PropertyViewActivity.this, "Lot size not an number: " + lotStr, Toast.LENGTH_LONG).show();
+                return;
+            }
+        }
+
+        final String yearStr = _yearField.getText().toString();
+        int year = 0;
+        if(yearStr.isEmpty() == false)
+        {
+            try
+            {
+                year = Integer.parseInt(yearStr);
+            }
+            catch(NumberFormatException e)
+            {
+                Toast.makeText(PropertyViewActivity.this, "Year not an number: " + yearStr, Toast.LENGTH_LONG).show();
+                return;
+            }
+        }
+
+        final ParkingType parkingType = ParkingType.fromString(PropertyViewActivity.this, (String)_parkingSpinner.getSelectedItem());
+        final int parkingPosition = parkingType.ordinal();
+
+        final String zoning = _zoningField.getText().toString();
+        final String mls = _mlsField.getText().toString();
+
+        final long id = (_existingProperty != null) ? _existingProperty.id : 0;
+
+        Property newProperty = (_existingProperty != null) ? new Property(_existingProperty) : new Property();
+        newProperty.id = id;
+        newProperty.nickname = nickname;
+        newProperty.addressStreet = street;
+        newProperty.addressCity = city;
+        newProperty.addressState = state;
+        newProperty.addressZip = zip;
+        newProperty.propertyType = propertyTypePosition;
+        newProperty.propertyBeds = beds;
+        newProperty.propertyBaths = baths;
+        newProperty.propertySqft = sqft;
+        newProperty.propertyLot = lot;
+        newProperty.propertyYear = year;
+        newProperty.propertyParking = parkingPosition;
+        newProperty.propertyZoning = zoning;
+        newProperty.propertyMls = mls;
+
+        if(_existingProperty == null)
+        {
+            Log.i(TAG, "Adding property");
+            _db.insertProperty(newProperty);
+        }
+        else
+        {
+            Log.i(TAG, "Updating property " + newProperty.id);
+            _db.updateProperty(newProperty);
+        }
+
+        finish();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
+        getMenuInflater().inflate(R.menu.save_menu, menu);
+        return super.onCreateOptionsMenu(menu);
     }
 
     @Override
@@ -281,6 +268,12 @@ public class PropertyViewActivity extends AppCompatActivity
         if(id == android.R.id.home)
         {
             finish();
+            return true;
+        }
+
+        if(id == R.id.action_save)
+        {
+            doSave();
             return true;
         }
 

@@ -5,6 +5,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -58,36 +59,22 @@ public class PropertyNotesActivity extends AppCompatActivity
         _notes.setText(_property.notes);
     }
 
-    @Override
-    public void onResume()
+    private void doSave()
     {
-        super.onResume();
+        Property updatedProperty = new Property(_property);
+        updatedProperty.notes = _notes.getText().toString();
 
-        final Button saveButton = (Button)findViewById(R.id.saveButton);
-        saveButton.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(final View v)
-            {
-                Property updatedProperty = new Property(_property);
-                updatedProperty.notes = _notes.getText().toString();
+        Log.i(TAG, "Updating notes for property " + updatedProperty.id);
+        _db.updateProperty(updatedProperty);
 
-                Log.i(TAG, "Updating notes for property " + updatedProperty.id);
-                _db.updateProperty(updatedProperty);
+        finish();
+    }
 
-                finish();
-            }
-        });
-
-        final Button cancelButton = (Button)findViewById(R.id.cancelButton);
-        cancelButton.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
-            {
-                finish();
-            }
-        });
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
+        getMenuInflater().inflate(R.menu.save_menu, menu);
+        return super.onCreateOptionsMenu(menu);
     }
 
     @Override
@@ -98,6 +85,12 @@ public class PropertyNotesActivity extends AppCompatActivity
         if(id == android.R.id.home)
         {
             finish();
+            return true;
+        }
+
+        if(id == R.id.action_save)
+        {
+            doSave();
             return true;
         }
 
