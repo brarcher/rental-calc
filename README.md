@@ -10,3 +10,4 @@ This application uses the following images:
 - [Chat Question](https://thenounproject.com/term/question/562370/) by [Shmidt Sergey](https://thenounproject.com/monstercritic/)
 [Kuber](https://thenounproject.com/funkyiconz26/)
 - [Save](https://thenounproject.com/term/save/716011) by [Bernar Novalyi](https://thenounproject.com/bernar.novalyi)
+- [For Sale](https://thenounproject.com/term/for-sale/716241/) by [parkjisun](https://thenounproject.com/naripuru/)
