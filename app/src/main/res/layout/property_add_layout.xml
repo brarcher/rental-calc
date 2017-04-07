@@ -632,7 +632,7 @@
 
                         <EditText
                             android:id="@+id/mls"
-                            android:inputType="text"
+                            android:inputType="number"
                             android:hint="@string/mlsNumber"
                             android:gravity="end"
                             android:layout_height="wrap_content"
