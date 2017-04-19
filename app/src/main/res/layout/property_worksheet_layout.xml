@@ -426,37 +426,49 @@
                         android:paddingRight="@dimen/inputPadding"
                         android:paddingEnd="@dimen/inputPadding">
 
-                        <TextView
-                            android:text="@string/loanDurationField"
-                            android:labelFor="@+id/loanDuration"
-                            android:layout_height="wrap_content"
+                        <LinearLayout
                             android:layout_width="wrap_content"
-                            android:layout_weight="0"
-                            android:padding="@dimen/inputPadding"
-                            android:textSize="@dimen/inputSize"/>
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:padding="@dimen/inputPadding">
+                            <TextView
+                                android:text="@string/loanDurationField"
+                                android:labelFor="@+id/loanDuration"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_weight="0"
+                                android:textSize="@dimen/inputSize"/>
+                        </LinearLayout>
 
                         <Space
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_weight="1"/>
 
-                        <EditText
-                            android:id="@+id/loanDuration"
-                            android:inputType="number"
-                            android:gravity="end"
-                            android:layout_weight="0"
-                            android:layout_height="wrap_content"
+                        <RelativeLayout
                             android:layout_width="wrap_content"
-                            android:maxLength="2"
-                            android:padding="@dimen/inputPadding"
-                            android:textSize="@dimen/inputSize" />
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0">
+                            <EditText
+                                android:id="@+id/loanDuration"
+                                android:inputType="number"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="end"
+                                android:minWidth="80sp"
+                                android:maxLength="2"
+                                android:layout_alignParentTop="true"
+                                android:textSize="@dimen/inputSize"/>
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="0"
-                            android:text="@string/yearsUnit"
-                            android:textSize="@dimen/inputSize"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignRight="@id/loanDuration"
+                                android:layout_alignEnd="@id/loanDuration"
+                                android:layout_below="@id/loanDuration"
+                                android:text="@string/yearsUnit"
+                                android:layout_alignParentBottom="true"/>
+                        </RelativeLayout>
                     </LinearLayout>
 
                     <View
@@ -522,37 +534,49 @@
                         android:paddingRight="@dimen/inputPadding"
                         android:paddingEnd="@dimen/inputPadding">
 
-                        <TextView
-                            android:text="@string/totalField"
-                            android:labelFor="@+id/purchaseCost"
-                            android:layout_height="wrap_content"
+                        <LinearLayout
                             android:layout_width="wrap_content"
-                            android:layout_weight="0"
-                            android:padding="@dimen/inputPadding"
-                            android:textSize="@dimen/inputSize"/>
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:padding="@dimen/inputPadding">
+                            <TextView
+                                android:text="@string/totalField"
+                                android:labelFor="@+id/purchaseCost"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_weight="0"
+                                android:textSize="@dimen/inputSize"/>
+                        </LinearLayout>
 
                         <Space
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_weight="1"/>
 
-                        <EditText
-                            android:id="@+id/purchaseCost"
-                            android:inputType="number"
-                            android:gravity="end"
-                            android:layout_weight="0"
-                            android:layout_height="wrap_content"
+                        <RelativeLayout
                             android:layout_width="wrap_content"
-                            android:maxLength="3"
-                            android:padding="@dimen/inputPadding"
-                            android:textSize="@dimen/inputSize" />
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0">
+                            <EditText
+                                android:id="@+id/purchaseCost"
+                                android:inputType="number"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="end"
+                                android:minWidth="100sp"
+                                android:maxLength="3"
+                                android:layout_alignParentTop="true"
+                                android:textSize="@dimen/inputSize"/>
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="0"
-                            android:text="@string/percentOfPriceUnit"
-                            android:textSize="@dimen/inputSize"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignRight="@id/purchaseCost"
+                                android:layout_alignEnd="@id/purchaseCost"
+                                android:layout_below="@id/purchaseCost"
+                                android:text="@string/percentOfPriceUnit"
+                                android:layout_alignParentBottom="true"/>
+                        </RelativeLayout>
                     </LinearLayout>
 
                     <View
@@ -736,24 +760,30 @@
                             android:layout_weight="0"
                             android:textSize="@dimen/inputSize"/>
 
-                        <EditText
-                            android:id="@+id/rent"
-                            android:inputType="number"
-                            android:gravity="end"
-                            android:layout_weight="0"
-                            android:layout_height="wrap_content"
+                        <RelativeLayout
                             android:layout_width="wrap_content"
-                            android:maxLength="7"
-                            android:minWidth="160sp"
-                            android:padding="@dimen/inputPadding"
-                            android:textSize="@dimen/inputSize" />
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0">
+                            <EditText
+                                android:id="@+id/rent"
+                                android:inputType="number"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="end"
+                                android:maxLength="7"
+                                android:minWidth="160sp"
+                                android:layout_alignParentTop="true"
+                                android:textSize="@dimen/inputSize"/>
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="0"
-                            android:textSize="@dimen/inputSize"
-                            android:text="@string/perMonthUnit"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignRight="@id/rent"
+                                android:layout_alignEnd="@id/rent"
+                                android:layout_below="@id/rent"
+                                android:text="@string/perMonthUnit"
+                                android:layout_alignParentBottom="true"/>
+                        </RelativeLayout>
                     </LinearLayout>
 
                     <View
@@ -788,14 +818,19 @@
                         android:paddingRight="@dimen/inputPadding"
                         android:paddingEnd="@dimen/inputPadding">
 
-                        <TextView
-                            android:text="@string/otherIncomeField"
-                            android:labelFor="@+id/otherIncome"
-                            android:layout_height="wrap_content"
+                        <LinearLayout
                             android:layout_width="wrap_content"
-                            android:layout_weight="0"
-                            android:padding="@dimen/inputPadding"
-                            android:textSize="@dimen/inputSize"/>
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:padding="@dimen/inputPadding">
+                            <TextView
+                                android:text="@string/otherIncomeField"
+                                android:labelFor="@+id/otherIncome"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_weight="0"
+                                android:textSize="@dimen/inputSize"/>
+                        </LinearLayout>
 
                         <Space
                             android:layout_width="match_parent"
@@ -810,24 +845,30 @@
                             android:layout_weight="0"
                             android:textSize="@dimen/inputSize"/>
 
-                        <EditText
-                            android:id="@+id/otherIncome"
-                            android:inputType="number"
-                            android:gravity="end"
-                            android:layout_weight="0"
-                            android:layout_height="wrap_content"
+                        <RelativeLayout
                             android:layout_width="wrap_content"
-                            android:maxLength="7"
-                            android:minWidth="160sp"
-                            android:padding="@dimen/inputPadding"
-                            android:textSize="@dimen/inputSize" />
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0">
+                            <EditText
+                                android:id="@+id/otherIncome"
+                                android:inputType="number"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="end"
+                                android:maxLength="7"
+                                android:minWidth="160sp"
+                                android:layout_alignParentTop="true"
+                                android:textSize="@dimen/inputSize"/>
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="0"
-                            android:text="@string/perMonthUnit"
-                            android:textSize="@dimen/inputSize"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignRight="@id/otherIncome"
+                                android:layout_alignEnd="@id/otherIncome"
+                                android:layout_below="@id/otherIncome"
+                                android:text="@string/perMonthUnit"
+                                android:layout_alignParentBottom="true"/>
+                        </RelativeLayout>
                     </LinearLayout>
 
                     <View
@@ -893,37 +934,49 @@
                         android:paddingRight="@dimen/inputPadding"
                         android:paddingEnd="@dimen/inputPadding">
 
-                        <TextView
-                            android:text="@string/totalField"
-                            android:labelFor="@+id/totalExpenses"
-                            android:layout_height="wrap_content"
+                        <LinearLayout
                             android:layout_width="wrap_content"
-                            android:layout_weight="0"
-                            android:padding="@dimen/inputPadding"
-                            android:textSize="@dimen/inputSize"/>
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:padding="@dimen/inputPadding">
+                            <TextView
+                                android:text="@string/totalField"
+                                android:labelFor="@+id/totalExpenses"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_weight="0"
+                                android:textSize="@dimen/inputSize"/>
+                        </LinearLayout>
 
                         <Space
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_weight="1"/>
 
-                        <EditText
-                            android:id="@+id/totalExpenses"
-                            android:inputType="number"
-                            android:gravity="end"
-                            android:layout_weight="0"
-                            android:layout_height="wrap_content"
+                        <RelativeLayout
                             android:layout_width="wrap_content"
-                            android:maxLength="6"
-                            android:padding="@dimen/inputPadding"
-                            android:textSize="@dimen/inputSize" />
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0">
+                            <EditText
+                                android:id="@+id/totalExpenses"
+                                android:inputType="number"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="end"
+                                android:maxLength="6"
+                                android:minWidth="100sp"
+                                android:layout_alignParentTop="true"
+                                android:textSize="@dimen/inputSize"/>
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="0"
-                            android:text="@string/percentOfRentUnit"
-                            android:textSize="@dimen/inputSize"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignRight="@id/totalExpenses"
+                                android:layout_alignEnd="@id/totalExpenses"
+                                android:layout_below="@id/totalExpenses"
+                                android:text="@string/percentOfRentUnit"
+                                android:layout_alignParentBottom="true"/>
+                        </RelativeLayout>
                     </LinearLayout>
 
                     <View
@@ -1079,23 +1132,30 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"/>
 
-                        <EditText
-                            android:id="@+id/appreciation"
-                            android:inputType="number"
-                            android:gravity="end"
-                            android:layout_weight="0"
-                            android:layout_height="wrap_content"
+                        <RelativeLayout
                             android:layout_width="wrap_content"
-                            android:maxLength="3"
-                            android:padding="@dimen/inputPadding"
-                            android:textSize="@dimen/inputSize" />
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0">
+                            <EditText
+                                android:id="@+id/appreciation"
+                                android:inputType="number"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="end"
+                                android:maxLength="3"
+                                android:minWidth="100sp"
+                                android:layout_alignParentTop="true"
+                                android:textSize="@dimen/inputSize"/>
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="0"
-                            android:text="@string/percentPerYearUnit"
-                            android:textSize="@dimen/inputSize"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignRight="@id/appreciation"
+                                android:layout_alignEnd="@id/appreciation"
+                                android:layout_below="@id/appreciation"
+                                android:text="@string/percentPerYearUnit"
+                                android:layout_alignParentBottom="true"/>
+                        </RelativeLayout>
                     </LinearLayout>
 
                     <View
@@ -1154,23 +1214,30 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"/>
 
-                        <EditText
-                            android:id="@+id/incomeIncrease"
-                            android:inputType="number"
-                            android:gravity="end"
-                            android:layout_weight="0"
-                            android:layout_height="wrap_content"
+                        <RelativeLayout
                             android:layout_width="wrap_content"
-                            android:maxLength="3"
-                            android:padding="@dimen/inputPadding"
-                            android:textSize="@dimen/inputSize" />
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0">
+                            <EditText
+                                android:id="@+id/incomeIncrease"
+                                android:inputType="number"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="end"
+                                android:maxLength="3"
+                                android:minWidth="100sp"
+                                android:layout_alignParentTop="true"
+                                android:textSize="@dimen/inputSize"/>
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="0"
-                            android:text="@string/percentPerYearUnit"
-                            android:textSize="@dimen/inputSize"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignRight="@id/incomeIncrease"
+                                android:layout_alignEnd="@id/incomeIncrease"
+                                android:layout_below="@id/incomeIncrease"
+                                android:text="@string/percentPerYearUnit"
+                                android:layout_alignParentBottom="true"/>
+                        </RelativeLayout>
                     </LinearLayout>
 
                     <View
@@ -1229,23 +1296,30 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"/>
 
-                        <EditText
-                            android:id="@+id/expensesIncrease"
-                            android:inputType="number"
-                            android:gravity="end"
-                            android:layout_weight="0"
-                            android:layout_height="wrap_content"
+                        <RelativeLayout
                             android:layout_width="wrap_content"
-                            android:maxLength="3"
-                            android:padding="@dimen/inputPadding"
-                            android:textSize="@dimen/inputSize" />
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0">
+                            <EditText
+                                android:id="@+id/expensesIncrease"
+                                android:inputType="number"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="end"
+                                android:maxLength="3"
+                                android:minWidth="100sp"
+                                android:layout_alignParentTop="true"
+                                android:textSize="@dimen/inputSize"/>
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="0"
-                            android:text="@string/percentPerYearUnit"
-                            android:textSize="@dimen/inputSize"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignRight="@id/expensesIncrease"
+                                android:layout_alignEnd="@id/expensesIncrease"
+                                android:layout_below="@id/expensesIncrease"
+                                android:text="@string/percentPerYearUnit"
+                                android:layout_alignParentBottom="true"/>
+                        </RelativeLayout>
                     </LinearLayout>
 
                     <View
@@ -1304,23 +1378,30 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"/>
 
-                        <EditText
-                            android:id="@+id/sellingCosts"
-                            android:inputType="number"
-                            android:gravity="end"
-                            android:layout_weight="0"
-                            android:layout_height="wrap_content"
+                        <RelativeLayout
                             android:layout_width="wrap_content"
-                            android:maxLength="3"
-                            android:padding="@dimen/inputPadding"
-                            android:textSize="@dimen/inputSize"/>
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0">
+                            <EditText
+                                android:id="@+id/sellingCosts"
+                                android:inputType="number"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="end"
+                                android:maxLength="3"
+                                android:minWidth="100sp"
+                                android:layout_alignParentTop="true"
+                                android:textSize="@dimen/inputSize"/>
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="0"
-                            android:text="@string/percentOfSalePriceUnit"
-                            android:textSize="@dimen/inputSize"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignRight="@id/sellingCosts"
+                                android:layout_alignEnd="@id/sellingCosts"
+                                android:layout_below="@id/sellingCosts"
+                                android:text="@string/percentOfSalePriceUnit"
+                                android:layout_alignParentBottom="true"/>
+                        </RelativeLayout>
                     </LinearLayout>
 
                     <View
