@@ -271,14 +271,14 @@
                         android:background="@color/inputBorder" />
                 </TableRow>
 
-                <!-- Purchase Price -->
+                <!-- Down Payment -->
                 <View
-                    android:id="@+id/purchaseBorder"
+                    android:id="@+id/downPaymentBorder"
                     android:layout_height="@dimen/inputBorderThickness"
                     android:layout_width="match_parent"
                     android:background="@color/inputBorder" />
                 <TableRow
-                    android:id="@+id/purchaseRow"
+                    android:id="@+id/downPaymentRow"
                     android:background="@color/inputBackground"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
