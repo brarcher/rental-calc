@@ -9,7 +9,6 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -110,8 +109,8 @@ public class PropertyWorksheetActivity extends AppCompatActivity
                     findViewById(R.id.loanRow),
                     findViewById(R.id.interestBorder),
                     findViewById(R.id.interestRow),
-                    findViewById(R.id.purchaseBorder),
-                    findViewById(R.id.purchaseRow)
+                    findViewById(R.id.downPaymentBorder),
+                    findViewById(R.id.downPaymentRow)
                 );
 
                 for(View view : views)
