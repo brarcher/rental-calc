@@ -672,7 +672,7 @@
                             android:layout_height="wrap_content"
                             android:layout_width="wrap_content"
                             android:maxLength="13"
-                            android:minWidth="160sp"
+                            android:minWidth="130sp"
                             android:padding="@dimen/inputPadding"
                             android:textSize="@dimen/inputSize" />
                     </LinearLayout>
@@ -773,7 +773,7 @@
                                 android:layout_height="wrap_content"
                                 android:gravity="end"
                                 android:maxLength="7"
-                                android:minWidth="160sp"
+                                android:minWidth="130sp"
                                 android:layout_alignParentTop="true"
                                 android:textSize="@dimen/inputSize"/>
 
@@ -858,7 +858,7 @@
                                 android:layout_height="wrap_content"
                                 android:gravity="end"
                                 android:maxLength="7"
-                                android:minWidth="160sp"
+                                android:minWidth="130sp"
                                 android:layout_alignParentTop="true"
                                 android:textSize="@dimen/inputSize"/>
 
@@ -1479,7 +1479,7 @@
                             android:layout_height="wrap_content"
                             android:layout_width="wrap_content"
                             android:maxLength="13"
-                            android:minWidth="160sp"
+                            android:minWidth="130sp"
                             android:padding="@dimen/inputPadding"
                             android:textSize="@dimen/inputSize" />
                     </LinearLayout>
