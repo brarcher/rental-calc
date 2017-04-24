@@ -78,7 +78,16 @@ public class PropertySummaryActivity extends AppCompatActivity
 
         priceValue.setText(String.format(Locale.US, "%d", property.purchasePrice));
 
-        double downPercent = ((double)property.downPayment)/100.0;
+        double downPercent;
+        if(property.useLoan)
+        {
+            downPercent = ((double)property.downPayment)/100.0;
+        }
+        else
+        {
+            downPercent = 1.0;
+        }
+
         double financedPercent = 1.0 - downPercent;
         double financed = property.purchasePrice * financedPercent;
         financedValue.setText(String.format(Locale.US, "%d", Math.round(financed)));
