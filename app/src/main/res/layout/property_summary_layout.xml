@@ -104,22 +104,31 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"/>
 
-                        <TextView
-                            android:id="@+id/priceCurrency"
-                            android:text="$"
-                            android:layout_height="wrap_content"
+                        <LinearLayout
                             android:layout_width="wrap_content"
-                            android:layout_weight="0"
-                            android:textSize="@dimen/inputSize"/>
-
-                        <TextView
-                            android:id="@+id/priceValue"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
                             android:gravity="end"
-                            android:layout_height="wrap_content"
-                            android:layout_width="wrap_content"
                             android:layout_weight="0"
-                            android:padding="@dimen/inputPadding"
-                            android:textSize="@dimen/inputSize" />
+                            android:paddingTop="@dimen/inputPadding"
+                            android:paddingBottom="@dimen/inputPadding"
+                            android:minWidth="@dimen/minValueWidth">
+                            <TextView
+                                android:id="@+id/priceCurrency"
+                                android:text="$"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:textSize="@dimen/inputSize"
+                                android:paddingEnd="@dimen/valueItemPadding"
+                                android:paddingRight="@dimen/valueItemPadding"/>
+                            <TextView
+                                android:id="@+id/priceValue"
+                                android:gravity="end"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:textSize="@dimen/inputSize" />
+                        </LinearLayout>
+
                     </LinearLayout>
 
                     <View
@@ -165,34 +174,30 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"/>
 
-                        <TextView
-                            android:text="-"
-                            android:layout_height="wrap_content"
+                        <LinearLayout
                             android:layout_width="wrap_content"
-                            android:layout_weight="0"
-                            android:textSize="@dimen/inputSize"/>
-
-                        <Space
-                            android:layout_width="30sp"
                             android:layout_height="match_parent"
-                            android:layout_weight="0"/>
-
-                        <TextView
-                            android:id="@+id/financedValueCurrency"
-                            android:text="$"
-                            android:layout_height="wrap_content"
-                            android:layout_width="wrap_content"
-                            android:layout_weight="0"
-                            android:textSize="@dimen/inputSize"/>
-
-                        <TextView
-                            android:id="@+id/financedValue"
+                            android:orientation="horizontal"
                             android:gravity="end"
-                            android:layout_height="wrap_content"
-                            android:layout_width="wrap_content"
                             android:layout_weight="0"
-                            android:padding="@dimen/inputPadding"
-                            android:textSize="@dimen/inputSize" />
+                            android:paddingTop="@dimen/inputPadding"
+                            android:paddingBottom="@dimen/inputPadding"
+                            android:minWidth="@dimen/minValueWidth">
+                            <TextView
+                                android:id="@+id/financedValueCurrency"
+                                android:text="$"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:textSize="@dimen/inputSize"
+                                android:paddingEnd="@dimen/valueItemPadding"
+                                android:paddingRight="@dimen/valueItemPadding"/>
+                            <TextView
+                                android:id="@+id/financedValue"
+                                android:gravity="end"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:textSize="@dimen/inputSize" />
+                        </LinearLayout>
                     </LinearLayout>
 
                     <View
@@ -243,29 +248,38 @@
                             android:layout_height="wrap_content"
                             android:layout_width="wrap_content"
                             android:layout_weight="0"
-                            android:textSize="@dimen/inputSize"/>
+                            android:textSize="@dimen/inputSize"
+                            android:paddingStart="@dimen/valueItemPadding"
+                            android:paddingLeft="@dimen/valueItemPadding"
+                            android:paddingRight="@dimen/valueItemPadding"
+                            android:paddingEnd="@dimen/valueItemPadding"
+                            android:paddingTop="@dimen/inputPadding"
+                            android:paddingBottom="@dimen/inputPadding"/>
 
-                        <Space
-                            android:layout_width="30sp"
+                        <LinearLayout
+                            android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:layout_weight="0"/>
-
-                        <TextView
-                            android:id="@+id/downPaymentValueCurrency"
-                            android:text="$"
-                            android:layout_height="wrap_content"
-                            android:layout_width="wrap_content"
-                            android:layout_weight="0"
-                            android:textSize="@dimen/inputSize"/>
-
-                        <TextView
-                            android:id="@+id/downPaymentValue"
+                            android:orientation="horizontal"
                             android:gravity="end"
-                            android:layout_height="wrap_content"
-                            android:layout_width="wrap_content"
                             android:layout_weight="0"
-                            android:padding="@dimen/inputPadding"
-                            android:textSize="@dimen/inputSize" />
+                            android:paddingTop="@dimen/inputPadding"
+                            android:paddingBottom="@dimen/inputPadding"
+                            android:minWidth="@dimen/minValueWidth">
+                            <TextView
+                                android:id="@+id/downPaymentValueCurrency"
+                                android:text="$"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:textSize="@dimen/inputSize"
+                                android:paddingEnd="@dimen/valueItemPadding"
+                                android:paddingRight="@dimen/valueItemPadding"/>
+                            <TextView
+                                android:id="@+id/downPaymentValue"
+                                android:gravity="end"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:textSize="@dimen/inputSize" />
+                        </LinearLayout>
                     </LinearLayout>
 
                     <View
@@ -324,39 +338,44 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"/>
 
-                        <Space
-                            android:layout_width="30sp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="0"/>
-
                         <TextView
                             android:text="+"
                             android:layout_height="wrap_content"
                             android:layout_width="wrap_content"
                             android:layout_weight="0"
-                            android:textSize="@dimen/inputSize"/>
+                            android:textSize="@dimen/inputSize"
+                            android:paddingStart="@dimen/valueItemPadding"
+                            android:paddingLeft="@dimen/valueItemPadding"
+                            android:paddingRight="@dimen/valueItemPadding"
+                            android:paddingEnd="@dimen/valueItemPadding"
+                            android:paddingTop="@dimen/inputPadding"
+                            android:paddingBottom="@dimen/inputPadding"/>
 
-                        <Space
-                            android:layout_width="30sp"
+                        <LinearLayout
+                            android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:layout_weight="0"/>
-
-                        <TextView
-                            android:id="@+id/purchaseCostsValueCurrency"
-                            android:text="$"
-                            android:layout_height="wrap_content"
-                            android:layout_width="wrap_content"
-                            android:layout_weight="0"
-                            android:textSize="@dimen/inputSize"/>
-
-                        <TextView
-                            android:id="@+id/purchaseCostsValue"
+                            android:orientation="horizontal"
                             android:gravity="end"
-                            android:layout_height="wrap_content"
-                            android:layout_width="wrap_content"
                             android:layout_weight="0"
-                            android:padding="@dimen/inputPadding"
-                            android:textSize="@dimen/inputSize" />
+                            android:paddingTop="@dimen/inputPadding"
+                            android:paddingBottom="@dimen/inputPadding"
+                            android:minWidth="@dimen/minValueWidth">
+
+                            <TextView
+                                android:id="@+id/purchaseCostsValueCurrency"
+                                android:text="$"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:textSize="@dimen/inputSize"
+                                android:paddingEnd="@dimen/valueItemPadding"
+                                android:paddingRight="@dimen/valueItemPadding"/>
+                            <TextView
+                                android:id="@+id/purchaseCostsValue"
+                                android:gravity="end"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:textSize="@dimen/inputSize" />
+                        </LinearLayout>
                     </LinearLayout>
 
                     <View
@@ -420,29 +439,38 @@
                             android:layout_height="wrap_content"
                             android:layout_width="wrap_content"
                             android:layout_weight="0"
-                            android:textSize="@dimen/inputSize"/>
+                            android:textSize="@dimen/inputSize"
+                            android:paddingStart="@dimen/valueItemPadding"
+                            android:paddingLeft="@dimen/valueItemPadding"
+                            android:paddingRight="@dimen/valueItemPadding"
+                            android:paddingEnd="@dimen/valueItemPadding"
+                            android:paddingTop="@dimen/inputPadding"
+                            android:paddingBottom="@dimen/inputPadding"/>
 
-                        <Space
-                            android:layout_width="30sp"
+                        <LinearLayout
+                            android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:layout_weight="0"/>
-
-                        <TextView
-                            android:id="@+id/repairRemodelCostsValueCurrency"
-                            android:text="$"
-                            android:layout_height="wrap_content"
-                            android:layout_width="wrap_content"
-                            android:layout_weight="0"
-                            android:textSize="@dimen/inputSize"/>
-
-                        <TextView
-                            android:id="@+id/repairRemodelCostsValue"
+                            android:orientation="horizontal"
                             android:gravity="end"
-                            android:layout_height="wrap_content"
-                            android:layout_width="wrap_content"
                             android:layout_weight="0"
-                            android:padding="@dimen/inputPadding"
-                            android:textSize="@dimen/inputSize" />
+                            android:paddingTop="@dimen/inputPadding"
+                            android:paddingBottom="@dimen/inputPadding"
+                            android:minWidth="@dimen/minValueWidth">
+                            <TextView
+                                android:id="@+id/repairRemodelCostsValueCurrency"
+                                android:text="$"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:textSize="@dimen/inputSize"
+                                android:paddingEnd="@dimen/valueItemPadding"
+                                android:paddingRight="@dimen/valueItemPadding"/>
+                            <TextView
+                                android:id="@+id/repairRemodelCostsValue"
+                                android:gravity="end"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:textSize="@dimen/inputSize" />
+                        </LinearLayout>
                     </LinearLayout>
 
                     <View
@@ -501,39 +529,43 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"/>
 
-                        <Space
-                            android:layout_width="30sp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="0"/>
-
                         <TextView
                             android:text="="
                             android:layout_height="wrap_content"
                             android:layout_width="wrap_content"
                             android:layout_weight="0"
-                            android:textSize="@dimen/inputSize"/>
+                            android:textSize="@dimen/inputSize"
+                            android:paddingStart="@dimen/valueItemPadding"
+                            android:paddingLeft="@dimen/valueItemPadding"
+                            android:paddingRight="@dimen/valueItemPadding"
+                            android:paddingEnd="@dimen/valueItemPadding"
+                            android:paddingTop="@dimen/inputPadding"
+                            android:paddingBottom="@dimen/inputPadding"/>
 
-                        <Space
-                            android:layout_width="30sp"
+                        <LinearLayout
+                            android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:layout_weight="0"/>
-
-                        <TextView
-                            android:id="@+id/totalCashNeededValueCurrency"
-                            android:text="$"
-                            android:layout_height="wrap_content"
-                            android:layout_width="wrap_content"
-                            android:layout_weight="0"
-                            android:textSize="@dimen/inputSize"/>
-
-                        <TextView
-                            android:id="@+id/totalCashNeededValue"
+                            android:orientation="horizontal"
                             android:gravity="end"
-                            android:layout_height="wrap_content"
-                            android:layout_width="wrap_content"
                             android:layout_weight="0"
-                            android:padding="@dimen/inputPadding"
-                            android:textSize="@dimen/inputSize" />
+                            android:paddingTop="@dimen/inputPadding"
+                            android:paddingBottom="@dimen/inputPadding"
+                            android:minWidth="@dimen/minValueWidth">
+                            <TextView
+                                android:id="@+id/totalCashNeededValueCurrency"
+                                android:text="$"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:textSize="@dimen/inputSize"
+                                android:paddingEnd="@dimen/valueItemPadding"
+                                android:paddingRight="@dimen/valueItemPadding"/>
+                            <TextView
+                                android:id="@+id/totalCashNeededValue"
+                                android:gravity="end"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:textSize="@dimen/inputSize" />
+                        </LinearLayout>
                     </LinearLayout>
 
                     <View
@@ -601,22 +633,29 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"/>
 
-                        <TextView
-                            android:id="@+id/pricePerSizeValueCurrency"
-                            android:text="$"
-                            android:layout_height="wrap_content"
+                        <LinearLayout
                             android:layout_width="wrap_content"
-                            android:layout_weight="0"
-                            android:textSize="@dimen/inputSize"/>
-
-                        <TextView
-                            android:id="@+id/pricePerSizeValue"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
                             android:gravity="end"
-                            android:layout_height="wrap_content"
-                            android:layout_width="wrap_content"
                             android:layout_weight="0"
-                            android:padding="@dimen/inputPadding"
-                            android:textSize="@dimen/inputSize" />
+                            android:paddingTop="@dimen/inputPadding"
+                            android:paddingBottom="@dimen/inputPadding">
+                            <TextView
+                                android:id="@+id/pricePerSizeValueCurrency"
+                                android:text="$"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:textSize="@dimen/inputSize"
+                                android:paddingEnd="@dimen/valueItemPadding"
+                                android:paddingRight="@dimen/valueItemPadding"/>
+                            <TextView
+                                android:id="@+id/pricePerSizeValue"
+                                android:gravity="end"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:textSize="@dimen/inputSize" />
+                        </LinearLayout>
                     </LinearLayout>
 
                     <View
@@ -698,22 +737,30 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"/>
 
-                        <TextView
-                            android:id="@+id/rentValueCurrency"
-                            android:text="$"
-                            android:layout_height="wrap_content"
+                        <LinearLayout
                             android:layout_width="wrap_content"
-                            android:layout_weight="0"
-                            android:textSize="@dimen/inputSize"/>
-
-                        <TextView
-                            android:id="@+id/rentValue"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
                             android:gravity="end"
-                            android:layout_height="wrap_content"
-                            android:layout_width="wrap_content"
                             android:layout_weight="0"
-                            android:padding="@dimen/inputPadding"
-                            android:textSize="@dimen/inputSize" />
+                            android:paddingTop="@dimen/inputPadding"
+                            android:paddingBottom="@dimen/inputPadding"
+                            android:minWidth="@dimen/minValueWidth">
+                            <TextView
+                                android:id="@+id/rentValueCurrency"
+                                android:text="$"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:textSize="@dimen/inputSize"
+                                android:paddingEnd="@dimen/valueItemPadding"
+                                android:paddingRight="@dimen/valueItemPadding"/>
+                            <TextView
+                                android:id="@+id/rentValue"
+                                android:gravity="end"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:textSize="@dimen/inputSize" />
+                        </LinearLayout>
                     </LinearLayout>
 
                     <View
@@ -772,39 +819,43 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"/>
 
-                        <Space
-                            android:layout_width="30sp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="0"/>
-
                         <TextView
                             android:text="-"
                             android:layout_height="wrap_content"
                             android:layout_width="wrap_content"
                             android:layout_weight="0"
-                            android:textSize="@dimen/inputSize"/>
+                            android:textSize="@dimen/inputSize"
+                            android:paddingStart="@dimen/valueItemPadding"
+                            android:paddingLeft="@dimen/valueItemPadding"
+                            android:paddingRight="@dimen/valueItemPadding"
+                            android:paddingEnd="@dimen/valueItemPadding"
+                            android:paddingTop="@dimen/inputPadding"
+                            android:paddingBottom="@dimen/inputPadding"/>
 
-                        <Space
-                            android:layout_width="30sp"
+                        <LinearLayout
+                            android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:layout_weight="0"/>
-
-                        <TextView
-                            android:id="@+id/vancancyValueCurrency"
-                            android:text="$"
-                            android:layout_height="wrap_content"
-                            android:layout_width="wrap_content"
-                            android:layout_weight="0"
-                            android:textSize="@dimen/inputSize"/>
-
-                        <TextView
-                            android:id="@+id/vancancyValue"
+                            android:orientation="horizontal"
                             android:gravity="end"
-                            android:layout_height="wrap_content"
-                            android:layout_width="wrap_content"
                             android:layout_weight="0"
-                            android:padding="@dimen/inputPadding"
-                            android:textSize="@dimen/inputSize" />
+                            android:paddingTop="@dimen/inputPadding"
+                            android:paddingBottom="@dimen/inputPadding"
+                            android:minWidth="@dimen/minValueWidth">
+                            <TextView
+                                android:id="@+id/vancancyValueCurrency"
+                                android:text="$"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:textSize="@dimen/inputSize"
+                                android:paddingEnd="@dimen/valueItemPadding"
+                                android:paddingRight="@dimen/valueItemPadding"/>
+                            <TextView
+                                android:id="@+id/vancancyValue"
+                                android:gravity="end"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:textSize="@dimen/inputSize" />
+                        </LinearLayout>
                     </LinearLayout>
 
                     <View
@@ -868,29 +919,38 @@
                             android:layout_height="wrap_content"
                             android:layout_width="wrap_content"
                             android:layout_weight="0"
-                            android:textSize="@dimen/inputSize"/>
+                            android:textSize="@dimen/inputSize"
+                            android:paddingStart="@dimen/valueItemPadding"
+                            android:paddingLeft="@dimen/valueItemPadding"
+                            android:paddingRight="@dimen/valueItemPadding"
+                            android:paddingEnd="@dimen/valueItemPadding"
+                            android:paddingTop="@dimen/inputPadding"
+                            android:paddingBottom="@dimen/inputPadding"/>
 
-                        <Space
-                            android:layout_width="30sp"
+                        <LinearLayout
+                            android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:layout_weight="0"/>
-
-                        <TextView
-                            android:id="@+id/operatingIncomeValueCurrency"
-                            android:text="$"
-                            android:layout_height="wrap_content"
-                            android:layout_width="wrap_content"
-                            android:layout_weight="0"
-                            android:textSize="@dimen/inputSize"/>
-
-                        <TextView
-                            android:id="@+id/operatingIncomeValue"
+                            android:orientation="horizontal"
                             android:gravity="end"
-                            android:layout_height="wrap_content"
-                            android:layout_width="wrap_content"
                             android:layout_weight="0"
-                            android:padding="@dimen/inputPadding"
-                            android:textSize="@dimen/inputSize" />
+                            android:paddingTop="@dimen/inputPadding"
+                            android:paddingBottom="@dimen/inputPadding"
+                            android:minWidth="@dimen/minValueWidth">
+                            <TextView
+                                android:id="@+id/operatingIncomeValueCurrency"
+                                android:text="$"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:textSize="@dimen/inputSize"
+                                android:paddingEnd="@dimen/valueItemPadding"
+                                android:paddingRight="@dimen/valueItemPadding"/>
+                            <TextView
+                                android:id="@+id/operatingIncomeValue"
+                                android:gravity="end"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:textSize="@dimen/inputSize" />
+                        </LinearLayout>
                     </LinearLayout>
 
                     <View
@@ -954,29 +1014,38 @@
                             android:layout_height="wrap_content"
                             android:layout_width="wrap_content"
                             android:layout_weight="0"
-                            android:textSize="@dimen/inputSize"/>
+                            android:textSize="@dimen/inputSize"
+                            android:paddingStart="@dimen/valueItemPadding"
+                            android:paddingLeft="@dimen/valueItemPadding"
+                            android:paddingRight="@dimen/valueItemPadding"
+                            android:paddingEnd="@dimen/valueItemPadding"
+                            android:paddingTop="@dimen/inputPadding"
+                            android:paddingBottom="@dimen/inputPadding"/>
 
-                        <Space
-                            android:layout_width="30sp"
+                        <LinearLayout
+                            android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:layout_weight="0"/>
-
-                        <TextView
-                            android:id="@+id/operatingExpensesValueCurrency"
-                            android:text="$"
-                            android:layout_height="wrap_content"
-                            android:layout_width="wrap_content"
-                            android:layout_weight="0"
-                            android:textSize="@dimen/inputSize"/>
-
-                        <TextView
-                            android:id="@+id/operatingExpensesValue"
+                            android:orientation="horizontal"
                             android:gravity="end"
-                            android:layout_height="wrap_content"
-                            android:layout_width="wrap_content"
                             android:layout_weight="0"
-                            android:padding="@dimen/inputPadding"
-                            android:textSize="@dimen/inputSize" />
+                            android:paddingTop="@dimen/inputPadding"
+                            android:paddingBottom="@dimen/inputPadding"
+                            android:minWidth="@dimen/minValueWidth">
+                            <TextView
+                                android:id="@+id/operatingExpensesValueCurrency"
+                                android:text="$"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:textSize="@dimen/inputSize"
+                                android:paddingEnd="@dimen/valueItemPadding"
+                                android:paddingRight="@dimen/valueItemPadding"/>
+                            <TextView
+                                android:id="@+id/operatingExpensesValue"
+                                android:gravity="end"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:textSize="@dimen/inputSize" />
+                        </LinearLayout>
                     </LinearLayout>
 
                     <View
@@ -1040,29 +1109,38 @@
                             android:layout_height="wrap_content"
                             android:layout_width="wrap_content"
                             android:layout_weight="0"
-                            android:textSize="@dimen/inputSize"/>
+                            android:textSize="@dimen/inputSize"
+                            android:paddingStart="@dimen/valueItemPadding"
+                            android:paddingLeft="@dimen/valueItemPadding"
+                            android:paddingRight="@dimen/valueItemPadding"
+                            android:paddingEnd="@dimen/valueItemPadding"
+                            android:paddingTop="@dimen/inputPadding"
+                            android:paddingBottom="@dimen/inputPadding"/>
 
-                        <Space
-                            android:layout_width="30sp"
+                        <LinearLayout
+                            android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:layout_weight="0"/>
-
-                        <TextView
-                            android:id="@+id/netOperatingIncomeValueCurrency"
-                            android:text="$"
-                            android:layout_height="wrap_content"
-                            android:layout_width="wrap_content"
-                            android:layout_weight="0"
-                            android:textSize="@dimen/inputSize"/>
-
-                        <TextView
-                            android:id="@+id/netOperatingIncomeValue"
+                            android:orientation="horizontal"
                             android:gravity="end"
-                            android:layout_height="wrap_content"
-                            android:layout_width="wrap_content"
                             android:layout_weight="0"
-                            android:padding="@dimen/inputPadding"
-                            android:textSize="@dimen/inputSize" />
+                            android:paddingTop="@dimen/inputPadding"
+                            android:paddingBottom="@dimen/inputPadding"
+                            android:minWidth="@dimen/minValueWidth">
+                            <TextView
+                                android:id="@+id/netOperatingIncomeValueCurrency"
+                                android:text="$"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:textSize="@dimen/inputSize"
+                                android:paddingEnd="@dimen/valueItemPadding"
+                                android:paddingRight="@dimen/valueItemPadding"/>
+                            <TextView
+                                android:id="@+id/netOperatingIncomeValue"
+                                android:gravity="end"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:textSize="@dimen/inputSize" />
+                        </LinearLayout>
                     </LinearLayout>
 
                     <View
@@ -1113,29 +1191,38 @@
                             android:layout_height="wrap_content"
                             android:layout_width="wrap_content"
                             android:layout_weight="0"
-                            android:textSize="@dimen/inputSize"/>
+                            android:textSize="@dimen/inputSize"
+                            android:paddingStart="@dimen/valueItemPadding"
+                            android:paddingLeft="@dimen/valueItemPadding"
+                            android:paddingRight="@dimen/valueItemPadding"
+                            android:paddingEnd="@dimen/valueItemPadding"
+                            android:paddingTop="@dimen/inputPadding"
+                            android:paddingBottom="@dimen/inputPadding"/>
 
-                        <Space
-                            android:layout_width="30sp"
+                        <LinearLayout
+                            android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:layout_weight="0"/>
-
-                        <TextView
-                            android:id="@+id/mortgageValueCurrency"
-                            android:text="$"
-                            android:layout_height="wrap_content"
-                            android:layout_width="wrap_content"
-                            android:layout_weight="0"
-                            android:textSize="@dimen/inputSize"/>
-
-                        <TextView
-                            android:id="@+id/mortgageValue"
+                            android:orientation="horizontal"
                             android:gravity="end"
-                            android:layout_height="wrap_content"
-                            android:layout_width="wrap_content"
                             android:layout_weight="0"
-                            android:padding="@dimen/inputPadding"
-                            android:textSize="@dimen/inputSize" />
+                            android:paddingTop="@dimen/inputPadding"
+                            android:paddingBottom="@dimen/inputPadding"
+                            android:minWidth="@dimen/minValueWidth">
+                            <TextView
+                                android:id="@+id/mortgageValueCurrency"
+                                android:text="$"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:textSize="@dimen/inputSize"
+                                android:paddingEnd="@dimen/valueItemPadding"
+                                android:paddingRight="@dimen/valueItemPadding"/>
+                            <TextView
+                                android:id="@+id/mortgageValue"
+                                android:gravity="end"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:textSize="@dimen/inputSize" />
+                        </LinearLayout>
                     </LinearLayout>
 
                     <View
@@ -1199,29 +1286,38 @@
                             android:layout_height="wrap_content"
                             android:layout_width="wrap_content"
                             android:layout_weight="0"
-                            android:textSize="@dimen/inputSize"/>
+                            android:textSize="@dimen/inputSize"
+                            android:paddingStart="@dimen/valueItemPadding"
+                            android:paddingLeft="@dimen/valueItemPadding"
+                            android:paddingRight="@dimen/valueItemPadding"
+                            android:paddingEnd="@dimen/valueItemPadding"
+                            android:paddingTop="@dimen/inputPadding"
+                            android:paddingBottom="@dimen/inputPadding"/>
 
-                        <Space
-                            android:layout_width="30sp"
+                        <LinearLayout
+                            android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:layout_weight="0"/>
-
-                        <TextView
-                            android:id="@+id/cashFlowValueCurrency"
-                            android:text="$"
-                            android:layout_height="wrap_content"
-                            android:layout_width="wrap_content"
-                            android:layout_weight="0"
-                            android:textSize="@dimen/inputSize"/>
-
-                        <TextView
-                            android:id="@+id/cashFlowValue"
+                            android:orientation="horizontal"
                             android:gravity="end"
-                            android:layout_height="wrap_content"
-                            android:layout_width="wrap_content"
                             android:layout_weight="0"
-                            android:padding="@dimen/inputPadding"
-                            android:textSize="@dimen/inputSize" />
+                            android:paddingTop="@dimen/inputPadding"
+                            android:paddingBottom="@dimen/inputPadding"
+                            android:minWidth="@dimen/minValueWidth">
+                            <TextView
+                                android:id="@+id/cashFlowValueCurrency"
+                                android:text="$"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:textSize="@dimen/inputSize"
+                                android:paddingEnd="@dimen/valueItemPadding"
+                                android:paddingRight="@dimen/valueItemPadding"/>
+                            <TextView
+                                android:id="@+id/cashFlowValue"
+                                android:gravity="end"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:textSize="@dimen/inputSize" />
+                        </LinearLayout>
                     </LinearLayout>
 
                     <View
@@ -1301,21 +1397,29 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"/>
 
-                        <TextView
-                            android:id="@+id/capitalizationRateValue"
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
                             android:gravity="end"
-                            android:layout_height="wrap_content"
-                            android:layout_width="wrap_content"
                             android:layout_weight="0"
-                            android:padding="@dimen/inputPadding"
-                            android:textSize="@dimen/inputSize" />
-
-                        <TextView
-                            android:text="%"
-                            android:layout_height="wrap_content"
-                            android:layout_width="wrap_content"
-                            android:layout_weight="0"
-                            android:textSize="@dimen/inputSize"/>
+                            android:paddingTop="@dimen/inputPadding"
+                            android:paddingBottom="@dimen/inputPadding"
+                            android:minWidth="@dimen/minValueWidth">
+                            <TextView
+                                android:id="@+id/capitalizationRateValue"
+                                android:gravity="end"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:paddingEnd="@dimen/valueItemPadding"
+                                android:paddingRight="@dimen/valueItemPadding"
+                                android:textSize="@dimen/inputSize" />
+                            <TextView
+                                android:text="%"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:textSize="@dimen/inputSize"/>
+                        </LinearLayout>
                     </LinearLayout>
 
                     <View
@@ -1374,21 +1478,29 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"/>
 
-                        <TextView
-                            android:id="@+id/cashOnCashValue"
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
                             android:gravity="end"
-                            android:layout_height="wrap_content"
-                            android:layout_width="wrap_content"
                             android:layout_weight="0"
-                            android:padding="@dimen/inputPadding"
-                            android:textSize="@dimen/inputSize" />
-
-                        <TextView
-                            android:text="%"
-                            android:layout_height="wrap_content"
-                            android:layout_width="wrap_content"
-                            android:layout_weight="0"
-                            android:textSize="@dimen/inputSize"/>
+                            android:paddingTop="@dimen/inputPadding"
+                            android:paddingBottom="@dimen/inputPadding"
+                            android:minWidth="@dimen/minValueWidth">
+                            <TextView
+                                android:id="@+id/cashOnCashValue"
+                                android:gravity="end"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:paddingEnd="@dimen/valueItemPadding"
+                                android:paddingRight="@dimen/valueItemPadding"
+                                android:textSize="@dimen/inputSize" />
+                            <TextView
+                                android:text="%"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:textSize="@dimen/inputSize"/>
+                        </LinearLayout>
                     </LinearLayout>
 
                     <View
@@ -1447,21 +1559,29 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"/>
 
-                        <TextView
-                            android:id="@+id/rentToValueValue"
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
                             android:gravity="end"
-                            android:layout_height="wrap_content"
-                            android:layout_width="wrap_content"
                             android:layout_weight="0"
-                            android:padding="@dimen/inputPadding"
-                            android:textSize="@dimen/inputSize" />
-
-                        <TextView
-                            android:text="%"
-                            android:layout_height="wrap_content"
-                            android:layout_width="wrap_content"
-                            android:layout_weight="0"
-                            android:textSize="@dimen/inputSize"/>
+                            android:paddingTop="@dimen/inputPadding"
+                            android:paddingBottom="@dimen/inputPadding"
+                            android:minWidth="@dimen/minValueWidth">
+                            <TextView
+                                android:id="@+id/rentToValueValue"
+                                android:gravity="end"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:paddingEnd="@dimen/valueItemPadding"
+                                android:paddingRight="@dimen/valueItemPadding"
+                                android:textSize="@dimen/inputSize" />
+                            <TextView
+                                android:text="%"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:textSize="@dimen/inputSize"/>
+                        </LinearLayout>
                     </LinearLayout>
 
                     <View
@@ -1520,14 +1640,22 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"/>
 
-                        <TextView
-                            android:id="@+id/grossRentMultiplierValue"
-                            android:gravity="end"
-                            android:layout_height="wrap_content"
+                        <LinearLayout
                             android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:gravity="end"
                             android:layout_weight="0"
-                            android:padding="@dimen/inputPadding"
-                            android:textSize="@dimen/inputSize" />
+                            android:paddingTop="@dimen/inputPadding"
+                            android:paddingBottom="@dimen/inputPadding"
+                            android:minWidth="@dimen/minValueWidth">
+                            <TextView
+                                android:id="@+id/grossRentMultiplierValue"
+                                android:gravity="end"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:textSize="@dimen/inputSize" />
+                        </LinearLayout>
                     </LinearLayout>
 
                     <View
