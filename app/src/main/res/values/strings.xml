@@ -8,6 +8,7 @@
     <string name="worksheetTitle">Overview</string>
     <string name="notesTitle">Notes</string>
     <string name="summaryTitle">Summary</string>
+    <string name="projectionsTitle">Projections</string>
 
     <string name="add">Add</string>
     <string name="about">About</string>
@@ -120,9 +121,14 @@
     <string name="cashOnCashField">Cash On Cash:</string>
     <string name="rentToValueField">Rent To Value:</string>
     <string name="grossRentMultiplierField">Gross Rent Multiplier:</string>
-    <string name="NAME">VALUE</string>
-
-
+    <string name="equityTitle">EQUITY</string>
+    <string name="propertyValueField">Property Value</string>
+    <string name="loanBalanceField">Loan Balance</string>
+    <string name="totalEquityField">Total Equity</string>
+    <string name="taxAdvantagesTitle">TAX ADVANTAGES</string>
+    <string name="depreciationField">Depreciation</string>
+    <string name="mortgageInterestField">Mortgage Interest</string>
+    <string name="projectionText">Year: <xliff:g id="number">%d</xliff:g></string>
 
     <!-- Dictionary lookups -->
     <string name="purchasePriceHelpTitle">Purchase Price</string>
@@ -174,5 +180,16 @@
     <string name="grossRentMultiplierHelpTitle">Gross Rent Multipliers</string>
     <string name="grossRentMultiplierDefinition">A rate of return on a rental property that compares the property\'s Purchase Price and the monthly Gross Rent.\n\nThis represents the number of years it will take for the yearly Gross Rent to add to the purchase price.</string>
     <string name="grossRentMultiplierFormula">$$\\text{Gross Rent Multiplier} = \\frac{\\text{Purchase Price}}{\\text{Monthly Gross Rent}}$$</string>
+    <string name="propertyValueHelpHelpTitle">Property Value</string>
+    <string name="propertyValueHelpDefinition">The current value of the property.\n\nThis may not be the same as the purchase price, as the property may have been purchased at a discount, repairs or updated may have been made, the property has appreciated over time, etc.</string>
+    <string name="totalEquityHelpTitle">Total Equity</string>
+    <string name="totalEquityHelpDefinition">The portion of the property\'s market value that you own. If using a loan, this depends on the balance of the loan. Equity will increase as the loan is paid down and the property\'s value appreciates.</string>
+    <string name="totalEquityHelpFormula">$$\\text{Equity} = \\text{Market Price} - \\text{Loan Balance}$$</string>
+    <string name="depreciationHelpTitle">Depreciation</string>
+    <string name="depreciationHelpDefinition">Instead of deducting the cost of purchasing a property all in one year, many country\'s require that the cost of a rental property be taken over the property\'s useful lifespan.\n\nIn the US, the useful lifespan of a property is considered 27.5 years. If ot in the US, check the local tax laws on rental property depreciation rules.</string>
+    <string name="depreciationHelpFormula">Instead of deducting the cost of purchasing a property all in one year, many country\'s require that the cost of a rental property be taken over the property\'s useful lifespan.\n\nIn the US, the useful lifespan of a property is considered 27.5 years. If ot in the US, check the local tax laws on rental property depreciation rules.</string>
+    <string name="mortgageInterestHelpTitle">Mortgage Interest</string>
+    <string name="mortgageInterestHelpDefinition">The portion of the mortgage payment which is the interest portion of the loan.\n\nIn some countries one can deduct the mortgage interest from one\'s taxes. Check local tax laws for more information.</string>
+
 
 </resources>

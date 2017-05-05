@@ -1,0 +1,1563 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                 xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                 android:layout_width="match_parent"
+                                                 android:layout_height="match_parent"
+                                                 android:background="@color/inputContrastBackground"
+                                                 android:fitsSystemWindows="true">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <LinearLayout android:orientation="vertical"
+                  android:layout_width="fill_parent"
+                  android:layout_height="fill_parent"
+                  app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <ScrollView android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:background="@color/inputContrastBackground"
+                    app:layout_behavior="android.support.design.widget.AppBarLayout$ScrollingViewBehavior">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                             android:layout_width="fill_parent"
+                             android:layout_height="wrap_content"
+                             android:stretchColumns="1"
+                             android:background="@color/inputContrastBackground">
+
+
+                    <!-- Operation title -->
+                    <View
+                        android:layout_height="@dimen/inputBorderThickness"
+                        android:layout_width="match_parent"
+                        android:background="@color/inputBorder" />
+                    <TableRow
+                        android:background="@color/inputContrastBackground"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_column="1"
+                            android:paddingLeft="@dimen/titlePaddingHorizontal"
+                            android:paddingRight="@dimen/titlePaddingHorizontal"
+                            android:paddingStart="@dimen/titlePaddingHorizontal"
+                            android:paddingTop="@dimen/titlePaddingTop"
+                            android:text="@string/operationTitle"
+                            android:textSize="@dimen/inputTitleSize"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+                    </TableRow>
+
+                    <!-- Rent Value -->
+                    <View
+                        android:layout_height="@dimen/inputBorderThickness"
+                        android:layout_width="match_parent"
+                        android:background="@color/inputBorder" />
+                    <TableRow
+                        android:background="@color/inputBackground"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <View
+                            android:gravity="start"
+                            android:layout_height="match_parent"
+                            android:layout_width="@dimen/inputBorderThickness"
+                            android:background="@color/inputBorder" />
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingRight="@dimen/inputPadding"
+                            android:paddingEnd="@dimen/inputPadding">
+
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:padding="@dimen/inputPadding">
+                                <TextView
+                                    android:text="@string/grossRentField"
+                                    android:labelFor="@+id/rentValue"
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:layout_weight="0"
+                                    android:textSize="@dimen/inputSize"/>
+                                <ImageView
+                                    android:id="@+id/grossRentHelp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:layout_weight="0"
+                                    android:src="@drawable/chat_question_16dp"
+                                    android:tint="@color/helpChatBox"/>
+                            </LinearLayout>
+
+                            <Space
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"/>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal"
+                                android:gravity="end"
+                                android:layout_weight="0"
+                                android:paddingTop="@dimen/inputPadding"
+                                android:paddingBottom="@dimen/inputPadding"
+                                android:minWidth="@dimen/minValueWidth">
+                                <TextView
+                                    android:id="@+id/rentValueCurrency"
+                                    android:text="$"
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:textSize="@dimen/inputSize"
+                                    android:paddingEnd="@dimen/valueItemPadding"
+                                    android:paddingRight="@dimen/valueItemPadding"/>
+                                <TextView
+                                    android:id="@+id/rentValue"
+                                    android:gravity="end"
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:textSize="@dimen/inputSize" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <View
+                            android:gravity="end"
+                            android:layout_height="match_parent"
+                            android:layout_width="@dimen/inputBorderThickness"
+                            android:background="@color/inputBorder" />
+                    </TableRow>
+
+                    <!-- Vacancy Value -->
+                    <View
+                        android:layout_height="@dimen/inputBorderThickness"
+                        android:layout_width="match_parent"
+                        android:background="@color/inputBorder" />
+                    <TableRow
+                        android:background="@color/inputBackground"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <View
+                            android:gravity="start"
+                            android:layout_height="match_parent"
+                            android:layout_width="@dimen/inputBorderThickness"
+                            android:background="@color/inputBorder" />
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingRight="@dimen/inputPadding"
+                            android:paddingEnd="@dimen/inputPadding">
+
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:padding="@dimen/inputPadding">
+                                <TextView
+                                    android:text="@string/vacancyField"
+                                    android:labelFor="@+id/vancancyValue"
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:layout_weight="0"
+                                    android:textSize="@dimen/inputSize"/>
+                                <ImageView
+                                    android:id="@+id/vacancyHelp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:layout_weight="0"
+                                    android:src="@drawable/chat_question_16dp"
+                                    android:tint="@color/helpChatBox"/>
+                            </LinearLayout>
+
+                            <Space
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"/>
+
+                            <TextView
+                                android:text="-"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_weight="0"
+                                android:textSize="@dimen/inputSize"
+                                android:paddingStart="@dimen/valueItemPadding"
+                                android:paddingLeft="@dimen/valueItemPadding"
+                                android:paddingRight="@dimen/valueItemPadding"
+                                android:paddingEnd="@dimen/valueItemPadding"
+                                android:paddingTop="@dimen/inputPadding"
+                                android:paddingBottom="@dimen/inputPadding"/>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal"
+                                android:gravity="end"
+                                android:layout_weight="0"
+                                android:paddingTop="@dimen/inputPadding"
+                                android:paddingBottom="@dimen/inputPadding"
+                                android:minWidth="@dimen/minValueWidth">
+                                <TextView
+                                    android:id="@+id/vancancyValueCurrency"
+                                    android:text="$"
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:textSize="@dimen/inputSize"
+                                    android:paddingEnd="@dimen/valueItemPadding"
+                                    android:paddingRight="@dimen/valueItemPadding"/>
+                                <TextView
+                                    android:id="@+id/vancancyValue"
+                                    android:gravity="end"
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:textSize="@dimen/inputSize" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <View
+                            android:gravity="end"
+                            android:layout_height="match_parent"
+                            android:layout_width="@dimen/inputBorderThickness"
+                            android:background="@color/inputBorder" />
+                    </TableRow>
+
+                    <!-- Vacancy Value -->
+                    <View
+                        android:layout_height="@dimen/inputBorderDividerThickness"
+                        android:layout_width="match_parent"
+                        android:background="@color/inputDividerBorder" />
+                    <TableRow
+                        android:background="@color/inputBackground"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <View
+                            android:gravity="start"
+                            android:layout_height="match_parent"
+                            android:layout_width="@dimen/inputBorderThickness"
+                            android:background="@color/inputBorder" />
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingRight="@dimen/inputPadding"
+                            android:paddingEnd="@dimen/inputPadding">
+
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:padding="@dimen/inputPadding">
+                                <TextView
+                                    android:text="@string/operatingIncomeField"
+                                    android:labelFor="@+id/vancancyValue"
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:layout_weight="0"
+                                    android:textSize="@dimen/inputSize"/>
+                                <ImageView
+                                    android:id="@+id/operatingIncomeHelp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:layout_weight="0"
+                                    android:src="@drawable/chat_question_16dp"
+                                    android:tint="@color/helpChatBox"/>
+                            </LinearLayout>
+
+                            <Space
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"/>
+
+                            <TextView
+                                android:text="="
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_weight="0"
+                                android:textSize="@dimen/inputSize"
+                                android:paddingStart="@dimen/valueItemPadding"
+                                android:paddingLeft="@dimen/valueItemPadding"
+                                android:paddingRight="@dimen/valueItemPadding"
+                                android:paddingEnd="@dimen/valueItemPadding"
+                                android:paddingTop="@dimen/inputPadding"
+                                android:paddingBottom="@dimen/inputPadding"/>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal"
+                                android:gravity="end"
+                                android:layout_weight="0"
+                                android:paddingTop="@dimen/inputPadding"
+                                android:paddingBottom="@dimen/inputPadding"
+                                android:minWidth="@dimen/minValueWidth">
+                                <TextView
+                                    android:id="@+id/operatingIncomeValueCurrency"
+                                    android:text="$"
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:textSize="@dimen/inputSize"
+                                    android:paddingEnd="@dimen/valueItemPadding"
+                                    android:paddingRight="@dimen/valueItemPadding"/>
+                                <TextView
+                                    android:id="@+id/operatingIncomeValue"
+                                    android:gravity="end"
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:textSize="@dimen/inputSize" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <View
+                            android:gravity="end"
+                            android:layout_height="match_parent"
+                            android:layout_width="@dimen/inputBorderThickness"
+                            android:background="@color/inputBorder" />
+                    </TableRow>
+
+                    <!-- Operating Expenses Value -->
+                    <View
+                        android:layout_height="@dimen/inputBorderThickness"
+                        android:layout_width="match_parent"
+                        android:background="@color/inputBorder" />
+                    <TableRow
+                        android:background="@color/inputBackground"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <View
+                            android:gravity="start"
+                            android:layout_height="match_parent"
+                            android:layout_width="@dimen/inputBorderThickness"
+                            android:background="@color/inputBorder" />
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingRight="@dimen/inputPadding"
+                            android:paddingEnd="@dimen/inputPadding">
+
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:padding="@dimen/inputPadding">
+                                <TextView
+                                    android:text="@string/operatingExpensesField"
+                                    android:labelFor="@+id/operatingExpensesValue"
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:layout_weight="0"
+                                    android:textSize="@dimen/inputSize"/>
+                                <ImageView
+                                    android:id="@+id/operatingExpensesHelp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:layout_weight="0"
+                                    android:src="@drawable/chat_question_16dp"
+                                    android:tint="@color/helpChatBox"/>
+                            </LinearLayout>
+
+                            <Space
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"/>
+
+                            <TextView
+                                android:text="-"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_weight="0"
+                                android:textSize="@dimen/inputSize"
+                                android:paddingStart="@dimen/valueItemPadding"
+                                android:paddingLeft="@dimen/valueItemPadding"
+                                android:paddingRight="@dimen/valueItemPadding"
+                                android:paddingEnd="@dimen/valueItemPadding"
+                                android:paddingTop="@dimen/inputPadding"
+                                android:paddingBottom="@dimen/inputPadding"/>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal"
+                                android:gravity="end"
+                                android:layout_weight="0"
+                                android:paddingTop="@dimen/inputPadding"
+                                android:paddingBottom="@dimen/inputPadding"
+                                android:minWidth="@dimen/minValueWidth">
+                                <TextView
+                                    android:id="@+id/operatingExpensesValueCurrency"
+                                    android:text="$"
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:textSize="@dimen/inputSize"
+                                    android:paddingEnd="@dimen/valueItemPadding"
+                                    android:paddingRight="@dimen/valueItemPadding"/>
+                                <TextView
+                                    android:id="@+id/operatingExpensesValue"
+                                    android:gravity="end"
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:textSize="@dimen/inputSize" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <View
+                            android:gravity="end"
+                            android:layout_height="match_parent"
+                            android:layout_width="@dimen/inputBorderThickness"
+                            android:background="@color/inputBorder" />
+                    </TableRow>
+
+                    <!-- Net Operating Income Value -->
+                    <View
+                        android:layout_height="@dimen/inputBorderDividerThickness"
+                        android:layout_width="match_parent"
+                        android:background="@color/inputDividerBorder" />
+                    <TableRow
+                        android:background="@color/inputBackground"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <View
+                            android:gravity="start"
+                            android:layout_height="match_parent"
+                            android:layout_width="@dimen/inputBorderThickness"
+                            android:background="@color/inputBorder" />
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingRight="@dimen/inputPadding"
+                            android:paddingEnd="@dimen/inputPadding">
+
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:padding="@dimen/inputPadding">
+                                <TextView
+                                    android:text="@string/netOperatingIncomeField"
+                                    android:labelFor="@+id/netOperatingIncomeValue"
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:layout_weight="0"
+                                    android:textSize="@dimen/inputSize"/>
+                                <ImageView
+                                    android:id="@+id/netOperatingIncomeHelp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:layout_weight="0"
+                                    android:src="@drawable/chat_question_16dp"
+                                    android:tint="@color/helpChatBox"/>
+                            </LinearLayout>
+
+                            <Space
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"/>
+
+                            <TextView
+                                android:text="="
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_weight="0"
+                                android:textSize="@dimen/inputSize"
+                                android:paddingStart="@dimen/valueItemPadding"
+                                android:paddingLeft="@dimen/valueItemPadding"
+                                android:paddingRight="@dimen/valueItemPadding"
+                                android:paddingEnd="@dimen/valueItemPadding"
+                                android:paddingTop="@dimen/inputPadding"
+                                android:paddingBottom="@dimen/inputPadding"/>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal"
+                                android:gravity="end"
+                                android:layout_weight="0"
+                                android:paddingTop="@dimen/inputPadding"
+                                android:paddingBottom="@dimen/inputPadding"
+                                android:minWidth="@dimen/minValueWidth">
+                                <TextView
+                                    android:id="@+id/netOperatingIncomeValueCurrency"
+                                    android:text="$"
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:textSize="@dimen/inputSize"
+                                    android:paddingEnd="@dimen/valueItemPadding"
+                                    android:paddingRight="@dimen/valueItemPadding"/>
+                                <TextView
+                                    android:id="@+id/netOperatingIncomeValue"
+                                    android:gravity="end"
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:textSize="@dimen/inputSize" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <View
+                            android:gravity="end"
+                            android:layout_height="match_parent"
+                            android:layout_width="@dimen/inputBorderThickness"
+                            android:background="@color/inputBorder" />
+                    </TableRow>
+
+                    <!-- Mortgage Value -->
+                    <View
+                        android:layout_height="@dimen/inputBorderThickness"
+                        android:layout_width="match_parent"
+                        android:background="@color/inputBorder" />
+                    <TableRow
+                        android:background="@color/inputBackground"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <View
+                            android:gravity="start"
+                            android:layout_height="match_parent"
+                            android:layout_width="@dimen/inputBorderThickness"
+                            android:background="@color/inputBorder" />
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingRight="@dimen/inputPadding"
+                            android:paddingEnd="@dimen/inputPadding">
+                            <TextView
+                                android:text="@string/mortgageField"
+                                android:labelFor="@+id/mortgageValue"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_weight="0"
+                                android:padding="@dimen/inputPadding"
+                                android:textSize="@dimen/inputSize"/>
+
+                            <Space
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"/>
+
+                            <TextView
+                                android:text="-"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_weight="0"
+                                android:textSize="@dimen/inputSize"
+                                android:paddingStart="@dimen/valueItemPadding"
+                                android:paddingLeft="@dimen/valueItemPadding"
+                                android:paddingRight="@dimen/valueItemPadding"
+                                android:paddingEnd="@dimen/valueItemPadding"
+                                android:paddingTop="@dimen/inputPadding"
+                                android:paddingBottom="@dimen/inputPadding"/>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal"
+                                android:gravity="end"
+                                android:layout_weight="0"
+                                android:paddingTop="@dimen/inputPadding"
+                                android:paddingBottom="@dimen/inputPadding"
+                                android:minWidth="@dimen/minValueWidth">
+                                <TextView
+                                    android:id="@+id/mortgageValueCurrency"
+                                    android:text="$"
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:textSize="@dimen/inputSize"
+                                    android:paddingEnd="@dimen/valueItemPadding"
+                                    android:paddingRight="@dimen/valueItemPadding"/>
+                                <TextView
+                                    android:id="@+id/mortgageValue"
+                                    android:gravity="end"
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:textSize="@dimen/inputSize" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <View
+                            android:gravity="end"
+                            android:layout_height="match_parent"
+                            android:layout_width="@dimen/inputBorderThickness"
+                            android:background="@color/inputBorder" />
+                    </TableRow>
+
+                    <!-- Cash Flow Value -->
+                    <View
+                        android:layout_height="@dimen/inputBorderDividerThickness"
+                        android:layout_width="match_parent"
+                        android:background="@color/inputDividerBorder" />
+                    <TableRow
+                        android:background="@color/inputBackground"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <View
+                            android:gravity="start"
+                            android:layout_height="match_parent"
+                            android:layout_width="@dimen/inputBorderThickness"
+                            android:background="@color/inputBorder" />
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingRight="@dimen/inputPadding"
+                            android:paddingEnd="@dimen/inputPadding">
+
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:padding="@dimen/inputPadding">
+                                <TextView
+                                    android:text="@string/cashFlowField"
+                                    android:labelFor="@+id/cashFlowValue"
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:layout_weight="0"
+                                    android:textSize="@dimen/inputSize"/>
+                                <ImageView
+                                    android:id="@+id/cashFlowHelp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:layout_weight="0"
+                                    android:src="@drawable/chat_question_16dp"
+                                    android:tint="@color/helpChatBox"/>
+                            </LinearLayout>
+
+                            <Space
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"/>
+
+                            <TextView
+                                android:text="="
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_weight="0"
+                                android:textSize="@dimen/inputSize"
+                                android:paddingStart="@dimen/valueItemPadding"
+                                android:paddingLeft="@dimen/valueItemPadding"
+                                android:paddingRight="@dimen/valueItemPadding"
+                                android:paddingEnd="@dimen/valueItemPadding"
+                                android:paddingTop="@dimen/inputPadding"
+                                android:paddingBottom="@dimen/inputPadding"/>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal"
+                                android:gravity="end"
+                                android:layout_weight="0"
+                                android:paddingTop="@dimen/inputPadding"
+                                android:paddingBottom="@dimen/inputPadding"
+                                android:minWidth="@dimen/minValueWidth">
+                                <TextView
+                                    android:id="@+id/cashFlowValueCurrency"
+                                    android:text="$"
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:textSize="@dimen/inputSize"
+                                    android:paddingEnd="@dimen/valueItemPadding"
+                                    android:paddingRight="@dimen/valueItemPadding"/>
+                                <TextView
+                                    android:id="@+id/cashFlowValue"
+                                    android:gravity="end"
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:textSize="@dimen/inputSize" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <View
+                            android:gravity="end"
+                            android:layout_height="match_parent"
+                            android:layout_width="@dimen/inputBorderThickness"
+                            android:background="@color/inputBorder" />
+                    </TableRow>
+
+
+                    <!-- Equity title -->
+                    <View
+                        android:layout_height="@dimen/inputBorderThickness"
+                        android:layout_width="match_parent"
+                        android:background="@color/inputBorder" />
+                    <TableRow
+                        android:background="@color/inputContrastBackground"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_column="1"
+                            android:paddingLeft="@dimen/titlePaddingHorizontal"
+                            android:paddingRight="@dimen/titlePaddingHorizontal"
+                            android:paddingStart="@dimen/titlePaddingHorizontal"
+                            android:paddingTop="@dimen/titlePaddingTop"
+                            android:text="@string/equityTitle"
+                            android:textSize="@dimen/inputTitleSize"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+                    </TableRow>
+
+                    <!-- Property Value -->
+                    <View
+                        android:layout_height="@dimen/inputBorderThickness"
+                        android:layout_width="match_parent"
+                        android:background="@color/inputBorder" />
+                    <TableRow
+                        android:background="@color/inputBackground"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <View
+                            android:gravity="start"
+                            android:layout_height="match_parent"
+                            android:layout_width="@dimen/inputBorderThickness"
+                            android:background="@color/inputBorder" />
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingRight="@dimen/inputPadding"
+                            android:paddingEnd="@dimen/inputPadding">
+
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:padding="@dimen/inputPadding">
+                                <TextView
+                                    android:text="@string/propertyValueField"
+                                    android:labelFor="@+id/propertyValueValue"
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:layout_weight="0"
+                                    android:textSize="@dimen/inputSize"/>
+                                <ImageView
+                                    android:id="@+id/propertyValueHelp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:layout_weight="0"
+                                    android:src="@drawable/chat_question_16dp"
+                                    android:tint="@color/helpChatBox"/>
+                            </LinearLayout>
+
+                            <Space
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"/>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal"
+                                android:gravity="end"
+                                android:layout_weight="0"
+                                android:paddingTop="@dimen/inputPadding"
+                                android:paddingBottom="@dimen/inputPadding"
+                                android:minWidth="@dimen/minValueWidth">
+                                <TextView
+                                    android:id="@+id/propertyValueCurrency"
+                                    android:text="$"
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:textSize="@dimen/inputSize"
+                                    android:paddingEnd="@dimen/valueItemPadding"
+                                    android:paddingRight="@dimen/valueItemPadding"/>
+                                <TextView
+                                    android:id="@+id/propertyValueValue"
+                                    android:gravity="end"
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:paddingEnd="@dimen/valueItemPadding"
+                                    android:paddingRight="@dimen/valueItemPadding"
+                                    android:textSize="@dimen/inputSize" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <View
+                            android:gravity="end"
+                            android:layout_height="match_parent"
+                            android:layout_width="@dimen/inputBorderThickness"
+                            android:background="@color/inputBorder" />
+                    </TableRow>
+
+                    <!-- Loan Balance Value -->
+                    <View
+                        android:layout_height="@dimen/inputBorderThickness"
+                        android:layout_width="match_parent"
+                        android:background="@color/inputBorder" />
+                    <TableRow
+                        android:background="@color/inputBackground"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <View
+                            android:gravity="start"
+                            android:layout_height="match_parent"
+                            android:layout_width="@dimen/inputBorderThickness"
+                            android:background="@color/inputBorder" />
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingRight="@dimen/inputPadding"
+                            android:paddingEnd="@dimen/inputPadding">
+
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:padding="@dimen/inputPadding">
+                                <TextView
+                                    android:text="@string/loanBalanceField"
+                                    android:labelFor="@+id/loanBalanceValue"
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:layout_weight="0"
+                                    android:textSize="@dimen/inputSize"/>
+                            </LinearLayout>
+
+                            <Space
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"/>
+
+                            <TextView
+                                android:text="-"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_weight="0"
+                                android:textSize="@dimen/inputSize"
+                                android:paddingStart="@dimen/valueItemPadding"
+                                android:paddingLeft="@dimen/valueItemPadding"
+                                android:paddingRight="@dimen/valueItemPadding"
+                                android:paddingEnd="@dimen/valueItemPadding"
+                                android:paddingTop="@dimen/inputPadding"
+                                android:paddingBottom="@dimen/inputPadding"/>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal"
+                                android:gravity="end"
+                                android:layout_weight="0"
+                                android:paddingTop="@dimen/inputPadding"
+                                android:paddingBottom="@dimen/inputPadding"
+                                android:minWidth="@dimen/minValueWidth">
+                                <TextView
+                                    android:id="@+id/loanBalanceCurrency"
+                                    android:text="$"
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:textSize="@dimen/inputSize"
+                                    android:paddingEnd="@dimen/valueItemPadding"
+                                    android:paddingRight="@dimen/valueItemPadding"/>
+                                <TextView
+                                    android:id="@+id/loanBalanceValue"
+                                    android:gravity="end"
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:paddingEnd="@dimen/valueItemPadding"
+                                    android:paddingRight="@dimen/valueItemPadding"
+                                    android:textSize="@dimen/inputSize" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <View
+                            android:gravity="end"
+                            android:layout_height="match_parent"
+                            android:layout_width="@dimen/inputBorderThickness"
+                            android:background="@color/inputBorder" />
+                    </TableRow>
+
+                    <!-- Total Equity Value -->
+                    <View
+                        android:layout_height="@dimen/inputBorderThickness"
+                        android:layout_width="match_parent"
+                        android:background="@color/inputBorder" />
+                    <TableRow
+                        android:background="@color/inputBackground"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <View
+                            android:gravity="start"
+                            android:layout_height="match_parent"
+                            android:layout_width="@dimen/inputBorderThickness"
+                            android:background="@color/inputBorder" />
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingRight="@dimen/inputPadding"
+                            android:paddingEnd="@dimen/inputPadding">
+
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:padding="@dimen/inputPadding">
+                                <TextView
+                                    android:text="@string/totalEquityField"
+                                    android:labelFor="@+id/totalEquityValue"
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:layout_weight="0"
+                                    android:textSize="@dimen/inputSize"/>
+                                <ImageView
+                                    android:id="@+id/totalEquityHelp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:layout_weight="0"
+                                    android:src="@drawable/chat_question_16dp"
+                                    android:tint="@color/helpChatBox"/>
+                            </LinearLayout>
+
+                            <Space
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"/>
+
+                            <TextView
+                                android:text="="
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_weight="0"
+                                android:textSize="@dimen/inputSize"
+                                android:paddingStart="@dimen/valueItemPadding"
+                                android:paddingLeft="@dimen/valueItemPadding"
+                                android:paddingRight="@dimen/valueItemPadding"
+                                android:paddingEnd="@dimen/valueItemPadding"
+                                android:paddingTop="@dimen/inputPadding"
+                                android:paddingBottom="@dimen/inputPadding"/>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal"
+                                android:gravity="end"
+                                android:layout_weight="0"
+                                android:paddingTop="@dimen/inputPadding"
+                                android:paddingBottom="@dimen/inputPadding"
+                                android:minWidth="@dimen/minValueWidth">
+                                <TextView
+                                    android:id="@+id/totalEquityCurrency"
+                                    android:text="$"
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:textSize="@dimen/inputSize"
+                                    android:paddingEnd="@dimen/valueItemPadding"
+                                    android:paddingRight="@dimen/valueItemPadding"/>
+                                <TextView
+                                    android:id="@+id/totalEquityValue"
+                                    android:gravity="end"
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:paddingEnd="@dimen/valueItemPadding"
+                                    android:paddingRight="@dimen/valueItemPadding"
+                                    android:textSize="@dimen/inputSize" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <View
+                            android:gravity="end"
+                            android:layout_height="match_parent"
+                            android:layout_width="@dimen/inputBorderThickness"
+                            android:background="@color/inputBorder" />
+                    </TableRow>
+
+
+
+                    <!-- Tax Advantages title -->
+                    <View
+                        android:layout_height="@dimen/inputBorderThickness"
+                        android:layout_width="match_parent"
+                        android:background="@color/inputBorder" />
+                    <TableRow
+                        android:background="@color/inputContrastBackground"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_column="1"
+                            android:paddingLeft="@dimen/titlePaddingHorizontal"
+                            android:paddingRight="@dimen/titlePaddingHorizontal"
+                            android:paddingStart="@dimen/titlePaddingHorizontal"
+                            android:paddingTop="@dimen/titlePaddingTop"
+                            android:text="@string/taxAdvantagesTitle"
+                            android:textSize="@dimen/inputTitleSize"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+                    </TableRow>
+
+                    <!-- Depreciation Value -->
+                    <View
+                        android:layout_height="@dimen/inputBorderThickness"
+                        android:layout_width="match_parent"
+                        android:background="@color/inputBorder" />
+                    <TableRow
+                        android:background="@color/inputBackground"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <View
+                            android:gravity="start"
+                            android:layout_height="match_parent"
+                            android:layout_width="@dimen/inputBorderThickness"
+                            android:background="@color/inputBorder" />
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingRight="@dimen/inputPadding"
+                            android:paddingEnd="@dimen/inputPadding">
+
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:padding="@dimen/inputPadding">
+                                <TextView
+                                    android:text="@string/depreciationField"
+                                    android:labelFor="@+id/depreciationValue"
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:layout_weight="0"
+                                    android:textSize="@dimen/inputSize"/>
+                                <ImageView
+                                    android:id="@+id/depreciationHelp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:layout_weight="0"
+                                    android:src="@drawable/chat_question_16dp"
+                                    android:tint="@color/helpChatBox"/>
+                            </LinearLayout>
+
+                            <Space
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"/>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal"
+                                android:gravity="end"
+                                android:layout_weight="0"
+                                android:paddingTop="@dimen/inputPadding"
+                                android:paddingBottom="@dimen/inputPadding"
+                                android:minWidth="@dimen/minValueWidth">
+                                <TextView
+                                    android:id="@+id/depreciationCurrency"
+                                    android:text="$"
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:textSize="@dimen/inputSize"
+                                    android:paddingEnd="@dimen/valueItemPadding"
+                                    android:paddingRight="@dimen/valueItemPadding"/>
+                                <TextView
+                                    android:id="@+id/depreciationValue"
+                                    android:gravity="end"
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:paddingEnd="@dimen/valueItemPadding"
+                                    android:paddingRight="@dimen/valueItemPadding"
+                                    android:textSize="@dimen/inputSize" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <View
+                            android:gravity="end"
+                            android:layout_height="match_parent"
+                            android:layout_width="@dimen/inputBorderThickness"
+                            android:background="@color/inputBorder" />
+                    </TableRow>
+
+                    <!-- Mortgage Interest Value -->
+                    <View
+                        android:layout_height="@dimen/inputBorderThickness"
+                        android:layout_width="match_parent"
+                        android:background="@color/inputBorder" />
+                    <TableRow
+                        android:background="@color/inputBackground"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <View
+                            android:gravity="start"
+                            android:layout_height="match_parent"
+                            android:layout_width="@dimen/inputBorderThickness"
+                            android:background="@color/inputBorder" />
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingRight="@dimen/inputPadding"
+                            android:paddingEnd="@dimen/inputPadding">
+
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:padding="@dimen/inputPadding">
+                                <TextView
+                                    android:text="@string/mortgageInterestField"
+                                    android:labelFor="@+id/depreciationValue"
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:layout_weight="0"
+                                    android:textSize="@dimen/inputSize"/>
+                                <ImageView
+                                    android:id="@+id/mortgageInterestHelp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:layout_weight="0"
+                                    android:src="@drawable/chat_question_16dp"
+                                    android:tint="@color/helpChatBox"/>
+                            </LinearLayout>
+
+                            <Space
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"/>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal"
+                                android:gravity="end"
+                                android:layout_weight="0"
+                                android:paddingTop="@dimen/inputPadding"
+                                android:paddingBottom="@dimen/inputPadding"
+                                android:minWidth="@dimen/minValueWidth">
+                                <TextView
+                                    android:id="@+id/mortgageInterestCurrency"
+                                    android:text="$"
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:textSize="@dimen/inputSize"
+                                    android:paddingEnd="@dimen/valueItemPadding"
+                                    android:paddingRight="@dimen/valueItemPadding"/>
+                                <TextView
+                                    android:id="@+id/mortgageInterestValue"
+                                    android:gravity="end"
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:paddingEnd="@dimen/valueItemPadding"
+                                    android:paddingRight="@dimen/valueItemPadding"
+                                    android:textSize="@dimen/inputSize" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <View
+                            android:gravity="end"
+                            android:layout_height="match_parent"
+                            android:layout_width="@dimen/inputBorderThickness"
+                            android:background="@color/inputBorder" />
+                    </TableRow>
+
+
+
+                    <!-- Returns title -->
+                    <View
+                        android:layout_height="@dimen/inputBorderThickness"
+                        android:layout_width="match_parent"
+                        android:background="@color/inputBorder" />
+                    <TableRow
+                        android:background="@color/inputContrastBackground"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_column="1"
+                            android:paddingLeft="@dimen/titlePaddingHorizontal"
+                            android:paddingRight="@dimen/titlePaddingHorizontal"
+                            android:paddingStart="@dimen/titlePaddingHorizontal"
+                            android:paddingTop="@dimen/titlePaddingTop"
+                            android:text="@string/returnsTitle"
+                            android:textSize="@dimen/inputTitleSize"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+                    </TableRow>
+
+                    <!-- Capitalization Rate Value -->
+                    <View
+                        android:layout_height="@dimen/inputBorderThickness"
+                        android:layout_width="match_parent"
+                        android:background="@color/inputBorder" />
+                    <TableRow
+                        android:background="@color/inputBackground"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <View
+                            android:gravity="start"
+                            android:layout_height="match_parent"
+                            android:layout_width="@dimen/inputBorderThickness"
+                            android:background="@color/inputBorder" />
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingRight="@dimen/inputPadding"
+                            android:paddingEnd="@dimen/inputPadding">
+
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:padding="@dimen/inputPadding">
+                                <TextView
+                                    android:text="@string/capitalizationRateField"
+                                    android:labelFor="@+id/capitalizationRateValue"
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:layout_weight="0"
+                                    android:textSize="@dimen/inputSize"/>
+                                <ImageView
+                                    android:id="@+id/capitalizationRateHelp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:layout_weight="0"
+                                    android:src="@drawable/chat_question_16dp"
+                                    android:tint="@color/helpChatBox"/>
+                            </LinearLayout>
+
+                            <Space
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"/>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal"
+                                android:gravity="end"
+                                android:layout_weight="0"
+                                android:paddingTop="@dimen/inputPadding"
+                                android:paddingBottom="@dimen/inputPadding"
+                                android:minWidth="@dimen/minValueWidth">
+                                <TextView
+                                    android:id="@+id/capitalizationRateValue"
+                                    android:gravity="end"
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:paddingEnd="@dimen/valueItemPadding"
+                                    android:paddingRight="@dimen/valueItemPadding"
+                                    android:textSize="@dimen/inputSize" />
+                                <TextView
+                                    android:text="%"
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:textSize="@dimen/inputSize"/>
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <View
+                            android:gravity="end"
+                            android:layout_height="match_parent"
+                            android:layout_width="@dimen/inputBorderThickness"
+                            android:background="@color/inputBorder" />
+                    </TableRow>
+
+                    <!-- Cash on Cash Value -->
+                    <View
+                        android:layout_height="@dimen/inputBorderThickness"
+                        android:layout_width="match_parent"
+                        android:background="@color/inputBorder" />
+                    <TableRow
+                        android:background="@color/inputBackground"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <View
+                            android:gravity="start"
+                            android:layout_height="match_parent"
+                            android:layout_width="@dimen/inputBorderThickness"
+                            android:background="@color/inputBorder" />
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingRight="@dimen/inputPadding"
+                            android:paddingEnd="@dimen/inputPadding">
+
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:padding="@dimen/inputPadding">
+                                <TextView
+                                    android:text="@string/cashOnCashField"
+                                    android:labelFor="@+id/cashOnCashValue"
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:layout_weight="0"
+                                    android:textSize="@dimen/inputSize"/>
+                                <ImageView
+                                    android:id="@+id/cashOnCashHelp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:layout_weight="0"
+                                    android:src="@drawable/chat_question_16dp"
+                                    android:tint="@color/helpChatBox"/>
+                            </LinearLayout>
+
+                            <Space
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"/>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal"
+                                android:gravity="end"
+                                android:layout_weight="0"
+                                android:paddingTop="@dimen/inputPadding"
+                                android:paddingBottom="@dimen/inputPadding"
+                                android:minWidth="@dimen/minValueWidth">
+                                <TextView
+                                    android:id="@+id/cashOnCashValue"
+                                    android:gravity="end"
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:paddingEnd="@dimen/valueItemPadding"
+                                    android:paddingRight="@dimen/valueItemPadding"
+                                    android:textSize="@dimen/inputSize" />
+                                <TextView
+                                    android:text="%"
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:textSize="@dimen/inputSize"/>
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <View
+                            android:gravity="end"
+                            android:layout_height="match_parent"
+                            android:layout_width="@dimen/inputBorderThickness"
+                            android:background="@color/inputBorder" />
+                    </TableRow>
+
+                    <!--Rent To Value Value -->
+                    <View
+                        android:layout_height="@dimen/inputBorderThickness"
+                        android:layout_width="match_parent"
+                        android:background="@color/inputBorder" />
+                    <TableRow
+                        android:background="@color/inputBackground"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <View
+                            android:gravity="start"
+                            android:layout_height="match_parent"
+                            android:layout_width="@dimen/inputBorderThickness"
+                            android:background="@color/inputBorder" />
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingRight="@dimen/inputPadding"
+                            android:paddingEnd="@dimen/inputPadding">
+
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:padding="@dimen/inputPadding">
+                                <TextView
+                                    android:text="@string/rentToValueField"
+                                    android:labelFor="@+id/rentToValueValue"
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:layout_weight="0"
+                                    android:textSize="@dimen/inputSize"/>
+                                <ImageView
+                                    android:id="@+id/rentToValueHelp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:layout_weight="0"
+                                    android:src="@drawable/chat_question_16dp"
+                                    android:tint="@color/helpChatBox"/>
+                            </LinearLayout>
+
+                            <Space
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"/>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal"
+                                android:gravity="end"
+                                android:layout_weight="0"
+                                android:paddingTop="@dimen/inputPadding"
+                                android:paddingBottom="@dimen/inputPadding"
+                                android:minWidth="@dimen/minValueWidth">
+                                <TextView
+                                    android:id="@+id/rentToValueValue"
+                                    android:gravity="end"
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:paddingEnd="@dimen/valueItemPadding"
+                                    android:paddingRight="@dimen/valueItemPadding"
+                                    android:textSize="@dimen/inputSize" />
+                                <TextView
+                                    android:text="%"
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:textSize="@dimen/inputSize"/>
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <View
+                            android:gravity="end"
+                            android:layout_height="match_parent"
+                            android:layout_width="@dimen/inputBorderThickness"
+                            android:background="@color/inputBorder" />
+                    </TableRow>
+
+                    <!-- Gross Rent Multiplier Value -->
+                    <View
+                        android:layout_height="@dimen/inputBorderThickness"
+                        android:layout_width="match_parent"
+                        android:background="@color/inputBorder" />
+                    <TableRow
+                        android:background="@color/inputBackground"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <View
+                            android:gravity="start"
+                            android:layout_height="match_parent"
+                            android:layout_width="@dimen/inputBorderThickness"
+                            android:background="@color/inputBorder" />
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingRight="@dimen/inputPadding"
+                            android:paddingEnd="@dimen/inputPadding">
+
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:padding="@dimen/inputPadding">
+                                <TextView
+                                    android:text="@string/grossRentMultiplierField"
+                                    android:labelFor="@+id/grossRentMultiplierValue"
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:layout_weight="0"
+                                    android:textSize="@dimen/inputSize"/>
+                                <ImageView
+                                    android:id="@+id/grossRentMultiplierHelp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:layout_weight="0"
+                                    android:src="@drawable/chat_question_16dp"
+                                    android:tint="@color/helpChatBox"/>
+                            </LinearLayout>
+
+                            <Space
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"/>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal"
+                                android:gravity="end"
+                                android:layout_weight="0"
+                                android:paddingTop="@dimen/inputPadding"
+                                android:paddingBottom="@dimen/inputPadding"
+                                android:minWidth="@dimen/minValueWidth">
+                                <TextView
+                                    android:id="@+id/grossRentMultiplierValue"
+                                    android:gravity="end"
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:textSize="@dimen/inputSize" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <View
+                            android:gravity="end"
+                            android:layout_height="match_parent"
+                            android:layout_width="@dimen/inputBorderThickness"
+                            android:background="@color/inputBorder" />
+                    </TableRow>
+                </TableLayout>
+            </LinearLayout>
+        </ScrollView>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            android:background="@android:color/darker_gray"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/projectionText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:padding="@dimen/titlePaddingHorizontal"/>
+
+            <SeekBar
+                android:id="@+id/yearSeeker"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="10dp"
+                android:progress="0"
+                android:max="39"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+</android.support.design.widget.CoordinatorLayout>
