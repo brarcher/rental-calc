@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.google.common.collect.ImmutableMap;
 
+import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
@@ -73,6 +74,8 @@ public class PropertySummaryActivity extends AppCompatActivity
         TextView rentToValueValue = (TextView)findViewById(R.id.rentToValueValue);
         TextView grossRentMultiplierValue = (TextView)findViewById(R.id.grossRentMultiplierValue);
 
+        List<PropertyCalculation> calculations = CalcUtil.calculateForYears(property, 1);
+        PropertyCalculation calc = calculations.get(0);
 
         // PURCAHSE COST
 
@@ -117,63 +120,23 @@ public class PropertySummaryActivity extends AppCompatActivity
 
         // OPERATION
 
+        final double MONTHS_PER_YEAR = 12;
+
         rentValue.setText(String.format(Locale.US, "%d", property.grossRent));
-
-        double vacancyRate = (double)property.vacancy / 100.0;
-        double vacancy = property.grossRent * vacancyRate;
-        vancancyValue.setText(String.format(Locale.US, "%d", Math.round(vacancy)));
-
-        double operatingIncome = property.grossRent - vacancy;
-        operatingIncomeValue.setText(String.format(Locale.US, "%d", Math.round(operatingIncome)));
-
-        double expensesPercent = (double)property.expenses / 100.0;
-        double operatingExpenses = property.grossRent * expensesPercent;
-        operatingExpensesValue.setText(String.format(Locale.US, "%d", Math.round(operatingExpenses)));
-
-        double netOperatingIncome = operatingIncome - operatingExpenses;
-        netOperatingIncomeValue.setText(String.format(Locale.US, "%d", Math.round(netOperatingIncome)));
-
-        double monthlyInterestRate = property.interestRate / 100.0 / 12;
-        int paymentMonths = property.loanDuration * 12;
-        double onePlusRateRaised = Math.pow(1 + monthlyInterestRate, paymentMonths);
-        double mortgage = financed * (monthlyInterestRate * onePlusRateRaised) / (onePlusRateRaised - 1);
+        vancancyValue.setText(String.format(Locale.US, "%d", Math.round(calc.vacancy / MONTHS_PER_YEAR)));
+        operatingIncomeValue.setText(String.format(Locale.US, "%d", Math.round(calc.operatingIncome / MONTHS_PER_YEAR)));
+        operatingExpensesValue.setText(String.format(Locale.US, "%d", Math.round(calc.totalExpenses / MONTHS_PER_YEAR)));
+        netOperatingIncomeValue.setText(String.format(Locale.US, "%d", Math.round(calc.netOperatingIncome/MONTHS_PER_YEAR)));
+        double mortgage = CalcUtil.monthlyMortgagePayment(property);
         mortgageValue.setText(String.format(Locale.US, "%d", Math.round(mortgage)));
-
-        double cashFlow = netOperatingIncome - mortgage;
-        cashFlowValue.setText(String.format(Locale.US, "%d", Math.round(cashFlow)));
+        cashFlowValue.setText(String.format(Locale.US, "%d", Math.round(calc.cashFlow/MONTHS_PER_YEAR)));
 
 
         // RETURNS
-
-        double yearlyNetOperatingIncome = netOperatingIncome * 12;
-        double capitalizationRate = 0;
-        if(property.purchasePrice > 0)
-        {
-            capitalizationRate = yearlyNetOperatingIncome * 100.0 / (double)property.purchasePrice;
-        }
-        capitalizationRateValue.setText(String.format(Locale.US, "%.1f", capitalizationRate));
-
-        double yearlyCashFlow = cashFlow * 12;
-        double cashOnCashRate = 0;
-        if(totalCashNeeded > 0)
-        {
-            cashOnCashRate = yearlyCashFlow * 100.0 / (double)totalCashNeeded;
-        }
-        cashOnCashValue.setText(String.format(Locale.US, "%.1f", cashOnCashRate));
-
-        double rentToValue = 0;
-        if(property.purchasePrice > 0)
-        {
-            rentToValue = property.grossRent * 100.0 / property.purchasePrice;
-        }
-        rentToValueValue.setText(String.format(Locale.US, "%.1f", rentToValue));
-
-        double grossRentMultiplier = 0;
-        if(property.grossRent > 0)
-        {
-            grossRentMultiplier = (double)property.purchasePrice / (property.grossRent * 12.0);
-        }
-        grossRentMultiplierValue.setText(String.format(Locale.US, "%.1f", grossRentMultiplier));
+        capitalizationRateValue.setText(String.format(Locale.US, "%.1f", calc.capitalization));
+        cashOnCashValue.setText(String.format(Locale.US, "%.1f", calc.cashOnCash));
+        rentToValueValue.setText(String.format(Locale.US, "%.1f", calc.rentToValue));
+        grossRentMultiplierValue.setText(String.format(Locale.US, "%.1f", calc.grossRentMultiplier));
 
 
         // Setup help texts

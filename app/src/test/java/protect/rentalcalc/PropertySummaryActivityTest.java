@@ -218,6 +218,7 @@ public class PropertySummaryActivityTest
         Property property = new Property();
 
         property.purchasePrice = 123456;
+        property.afterRepairsValue = 150000;
         property.useLoan = true;
         property.downPayment = 10;
         property.purchaseCosts = 4;
@@ -249,7 +250,7 @@ public class PropertySummaryActivityTest
                 .put(R.id.cashFlowValue, "715") // 1650 - 82.5 - 247.5 - 604.98 = 715
                 .put(R.id.capitalizationRateValue, "12.8") // 1320 * 12 / 123456 = 0.128
                 .put(R.id.cashOnCashValue, "20.3") // 715*12 / 42273.84 = 0.2029
-                .put(R.id.rentToValueValue, "1.3") // 1650 / 123456 = 0.0133
+                .put(R.id.rentToValueValue, "1.1") // 1650 / 150000 = 0.011
                 .put(R.id.grossRentMultiplierValue, "6.2") // 123456 / (1650*12) = 6.23
                 .build();
 
@@ -262,6 +263,7 @@ public class PropertySummaryActivityTest
         Property property = new Property();
 
         property.purchasePrice = 123456;
+        property.afterRepairsValue = 150000;
         property.useLoan = false;
         // Fill in loan fields, to check that they are ignored
         property.interestRate = 5.125;
@@ -294,7 +296,7 @@ public class PropertySummaryActivityTest
                 .put(R.id.cashFlowValue, "1320") // 1650 - 82.5 - 247.5 - 0 = 1320
                 .put(R.id.capitalizationRateValue, "12.8") // 1320 * 12 / 123456 = 0.128
                 .put(R.id.cashOnCashValue, "10.3") // 1320*12 / 153384.24 = 0.1032
-                .put(R.id.rentToValueValue, "1.3") // 1650 / 123456 = 0.0133
+                .put(R.id.rentToValueValue, "1.1") // 1650 / 150000 = 0.011
                 .put(R.id.grossRentMultiplierValue, "6.2") // 123456 / (1650*12) = 6.23
                 .build();
 
