@@ -682,7 +682,7 @@
                         android:paddingRight="@dimen/titlePaddingHorizontal"
                         android:paddingStart="@dimen/titlePaddingHorizontal"
                         android:paddingTop="@dimen/titlePaddingTop"
-                        android:text="@string/operationTitle"
+                        android:text="@string/operationFirstYearTitle"
                         android:textSize="@dimen/inputTitleSize"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"/>

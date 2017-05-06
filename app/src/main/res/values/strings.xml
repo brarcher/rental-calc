@@ -108,6 +108,7 @@
     <string name="totalCashNeededField">Total Cash Needed:</string>
     <string name="valuationTitle">VALUATION</string>
     <string name="pricePerSquareFootField">Price Per Square Foot:</string>
+    <string name="operationFirstYearTitle">OPERATION (FIRST YEAR)</string>
     <string name="operationTitle">OPERATION</string>
     <string name="operatingIncomeField">Operating Income:</string>
     <string name="operatingExpensesField">Operating Expenses:</string>

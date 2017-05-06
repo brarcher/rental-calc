@@ -241,13 +241,13 @@ public class PropertySummaryActivityTest
                 .put(R.id.repairRemodelCostsValue, "25000")
                 .put(R.id.totalCashNeededValue, "42284") // 12345.6 + 4928.24 + 25000 = 42273.84
                 .put(R.id.pricePerSizeValue, "53") // 123456/2342
-                .put(R.id.rentValue, "1650")
-                .put(R.id.vancancyValue, "83") // 5% of 1650 = 82.5
-                .put(R.id.operatingIncomeValue, "1568")  // 1650 - 82.5
-                .put(R.id.operatingExpensesValue, "248") // 15% of 1650 = 247.5
-                .put(R.id.netOperatingIncomeValue, "1320") // 1650 - 82.5 - 247.5
-                .put(R.id.mortgageValue, "605") // 604.98
-                .put(R.id.cashFlowValue, "715") // 1650 - 82.5 - 247.5 - 604.98 = 715
+                .put(R.id.rentValue, "19800") // 1650 * 12 = 19800
+                .put(R.id.vancancyValue, "990") // 5% of 19800 = 990
+                .put(R.id.operatingIncomeValue, "18810")  // 19800 - 990
+                .put(R.id.operatingExpensesValue, "2970") // 15% of 19800 = 2970
+                .put(R.id.netOperatingIncomeValue, "15840") // 19800 - 2970 - 990 = 15840
+                .put(R.id.mortgageValue, "7260") // 604.98 * 12 = 7259.76
+                .put(R.id.cashFlowValue, "8580") // 15840 - 7260 = 8580
                 .put(R.id.capitalizationRateValue, "12.8") // 1320 * 12 / 123456 = 0.128
                 .put(R.id.cashOnCashValue, "20.3") // 715*12 / 42273.84 = 0.2029
                 .put(R.id.rentToValueValue, "1.1") // 1650 / 150000 = 0.011
@@ -287,13 +287,13 @@ public class PropertySummaryActivityTest
                 .put(R.id.repairRemodelCostsValue, "25000")
                 .put(R.id.totalCashNeededValue, "153394") // 123456 + 4938.24 + 25000 = 153384.24
                 .put(R.id.pricePerSizeValue, "53") // 123456/2342
-                .put(R.id.rentValue, "1650")
-                .put(R.id.vancancyValue, "83") // 5% of 1650 = 82.5
-                .put(R.id.operatingIncomeValue, "1568")  // 1650 - 82.5
-                .put(R.id.operatingExpensesValue, "248") // 15% of 1650 = 247.5
-                .put(R.id.netOperatingIncomeValue, "1320") // 1650 - 82.5 - 247.5
+                .put(R.id.rentValue, "19800") // 1650 * 12 = 19800
+                .put(R.id.vancancyValue, "990") // 5% of 19800 = 990
+                .put(R.id.operatingIncomeValue, "18810")  // 19800 - 990 = 18810
+                .put(R.id.operatingExpensesValue, "2970") // 15% of 19800 = 2970
+                .put(R.id.netOperatingIncomeValue, "15840") // 19800 - 990 - 2970 = 15840
                 .put(R.id.mortgageValue, "0") // 0
-                .put(R.id.cashFlowValue, "1320") // 1650 - 82.5 - 247.5 - 0 = 1320
+                .put(R.id.cashFlowValue, "15840") // 19800 - 990 - 2970 = 15840
                 .put(R.id.capitalizationRateValue, "12.8") // 1320 * 12 / 123456 = 0.128
                 .put(R.id.cashOnCashValue, "10.3") // 1320*12 / 153384.24 = 0.1032
                 .put(R.id.rentToValueValue, "1.1") // 1650 / 150000 = 0.011

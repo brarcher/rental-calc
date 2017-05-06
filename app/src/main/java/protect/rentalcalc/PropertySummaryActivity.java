@@ -119,17 +119,13 @@ public class PropertySummaryActivity extends AppCompatActivity
 
 
         // OPERATION
-
-        final double MONTHS_PER_YEAR = 12;
-
-        rentValue.setText(String.format(Locale.US, "%d", property.grossRent));
-        vancancyValue.setText(String.format(Locale.US, "%d", Math.round(calc.vacancy / MONTHS_PER_YEAR)));
-        operatingIncomeValue.setText(String.format(Locale.US, "%d", Math.round(calc.operatingIncome / MONTHS_PER_YEAR)));
-        operatingExpensesValue.setText(String.format(Locale.US, "%d", Math.round(calc.totalExpenses / MONTHS_PER_YEAR)));
-        netOperatingIncomeValue.setText(String.format(Locale.US, "%d", Math.round(calc.netOperatingIncome/MONTHS_PER_YEAR)));
-        double mortgage = CalcUtil.monthlyMortgagePayment(property);
-        mortgageValue.setText(String.format(Locale.US, "%d", Math.round(mortgage)));
-        cashFlowValue.setText(String.format(Locale.US, "%d", Math.round(calc.cashFlow/MONTHS_PER_YEAR)));
+        rentValue.setText(String.format(Locale.US, "%d", (int)calc.grossRent));
+        vancancyValue.setText(String.format(Locale.US, "%d", (int)Math.round(calc.vacancy)));
+        operatingIncomeValue.setText(String.format(Locale.US, "%d", (int)Math.round(calc.operatingIncome)));
+        operatingExpensesValue.setText(String.format(Locale.US, "%d", (int)Math.round(calc.totalExpenses)));
+        netOperatingIncomeValue.setText(String.format(Locale.US, "%d", (int)Math.round(calc.netOperatingIncome)));
+        mortgageValue.setText(String.format(Locale.US, "%d", (int)Math.round(calc.loanPayments)));
+        cashFlowValue.setText(String.format(Locale.US, "%d", (int)Math.round(calc.cashFlow)));
 
 
         // RETURNS
