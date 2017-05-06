@@ -1,0 +1,138 @@
+package protect.rentalcalc;
+
+import java.util.ArrayList;
+import java.util.List;
+
+class CalcUtil
+{
+    static List<PropertyCalculation> calculateForYears(Property property, int numYears)
+    {
+        List<PropertyCalculation> list = new ArrayList<>(numYears);
+
+        double grossRent = property.grossRent * 12;
+        double totalExpenses = grossRent * property.expenses / 100.0;
+
+        double downPercent;
+        if(property.useLoan)
+        {
+            downPercent = ((double)property.downPayment)/100.0;
+        }
+        else
+        {
+            downPercent = 1.0;
+        }
+
+        double mortgage = monthlyMortgagePayment(property);
+        double yearlyMortgage = mortgage*12;
+        double downPayment = downPercent * (double)property.purchasePrice;
+
+        double loanBalance = property.purchasePrice - downPayment;
+
+        double propertyValue = property.afterRepairsValue;
+
+        double depreciation = (property.purchasePrice - property.landValue + property.purchaseCosts*property.purchasePrice/100) / 27.5;
+
+        double purchaseCostPercent = ((double)property.purchaseCosts/100.0);
+        double purchaseCost = purchaseCostPercent * (double)property.purchasePrice;
+        double totalCashNeeded = downPayment + purchaseCost + property.repairRemodelCosts;
+
+        for(int year = 1; year <= numYears; year++)
+        {
+            PropertyCalculation calc = new PropertyCalculation();
+
+            calc.grossRent = grossRent;
+            grossRent *= (1 + property.incomeIncrease/100.0);
+
+            calc.vacancy = calc.grossRent * property.vacancy / 100.0;
+
+            calc.operatingIncome = calc.grossRent - calc.vacancy;
+
+            calc.totalExpenses = totalExpenses;
+            totalExpenses *= (1 + property.expenseIncrease/100.0);
+
+            calc.netOperatingIncome = calc.operatingIncome - calc.totalExpenses;
+
+            calc.loanPayments = yearlyMortgage;
+            if(calc.loanPayments > loanBalance)
+            {
+                calc.loanPayments = loanBalance;
+            }
+
+            calc.cashFlow = calc.netOperatingIncome - calc.loanPayments;
+
+            calc.propertyValue = propertyValue;
+            propertyValue *= (1 + property.appreciation/100.0);
+
+            for(int month = 1; month <= 12; month++)
+            {
+                double interest = loanBalance * property.interestRate/100.0/12;
+                double principal = mortgage - interest;
+
+                calc.loanInterest += interest;
+                loanBalance -= principal;
+                if(loanBalance < 0)
+                {
+                    loanBalance = 0;
+                }
+            }
+
+            calc.loanBalance = loanBalance;
+            calc.totalEquity = calc.propertyValue - loanBalance;
+
+            if(year <= 27)
+            {
+                calc.depreciation = depreciation;
+            }
+            else if(year == 28)
+            {
+                // On the last year, one only receives 1/2 of the normal value
+                calc.depreciation = depreciation/2;
+            }
+
+            if(property.purchasePrice > 0)
+            {
+                calc.capitalization = calc.netOperatingIncome * 100.0 / (double)property.purchasePrice;
+            }
+
+            if(totalCashNeeded > 0)
+            {
+                calc.cashOnCash = calc.cashFlow * 100.0 / totalCashNeeded;
+            }
+
+            if(property.purchasePrice > 0)
+            {
+                calc.rentToValue = calc.grossRent / 12.0 * 100.0 / propertyValue;
+            }
+
+            if(property.grossRent > 0)
+            {
+                calc.grossRentMultiplier = (double)property.purchasePrice / calc.grossRent;
+            }
+
+            list.add(year-1, calc);
+        }
+
+        return list;
+    }
+
+    static double monthlyMortgagePayment(Property property)
+    {
+        double downPercent;
+        if(property.useLoan)
+        {
+            downPercent = ((double)property.downPayment)/100.0;
+        }
+        else
+        {
+            downPercent = 1.0;
+        }
+        double financedPercent = 1.0 - downPercent;
+        double financed = property.purchasePrice * financedPercent;
+        double monthlyInterestRate = property.interestRate / 100.0 / 12;
+        int paymentMonths = property.loanDuration * 12;
+        double onePlusRateRaised = Math.pow(1 + monthlyInterestRate, paymentMonths);
+        double mortgage = financed * (monthlyInterestRate * onePlusRateRaised) / (onePlusRateRaised - 1);
+
+        return mortgage;
+    }
+}

@@ -9,10 +9,14 @@
     <dimen name="inputButtonPadding">5dip</dimen>
     <dimen name="titlePaddingHorizontal">10dip</dimen>
     <dimen name="titlePaddingTop">20dip</dimen>
-    <dimen name="inputSize">18sp</dimen>
+    <dimen name="inputSize">15sp</dimen>
     <dimen name="inputTitleSize">15sp</dimen>
+    <dimen name="minValueWidth">80sp</dimen>
+    <dimen name="valueItemPadding">5dp</dimen>
+    <dimen name="overviewValueSize">18sp</dimen>
+    <dimen name="overviewTitleSize">15sp</dimen>
 
-    <dimen name="propertySummaryTitleSize">18sp</dimen>
+    <dimen name="propertySummaryTitleSize">15sp</dimen>
     <dimen name="propertySummaryDetailSize">15sp</dimen>
 
     <dimen name="propertyOverviewEntryPadding">10dp</dimen>

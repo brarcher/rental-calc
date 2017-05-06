@@ -218,6 +218,8 @@ public class PropertySummaryActivityTest
         Property property = new Property();
 
         property.purchasePrice = 123456;
+        property.afterRepairsValue = 150000;
+        property.useLoan = true;
         property.downPayment = 10;
         property.purchaseCosts = 4;
         property.repairRemodelCosts = 25000;
@@ -239,16 +241,62 @@ public class PropertySummaryActivityTest
                 .put(R.id.repairRemodelCostsValue, "25000")
                 .put(R.id.totalCashNeededValue, "42284") // 12345.6 + 4928.24 + 25000 = 42273.84
                 .put(R.id.pricePerSizeValue, "53") // 123456/2342
-                .put(R.id.rentValue, "1650")
-                .put(R.id.vancancyValue, "83") // 5% of 1650 = 82.5
-                .put(R.id.operatingIncomeValue, "1568")  // 1650 - 82.5
-                .put(R.id.operatingExpensesValue, "248") // 15% of 1650 = 247.5
-                .put(R.id.netOperatingIncomeValue, "1320") // 1650 - 82.5 - 247.5
-                .put(R.id.mortgageValue, "605") // 604.98
-                .put(R.id.cashFlowValue, "715") // 1650 - 82.5 - 247.5 - 604.98 = 715
+                .put(R.id.rentValue, "19800") // 1650 * 12 = 19800
+                .put(R.id.vancancyValue, "990") // 5% of 19800 = 990
+                .put(R.id.operatingIncomeValue, "18810")  // 19800 - 990
+                .put(R.id.operatingExpensesValue, "2970") // 15% of 19800 = 2970
+                .put(R.id.netOperatingIncomeValue, "15840") // 19800 - 2970 - 990 = 15840
+                .put(R.id.mortgageValue, "7260") // 604.98 * 12 = 7259.76
+                .put(R.id.cashFlowValue, "8580") // 15840 - 7260 = 8580
                 .put(R.id.capitalizationRateValue, "12.8") // 1320 * 12 / 123456 = 0.128
                 .put(R.id.cashOnCashValue, "20.3") // 715*12 / 42273.84 = 0.2029
-                .put(R.id.rentToValueValue, "1.3") // 1650 / 123456 = 0.0133
+                .put(R.id.rentToValueValue, "1.1") // 1650 / 150000 = 0.011
+                .put(R.id.grossRentMultiplierValue, "6.2") // 123456 / (1650*12) = 6.23
+                .build();
+
+        checkFields(activity, expectedValues);
+    }
+
+    @Test
+    public void testNoLoanProperty() throws Exception
+    {
+        Property property = new Property();
+
+        property.purchasePrice = 123456;
+        property.afterRepairsValue = 150000;
+        property.useLoan = false;
+        // Fill in loan fields, to check that they are ignored
+        property.interestRate = 5.125;
+        property.loanDuration = 30;
+        property.downPayment = 10;
+        property.purchaseCosts = 4;
+        property.repairRemodelCosts = 25000;
+        property.propertySqft = 2342;
+        property.grossRent = 1650;
+        property.vacancy = 5;
+        property.expenses = 15;
+
+        ActivityController controller = startWithProperty(property);
+        Activity activity = (Activity)controller.get();
+
+        Map<Integer, String> expectedValues = new ImmutableMap.Builder<Integer, String>()
+                .put(R.id.priceValue, "123456")
+                .put(R.id.financedValue, "0")  // nothing financed
+                .put(R.id.downPaymentValue, "123456")  // 100% of 123456
+                .put(R.id.purchaseCostsValue, "4938") // 4% of 123456 = 4938.24
+                .put(R.id.repairRemodelCostsValue, "25000")
+                .put(R.id.totalCashNeededValue, "153394") // 123456 + 4938.24 + 25000 = 153384.24
+                .put(R.id.pricePerSizeValue, "53") // 123456/2342
+                .put(R.id.rentValue, "19800") // 1650 * 12 = 19800
+                .put(R.id.vancancyValue, "990") // 5% of 19800 = 990
+                .put(R.id.operatingIncomeValue, "18810")  // 19800 - 990 = 18810
+                .put(R.id.operatingExpensesValue, "2970") // 15% of 19800 = 2970
+                .put(R.id.netOperatingIncomeValue, "15840") // 19800 - 990 - 2970 = 15840
+                .put(R.id.mortgageValue, "0") // 0
+                .put(R.id.cashFlowValue, "15840") // 19800 - 990 - 2970 = 15840
+                .put(R.id.capitalizationRateValue, "12.8") // 1320 * 12 / 123456 = 0.128
+                .put(R.id.cashOnCashValue, "10.3") // 1320*12 / 153384.24 = 0.1032
+                .put(R.id.rentToValueValue, "1.1") // 1650 / 150000 = 0.011
                 .put(R.id.grossRentMultiplierValue, "6.2") // 123456 / (1650*12) = 6.23
                 .build();
 

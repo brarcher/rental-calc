@@ -68,7 +68,7 @@
                             android:layout_weight="1">
 
                             <TextView
-                                android:textSize="@dimen/inputSize"
+                                android:textSize="@dimen/overviewValueSize"
                                 android:id="@+id/nickname"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"/>
@@ -149,7 +149,7 @@
                         android:padding="@dimen/propertyOverviewEntryPadding">
 
                         <TextView
-                            android:textSize="@dimen/inputSize"
+                            android:textSize="@dimen/overviewValueSize"
                             android:text="@string/worksheet"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
@@ -195,7 +195,7 @@
                         android:padding="@dimen/propertyOverviewEntryPadding">
 
                         <TextView
-                            android:textSize="@dimen/inputSize"
+                            android:textSize="@dimen/overviewValueSize"
                             android:text="@string/notes"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
@@ -231,7 +231,7 @@
                         android:paddingStart="@dimen/titlePaddingHorizontal"
                         android:paddingTop="@dimen/titlePaddingTop"
                         android:text="@string/analysisTitle"
-                        android:textSize="@dimen/inputTitleSize"
+                        android:textSize="@dimen/overviewTitleSize"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"/>
                 </TableRow>
@@ -262,7 +262,7 @@
                         android:padding="@dimen/propertyOverviewEntryPadding">
 
                         <TextView
-                            android:textSize="@dimen/inputSize"
+                            android:textSize="@dimen/overviewValueSize"
                             android:text="@string/summary"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
@@ -308,7 +308,7 @@
                         android:padding="@dimen/propertyOverviewEntryPadding">
 
                         <TextView
-                            android:textSize="@dimen/inputSize"
+                            android:textSize="@dimen/overviewValueSize"
                             android:text="@string/projections"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
