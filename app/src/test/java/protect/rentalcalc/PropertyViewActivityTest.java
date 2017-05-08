@@ -1,6 +1,7 @@
 package protect.rentalcalc;
 
 import android.app.Activity;
+import android.content.ComponentName;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -213,6 +214,41 @@ public class PropertyViewActivityTest
     }
 
     @Test
+    public void startWithoutPropertyAndSave() throws IllegalAccessException
+    {
+        Intent intent = new Intent();
+        final Bundle bundle = new Bundle();
+        intent.putExtras(bundle);
+
+        ActivityController controller = Robolectric.buildActivity(PropertyViewActivity.class, intent).create();
+        Activity activity = (Activity)controller.get();
+        controller.start();
+        controller.visible();
+        controller.resume();
+
+        Property property = new Property();
+        preloadProperty(property);
+        setFields(activity, property);
+
+        assertNotNull(shadowOf(activity).getOptionsMenu().findItem(R.id.action_save));
+        shadowOf(activity).clickMenuItem(R.id.action_save);
+        assertTrue(activity.isFinishing());
+
+        Intent next = shadowOf(activity).getNextStartedActivity();
+        ComponentName componentName = next.getComponent();
+        String name = componentName.flattenToShortString();
+        assertEquals("protect.rentalcalc/.PropertyOverviewActivity", name);
+        Bundle nextBundle = next.getExtras();
+        assertNotNull(nextBundle);
+        assertTrue(nextBundle.containsKey("id"));
+        assertEquals(DatabaseTestHelper.FIRST_ID, nextBundle.getLong("id"));
+
+        Property updatedProperty = db.getProperty(DatabaseTestHelper.FIRST_ID);
+
+        compareRelevantPropertyFields(property, updatedProperty);
+    }
+
+    @Test
     public void startWithMissingProperty()
     {
         Intent intent = new Intent();
@@ -316,6 +352,9 @@ public class PropertyViewActivityTest
         assertNotNull(shadowOf(activity).getOptionsMenu().findItem(R.id.action_save));
         shadowOf(activity).clickMenuItem(R.id.action_save);
         assertTrue(activity.isFinishing());
+
+        Intent next = shadowOf(activity).getNextStartedActivity();
+        assertNull(next);
 
         Property updatedProperty = db.getProperty(DatabaseTestHelper.FIRST_ID);
 
