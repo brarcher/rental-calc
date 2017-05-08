@@ -1,5 +1,6 @@
 package protect.rentalcalc;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -242,7 +243,15 @@ public class PropertyViewActivity extends AppCompatActivity
         if(_existingProperty == null)
         {
             Log.i(TAG, "Adding property");
-            _db.insertProperty(newProperty);
+            long newId = _db.insertProperty(newProperty);
+
+            // Load the overview activity so that the user can start working
+            // with the new property.
+            Intent i = new Intent(this, PropertyOverviewActivity.class);
+            final Bundle b = new Bundle();
+            b.putLong("id", newId);
+            i.putExtras(b);
+            startActivity(i);
         }
         else
         {
