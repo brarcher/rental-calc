@@ -1,6 +1,11 @@
-# rental-calc
+# Rental Calc
 
 [![Build Status](https://travis-ci.org/brarcher/rental-calc.svg?branch=master)](https://travis-ci.org/brarcher/rental-calc)
+
+<a href="https://f-droid.org/repository/browse/?fdid=protect.rentalcalc" target="_blank">
+<img src="https://f-droid.org/badge/get-it-on.png" alt="Get it on F-Droid" height="90"/></a>
+<a href="https://play.google.com/store/apps/details?id=protect.rentalcalc" target="_blank">
+<img src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" alt="Get it on Google Play" height="90"/></a>
 
 Are you interested in investing in real estate and want to rent out homes? Not sure how to determine if a property is a good investment?
 
