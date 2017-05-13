@@ -26,6 +26,7 @@ dependencies {
     compile 'com.android.support:design:23.1.1'
     compile group: 'com.google.guava', name: 'guava', version: '20.0'
     compile 'io.github.kexanie.library:MathView:0.0.6'
+    compile 'com.itextpdf:itextg:5.5.10'
     testCompile 'junit:junit:4.12'
     testCompile "org.robolectric:robolectric:3.3.1"
     // To get around issue with robolectric not finding

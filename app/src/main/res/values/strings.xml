@@ -13,6 +13,8 @@
     <string name="add">Add</string>
     <string name="about">About</string>
     <string name="delete">Delete</string>
+    <string name="export_pdf">Export as PDF</string>
+    <string name="send_pdf">Send PDF&#8230;</string>
 
     <string name="ok">OK</string>
     <string name="save">Save</string>

@@ -2,7 +2,9 @@ package protect.rentalcalc;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -14,6 +16,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.File;
 import java.util.Locale;
 
 public class PropertyOverviewActivity extends AppCompatActivity
@@ -193,6 +196,30 @@ public class PropertyOverviewActivity extends AppCompatActivity
             dialog.show();
 
             return true;
+        }
+
+        if(id == R.id.action_export_pdf)
+        {
+            File sdcardDir = Environment.getExternalStorageDirectory();
+            File exportFile = new File(sdcardDir, "RentalCalcReport.pdf");
+
+            PdfExporter pdfExporter = new PdfExporter(_property);
+            boolean result = pdfExporter.exportPdf(exportFile);
+
+            if(result)
+            {
+                Uri outputUri = Uri.fromFile(exportFile);
+                Intent sendIntent = new Intent(Intent.ACTION_SEND);
+                sendIntent.putExtra(Intent.EXTRA_STREAM, outputUri);
+                sendIntent.setType("application/pdf");
+
+                final CharSequence sendLabel = getResources().getText(R.string.send_pdf);
+                startActivity(Intent.createChooser(sendIntent, sendLabel));
+            }
+            else
+            {
+                Log.e(TAG, "Failed to export report to pdf");
+            }
         }
 
         return super.onOptionsItemSelected(item);
