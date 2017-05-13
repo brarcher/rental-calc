@@ -187,7 +187,6 @@
     <string name="totalEquityHelpFormula">$$\\text{Equity} = \\text{Market Price} - \\text{Loan Balance}$$</string>
     <string name="depreciationHelpTitle">Depreciation</string>
     <string name="depreciationHelpDefinition">Instead of deducting the cost of purchasing a property all in one year, many country\'s require that the cost of a rental property be taken over the property\'s useful lifespan.\n\nIn the US, the useful lifespan of a property is considered 27.5 years. If ot in the US, check the local tax laws on rental property depreciation rules.</string>
-    <string name="depreciationHelpFormula">Instead of deducting the cost of purchasing a property all in one year, many country\'s require that the cost of a rental property be taken over the property\'s useful lifespan.\n\nIn the US, the useful lifespan of a property is considered 27.5 years. If ot in the US, check the local tax laws on rental property depreciation rules.</string>
     <string name="mortgageInterestHelpTitle">Mortgage Interest</string>
     <string name="mortgageInterestHelpDefinition">The portion of the mortgage payment which is the interest portion of the loan.\n\nIn some countries one can deduct the mortgage interest from one\'s taxes. Check local tax laws for more information.</string>
 
