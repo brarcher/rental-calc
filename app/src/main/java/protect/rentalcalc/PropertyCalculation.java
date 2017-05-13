@@ -29,6 +29,9 @@ public class PropertyCalculation
     // net operating income - loan payments
     double cashFlow;
 
+    // cash flow after taxes
+    double afterTaxCashFlow;
+
     // EQUITY:
 
     // Take into account appreciation

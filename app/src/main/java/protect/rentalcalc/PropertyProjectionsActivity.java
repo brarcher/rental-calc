@@ -29,6 +29,7 @@ public class PropertyProjectionsActivity extends AppCompatActivity
     private TextView _netOperatingIncomeValue;
     private TextView _mortgageValue;
     private TextView _cashFlowValue;
+    private TextView _afterTaxCashFlowValue;
     private TextView _propertyValueValue;
     private TextView _loanBalanceValue;
     private TextView _totalEquityValue;
@@ -85,6 +86,7 @@ public class PropertyProjectionsActivity extends AppCompatActivity
         _netOperatingIncomeValue = (TextView)findViewById(R.id.netOperatingIncomeValue);
         _mortgageValue = (TextView)findViewById(R.id.mortgageValue);
         _cashFlowValue = (TextView)findViewById(R.id.cashFlowValue);
+        _afterTaxCashFlowValue = (TextView)findViewById(R.id.afterTaxCashFlowValue);
         _propertyValueValue = (TextView)findViewById(R.id.propertyValueValue);
         _loanBalanceValue = (TextView)findViewById(R.id.loanBalanceValue);
         _totalEquityValue = (TextView)findViewById(R.id.totalEquityValue);
@@ -136,7 +138,7 @@ public class PropertyProjectionsActivity extends AppCompatActivity
                 .put(R.id.cashFlowHelp, new DictionaryItem(R.string.cashFlowHelpTitle, R.string.cashFlowDefinition, R.string.cashFlowFormula))
                 .put(R.id.propertyValueHelp, new DictionaryItem(R.string.propertyValueHelpHelpTitle, R.string.propertyValueHelpDefinition))
                 .put(R.id.totalEquityHelp, new DictionaryItem(R.string.totalEquityHelpTitle, R.string.totalEquityHelpDefinition, R.string.totalEquityHelpFormula))
-                .put(R.id.depreciationHelp, new DictionaryItem(R.string.depreciationHelpTitle, R.string.depreciationHelpDefinition, R.string.depreciationHelpFormula))
+                .put(R.id.depreciationHelp, new DictionaryItem(R.string.depreciationHelpTitle, R.string.depreciationHelpDefinition))
                 .put(R.id.mortgageInterestHelp, new DictionaryItem(R.string.mortgageInterestHelpTitle, R.string.mortgageInterestHelpDefinition))
                 .put(R.id.capitalizationRateHelp, new DictionaryItem(R.string.capitalizationRateHelpTitle, R.string.capitalizationRateDefinition, R.string.capitalizationRateFormula))
                 .put(R.id.cashOnCashHelp, new DictionaryItem(R.string.cashOnCashHelpTitle, R.string.cashOnCashDefinition, R.string.cashOnCashFormula))
@@ -184,6 +186,7 @@ public class PropertyProjectionsActivity extends AppCompatActivity
         _netOperatingIncomeValue.setText(String.format(Locale.US, "%d", (int)Math.round(calc.netOperatingIncome)));
         _mortgageValue.setText(String.format(Locale.US, "%d", (int)Math.round(calc.loanPayments)));
         _cashFlowValue.setText(String.format(Locale.US, "%d", (int)Math.round(calc.cashFlow)));
+        _afterTaxCashFlowValue.setText(String.format(Locale.US, "%d", (int)Math.round(calc.afterTaxCashFlow)));
 
         // EQUITY
         _propertyValueValue.setText(String.format(Locale.US, "%d", (int)Math.round(calc.propertyValue)));

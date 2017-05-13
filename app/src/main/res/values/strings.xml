@@ -75,6 +75,8 @@
     <string name="percentPerYearUnit">% Per Year</string>
     <string name="incomeIncreaseField">Income Increase:</string>
     <string name="expensesIncreaseField">Expenses Increase:</string>
+    <string name="incomeTaxRateField">Income Tax Rate:</string>
+    <string name="incomeTaxRateValueHelp">Enter your expected tax rate for after tax cash flow calculations.</string>
     <string name="sellingCostsField">Selling Costs:</string>
     <string name="percentOfSalePriceUnit">% of Sale Price</string>
     <string name="landValueField">Land Value:</string>
@@ -116,6 +118,7 @@
     <string name="netOperatingIncomeField">Net Operating Income:</string>
     <string name="mortgageField">Mortgage:</string>
     <string name="cashFlowField">Cash Flow:</string>
+    <string name="afterTaxCashFlowField">After Tax Cash Flow:</string>
     <string name="returnsTitle">RETURNS</string>
     <string name="capitalizationRateField">Capitalization Rate:</string>
     <string name="cashOnCashField">Cash On Cash:</string>
@@ -187,7 +190,6 @@
     <string name="totalEquityHelpFormula">$$\\text{Equity} = \\text{Market Price} - \\text{Loan Balance}$$</string>
     <string name="depreciationHelpTitle">Depreciation</string>
     <string name="depreciationHelpDefinition">Instead of deducting the cost of purchasing a property all in one year, many country\'s require that the cost of a rental property be taken over the property\'s useful lifespan.\n\nIn the US, the useful lifespan of a property is considered 27.5 years. If ot in the US, check the local tax laws on rental property depreciation rules.</string>
-    <string name="depreciationHelpFormula">Instead of deducting the cost of purchasing a property all in one year, many country\'s require that the cost of a rental property be taken over the property\'s useful lifespan.\n\nIn the US, the useful lifespan of a property is considered 27.5 years. If ot in the US, check the local tax laws on rental property depreciation rules.</string>
     <string name="mortgageInterestHelpTitle">Mortgage Interest</string>
     <string name="mortgageInterestHelpDefinition">The portion of the mortgage payment which is the interest portion of the loan.\n\nIn some countries one can deduct the mortgage interest from one\'s taxes. Check local tax laws for more information.</string>
 

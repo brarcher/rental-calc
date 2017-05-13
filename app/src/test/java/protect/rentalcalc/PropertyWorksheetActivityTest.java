@@ -179,6 +179,7 @@ public class PropertyWorksheetActivityTest
         EditText expensesIncrease = (EditText)activity.findViewById(R.id.expensesIncrease);
         EditText sellingCosts = (EditText)activity.findViewById(R.id.sellingCosts);
         EditText landValue = (EditText)activity.findViewById(R.id.landValue);
+        EditText incomeTaxRate = (EditText)activity.findViewById(R.id.incomeTaxRate);
 
         checkIntField(property.purchasePrice, price.getText().toString());
         checkIntField(property.afterRepairsValue, afterRepairsValue.getText().toString());
@@ -198,6 +199,7 @@ public class PropertyWorksheetActivityTest
         checkIntField(property.expenseIncrease, expensesIncrease.getText().toString());
         checkIntField(property.sellingCosts, sellingCosts.getText().toString());
         checkIntField(property.landValue, landValue.getText().toString());
+        checkIntField(property.incomeTaxRate, incomeTaxRate.getText().toString());
     }
 
     private void setFields(Activity activity, Property property)
@@ -219,6 +221,7 @@ public class PropertyWorksheetActivityTest
         EditText expensesIncrease = (EditText)activity.findViewById(R.id.expensesIncrease);
         EditText sellingCosts = (EditText)activity.findViewById(R.id.sellingCosts);
         EditText landValue = (EditText)activity.findViewById(R.id.landValue);
+        EditText incomeTaxRate = (EditText)activity.findViewById(R.id.incomeTaxRate);
 
         price.setText(String.format(Locale.US, "%d", property.purchasePrice));
         afterRepairsValue.setText(String.format(Locale.US, "%d", property.afterRepairsValue));
@@ -237,6 +240,7 @@ public class PropertyWorksheetActivityTest
         expensesIncrease.setText(String.format(Locale.US, "%d", property.expenseIncrease));
         sellingCosts.setText(String.format(Locale.US, "%d", property.sellingCosts));
         landValue.setText(String.format(Locale.US, "%d", property.landValue));
+        incomeTaxRate.setText(String.format(Locale.US, "%d", property.incomeTaxRate));
     }
 
     @Test
@@ -291,6 +295,7 @@ public class PropertyWorksheetActivityTest
         assertEquals(a.expenseIncrease, b.expenseIncrease);
         assertEquals(a.sellingCosts, b.sellingCosts);
         assertEquals(a.landValue, b.landValue);
+        assertEquals(a.incomeTaxRate, b.incomeTaxRate);
     }
 
     @Test

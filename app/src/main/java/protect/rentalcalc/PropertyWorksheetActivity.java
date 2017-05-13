@@ -44,6 +44,7 @@ public class PropertyWorksheetActivity extends AppCompatActivity
     private EditText _expensesIncrease;
     private EditText _sellingCosts;
     private EditText _landValue;
+    private EditText _incomeTaxRate;
 
     private Property _property;
 
@@ -98,6 +99,7 @@ public class PropertyWorksheetActivity extends AppCompatActivity
         _expensesIncrease = (EditText)findViewById(R.id.expensesIncrease);
         _sellingCosts = (EditText)findViewById(R.id.sellingCosts);
         _landValue = (EditText)findViewById(R.id.landValue);
+        _incomeTaxRate = (EditText)findViewById(R.id.incomeTaxRate);
 
         CompoundButton.OnCheckedChangeListener listener = new CompoundButton.OnCheckedChangeListener()
         {
@@ -141,6 +143,7 @@ public class PropertyWorksheetActivity extends AppCompatActivity
         _expensesIncrease.setText(String.format(Locale.US, "%d", _property.expenseIncrease));
         _sellingCosts.setText(String.format(Locale.US, "%d", _property.sellingCosts));
         _landValue.setText(String.format(Locale.US, "%d", _property.landValue));
+        _incomeTaxRate.setText(String.format(Locale.US, "%d", _property.incomeTaxRate));
 
         // Setup help texts
         Map<Integer, DictionaryItem> dictionaryLookups = new ImmutableMap.Builder<Integer, DictionaryItem>()
@@ -202,6 +205,7 @@ public class PropertyWorksheetActivity extends AppCompatActivity
         updatedProperty.expenseIncrease = extractInt(_expensesIncrease, 0);
         updatedProperty.sellingCosts = extractInt(_sellingCosts, 0);
         updatedProperty.landValue = extractInt(_landValue, 0);
+        updatedProperty.incomeTaxRate = extractInt(_incomeTaxRate, 0);
 
         Log.i(TAG, "Updating property " + updatedProperty.id);
         _db.updateProperty(updatedProperty);

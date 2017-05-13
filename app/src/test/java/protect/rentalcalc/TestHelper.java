@@ -100,6 +100,7 @@ class TestHelper
                 maxLengths.put("expenseIncrease", 3);
                 maxLengths.put("sellingCosts", 3);
                 maxLengths.put("landValue", 13);
+                maxLengths.put("incomeTaxRate", 3);
 
                 if(maxLengths.containsKey(fieldName))
                 {
