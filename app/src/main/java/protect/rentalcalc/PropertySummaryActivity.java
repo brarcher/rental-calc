@@ -69,6 +69,7 @@ public class PropertySummaryActivity extends AppCompatActivity
         TextView netOperatingIncomeValue = (TextView)findViewById(R.id.netOperatingIncomeValue);
         TextView mortgageValue = (TextView)findViewById(R.id.mortgageValue);
         TextView cashFlowValue = (TextView)findViewById(R.id.cashFlowValue);
+        TextView afterTaxCashFlowValue = (TextView)findViewById(R.id.afterTaxCashFlowValue);
         TextView capitalizationRateValue = (TextView)findViewById(R.id.capitalizationRateValue);
         TextView cashOnCashValue = (TextView)findViewById(R.id.cashOnCashValue);
         TextView rentToValueValue = (TextView)findViewById(R.id.rentToValueValue);
@@ -126,6 +127,7 @@ public class PropertySummaryActivity extends AppCompatActivity
         netOperatingIncomeValue.setText(String.format(Locale.US, "%d", (int)Math.round(calc.netOperatingIncome)));
         mortgageValue.setText(String.format(Locale.US, "%d", (int)Math.round(calc.loanPayments)));
         cashFlowValue.setText(String.format(Locale.US, "%d", (int)Math.round(calc.cashFlow)));
+        afterTaxCashFlowValue.setText(String.format(Locale.US, "%d", (int)Math.round(calc.afterTaxCashFlow)));
 
 
         // RETURNS

@@ -42,6 +42,7 @@ public class PropertyProjectionsActivityTest
             .put(R.id.netOperatingIncomeValue, "netOperatingIncomeValue")
             .put(R.id.mortgageValue, "mortgageValue")
             .put(R.id.cashFlowValue, "cashFlowValue")
+            .put(R.id.afterTaxCashFlowValue, "afterTaxCashFlowValue")
             .put(R.id.propertyValueValue, "propertyValueValue")
             .put(R.id.loanBalanceValue, "loanBalanceValue")
             .put(R.id.totalEquityValue, "totalEquityValue")
@@ -196,6 +197,7 @@ public class PropertyProjectionsActivityTest
                 .put(R.id.netOperatingIncomeValue, "0")
                 .put(R.id.mortgageValue, "0")
                 .put(R.id.cashFlowValue, "0")
+                .put(R.id.afterTaxCashFlowValue, "0")
                 .put(R.id.propertyValueValue, "0")
                 .put(R.id.loanBalanceValue, "0")
                 .put(R.id.totalEquityValue, "0")
@@ -243,6 +245,7 @@ public class PropertyProjectionsActivityTest
                 .put(R.id.netOperatingIncomeValue, "14400") // 18000 - 900 - 2700 = 14400
                 .put(R.id.mortgageValue, "9720") // 809.96 * 12 = 9719.52
                 .put(R.id.cashFlowValue, "4680") // 18000 - 900 - 2700 - 9719.52 = 4680.48
+                .put(R.id.afterTaxCashFlowValue, "3510") // 4680 * 75% = 3510
                 .put(R.id.propertyValueValue, "150000")
                 .put(R.id.loanBalanceValue, "73360") // calculated from spreadsheet: 73359.60
                 .put(R.id.totalEquityValue, "76640") // 150000 - 73359.60 = 76640.40
@@ -268,6 +271,7 @@ public class PropertyProjectionsActivityTest
                 .put(R.id.netOperatingIncomeValue, "15471") // 19483.77 - 974.18 - 3038.87 = 15470.72
                 .put(R.id.mortgageValue, "9720") // 809.96 * 12 = 9719.52
                 .put(R.id.cashFlowValue, "5751") // 15470.72 - 9719.52 = 5751.20
+                .put(R.id.afterTaxCashFlowValue, "4313") // 4313.25 * 75% = 4313.4
                 .put(R.id.propertyValueValue, "175479") // 150000 * 1.04^4 = 175478.78
                 .put(R.id.loanBalanceValue, "43980") // calculated from spreadsheet: 43980.30
                 .put(R.id.totalEquityValue, "131499") // 175478.78 - 43980.30 = 131498.48
@@ -292,6 +296,7 @@ public class PropertyProjectionsActivityTest
                 .put(R.id.netOperatingIncomeValue, "17216") // 20844.80 - 3628.57 = 17216.23
                 .put(R.id.mortgageValue, "0") // mortgage is done
                 .put(R.id.cashFlowValue, "17216")
+                .put(R.id.afterTaxCashFlowValue, "12912")
                 .put(R.id.propertyValueValue, "222037") // 150000 * 1.04^10 = 222036.64
                 .put(R.id.loanBalanceValue, "0")
                 .put(R.id.totalEquityValue, "222037")
@@ -358,6 +363,7 @@ public class PropertyProjectionsActivityTest
                 .put(R.id.netOperatingIncomeValue, "14400") // 18000 - 900 - 2700 = 14400
                 .put(R.id.mortgageValue, "0")
                 .put(R.id.cashFlowValue, "14400") // 18000 - 900 - 2700 - 0 = 14400
+                .put(R.id.afterTaxCashFlowValue, "10800") // 14400 * 75% = 10800
                 .put(R.id.propertyValueValue, "150000")
                 .put(R.id.loanBalanceValue, "0")
                 .put(R.id.totalEquityValue, "150000")

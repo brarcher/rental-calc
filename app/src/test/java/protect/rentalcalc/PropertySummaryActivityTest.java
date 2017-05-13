@@ -51,6 +51,7 @@ public class PropertySummaryActivityTest
             .put(R.id.netOperatingIncomeValue, "netOperatingIncomeValue")
             .put(R.id.mortgageValue, "mortgageValue")
             .put(R.id.cashFlowValue, "cashFlowValue")
+            .put(R.id.afterTaxCashFlowValue, "afterTaxCashFlowValue")
             .put(R.id.capitalizationRateValue, "capitalizationRateValue")
             .put(R.id.cashOnCashValue, "cashOnCashValue")
             .put(R.id.rentToValueValue, "rentToValueValue")
@@ -203,6 +204,7 @@ public class PropertySummaryActivityTest
                 .put(R.id.netOperatingIncomeValue, "0")
                 .put(R.id.mortgageValue, "0")
                 .put(R.id.cashFlowValue, "0")
+                .put(R.id.afterTaxCashFlowValue, "0")
                 .put(R.id.capitalizationRateValue, "0.0")
                 .put(R.id.cashOnCashValue, "0.0")
                 .put(R.id.rentToValueValue, "0.0")
@@ -229,6 +231,7 @@ public class PropertySummaryActivityTest
         property.expenses = 15;
         property.interestRate = 5.125;
         property.loanDuration = 30;
+        property.incomeTaxRate = 10;
 
         ActivityController controller = startWithProperty(property);
         Activity activity = (Activity)controller.get();
@@ -248,6 +251,7 @@ public class PropertySummaryActivityTest
                 .put(R.id.netOperatingIncomeValue, "15840") // 19800 - 2970 - 990 = 15840
                 .put(R.id.mortgageValue, "7260") // 604.98 * 12 = 7259.76
                 .put(R.id.cashFlowValue, "8580") // 15840 - 7260 = 8580
+                .put(R.id.afterTaxCashFlowValue, "7722") // 8580 * 90% = 7722
                 .put(R.id.capitalizationRateValue, "12.8") // 1320 * 12 / 123456 = 0.128
                 .put(R.id.cashOnCashValue, "20.3") // 715*12 / 42273.84 = 0.2029
                 .put(R.id.rentToValueValue, "1.1") // 1650 / 150000 = 0.011
@@ -295,6 +299,7 @@ public class PropertySummaryActivityTest
                 .put(R.id.netOperatingIncomeValue, "15840") // 19800 - 990 - 2970 = 15840
                 .put(R.id.mortgageValue, "0") // 0
                 .put(R.id.cashFlowValue, "15840") // 19800 - 990 - 2970 = 15840
+                .put(R.id.afterTaxCashFlowValue, "11880") // 15840 * 75% = 11880
                 .put(R.id.capitalizationRateValue, "12.8") // 1320 * 12 / 123456 = 0.128
                 .put(R.id.cashOnCashValue, "10.3") // 1320*12 / 153384.24 = 0.1032
                 .put(R.id.rentToValueValue, "1.1") // 1650 / 150000 = 0.011

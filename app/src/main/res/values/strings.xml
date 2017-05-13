@@ -118,6 +118,7 @@
     <string name="netOperatingIncomeField">Net Operating Income:</string>
     <string name="mortgageField">Mortgage:</string>
     <string name="cashFlowField">Cash Flow:</string>
+    <string name="afterTaxCashFlowField">After Tax Cash Flow:</string>
     <string name="returnsTitle">RETURNS</string>
     <string name="capitalizationRateField">Capitalization Rate:</string>
     <string name="cashOnCashField">Cash On Cash:</string>

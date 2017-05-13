@@ -1491,11 +1491,102 @@
                         android:background="@color/inputBorder" />
                 </TableRow>
 
+                <!-- Income Tax Rate -->
                 <View
-                    android:id="@+id/endingDivider"
                     android:layout_height="@dimen/inputBorderThickness"
-                    android:background="@color/inputBorder"
-                    android:layout_width="match_parent"/>
+                    android:layout_width="match_parent"
+                    android:background="@color/inputBorder" />
+                <TableRow
+                    android:background="@color/inputBackground"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <View
+                        android:gravity="start"
+                        android:layout_height="match_parent"
+                        android:layout_width="@dimen/inputBorderThickness"
+                        android:background="@color/inputBorder" />
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="@dimen/inputPadding"
+                        android:paddingEnd="@dimen/inputPadding">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:padding="@dimen/inputPadding">
+                            <TextView
+                                android:text="@string/incomeTaxRateField"
+                                android:labelFor="@+id/incomeTaxRateValue"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_weight="0"
+                                android:textSize="@dimen/inputSize"/>
+                            <ImageView
+                                android:id="@+id/incomeTaxRateHelp"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_weight="0"
+                                android:src="@drawable/chat_question_16dp"
+                                android:tint="@color/helpChatBox"/>
+                        </LinearLayout>
+
+                        <Space
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"/>
+
+                        <EditText
+                            android:id="@+id/incomeTaxRate"
+                            android:inputType="number"
+                            android:gravity="end"
+                            android:layout_weight="0"
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:maxLength="3"
+                            android:minWidth="100sp"
+                            android:padding="@dimen/inputPadding"
+                            android:textSize="@dimen/inputSize" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0"
+                            android:text="@string/percentSymbol"
+                            android:textSize="@dimen/inputSize"/>
+                    </LinearLayout>
+
+                    <View
+                        android:gravity="end"
+                        android:layout_height="match_parent"
+                        android:layout_width="@dimen/inputBorderThickness"
+                        android:background="@color/inputBorder" />
+                </TableRow>
+
+                <!-- Income Tax Rate info -->
+                <View
+                    android:layout_height="@dimen/inputBorderThickness"
+                    android:layout_width="match_parent"
+                    android:background="@color/inputBorder" />
+                <TableRow
+                    android:background="@color/inputContrastBackground"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_column="1"
+                        android:paddingLeft="@dimen/titlePaddingHorizontal"
+                        android:paddingRight="@dimen/titlePaddingHorizontal"
+                        android:paddingStart="@dimen/titlePaddingHorizontal"
+                        android:paddingTop="@dimen/titlePaddingHorizontal"
+                        android:text="@string/incomeTaxRateValueHelp"
+                        android:textSize="@dimen/inputTitleSize"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                </TableRow>
 
                 <TableRow
                     android:background="@color/inputContrastBackground"

@@ -59,6 +59,7 @@ class CalcUtil
             }
 
             calc.cashFlow = calc.netOperatingIncome - calc.loanPayments;
+            calc.afterTaxCashFlow = calc.cashFlow * (1 - property.incomeTaxRate/100.0);
 
             calc.propertyValue = propertyValue;
             propertyValue *= (1 + property.appreciation/100.0);

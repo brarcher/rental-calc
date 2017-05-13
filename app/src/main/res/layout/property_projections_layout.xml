@@ -701,6 +701,81 @@
                             android:background="@color/inputBorder" />
                     </TableRow>
 
+                    <!-- After Tax Cash Flow Value -->
+                    <View
+                        android:layout_height="@dimen/inputBorderThickness"
+                        android:layout_width="match_parent"
+                        android:background="@color/inputDividerBorder" />
+                    <TableRow
+                        android:background="@color/inputBackground"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <View
+                            android:gravity="start"
+                            android:layout_height="match_parent"
+                            android:layout_width="@dimen/inputBorderThickness"
+                            android:background="@color/inputBorder" />
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingRight="@dimen/inputPadding"
+                            android:paddingEnd="@dimen/inputPadding">
+
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:padding="@dimen/inputPadding">
+                                <TextView
+                                    android:text="@string/afterTaxCashFlowField"
+                                    android:labelFor="@+id/afterTaxCashFlowValue"
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:layout_weight="0"
+                                    android:textSize="@dimen/inputSize"/>
+                            </LinearLayout>
+
+                            <Space
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"/>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal"
+                                android:gravity="end"
+                                android:layout_weight="0"
+                                android:paddingTop="@dimen/inputPadding"
+                                android:paddingBottom="@dimen/inputPadding"
+                                android:minWidth="@dimen/minValueWidth">
+                                <TextView
+                                    android:id="@+id/afterTaxCashFlowValueCurrency"
+                                    android:text="$"
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:textSize="@dimen/inputSize"
+                                    android:paddingEnd="@dimen/valueItemPadding"
+                                    android:paddingRight="@dimen/valueItemPadding"/>
+                                <TextView
+                                    android:id="@+id/afterTaxCashFlowValue"
+                                    android:gravity="end"
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:textSize="@dimen/inputSize" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <View
+                            android:gravity="end"
+                            android:layout_height="match_parent"
+                            android:layout_width="@dimen/inputBorderThickness"
+                            android:background="@color/inputBorder" />
+                    </TableRow>
+
 
                     <!-- Equity title -->
                     <View
