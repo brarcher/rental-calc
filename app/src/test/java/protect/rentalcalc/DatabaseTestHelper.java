@@ -64,6 +64,7 @@ class DatabaseTestHelper
         property.appreciation = index;
         property.incomeIncrease = index;
         property.expenseIncrease = index;
+        property.incomeTaxRate = index;
         property.sellingCosts = index;
         property.landValue = index;
         property.notes = "notes" + indexStr;
@@ -125,6 +126,7 @@ class DatabaseTestHelper
         assertEquals(index, property.appreciation);
         assertEquals(index, property.incomeIncrease);
         assertEquals(index, property.expenseIncrease);
+        assertEquals(index, property.incomeTaxRate);
         assertEquals(index, property.sellingCosts);
         assertEquals(index, property.landValue);
         assertEquals("notes" + indexStr, property.notes);

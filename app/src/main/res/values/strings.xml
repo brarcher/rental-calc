@@ -75,6 +75,8 @@
     <string name="percentPerYearUnit">% Per Year</string>
     <string name="incomeIncreaseField">Income Increase:</string>
     <string name="expensesIncreaseField">Expenses Increase:</string>
+    <string name="incomeTaxRateField">Income Tax Rate:</string>
+    <string name="incomeTaxRateValueHelp">Enter your expected tax rate for after tax cash flow calculations.</string>
     <string name="sellingCostsField">Selling Costs:</string>
     <string name="percentOfSalePriceUnit">% of Sale Price</string>
     <string name="landValueField">Land Value:</string>

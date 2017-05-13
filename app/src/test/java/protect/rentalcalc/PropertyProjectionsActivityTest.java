@@ -230,6 +230,7 @@ public class PropertyProjectionsActivityTest
         property.incomeIncrease = 2;
         property.expenseIncrease = 3;
         property.appreciation = 4;
+        property.incomeTaxRate = 25;
 
         ActivityController controller = startWithProperty(property);
         Activity activity = (Activity)controller.get();
@@ -343,6 +344,7 @@ public class PropertyProjectionsActivityTest
         property.vacancy = 5;
         property.expenses = 15;
         property.landValue = 10000;
+        property.incomeTaxRate = 25;
 
 
         ActivityController controller = startWithProperty(property);

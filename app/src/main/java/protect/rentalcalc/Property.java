@@ -39,6 +39,7 @@ class Property
     int expenseIncrease;
     int sellingCosts;
     int landValue;
+    int incomeTaxRate;
     String notes;
 
     private static String toBlankIfNull(final String string)
@@ -90,6 +91,7 @@ class Property
         expenseIncrease = 2;
         sellingCosts = 6; // 6% of sale price
         landValue = 0; // cost of the land
+        incomeTaxRate = 25; // 25% tax rate
     }
 
     Property(final Property original)
@@ -143,6 +145,7 @@ class Property
         property.expenseIncrease = cursor.getInt(cursor.getColumnIndexOrThrow(DBHelper.PropertyDbIds.EXPENSE_INCREASE));
         property.sellingCosts = cursor.getInt(cursor.getColumnIndexOrThrow(DBHelper.PropertyDbIds.SELLING_COSTS));
         property.landValue = cursor.getInt(cursor.getColumnIndexOrThrow(DBHelper.PropertyDbIds.LAND_VALUE));
+        property.incomeTaxRate = cursor.getInt(cursor.getColumnIndexOrThrow(DBHelper.PropertyDbIds.INCOME_TAX_RATE));
         property.notes = cursor.getString(cursor.getColumnIndexOrThrow(DBHelper.PropertyDbIds.NOTES));
 
         return property;

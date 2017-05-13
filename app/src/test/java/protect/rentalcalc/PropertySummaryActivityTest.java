@@ -275,6 +275,7 @@ public class PropertySummaryActivityTest
         property.grossRent = 1650;
         property.vacancy = 5;
         property.expenses = 15;
+        property.incomeTaxRate = 25;
 
         ActivityController controller = startWithProperty(property);
         Activity activity = (Activity)controller.get();
