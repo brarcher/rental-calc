@@ -832,6 +832,13 @@
                                 android:layout_width="wrap_content"
                                 android:layout_weight="0"
                                 android:textSize="@dimen/inputSize"/>
+                            <ImageView
+                                android:id="@+id/otherIncomeHelp"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_weight="0"
+                                android:src="@drawable/chat_question_16dp"
+                                android:tint="@color/helpChatBox"/>
                         </LinearLayout>
 
                         <Space

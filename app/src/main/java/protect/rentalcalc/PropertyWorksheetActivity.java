@@ -152,6 +152,7 @@ public class PropertyWorksheetActivity extends AppCompatActivity
             .put(R.id.purchaseCostsHelp, new DictionaryItem(R.string.purchaseCostsHelpTitle, R.string.purchaseCostsDefinition))
             .put(R.id.repairRemodelCostsHelp, new DictionaryItem(R.string.repairRemodelHelpTitle, R.string.repairRemodelDefinition))
             .put(R.id.grossRentHelp, new DictionaryItem(R.string.grossRentHelpTitle, R.string.grossRentDefinition))
+            .put(R.id.otherIncomeHelp, new DictionaryItem(R.string.otherIncomeHelpTitle, R.string.otherIncomeDefinition))
             .put(R.id.expensesHelp, new DictionaryItem(R.string.operatingExpensesHelpTitle, R.string.operatingExpensesDefinition))
             .put(R.id.vacancyHelp, new DictionaryItem(R.string.vacancyHelpTitle, R.string.vacancyDefinition, R.string.vacancyFormula))
             .put(R.id.appreciationHelp, new DictionaryItem(R.string.appreciationHelpTitle, R.string.appreciationDefinition))

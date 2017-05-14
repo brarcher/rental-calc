@@ -144,6 +144,8 @@
     <string name="repairRemodelDefinition">The costs for repairing and updating the property.\n\nExamples include paint, flooring, appliances, and cleaning.</string>
     <string name="grossRentHelpTitle">Gross Rent</string>
     <string name="grossRentDefinition">The total values of all rents collected from tenants. Does not consider vacancy or expenses.</string>
+    <string name="otherIncomeHelpTitle">Other Income</string>
+    <string name="otherIncomeDefinition">Any other income besides than that from rents.\n\nThis may include other services provided to tenants, such as yard maintenance, house cleaning, utilities, and coin-operated laundry and vending machine proceeds.</string>
     <string name="operatingExpensesHelpTitle">Operating Expenses</string>
     <string name="operatingExpensesDefinition">All the expenses paid while renting a property.\n\nExamples include insurance, 3rd party warranties, maintenance, property taxes, and utilities.</string>
     <string name="vacancyHelpTitle">Vacancy</string>
