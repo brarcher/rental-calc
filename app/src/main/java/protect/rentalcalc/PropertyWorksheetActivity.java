@@ -145,6 +145,25 @@ public class PropertyWorksheetActivity extends AppCompatActivity
         _landValue.setText(String.format(Locale.US, "%d", _property.landValue));
         _incomeTaxRate.setText(String.format(Locale.US, "%d", _property.incomeTaxRate));
 
+        // Once the price is set, if the after repairs value is not yet populated,
+        // fill it in with the price. It is a good first guess.
+        _price.setOnFocusChangeListener(new View.OnFocusChangeListener()
+        {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus)
+            {
+                if(hasFocus == false)
+                {
+                    String price = _price.getText().toString();
+                    if(price.isEmpty() == false && price.equals("0") == false &&
+                            _afterRepairsValue.getText().toString().equals("0"))
+                    {
+                        _afterRepairsValue.setText(price);
+                    }
+                }
+            }
+        });
+
         // Setup help texts
         Map<Integer, DictionaryItem> dictionaryLookups = new ImmutableMap.Builder<Integer, DictionaryItem>()
             .put(R.id.purchasePriceHelp, new DictionaryItem(R.string.purchasePriceHelpTitle, R.string.purchasePriceDefinition))
