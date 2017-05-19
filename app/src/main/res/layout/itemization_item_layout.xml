@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="horizontal"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content">
+    <View
+        android:gravity="start"
+        android:layout_height="match_parent"
+        android:layout_width="@dimen/inputBorderThickness"
+        android:background="@color/inputBorder" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingRight="@dimen/inputPadding"
+        android:paddingEnd="@dimen/inputPadding">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="@dimen/inputPadding">
+            <EditText
+                android:id="@+id/field"
+                android:hint="@string/name"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:textSize="@dimen/inputSize"/>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="@dimen/inputPadding">
+            <TextView
+                android:id="@+id/currency"
+                android:text="$"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_weight="0"
+                android:textSize="@dimen/inputSize"/>
+            <EditText
+                android:id="@+id/value"
+                android:hint="@string/value"
+                android:inputType="number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:textSize="@dimen/inputSize"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:layout_gravity="center">
+            <ImageView
+                android:id="@+id/deleteIcon"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_delete_white_24dp"
+                android:tint="@android:color/black"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <View
+        android:gravity="end"
+        android:layout_height="match_parent"
+        android:layout_width="@dimen/inputBorderThickness"
+        android:background="@color/inputBorder" />
+</LinearLayout>
