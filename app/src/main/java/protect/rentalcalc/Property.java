@@ -79,7 +79,7 @@ class Property
                 }
                 catch (IllegalAccessException e)
                 {
-                    Log.e("RentalCal", "Failed to assign field", e);
+                    Log.e("RentalCalc", "Failed to assign field", e);
                 }
             }
         }
