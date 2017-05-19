@@ -20,6 +20,14 @@ android {
     }
 }
 
+// On Travis-CI the unit tests consume too much memory. This may be
+// due to a leak when running Robolectric tests. To isolate the
+// impact of potential leaks, each test is run in its own process.
+android.testOptions.unitTests.all {
+    maxParallelForks = 1
+    forkEvery = 1
+}
+
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:23.1.1'
