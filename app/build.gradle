@@ -35,11 +35,7 @@ dependencies {
     compile group: 'com.google.guava', name: 'guava', version: '20.0'
     compile 'io.github.kexanie.library:MathView:0.0.6'
     testCompile 'junit:junit:4.12'
-    testCompile "org.robolectric:robolectric:3.3.1"
-    // To get around issue with robolectric not finding
-    // javax/microedition/khronos/opengles/GL
-    // https://github.com/robolectric/robolectric/issues/1932
-    testCompile 'org.khronos:opengl-api:gl1.1-android-2.1_r1'
+    testCompile "org.robolectric:robolectric:3.3.2"
 }
 
 findbugs {
