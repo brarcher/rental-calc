@@ -1,6 +1,6 @@
 package protect.rentalcalc;
 
-public class DictionaryItem
+class DictionaryItem
 {
     final Integer titleId;
     final Integer definitionId;
