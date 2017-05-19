@@ -136,4 +136,16 @@ class CalcUtil
 
         return mortgage;
     }
+
+    static int sumMapItems(Map<String, Integer> map)
+    {
+        int value = 0;
+
+        for(Map.Entry<String, Integer> entry : map.entrySet())
+        {
+            value += entry.getValue();
+        }
+
+        return value;
+    }
 }

@@ -200,5 +200,10 @@
     <string name="mortgageInterestHelpTitle">Mortgage Interest</string>
     <string name="mortgageInterestHelpDefinition">The portion of the mortgage payment which is the interest portion of the loan.\n\nIn some countries one can deduct the mortgage interest from one\'s taxes. Check local tax laws for more information.</string>
 
-
+    <string name="purchaseCostsItemizeTitle">Itemize Purchase Costs</string>
+    <string name="purchaseCostsItemizeHelp">Add any purchase costs/closing costs, which may include appraisal, property inspection, pest inspection, and homeowners\’ insurance for the first year. Note: the names must be unique.</string>
+    <string name="repairCostsItemizeTitle">Itemize Repair Costs</string>
+    <string name="repairCostsItemizeHelp">Add any repair costs, which may include paint, flooring, appliances, cleaning, and updates. Note: the names must be unique.</string>
+    <string name="expensesItemizeTitle">Itemize Expenses</string>
+    <string name="expensesItemizeHelp">Add any expenses per month, which may include property tax, insurance, 3rd party warranties, and lawn maintenance. Note: the names must be unique.</string>
 </resources>
