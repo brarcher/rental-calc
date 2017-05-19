@@ -13,11 +13,15 @@
     <string name="add">Add</string>
     <string name="about">About</string>
     <string name="delete">Delete</string>
+    <string name="done">Done</string>
 
     <string name="ok">OK</string>
     <string name="save">Save</string>
     <string name="cancel">Cancel</string>
     <string name="confirm">Confirm</string>
+
+    <string name="name">Name</string>
+    <string name="value">Value</string>
 
     <string name="app_copyright_fmt">Copyright 2017-<xliff:g>%d</xliff:g> Branden Archer</string>
     <string name="app_license">Licensed under the GPLv3.</string>
@@ -60,6 +64,7 @@
     <string name="purchaseCostsTitle">PURCHASE COSTS</string>
     <string name="purchaseCostsField">Purchase Costs:</string>
     <string name="totalField">Total:</string>
+    <string name="itemize">Itemize</string>
     <string name="percentOfPriceUnit">% of Price</string>
     <string name="repairRemodelCostsTitle">REPAIR/REMODEL COSTS</string>
     <string name="repairRemodelCostsField">Repair/Remodel Costs:</string>
@@ -144,6 +149,8 @@
     <string name="repairRemodelDefinition">The costs for repairing and updating the property.\n\nExamples include paint, flooring, appliances, and cleaning.</string>
     <string name="grossRentHelpTitle">Gross Rent</string>
     <string name="grossRentDefinition">The total values of all rents collected from tenants. Does not consider vacancy or expenses.</string>
+    <string name="otherIncomeHelpTitle">Other Income</string>
+    <string name="otherIncomeDefinition">Any other income besides than that from rents.\n\nThis may include other services provided to tenants, such as yard maintenance, house cleaning, utilities, and coin-operated laundry and vending machine proceeds.</string>
     <string name="operatingExpensesHelpTitle">Operating Expenses</string>
     <string name="operatingExpensesDefinition">All the expenses paid while renting a property.\n\nExamples include insurance, 3rd party warranties, maintenance, property taxes, and utilities.</string>
     <string name="vacancyHelpTitle">Vacancy</string>
@@ -193,5 +200,10 @@
     <string name="mortgageInterestHelpTitle">Mortgage Interest</string>
     <string name="mortgageInterestHelpDefinition">The portion of the mortgage payment which is the interest portion of the loan.\n\nIn some countries one can deduct the mortgage interest from one\'s taxes. Check local tax laws for more information.</string>
 
-
+    <string name="purchaseCostsItemizeTitle">Itemize Purchase Costs</string>
+    <string name="purchaseCostsItemizeHelp">Add any purchase costs/closing costs, which may include appraisal, property inspection, pest inspection, and homeowners\’ insurance for the first year. Note: the names must be unique.</string>
+    <string name="repairCostsItemizeTitle">Itemize Repair Costs</string>
+    <string name="repairCostsItemizeHelp">Add any repair costs, which may include paint, flooring, appliances, cleaning, and updates. Note: the names must be unique.</string>
+    <string name="expensesItemizeTitle">Itemize Expenses</string>
+    <string name="expensesItemizeHelp">Add any expenses per month, which may include property tax, insurance, 3rd party warranties, and lawn maintenance. Note: the names must be unique.</string>
 </resources>

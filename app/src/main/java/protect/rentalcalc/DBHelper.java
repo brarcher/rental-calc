@@ -5,11 +5,19 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.JsonWriter;
 import android.util.Log;
 
+import com.google.common.base.Charsets;
+import com.google.common.collect.ImmutableMap;
+
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.io.StringWriter;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Helper class for managing data in the database
@@ -53,10 +61,13 @@ class DBHelper extends SQLiteOpenHelper
         static final String INTEREST_RATE = "interestRate";
         static final String LOAN_DURATION = "loanDuration";
         static final String PURCHASE_COSTS = "purchaseCosts";
+        static final String PURCHASE_COSTS_ITEMIZED = "purchaseCostsItemized";
         static final String REPAIR_REMODEL_COSTS = "repairRemodelCosts";
+        static final String REPAIR_REMODEL_COSTS_ITEMIZED = "repairRemodelCostsItemized";
         static final String GROSS_RENT = "grossRent";
         static final String OTHER_INCOME = "otherIncome";
         static final String EXPENSES = "expenses";
+        static final String EXPENSES_ITEMIZED = "expensesItemized";
         static final String VACANCY = "vacancy";
         static final String APPRECIATION = "appreciation";
         static final String INCOME_INCREASE = "incomeIncrease";
@@ -101,10 +112,13 @@ class DBHelper extends SQLiteOpenHelper
                 PropertyDbIds.INTEREST_RATE + " REAL," +
                 PropertyDbIds.LOAN_DURATION + " INTEGER," +
                 PropertyDbIds.PURCHASE_COSTS + " INTEGER," +
+                PropertyDbIds.PURCHASE_COSTS_ITEMIZED + " TEXT," +
                 PropertyDbIds.REPAIR_REMODEL_COSTS + " INTEGER," +
+                PropertyDbIds.REPAIR_REMODEL_COSTS_ITEMIZED + " TEXT," +
                 PropertyDbIds.GROSS_RENT + " INTEGER," +
                 PropertyDbIds.OTHER_INCOME + " INTEGER," +
                 PropertyDbIds.EXPENSES + " INTEGER," +
+                PropertyDbIds.EXPENSES_ITEMIZED + " TEXT," +
                 PropertyDbIds.VACANCY + " INTEGER," +
                 PropertyDbIds.APPRECIATION + " INTEGER," +
                 PropertyDbIds.INCOME_INCREASE + " INTEGER," +
@@ -121,8 +135,10 @@ class DBHelper extends SQLiteOpenHelper
         // Upgrade from version 1 to version 2
         if(oldVersion < 2 && newVersion >= 2)
         {
-            db.execSQL("ALTER TABLE " + PropertyDbIds.TABLE
-                    + " ADD COLUMN " + PropertyDbIds.INCOME_TAX_RATE + " INTEGER DEFAULT 0");
+            db.execSQL("ALTER TABLE " + PropertyDbIds.TABLE + " ADD COLUMN " + PropertyDbIds.INCOME_TAX_RATE + " INTEGER DEFAULT 0");
+            db.execSQL("ALTER TABLE " + PropertyDbIds.TABLE + " ADD COLUMN " + PropertyDbIds.PURCHASE_COSTS_ITEMIZED + " TEXT");
+            db.execSQL("ALTER TABLE " + PropertyDbIds.TABLE + " ADD COLUMN " + PropertyDbIds.REPAIR_REMODEL_COSTS_ITEMIZED + " TEXT");
+            db.execSQL("ALTER TABLE " + PropertyDbIds.TABLE + " ADD COLUMN " + PropertyDbIds.EXPENSES_ITEMIZED + " TEXT");
         }
     }
 
@@ -162,6 +178,42 @@ class DBHelper extends SQLiteOpenHelper
         contentValues.put(PropertyDbIds.SELLING_COSTS, property.sellingCosts);
         contentValues.put(PropertyDbIds.LAND_VALUE, property.landValue);
         contentValues.put(PropertyDbIds.NOTES, property.notes);
+
+        // All the itemizations are stored as a JSON string in the database. They need to be converted
+        // from maps to JSON strings.
+        Map<String, Map<String, Integer>> itemizeOptionLookups = new ImmutableMap.Builder<String, Map<String, Integer>>()
+                .put(DBHelper.PropertyDbIds.PURCHASE_COSTS_ITEMIZED, property.purchaseCostsItemized)
+                .put(DBHelper.PropertyDbIds.REPAIR_REMODEL_COSTS_ITEMIZED, property.repairRemodelCostsItemized)
+                .put(DBHelper.PropertyDbIds.EXPENSES_ITEMIZED, property.expensesItemized)
+                .build();
+
+        for(final Map.Entry<String, Map<String, Integer>> entry : itemizeOptionLookups.entrySet())
+        {
+            Map<String, Integer> itemizations = entry.getValue();
+            String databaseColumn = entry.getKey();
+
+            StringWriter jsonText = new StringWriter();
+            JsonWriter writer = new JsonWriter(jsonText);
+
+            try
+            {
+                writer.beginObject();
+
+                for(final Map.Entry<String, Integer> item : itemizations.entrySet())
+                {
+                    writer.name(item.getKey()).value(item.getValue());
+                }
+
+                writer.endObject();
+                writer.close();
+            }
+            catch(IOException e)
+            {
+                Log.w(TAG, "Failed to convert itemizations to json for " + databaseColumn, e);
+            }
+
+            contentValues.put(databaseColumn, jsonText.toString());
+        }
 
         return contentValues;
     }

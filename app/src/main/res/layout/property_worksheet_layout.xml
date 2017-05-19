@@ -538,15 +538,15 @@
 
                         <LinearLayout
                             android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
                             android:orientation="horizontal"
+                            android:layout_weight="0"
                             android:padding="@dimen/inputPadding">
                             <TextView
                                 android:text="@string/totalField"
                                 android:labelFor="@+id/purchaseCost"
                                 android:layout_height="wrap_content"
                                 android:layout_width="wrap_content"
-                                android:layout_weight="0"
                                 android:textSize="@dimen/inputSize"/>
                         </LinearLayout>
 
@@ -556,6 +556,7 @@
                             android:layout_weight="1"/>
 
                         <RelativeLayout
+                            android:id="@+id/purchaseCostPercentageLayout"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="0">
@@ -578,6 +579,82 @@
                                 android:layout_below="@id/purchaseCost"
                                 android:text="@string/percentOfPriceUnit"
                                 android:layout_alignParentBottom="true"/>
+                        </RelativeLayout>
+
+                        <TextView
+                            android:id="@+id/purchaseCostItemizeCurrency"
+                            android:text="$"
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:layout_weight="0"
+                            android:textSize="@dimen/inputSize"/>
+
+                        <TextView
+                            android:id="@+id/purchaseCostItemize"
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:layout_weight="0"
+                            android:padding="@dimen/inputPadding"
+                            android:textSize="@dimen/inputSize"/>
+                    </LinearLayout>
+
+                    <View
+                        android:gravity="end"
+                        android:layout_height="match_parent"
+                        android:layout_width="@dimen/inputBorderThickness"
+                        android:background="@color/inputBorder" />
+                </TableRow>
+
+                <!-- Purchase costs itemize -->
+                <View
+                    android:layout_height="@dimen/inputBorderThickness"
+                    android:layout_width="match_parent"
+                    android:background="@color/inputBorder" />
+                <TableRow
+                    android:id="@+id/purchaseCostsItemize"
+                    android:background="@color/inputBackground"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <View
+                        android:gravity="start"
+                        android:layout_height="match_parent"
+                        android:layout_width="@dimen/inputBorderThickness"
+                        android:background="@color/inputBorder" />
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="@dimen/inputPadding"
+                        android:paddingEnd="@dimen/inputPadding">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:padding="@dimen/inputPadding">
+                            <TextView
+                                android:text="@string/itemize"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:textSize="@dimen/inputSize"/>
+                        </LinearLayout>
+
+                        <Space
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"/>
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0"
+                            android:layout_gravity="center">
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:src="@drawable/ic_chevron_right_black_30dp"/>
                         </RelativeLayout>
                     </LinearLayout>
 
@@ -675,6 +752,74 @@
                             android:minWidth="130sp"
                             android:padding="@dimen/inputPadding"
                             android:textSize="@dimen/inputSize" />
+
+                        <TextView
+                            android:id="@+id/repairCostItemize"
+                            android:gravity="end"
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:padding="@dimen/inputPadding"
+                            android:textSize="@dimen/inputSize" />
+                    </LinearLayout>
+
+                    <View
+                        android:gravity="end"
+                        android:layout_height="match_parent"
+                        android:layout_width="@dimen/inputBorderThickness"
+                        android:background="@color/inputBorder" />
+                </TableRow>
+
+                <!-- Repair costs itemize -->
+                <View
+                    android:layout_height="@dimen/inputBorderThickness"
+                    android:layout_width="match_parent"
+                    android:background="@color/inputBorder" />
+                <TableRow
+                    android:id="@+id/repairCostsItemize"
+                    android:background="@color/inputBackground"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <View
+                        android:gravity="start"
+                        android:layout_height="match_parent"
+                        android:layout_width="@dimen/inputBorderThickness"
+                        android:background="@color/inputBorder" />
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="@dimen/inputPadding"
+                        android:paddingEnd="@dimen/inputPadding">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:padding="@dimen/inputPadding">
+                            <TextView
+                                android:text="@string/itemize"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:textSize="@dimen/inputSize"/>
+                        </LinearLayout>
+
+                        <Space
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"/>
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0"
+                            android:layout_gravity="center">
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:src="@drawable/ic_chevron_right_black_30dp"/>
+                        </RelativeLayout>
                     </LinearLayout>
 
                     <View
@@ -832,6 +977,13 @@
                                 android:layout_width="wrap_content"
                                 android:layout_weight="0"
                                 android:textSize="@dimen/inputSize"/>
+                            <ImageView
+                                android:id="@+id/otherIncomeHelp"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_weight="0"
+                                android:src="@drawable/chat_question_16dp"
+                                android:tint="@color/helpChatBox"/>
                         </LinearLayout>
 
                         <Space
@@ -938,7 +1090,7 @@
 
                         <LinearLayout
                             android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
                             android:orientation="horizontal"
                             android:padding="@dimen/inputPadding">
                             <TextView
@@ -956,6 +1108,7 @@
                             android:layout_weight="1"/>
 
                         <RelativeLayout
+                            android:id="@+id/totalExpensesPercentLayout"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="0">
@@ -978,6 +1131,101 @@
                                 android:layout_below="@id/totalExpenses"
                                 android:text="@string/percentOfRentUnit"
                                 android:layout_alignParentBottom="true"/>
+                        </RelativeLayout>
+
+                        <TextView
+                            android:id="@+id/totalExpensesItemizeCurrency"
+                            android:text="$"
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:layout_weight="0"
+                            android:textSize="@dimen/inputSize"/>
+
+                        <RelativeLayout
+                            android:id="@+id/totalExpensesItemizeLayout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0">
+                            <TextView
+                                android:id="@+id/totalExpensesItemize"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="end"
+                                android:minWidth="100sp"
+                                android:paddingTop="10dp"
+                                android:paddingBottom="10dp"
+                                android:layout_alignParentTop="true"
+                                android:textSize="@dimen/inputSize"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignRight="@id/totalExpensesItemize"
+                                android:layout_alignEnd="@id/totalExpensesItemize"
+                                android:layout_below="@id/totalExpensesItemize"
+                                android:text="@string/perMonthUnit"
+                                android:layout_alignParentBottom="true"/>
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <View
+                        android:gravity="end"
+                        android:layout_height="match_parent"
+                        android:layout_width="@dimen/inputBorderThickness"
+                        android:background="@color/inputBorder" />
+                </TableRow>
+
+                <!-- Expenses itemize -->
+                <View
+                    android:layout_height="@dimen/inputBorderThickness"
+                    android:layout_width="match_parent"
+                    android:background="@color/inputBorder" />
+                <TableRow
+                    android:id="@+id/expensesItemize"
+                    android:background="@color/inputBackground"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <View
+                        android:gravity="start"
+                        android:layout_height="match_parent"
+                        android:layout_width="@dimen/inputBorderThickness"
+                        android:background="@color/inputBorder" />
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="@dimen/inputPadding"
+                        android:paddingEnd="@dimen/inputPadding">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:padding="@dimen/inputPadding">
+                            <TextView
+                                android:text="@string/itemize"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:textSize="@dimen/inputSize"/>
+                        </LinearLayout>
+
+                        <Space
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"/>
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0"
+                            android:layout_gravity="center">
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:src="@drawable/ic_chevron_right_black_30dp"/>
                         </RelativeLayout>
                     </LinearLayout>
 

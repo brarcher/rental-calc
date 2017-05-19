@@ -2,6 +2,7 @@ package protect.rentalcalc;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 class CalcUtil
 {
@@ -11,6 +12,10 @@ class CalcUtil
 
         double grossRent = property.grossRent * 12;
         double totalExpenses = grossRent * property.expenses / 100.0;
+        if(property.expensesItemized.isEmpty() == false)
+        {
+            totalExpenses = CalcUtil.sumMapItems(property.expensesItemized) * 12;
+        }
 
         double downPercent;
         if(property.useLoan)
@@ -30,11 +35,21 @@ class CalcUtil
 
         double propertyValue = property.afterRepairsValue;
 
-        double depreciation = (property.purchasePrice - property.landValue + property.purchaseCosts*property.purchasePrice/100) / 27.5;
+        double purchaseCost = property.purchaseCosts*property.purchasePrice/100.0;
+        if(property.purchaseCostsItemized.isEmpty() == false)
+        {
+            purchaseCost = CalcUtil.sumMapItems(property.purchaseCostsItemized);
+        }
 
-        double purchaseCostPercent = ((double)property.purchaseCosts/100.0);
-        double purchaseCost = purchaseCostPercent * (double)property.purchasePrice;
-        double totalCashNeeded = downPayment + purchaseCost + property.repairRemodelCosts;
+        double depreciation = (property.purchasePrice - property.landValue + purchaseCost) / 27.5;
+
+        int repairRemodelCosts = property.repairRemodelCosts;
+        if(property.repairRemodelCostsItemized.isEmpty() == false)
+        {
+            repairRemodelCosts = CalcUtil.sumMapItems(property.repairRemodelCostsItemized);
+        }
+
+        double totalCashNeeded = downPayment + purchaseCost + repairRemodelCosts;
 
         for(int year = 1; year <= numYears; year++)
         {
@@ -135,5 +150,17 @@ class CalcUtil
         double mortgage = financed * (monthlyInterestRate * onePlusRateRaised) / (onePlusRateRaised - 1);
 
         return mortgage;
+    }
+
+    static int sumMapItems(Map<String, Integer> map)
+    {
+        int value = 0;
+
+        for(Map.Entry<String, Integer> entry : map.entrySet())
+        {
+            value += entry.getValue();
+        }
+
+        return value;
     }
 }

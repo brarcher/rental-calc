@@ -114,4 +114,24 @@ class TestHelper
             }
         }
     }
+
+    static void preloadPropertyWithItemize(Property property) throws IllegalAccessException
+    {
+        preloadProperty(property);
+
+        for(int index = 1; index <= 10; index++)
+        {
+            property.purchaseCostsItemized.put("purchase cost " + index, index*10);
+
+            if( (index % 2) == 0)
+            {
+                property.repairRemodelCostsItemized.put("repair cost " + index, index*10);
+            }
+
+            if( (index % 3) == 0)
+            {
+                property.expensesItemized.put("expense cost " + index, index*10);
+            }
+        }
+    }
 }
