@@ -55,5 +55,11 @@
             android:label=""
             android:configChanges="orientation|screenSize"
             android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".ItemizeActivity"
+            android:label=""
+            android:configChanges="orientation|screenSize"
+            android:windowSoftInputMode="adjustPan"
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 </manifest>
