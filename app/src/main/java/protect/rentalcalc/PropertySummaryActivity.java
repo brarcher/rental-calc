@@ -99,13 +99,23 @@ public class PropertySummaryActivity extends AppCompatActivity
         double downPayment = downPercent * (double)property.purchasePrice;
         downPaymentValue.setText(String.format(Locale.US, "%d", Math.round(downPayment)));
 
-        double purchaseCostPercent = ((double)property.purchaseCosts/100.0);
-        double purchaseCost = purchaseCostPercent * (double)property.purchasePrice;
+        double purchaseCost = property.purchaseCosts*property.purchasePrice/100.0;
+        if(property.purchaseCostsItemized.isEmpty() == false)
+        {
+            purchaseCost = CalcUtil.sumMapItems(property.purchaseCostsItemized);
+        }
+
         purchaseCostsValue.setText(String.format(Locale.US, "%d", Math.round(purchaseCost)));
 
-        repairRemodelCostsValue.setText(String.format(Locale.US, "%d", property.repairRemodelCosts));
+        int repairRemodelCosts = property.repairRemodelCosts;
+        if(property.repairRemodelCostsItemized.isEmpty() == false)
+        {
+            repairRemodelCosts = CalcUtil.sumMapItems(property.repairRemodelCostsItemized);
+        }
 
-        double totalCashNeeded = downPayment + purchaseCost + property.repairRemodelCosts;
+        repairRemodelCostsValue.setText(String.format(Locale.US, "%d", repairRemodelCosts));
+
+        double totalCashNeeded = downPayment + purchaseCost + repairRemodelCosts;
         totalCashNeededValue.setText(String.format(Locale.US, "%d", Math.round(totalCashNeeded)));
 
 

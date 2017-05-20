@@ -1,9 +1,18 @@
 package protect.rentalcalc;
 
 import android.database.Cursor;
+import android.util.JsonReader;
 import android.util.Log;
 
+import com.google.common.base.Charsets;
+import com.google.common.collect.ImmutableMap;
+
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.StringReader;
 import java.lang.reflect.Field;
+import java.util.HashMap;
+import java.util.Map;
 
 class Property
 {
@@ -28,11 +37,14 @@ class Property
     int downPayment;
     double interestRate;
     int loanDuration;
-    int purchaseCosts;
-    int repairRemodelCosts;
+    int purchaseCosts; // not itemized, % of rent
+    HashMap<String, Integer> purchaseCostsItemized;
+    int repairRemodelCosts; // not itemized, $
+    HashMap<String, Integer> repairRemodelCostsItemized;
     int grossRent;
     int otherIncome;
-    int expenses;
+    int expenses; // not itemized, % of rent
+    HashMap<String, Integer> expensesItemized;
     int vacancy;
     int appreciation;
     int incomeIncrease;
@@ -67,7 +79,7 @@ class Property
                 }
                 catch (IllegalAccessException e)
                 {
-                    Log.e("RentalCal", "Failed to assign field", e);
+                    Log.e("RentalCalc", "Failed to assign field", e);
                 }
             }
         }
@@ -81,10 +93,13 @@ class Property
         interestRate = 5; // 5%
         loanDuration = 30; // 30 years
         purchaseCosts = 3; // 3 %
+        purchaseCostsItemized = new HashMap<>();
         repairRemodelCosts = 0; // 0 %
+        repairRemodelCostsItemized = new HashMap<>();
         grossRent = 0; // $0/month
         otherIncome = 0; // $0/month
         expenses = 30; // 30% of rent
+        expensesItemized = new HashMap<>();
         vacancy = 10; // 10% vacancy rate
         appreciation = 3; // 3% appreciation per year
         incomeIncrease = 2; // 2% increase per year
@@ -108,6 +123,12 @@ class Property
                 Log.e("RentalCal", "Failed to assign field", e);
             }
         }
+
+        // Override the map references to be a new map instance
+
+        purchaseCostsItemized = new HashMap<>(original.purchaseCostsItemized);
+        repairRemodelCostsItemized = new HashMap<>(original.repairRemodelCostsItemized);
+        expensesItemized = new HashMap<>(original.expensesItemized);
     }
 
     static Property toProperty(Cursor cursor)
@@ -147,6 +168,44 @@ class Property
         property.landValue = cursor.getInt(cursor.getColumnIndexOrThrow(DBHelper.PropertyDbIds.LAND_VALUE));
         property.incomeTaxRate = cursor.getInt(cursor.getColumnIndexOrThrow(DBHelper.PropertyDbIds.INCOME_TAX_RATE));
         property.notes = cursor.getString(cursor.getColumnIndexOrThrow(DBHelper.PropertyDbIds.NOTES));
+
+        // All the itemizations are stored as a JSON string in the database. They need to be extracted
+        // into a map.
+        Map<String, Map<String, Integer>> itemizeOptionLookups = new ImmutableMap.Builder<String, Map<String, Integer>>()
+                .put(DBHelper.PropertyDbIds.PURCHASE_COSTS_ITEMIZED, property.purchaseCostsItemized)
+                .put(DBHelper.PropertyDbIds.REPAIR_REMODEL_COSTS_ITEMIZED, property.repairRemodelCostsItemized)
+                .put(DBHelper.PropertyDbIds.EXPENSES_ITEMIZED, property.expensesItemized)
+                .build();
+
+        for(final Map.Entry<String, Map<String, Integer>> entry : itemizeOptionLookups.entrySet())
+        {
+            String databaseColumn = entry.getKey();
+            String jsonText = cursor.getString(cursor.getColumnIndexOrThrow(databaseColumn));
+            if(jsonText != null)
+            {
+                try
+                {
+                    Map<String, Integer> itemizations = entry.getValue();
+                    StringReader reader = new StringReader(jsonText);
+                    JsonReader parser = new JsonReader(reader);
+
+                    parser.beginObject();
+
+                    while(parser.hasNext())
+                    {
+                        String name = parser.nextName();
+                        int value = parser.nextInt();
+
+                        itemizations.put(name, value);
+                    }
+
+                }
+                catch(IOException e)
+                {
+                    Log.w("RentalCalc", "Failed to parse itemizations for " + databaseColumn, e);
+                }
+            }
+        }
 
         return property;
     }

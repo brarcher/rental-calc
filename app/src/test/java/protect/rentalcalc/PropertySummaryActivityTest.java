@@ -22,6 +22,7 @@ import org.robolectric.annotation.Config;
 import org.robolectric.shadows.ShadowLog;
 import org.robolectric.shadows.ShadowToast;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import static org.junit.Assert.assertEquals;
@@ -302,6 +303,83 @@ public class PropertySummaryActivityTest
                 .put(R.id.afterTaxCashFlowValue, "11880") // 15840 * 75% = 11880
                 .put(R.id.capitalizationRateValue, "12.8") // 1320 * 12 / 123456 = 0.128
                 .put(R.id.cashOnCashValue, "10.3") // 1320*12 / 153384.24 = 0.1032
+                .put(R.id.rentToValueValue, "1.1") // 1650 / 150000 = 0.011
+                .put(R.id.grossRentMultiplierValue, "6.2") // 123456 / (1650*12) = 6.23
+                .build();
+
+        checkFields(activity, expectedValues);
+    }
+
+    @Test
+    public void testItemizingProperty() throws Exception
+    {
+        Property property = new Property();
+
+        // Fill in the normal fields
+        property.purchasePrice = 123456;
+        property.afterRepairsValue = 150000;
+        property.useLoan = true;
+        property.downPayment = 10;
+        property.purchaseCosts = 4;
+        property.repairRemodelCosts = 25000;
+        property.propertySqft = 2342;
+        property.grossRent = 1650;
+        property.vacancy = 5;
+        property.expenses = 15;
+        property.interestRate = 5.125;
+        property.loanDuration = 30;
+        property.incomeTaxRate = 10;
+        // And also fill in the itemized fields, to see if they are used
+        property.purchaseCostsItemized = new HashMap<>
+            (
+                new ImmutableMap.Builder<String, Integer>()
+                .put("item 1", 100)
+                .put("item 2", 123)
+                .put("item 3", 2000)
+                .put("item 4", 45)
+                .put("item 5", 1250)
+                .build()
+            ); // = 3518
+        property.repairRemodelCostsItemized = new HashMap<>
+            (
+                new ImmutableMap.Builder<String, Integer>()
+                .put("item 1", 10000)
+                .put("item 2", 2500)
+                .put("item 3", 101)
+                .put("item 4", 1200)
+                .build()
+            ); // = 13801
+        property.expensesItemized = new HashMap<>
+            (
+                new ImmutableMap.Builder<String, Integer>()
+                .put("item 1", 45)
+                .put("item 2", 100)
+                .put("item 3", 12)
+                .put("item 4", 20)
+                .build()
+            ); // = 177
+
+        ActivityController controller = startWithProperty(property);
+        Activity activity = (Activity)controller.get();
+
+        Map<Integer, String> expectedValues = new ImmutableMap.Builder<Integer, String>()
+                .put(R.id.priceValue, "123456")
+                .put(R.id.financedValue, "111110")  // 90% of 123456
+                .put(R.id.downPaymentValue, "12346")  // 10% of 123456 = 12345.6
+                .put(R.id.purchaseCostsValue, "3518") // 3518 (see map)
+                .put(R.id.repairRemodelCostsValue, "13801") // 13801 (see map)
+                .put(R.id.totalCashNeededValue, "29665") // 12345.6 + 3518 + 13801 = 29664.6
+                .put(R.id.pricePerSizeValue, "53") // 123456/2342
+                .put(R.id.rentValue, "19800") // 1650 * 12 = 19800
+                .put(R.id.vancancyValue, "990") // 5% of 19800 = 990
+                .put(R.id.operatingIncomeValue, "18810")  // 19800 - 990 = 18810
+                .put(R.id.operatingExpensesValue, "2124") // 177 * 12 = 2124
+                .put(R.id.netOperatingIncomeValue, "16686") // 18810 - 2124 = 16686
+                .put(R.id.mortgageValue, "7260") // 604.98 * 12 = 7259.76
+                .put(R.id.cashFlowValue, "9426") // 16686 - 7260 = 9426
+                .put(R.id.afterTaxCashFlowValue, "8484") // 9426 * 90% = 8483.4
+                .put(R.id.capitalizationRateValue, "13.5") // 16686 / 123456 = 0.135
+                .put(R.id.cashOnCashValue, "31.8") // 9426 / 29664.6 = 0.3177
                 .put(R.id.rentToValueValue, "1.1") // 1650 / 150000 = 0.011
                 .put(R.id.grossRentMultiplierValue, "6.2") // 123456 / (1650*12) = 6.23
                 .build();

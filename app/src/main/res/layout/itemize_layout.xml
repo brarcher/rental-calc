@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                 xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                 android:layout_width="match_parent"
+                                                 android:layout_height="match_parent"
+                                                 android:fitsSystemWindows="true">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <LinearLayout android:orientation="vertical"
+                  android:layout_width="fill_parent"
+                  android:layout_height="fill_parent"
+                  app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <TextView
+            android:id="@+id/description"
+            android:padding="@dimen/titlePaddingHorizontal"
+            android:textSize="@dimen/inputTitleSize"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <View
+            android:layout_height="@dimen/inputBorderThickness"
+            android:layout_width="match_parent"
+            android:background="@color/inputBorder" />
+
+        <include layout="@layout/list_layout" />
+
+        <!-- Total field -->
+
+        <View
+            android:layout_height="@dimen/inputBorderDividerThickness"
+            android:layout_width="match_parent"
+            android:background="@color/inputDividerBorder" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <View
+                android:gravity="start"
+                android:layout_height="match_parent"
+                android:layout_width="@dimen/inputBorderThickness"
+                android:background="@color/inputBorder" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingRight="@dimen/inputPadding"
+                android:paddingEnd="@dimen/inputPadding">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:padding="@dimen/inputPadding">
+                    <TextView
+                        android:text="@string/totalField"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:layout_weight="0"
+                        android:textSize="@dimen/inputSize"/>
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:gravity="end"
+                    android:layout_weight="0"
+                    android:paddingTop="@dimen/inputPadding"
+                    android:paddingBottom="@dimen/inputPadding"
+                    android:minWidth="@dimen/minValueWidth">
+                    <TextView
+                        android:id="@+id/totalValueCurrency"
+                        android:text="$"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:textSize="@dimen/inputSize"
+                        android:paddingEnd="@dimen/valueItemPadding"
+                        android:paddingRight="@dimen/valueItemPadding"/>
+                    <TextView
+                        android:id="@+id/totalValue"
+                        android:gravity="end"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:textSize="@dimen/inputSize" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:gravity="end"
+                android:layout_height="match_parent"
+                android:layout_width="@dimen/inputBorderThickness"
+                android:background="@color/inputBorder" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</android.support.design.widget.CoordinatorLayout>
