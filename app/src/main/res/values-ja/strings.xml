@@ -1,0 +1,209 @@
+<resources
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <string name="app_name">Rental Calc</string>
+
+    <string name="addPropertyTitle">資産を追加</string>
+    <string name="overviewTitle">概要</string>
+    <string name="worksheetTitle">ワークシート</string>
+    <string name="notesTitle">メモ</string>
+    <string name="summaryTitle">サマリー</string>
+    <string name="projectionsTitle">投影</string>
+
+    <string name="add">追加</string>
+    <string name="about">アプリについて</string>
+    <string name="delete">削除</string>
+    <string name="done">完了</string>
+
+    <string name="ok">OK</string>
+    <string name="save">保存</string>
+    <string name="cancel">キャンセル</string>
+    <string name="confirm">確認</string>
+
+    <string name="name">名前</string>
+    <string name="value">値</string>
+
+    <string name="app_copyright_fmt">Copyright 2017-<xliff:g>%d</xliff:g> Branden Archer</string>
+    <string name="app_license">GPLv3 の下でライセンスされます。</string>
+    <string name="about_title_fmt"><xliff:g id="app_name">%s</xliff:g> について</string>
+    <string name="debug_version_fmt">バージョン: <xliff:g id="version">%s</xliff:g></string>
+    <string name="app_revision_fmt">リビジョン情報: <xliff:g id="app_revision_url">%s</xliff:g></string>
+    <string name="app_libraries"><xliff:g id="app_name">%s</xliff:g> は次のサードパーティのライブラリーを使用しています: <xliff:g id="app_libraries_list">%s</xliff:g></string>
+    <string name="app_resources"><xliff:g id="app_name">%s</xliff:g> は次のサードパーティのリソースを使用しています: <xliff:g id="app_resources_list">%s</xliff:g></string>
+
+    <string name="noProperties">現在資産はありません。 上部の "+" (プラス) ボタンをクリックして、始めましょう。\n\nRental Calc は資産を作成して、その投資の潜在力を判断するのに役立ちます。</string>
+
+
+    <string name="commercial">商店</string>
+    <string name="condo">マンション</string>
+    <string name="house">家</string>
+    <string name="land">土地</string>
+    <string name="multifamily">複数世帯住宅</string>
+    <string name="manufactured">工場</string>
+    <string name="other">その他</string>
+    <string name="carport">カーポート</string>
+    <string name="garage">ガレージ</string>
+    <string name="offstreet">裏通り</string>
+    <string name="onstreet">表通り</string>
+    <string name="none">なし</string>
+    <string name="privatelot">個人敷地</string>
+
+    <string name="deletePropertyTitle">資産を削除</string>
+    <string name="deletePropertyConfirmation">この資産の削除をご確認ください。</string>
+
+    <string name="purchasePriceField">購入価格:</string>
+    <string name="afterRepairsValueField">修理後の価値:</string>
+    <string name="afterRepairsValueHelp">修理が必要ない場合、これは購入価格と同じです。</string>
+    <string name="financingTitle">資金調達</string>
+    <string name="useALoanField">ローンを使う:</string>
+    <string name="downPaymentField">頭金:</string>
+
+    <string name="interestRateField">金利:</string>
+    <string name="loanDurationField">ローン期間:</string>
+    <string name="yearsUnit">年数</string>
+    <string name="purchaseCostsTitle">購入費用</string>
+    <string name="purchaseCostsField">購入費用:</string>
+    <string name="totalField">合計:</string>
+    <string name="itemize">明細</string>
+    <string name="percentOfPriceUnit">価格の %</string>
+    <string name="repairRemodelCostsTitle">修理/改造費用</string>
+    <string name="repairRemodelCostsField">修理/改造費用:</string>
+    <string name="incomeTitle">収入</string>
+    <string name="grossRentField">総賃料:</string>
+    <string name="perMonthUnit">月当たり</string>
+    <string name="otherIncomeField">他の収入:</string>
+    <string name="expensesTitle">経費</string>
+    <string name="percentOfRentUnit">賃料の %</string>
+    <string name="assumptionsTitle">推定</string>
+    <string name="vacancyField">空室:</string>
+    <string name="appreciationField">値上がり:</string>
+    <string name="percentPerYearUnit">年当たり %</string>
+    <string name="incomeIncreaseField">収入の増加:</string>
+    <string name="expensesIncreaseField">経費の増加:</string>
+    <string name="incomeTaxRateField">所得税率:</string>
+    <string name="incomeTaxRateValueHelp">税引後キャッシュフロー計算のための期待税率を入力してください。</string>
+    <string name="sellingCostsField">売却費用:</string>
+    <string name="percentOfSalePriceUnit">売却価格の %</string>
+    <string name="landValueField">土地価格:</string>
+    <string name="nickname">ニックネーム</string>
+    <string name="addressTitle">住所</string>
+    <string name="street">街路</string>
+    <string name="city">市区町村</string>
+    <string name="stateOrRegion">都道府県/州</string>
+    <string name="zip">郵便番号</string>
+    <string name="detailsTitle">詳細</string>
+    <string name="propertyTypeField">資産種類:</string>
+    <string name="bedsField">ベッド:</string>
+    <string name="bathsField">風呂:</string>
+    <string name="squareFootageField">面積:</string>
+    <string name="squareFeet">平方フィート</string>
+    <string name="lotSizeField">敷地サイズ:</string>
+    <string name="lotSize">敷地サイズ</string>
+    <string name="yearBuiltField">築年:</string>
+    <string name="yearBuilt">築年</string>
+    <string name="parkingField">駐車場:</string>
+    <string name="zoningField">地区制:</string>
+    <string name="zoning">地区制</string>
+    <string name="mlsNumberField">不動産情報番号(MLS):</string>
+    <string name="mlsNumber">不動産情報番号(MLS)</string>
+    <string name="worksheet">ワークシート</string>
+    <string name="notes">メモ</string>
+    <string name="analysisTitle">分析</string>
+    <string name="summary">サマリー</string>
+    <string name="projections">投影</string>
+    <string name="purchaseRepairRemodelTitle">購入, 修理, 改造</string>
+    <string name="financedField">資金調達:</string>
+    <string name="totalCashNeededField">必要総現金:</string>
+    <string name="valuationTitle">評価</string>
+    <string name="pricePerSquareFootField">平方フィート当たりの価格:</string>
+    <string name="operationFirstYearTitle">稼働 (最初の年)</string>
+    <string name="operationTitle">営業</string>
+    <string name="operatingIncomeField">営業収入:</string>
+    <string name="operatingExpensesField">営業経費:</string>
+    <string name="netOperatingIncomeField">営業純利益:</string>
+    <string name="mortgageField">住宅ローン:</string>
+    <string name="cashFlowField">キャッシュフロー:</string>
+    <string name="afterTaxCashFlowField">税引後キャッシュフロー:</string>
+    <string name="returnsTitle">収益</string>
+    <string name="capitalizationRateField">資本化率:</string>
+    <string name="cashOnCashField">キャッシュオンキャッシュ:</string>
+    <string name="rentToValueField">賃貸価値:</string>
+    <string name="grossRentMultiplierField">総賃貸乗数:</string>
+    <string name="equityTitle">エクイティ</string>
+    <string name="propertyValueField">資産価値</string>
+    <string name="loanBalanceField">ローン残高</string>
+    <string name="totalEquityField">合計エクイティ</string>
+    <string name="taxAdvantagesTitle">節税</string>
+    <string name="depreciationField">減価償却</string>
+    <string name="mortgageInterestField">住宅ローン金利</string>
+    <string name="projectionText">年: <xliff:g id="number">%d</xliff:g></string>
+
+    <!-- Dictionary lookups -->
+    <string name="purchasePriceHelpTitle">購入価格</string>
+    <string name="purchasePriceDefinition">資産の価格。\n\nこれには、購入費用または資産を修理または更新するための費用は含みません。</string>
+    <string name="afterRepairsValueHelpTitle">修理後の価値</string>
+    <string name="afterRepairsValueDefinition">修理および更新後の資産の推定市場価値。</string>
+    <string name="purchaseCostsHelpTitle">購入費用</string>
+    <string name="purchaseCostsDefinition">資産の購入に関連する費用と手数料。 これらは、クロージング費用とも呼ばれます。\n\n購入費用の例には、鑑定、資産検査、害虫検査、および最初の 1 年間の住宅所有者保険が含まれます。</string>
+    <string name="repairRemodelHelpTitle">修理/改造費用</string>
+    <string name="repairRemodelDefinition">資産を修復して更新するための費用。\n\n塗装、床材、電気器具、およびクリーニングが含まれます。</string>
+    <string name="grossRentHelpTitle">総賃料</string>
+    <string name="grossRentDefinition">テナントから集められたすべての賃料の合計額。 空室や経費は考慮しません。</string>
+    <string name="otherIncomeHelpTitle">その他収入</string>
+    <string name="otherIncomeDefinition">賃貸料以外の収入。\n\n庭の整備、家の清掃、光熱費、コインランドリーや自動販売機の収入など、テナントに提供されるその他のサービスも含まれます。</string>
+    <string name="operatingExpensesHelpTitle">営業経費</string>
+    <string name="operatingExpensesDefinition">資産を借りる間に支払うすべての経費。\n\n例には、保険、第三者の保証、メンテナンス、固定資産税、光熱費が含まれます。</string>
+    <string name="vacancyHelpTitle">空室</string>
+    <string name="vacancyDefinition">資産が賃貸されないと予想される時間の割合。\n\n理想的には、資産は常に賃貸されます。 ただし、資産はテナントの間または修理や更新で空室になる可能性があります。\n\n例: 資産が年に 1 ヶ月空いていると予想される場合は、1/12=8.3%</string>
+    <string name="vacancyFormula">$$\\text{Vacancy} = \\frac{\\text{time not rented}}{\\text{total time}}$$</string>
+    <string name="appreciationHelpTitle">値上がり</string>
+    <string name="appreciationDefinition">資産の価値の毎年の増加。 \n\nこれは、需要の増加や供給の減少、インフレなど、さまざまな理由によります。</string>
+    <string name="incomeIncreaseHelpTitle">収入の増加</string>
+    <string name="incomeIncreaseDefinition">資産によって生じる収入の年間の増加。\n\nインフレが増加の典型的な原因です。 これは、資産の賃貸料とその他の収入の両方に影響します。</string>
+    <string name="expensesIncreaseHelpTitle">経費の増加</string>
+    <string name="expensesIncreaseDefinition">資産を借りる間に支払った経費の年間の増加。 \n\nインフレが増加の典型的な原因であり、すべての経費に影響します。</string>
+    <string name="sellingCostsHelpTitle">売却費用</string>
+    <string name="sellingCostsDefinition">資産の売却に関連する費用および手数料。 これはクロージング費用とも呼ばれます。\n\n例には、不動産代理店の手数料、譲渡税、住宅保証、エスクロウ料などが含まれます。</string>
+    <string name="landValueHelpTitle">土地価格</string>
+    <string name="landValueDefinition">土地だけの価値、つまり住居や他の建物の価値を除いた資産の価値。\n\nこれは資産の減価償却費の計算に使用されます。</string>
+    <string name="totalCashNeededTitle">必要総現金</string>
+    <string name="totalCashNeededDefinition">資産を購入し、修理し、更新するのに必要な現金の総額。</string>
+    <string name="totalCashNeededFormula">$$\\text{Total Cash Needed} = \\text{Down Payment} + \\text{Purchase Costs} + \\text{Repair and Update Costs}$$</string>
+    <string name="operatingIncomeHelpTitle">営業収入</string>
+    <string name="operatingIncomeDefinition">資産を借りることによって生じるすべての収入、空室は除きます。</string>
+    <string name="operatingIncomeFormula">$$\\text{Operating Income} = \\text{Gross Rent} + \\text{Other Income} - \\text{Vacancies}$$</string>
+    <string name="netOperatingIncomeHelpTitle">営業純利益</string>
+    <string name="netOperatingIncomeDefinition">資産を借りることによって生じるすべての収入、営業経費は除きます。\n\nこれは、ローンの支払いを考慮しません。 このため、営業純利益は、資金調達とは無関係に資産を比較するために使用することができます。</string>
+    <string name="netOperatingIncomeFormula">$$\\text{Net Operating Income} = \\text{Operating Income} - \\text{Operating Expenses}$$</string>
+    <string name="cashFlowHelpTitle">キャッシュフロー</string>
+    <string name="cashFlowDefinition">収入として賃貸資産から受け取った金額。\n\nこれはすべての収入源と、ローン支払いを含むすべての経費を考慮したものです。</string>
+    <string name="cashFlowFormula">$$\\text{Cash Flow} = \\text{Net Operating Income} - \\text{Loan Payment}$$</string>
+    <string name="capitalizationRateHelpTitle">資本化率</string>
+    <string name="capitalizationRateDefinition">毎年の営業純利益と購入価格を比較する賃貸資産の収益率。\n\nこれはローンの支払いを考慮していません。 このため、資本化率は、資金調達とは無関係に資産を比較するために使用できます。</string>
+    <string name="capitalizationRateFormula">$$\\text{Capitalization Rate} = \\frac{\\text{Yearly Net Operating Income}}{\\text{Purchase Price}}$$</string>
+    <string name="cashOnCashHelpTitle">キャッシュオンキャッシュ</string>
+    <string name="cashOnCashDefinition">年間キャッシュフローと総投資現金を比較する賃貸資産の収益率。\n\nこれは投資した現金の年間収益率を表します。</string>
+    <string name="cashOnCashFormula">$$\\text{Cash On Cash} = \\frac{\\text{Yearly Cash Flow}}{\\text{Total Invested Cash}}$$</string>
+    <string name="rentToValueHelpTitle">賃貸価値</string>
+    <string name="rentToValueDefinition">月額総賃料と資産の市場価値を比較する賃貸資産の収益率。</string>
+    <string name="rentToValueFormula">$$\\text{Rent To Value} = \\frac{\\text{Monthly Gross Rent}}{\\text{Market Value}}$$</string>
+    <string name="grossRentMultiplierHelpTitle">総賃貸乗数</string>
+    <string name="grossRentMultiplierDefinition">資産の購入価格と毎月の総賃貸料を比較する賃貸資産の収益率。\n\nこれは、年間総賃料が購入価格に加算される年数を表します。</string>
+    <string name="grossRentMultiplierFormula">$$\\text{Gross Rent Multiplier} = \\frac{\\text{Purchase Price}}{\\text{Monthly Gross Rent}}$$</string>
+    <string name="propertyValueHelpHelpTitle">資産価値</string>
+    <string name="propertyValueHelpDefinition">資産の現在の価値。\n\n資産が割引で購入された可能性、修理または更新された可能性、資産が値上がりしたなどがあるため、購入価格と同じではない場合があります。</string>
+    <string name="totalEquityHelpTitle">合計エクイティ</string>
+    <string name="totalEquityHelpDefinition">所有する資産の市場価値の部分。 ローンを使用する場合、これはローンの残高によって異なります。 ローンが支払われ、財産の価値が高まるにつれて、エクイティが増加します。</string>
+    <string name="totalEquityHelpFormula">$$\\text{Equity} = \\text{Market Price} - \\text{Loan Balance}$$</string>
+    <string name="depreciationHelpTitle">減価償却</string>
+    <string name="depreciationHelpDefinition">1 年で不動産を購入する費用をすべて差し引くのではなく、多くの国では、賃貸資産の有効な耐用年数で資産の費用を引き継ぐことが求められています。\n\n米国では、資産の有効な耐用年数は 27.5 年と見なされます。 米国の場合は、賃貸不動産償却規則に関する地方税法を確認してください。</string>
+    <string name="mortgageInterestHelpTitle">住宅ローン金利</string>
+    <string name="mortgageInterestHelpDefinition">ローンの利息部分である抵当権支払いの部分。\n\n一部の国では、税金から抵当権を控除することができます。 詳細については、地方税法を確認してください。</string>
+
+    <string name="purchaseCostsItemizeTitle">購入費用の明細</string>
+    <string name="purchaseCostsItemizeHelp">最初の 1 年間の、評価、資産の検査、害虫の検査、住宅所有者の保険を含む購入費用/クロージング費用を追加してください。 注: 名前は一意にする必要があります。</string>
+    <string name="repairCostsItemizeTitle">修理費用の明細</string>
+    <string name="repairCostsItemizeHelp">塗装、床材、電気器具、クリーニング、更新などの修理費用を追加してください。 注: 名前は一意にする必要があります。</string>
+    <string name="expensesItemizeTitle">費用の明細</string>
+    <string name="expensesItemizeHelp">資産税、保険、第三者の保証、芝生のメンテナンスなど、1 か月あたりの費用を追加してください。 注: 名前は一意にする必要があります。</string>
+</resources>
