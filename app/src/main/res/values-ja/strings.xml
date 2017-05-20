@@ -13,11 +13,15 @@
     <string name="add">追加</string>
     <string name="about">アプリについて</string>
     <string name="delete">削除</string>
+    <string name="done">完了</string>
 
     <string name="ok">OK</string>
     <string name="save">保存</string>
     <string name="cancel">キャンセル</string>
     <string name="confirm">確認</string>
+
+    <string name="name">名前</string>
+    <string name="value">値</string>
 
     <string name="app_copyright_fmt">Copyright 2017-<xliff:g>%d</xliff:g> Branden Archer</string>
     <string name="app_license">GPLv3 の下でライセンスされます。</string>
@@ -28,6 +32,7 @@
     <string name="app_resources"><xliff:g id="app_name">%s</xliff:g> は次のサードパーティのリソースを使用しています: <xliff:g id="app_resources_list">%s</xliff:g></string>
 
     <string name="noProperties">現在資産はありません。 上部の "+" (プラス) ボタンをクリックして、始めましょう。\n\nRental Calc は資産を作成して、その投資の潜在力を判断するのに役立ちます。</string>
+
 
     <string name="commercial">商店</string>
     <string name="condo">マンション</string>
@@ -52,12 +57,14 @@
     <string name="financingTitle">資金調達</string>
     <string name="useALoanField">ローンを使う:</string>
     <string name="downPaymentField">頭金:</string>
+
     <string name="interestRateField">金利:</string>
     <string name="loanDurationField">ローン期間:</string>
     <string name="yearsUnit">年数</string>
     <string name="purchaseCostsTitle">購入費用</string>
     <string name="purchaseCostsField">購入費用:</string>
     <string name="totalField">合計:</string>
+    <string name="itemize">明細</string>
     <string name="percentOfPriceUnit">価格の %</string>
     <string name="repairRemodelCostsTitle">修理/改造費用</string>
     <string name="repairRemodelCostsField">修理/改造費用:</string>
@@ -142,6 +149,8 @@
     <string name="repairRemodelDefinition">資産を修復して更新するための費用。\n\n塗装、床材、電気器具、およびクリーニングが含まれます。</string>
     <string name="grossRentHelpTitle">総賃料</string>
     <string name="grossRentDefinition">テナントから集められたすべての賃料の合計額。 空室や経費は考慮しません。</string>
+    <string name="otherIncomeHelpTitle">その他収入</string>
+    <string name="otherIncomeDefinition">賃貸料以外の収入。\n\n庭の整備、家の清掃、光熱費、コインランドリーや自動販売機の収入など、テナントに提供されるその他のサービスも含まれます。</string>
     <string name="operatingExpensesHelpTitle">営業経費</string>
     <string name="operatingExpensesDefinition">資産を借りる間に支払うすべての経費。\n\n例には、保険、第三者の保証、メンテナンス、固定資産税、光熱費が含まれます。</string>
     <string name="vacancyHelpTitle">空室</string>
@@ -191,5 +200,10 @@
     <string name="mortgageInterestHelpTitle">住宅ローン金利</string>
     <string name="mortgageInterestHelpDefinition">ローンの利息部分である抵当権支払いの部分。\n\n一部の国では、税金から抵当権を控除することができます。 詳細については、地方税法を確認してください。</string>
 
-
+    <string name="purchaseCostsItemizeTitle">購入費用の明細</string>
+    <string name="purchaseCostsItemizeHelp">最初の 1 年間の、評価、資産の検査、害虫の検査、住宅所有者の保険を含む購入費用/クロージング費用を追加してください。 注: 名前は一意にする必要があります。</string>
+    <string name="repairCostsItemizeTitle">修理費用の明細</string>
+    <string name="repairCostsItemizeHelp">塗装、床材、電気器具、クリーニング、更新などの修理費用を追加してください。 注: 名前は一意にする必要があります。</string>
+    <string name="expensesItemizeTitle">費用の明細</string>
+    <string name="expensesItemizeHelp">資産税、保険、第三者の保証、芝生のメンテナンスなど、1 か月あたりの費用を追加してください。 注: 名前は一意にする必要があります。</string>
 </resources>
