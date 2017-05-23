@@ -5,10 +5,7 @@ import android.content.ComponentName;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.Spinner;
 
 import org.junit.After;
 import org.junit.Before;
@@ -21,11 +18,8 @@ import org.robolectric.android.controller.ActivityController;
 import org.robolectric.annotation.Config;
 import org.robolectric.shadows.ShadowListView;
 import org.robolectric.shadows.ShadowLog;
-import org.robolectric.shadows.ShadowToast;
 
 import protect.rentalcalc.protect.rentalcalc.shadows.ShadowCursorAdapterRemover;
-import java.lang.reflect.Field;
-import java.util.Locale;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
