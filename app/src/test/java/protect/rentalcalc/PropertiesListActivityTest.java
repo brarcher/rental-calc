@@ -23,6 +23,7 @@ import org.robolectric.shadows.ShadowListView;
 import org.robolectric.shadows.ShadowLog;
 import org.robolectric.shadows.ShadowToast;
 
+import protect.rentalcalc.protect.rentalcalc.shadows.ShadowCursorAdapterRemover;
 import java.lang.reflect.Field;
 import java.util.Locale;
 
@@ -33,7 +34,7 @@ import static org.junit.Assert.assertTrue;
 import static org.robolectric.Shadows.shadowOf;
 
 @RunWith(RobolectricTestRunner.class)
-@Config(constants = BuildConfig.class, sdk = 23)
+@Config(constants = BuildConfig.class, sdk = 23, shadows = ShadowCursorAdapterRemover.class)
 public class PropertiesListActivityTest
 {
     private DBHelper db;
@@ -74,6 +75,39 @@ public class PropertiesListActivityTest
 
         Bundle extras = next.getExtras();
         assertNull(extras);
+    }
+
+    @Test
+    public void clickPropertyLaunchesActivity()
+    {
+        db.insertProperty(new Property());
+        ActivityController controller = Robolectric.buildActivity(PropertiesListActivity.class).create();
+        Activity activity = (Activity)controller.get();
+
+        controller.start();
+        controller.visible();
+        controller.resume();
+
+        ListView list = (ListView)activity.findViewById(R.id.list);
+        ShadowListView shadowList = shadowOf(list);
+
+        shadowList.populateItems();
+
+        assertEquals(1, list.getCount());
+        shadowList.performItemClick(0);
+
+        assertTrue(activity.isFinishing() == false);
+
+        Intent next = shadowOf(activity).getNextStartedActivity();
+
+        ComponentName componentName = next.getComponent();
+        String name = componentName.flattenToShortString();
+        assertEquals("protect.rentalcalc/.PropertyOverviewActivity", name);
+
+        Bundle extras = next.getExtras();
+        assertNotNull(extras);
+        assertTrue(extras.containsKey("id"));
+        assertEquals(DatabaseTestHelper.FIRST_ID, extras.getLong("id"));
     }
 
     @Test
