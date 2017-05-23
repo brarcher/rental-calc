@@ -11,6 +11,7 @@ import android.util.Log;
 import com.google.common.base.Charsets;
 import com.google.common.collect.ImmutableMap;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.StringWriter;
@@ -29,7 +30,7 @@ class DBHelper extends SQLiteOpenHelper
     private static final String DATABASE_NAME = "RentalCalc.db";
 
     static final int ORIGINAL_DATABASE_VERSION = 1;
-    static final int DATABASE_VERSION = 2;
+    static final int DATABASE_VERSION = 3;
 
     /**
      * All strings used with the budget table
@@ -77,6 +78,7 @@ class DBHelper extends SQLiteOpenHelper
         static final String INCOME_TAX_RATE = "incomeTaxRate";
 
         static final String NOTES = "notes";
+        static final String PICTURES = "pictures";
     }
 
     DBHelper(Context context)
@@ -126,7 +128,8 @@ class DBHelper extends SQLiteOpenHelper
                 PropertyDbIds.SELLING_COSTS + " INTEGER," +
                 PropertyDbIds.LAND_VALUE + " INTEGER," +
                 PropertyDbIds.INCOME_TAX_RATE + " INTEGER," +
-                PropertyDbIds.NOTES + " TEXT)");
+                PropertyDbIds.NOTES + " TEXT," +
+                PropertyDbIds.PICTURES + " TEXT)");
     }
 
     @Override
@@ -139,6 +142,12 @@ class DBHelper extends SQLiteOpenHelper
             db.execSQL("ALTER TABLE " + PropertyDbIds.TABLE + " ADD COLUMN " + PropertyDbIds.PURCHASE_COSTS_ITEMIZED + " TEXT");
             db.execSQL("ALTER TABLE " + PropertyDbIds.TABLE + " ADD COLUMN " + PropertyDbIds.REPAIR_REMODEL_COSTS_ITEMIZED + " TEXT");
             db.execSQL("ALTER TABLE " + PropertyDbIds.TABLE + " ADD COLUMN " + PropertyDbIds.EXPENSES_ITEMIZED + " TEXT");
+        }
+
+        // Upgrade from version 2 to version 3
+        if(oldVersion < 3 && newVersion >= 3)
+        {
+            db.execSQL("ALTER TABLE " + PropertyDbIds.TABLE + " ADD COLUMN " + PropertyDbIds.PICTURES + " TEXT");
         }
     }
 
@@ -178,6 +187,34 @@ class DBHelper extends SQLiteOpenHelper
         contentValues.put(PropertyDbIds.SELLING_COSTS, property.sellingCosts);
         contentValues.put(PropertyDbIds.LAND_VALUE, property.landValue);
         contentValues.put(PropertyDbIds.NOTES, property.notes);
+        contentValues.put(PropertyDbIds.NOTES, property.notes);
+
+        {
+            StringWriter jsonText = new StringWriter();
+            JsonWriter writer = new JsonWriter(jsonText);
+
+            try
+            {
+                writer.beginArray();
+
+                for(File picture : property.pictures)
+                {
+                    if(picture.exists() && picture.isFile())
+                    {
+                        writer.value(picture.getAbsolutePath());
+                    }
+                }
+
+                writer.endArray();
+                writer.close();
+            }
+            catch(IOException e)
+            {
+                Log.w(TAG, "Failed to convert pictures to json", e);
+            }
+
+            contentValues.put(PropertyDbIds.PICTURES, jsonText.toString());
+        }
 
         // All the itemizations are stored as a JSON string in the database. They need to be converted
         // from maps to JSON strings.
