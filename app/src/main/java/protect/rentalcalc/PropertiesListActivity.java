@@ -102,6 +102,7 @@ public class PropertiesListActivity extends AppCompatActivity
         {
             Intent i = new Intent(getApplicationContext(), PropertyViewActivity.class);
             startActivity(i);
+            return true;
         }
 
         if(id == R.id.action_about)

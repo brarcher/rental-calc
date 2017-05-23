@@ -131,6 +131,7 @@ public class ItemizeActivity extends AppCompatActivity
         {
             _items.add(new Itemization("", 0));
             _listAdapter.notifyDataSetChanged();
+            return true;
         }
 
         if(id == R.id.action_done)
@@ -152,6 +153,7 @@ public class ItemizeActivity extends AppCompatActivity
             i.putExtras(bundle);
             setResult(RESULT_OK, i);
             finish();
+            return true;
         }
 
         return super.onOptionsItemSelected(item);
