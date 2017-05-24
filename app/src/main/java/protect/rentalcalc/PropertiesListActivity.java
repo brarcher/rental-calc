@@ -119,7 +119,8 @@ public class PropertiesListActivity extends AppCompatActivity
         final Map<String, String> USED_LIBRARIES = ImmutableMap.of
         (
             "Guava", "https://github.com/google/guava",
-            "MathView", "https://github.com/kexanie/MathView"
+            "MathView", "https://github.com/kexanie/MathView",
+            "Glide", "https://github.com/bumptech/glide"
         );
 
         final Map<String, String> USED_ASSETS = ImmutableMap.of
