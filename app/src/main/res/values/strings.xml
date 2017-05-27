@@ -7,6 +7,7 @@
     <string name="overviewTitle">Overview</string>
     <string name="worksheetTitle">Worksheet</string>
     <string name="notesTitle">Notes</string>
+    <string name="picturesTitle">Pictures</string>
     <string name="summaryTitle">Summary</string>
     <string name="projectionsTitle">Projections</string>
 
@@ -14,11 +15,23 @@
     <string name="about">About</string>
     <string name="delete">Delete</string>
     <string name="done">Done</string>
+    <string name="share">Share</string>
 
     <string name="ok">OK</string>
     <string name="save">Save</string>
     <string name="cancel">Cancel</string>
     <string name="confirm">Confirm</string>
+
+    <string name="addNewPhotoTitle">Add New Photo</string>
+    <string name="importExistingPhoto">Import Existing Photo</string>
+    <string name="captureNewPhoto">Capture New Photo</string>
+    <string name="selectPhotoTitle">Select Photo</string>
+    <string name="pictureCaptureError">Unable to capture or import photo</string>
+    <string name="savingPicture">Saving picture</string>
+    <string name="noCameraPermissionError">Unable to capture picture without the camera permission</string>
+    <string name="deletePictureTitle">Remove Picture</string>
+    <string name="deletePictureConfirmation">Please confirm that you want to delete this picture.</string>
+
 
     <string name="name">Name</string>
     <string name="value">Value</string>
@@ -107,6 +120,7 @@
     <string name="mlsNumberField">MLS Number:</string>
     <string name="mlsNumber">MLS Number</string>
     <string name="worksheet">Worksheet</string>
+    <string name="pictures">Pictures</string>
     <string name="notes">Notes</string>
     <string name="analysisTitle">ANALYSIS</string>
     <string name="summary">Summary</string>
