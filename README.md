@@ -16,10 +16,10 @@ If there is any interest in improving this project, kindly submit a pull request
 # Screenshots
 [<img src="https://cloud.githubusercontent.com/assets/5264535/25881817/3aebfa40-350d-11e7-80ff-6edda7b79426.png" width=250>](https://cloud.githubusercontent.com/assets/5264535/25881817/3aebfa40-350d-11e7-80ff-6edda7b79426.png)
 [<img src="https://cloud.githubusercontent.com/assets/5264535/25881820/3e2ae414-350d-11e7-88c2-3369edcbf0c4.png" width=250>](https://cloud.githubusercontent.com/assets/5264535/25881820/3e2ae414-350d-11e7-88c2-3369edcbf0c4.png)
-[<img src="https://cloud.githubusercontent.com/assets/5264535/26262712/b2318b68-3ca3-11e7-9ec6-24edb36182b2.png" width=250>](https://cloud.githubusercontent.com/assets/5264535/26262712/b2318b68-3ca3-11e7-9ec6-24edb36182b2.png)
+[<img src="https://cloud.githubusercontent.com/assets/5264535/26523272/ff2d3d6a-42e1-11e7-9eb8-566613e5e257.png" width=250>](https://cloud.githubusercontent.com/assets/5264535/26523272/ff2d3d6a-42e1-11e7-9eb8-566613e5e257.png)
 
-[<img src="https://cloud.githubusercontent.com/assets/5264535/26262734/c8637cca-3ca3-11e7-9ecb-9b51d61061e8.png" width=250>](https://cloud.githubusercontent.com/assets/5264535/26262734/c8637cca-3ca3-11e7-9ecb-9b51d61061e8.png)
-[<img src="https://cloud.githubusercontent.com/assets/5264535/25881825/4204a5fc-350d-11e7-8539-d6475e4b73c1.png" width=250>](https://cloud.githubusercontent.com/assets/5264535/25881825/4204a5fc-350d-11e7-8539-d6475e4b73c1.png)
+[<img src="https://cloud.githubusercontent.com/assets/5264535/26262712/b2318b68-3ca3-11e7-9ec6-24edb36182b2.png" width=250>](https://cloud.githubusercontent.com/assets/5264535/26262712/b2318b68-3ca3-11e7-9ec6-24edb36182b2.png)
+[<img src="https://cloud.githubusercontent.com/assets/5264535/26523261/a9e988a4-42e1-11e7-8fcf-d1831d25c6d0.png" width=250>](https://cloud.githubusercontent.com/assets/5264535/26523261/a9e988a4-42e1-11e7-8fcf-d1831d25c6d0.png)
 [<img src="https://cloud.githubusercontent.com/assets/5264535/25881827/43da4f6c-350d-11e7-9344-d6ce44ba8fdc.png" width=250>](https://cloud.githubusercontent.com/assets/5264535/25881827/43da4f6c-350d-11e7-9344-d6ce44ba8fdc.png)
 
 [<img src="https://cloud.githubusercontent.com/assets/5264535/25881828/4743fcac-350d-11e7-8e9c-85c8c0d68d9f.png" width=250>](https://cloud.githubusercontent.com/assets/5264535/25881828/4743fcac-350d-11e7-8e9c-85c8c0d68d9f.png)
