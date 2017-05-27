@@ -108,6 +108,18 @@ public class PropertyOverviewActivity extends AppCompatActivity
             }
         });
 
+        final View propertyPictures = findViewById(R.id.propertyPictures);
+        propertyPictures.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Intent i = new Intent(getApplicationContext(), PropertyPicturesActivity.class);
+                i.putExtras(argBundle);
+                startActivity(i);
+            }
+        });
+
         final View propertyNotes = findViewById(R.id.propertyNotes);
         propertyNotes.setOnClickListener(new View.OnClickListener()
         {

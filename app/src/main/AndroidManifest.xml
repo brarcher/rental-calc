@@ -3,6 +3,10 @@
           xmlns:tools="http://schemas.android.com/tools"
           package="protect.rentalcalc">
 
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-feature android:required="true" android:name="android.hardware.camera"/>
+
     <application
         tools:replace="android:allowBackup"
         android:allowBackup="false"
@@ -41,6 +45,11 @@
             android:configChanges="orientation|screenSize"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity
+            android:name=".PropertyPicturesActivity"
+            android:label="@string/picturesTitle"
+            android:configChanges="orientation|screenSize"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
             android:name=".PropertySummaryActivity"
             android:label="@string/summaryTitle"
             android:configChanges="orientation|screenSize"
@@ -60,6 +69,10 @@
             android:label=""
             android:configChanges="orientation|screenSize"
             android:windowSoftInputMode="adjustPan"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".PictureViewActivity"
+            android:label=""
             android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 </manifest>

@@ -5,10 +5,7 @@ import android.content.ComponentName;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.Spinner;
 
 import org.junit.After;
 import org.junit.Before;
@@ -21,10 +18,8 @@ import org.robolectric.android.controller.ActivityController;
 import org.robolectric.annotation.Config;
 import org.robolectric.shadows.ShadowListView;
 import org.robolectric.shadows.ShadowLog;
-import org.robolectric.shadows.ShadowToast;
 
-import java.lang.reflect.Field;
-import java.util.Locale;
+import protect.rentalcalc.protect.rentalcalc.shadows.ShadowCursorAdapterRemover;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -33,7 +28,7 @@ import static org.junit.Assert.assertTrue;
 import static org.robolectric.Shadows.shadowOf;
 
 @RunWith(RobolectricTestRunner.class)
-@Config(constants = BuildConfig.class, sdk = 23)
+@Config(constants = BuildConfig.class, sdk = 23, shadows = ShadowCursorAdapterRemover.class)
 public class PropertiesListActivityTest
 {
     private DBHelper db;
@@ -74,6 +69,39 @@ public class PropertiesListActivityTest
 
         Bundle extras = next.getExtras();
         assertNull(extras);
+    }
+
+    @Test
+    public void clickPropertyLaunchesActivity()
+    {
+        db.insertProperty(new Property());
+        ActivityController controller = Robolectric.buildActivity(PropertiesListActivity.class).create();
+        Activity activity = (Activity)controller.get();
+
+        controller.start();
+        controller.visible();
+        controller.resume();
+
+        ListView list = (ListView)activity.findViewById(R.id.list);
+        ShadowListView shadowList = shadowOf(list);
+
+        shadowList.populateItems();
+
+        assertEquals(1, list.getCount());
+        shadowList.performItemClick(0);
+
+        assertTrue(activity.isFinishing() == false);
+
+        Intent next = shadowOf(activity).getNextStartedActivity();
+
+        ComponentName componentName = next.getComponent();
+        String name = componentName.flattenToShortString();
+        assertEquals("protect.rentalcalc/.PropertyOverviewActivity", name);
+
+        Bundle extras = next.getExtras();
+        assertNotNull(extras);
+        assertTrue(extras.containsKey("id"));
+        assertEquals(DatabaseTestHelper.FIRST_ID, extras.getLong("id"));
     }
 
     @Test

@@ -169,6 +169,52 @@
                         android:background="@color/inputBorder" />
                 </TableRow>
 
+                <!-- Pictures -->
+                <View
+                    android:layout_height="@dimen/inputBorderThickness"
+                    android:layout_width="match_parent"
+                    android:background="@color/inputBorder" />
+
+                <TableRow
+                    android:id="@+id/propertyPictures"
+                    android:background="@color/inputBackground"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true">
+
+                    <View
+                        android:gravity="start"
+                        android:layout_height="match_parent"
+                        android:layout_width="@dimen/inputBorderThickness"
+                        android:background="@color/inputBorder" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/propertyOverviewEntryPadding">
+
+                        <TextView
+                            android:textSize="@dimen/overviewValueSize"
+                            android:text="@string/pictures"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"/>
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_weight="0"
+                            android:src="@drawable/ic_chevron_right_black_30dp"/>
+                    </LinearLayout>
+
+                    <View
+                        android:gravity="end"
+                        android:layout_height="match_parent"
+                        android:layout_width="@dimen/inputBorderThickness"
+                        android:background="@color/inputBorder" />
+                </TableRow>
+
                 <!-- Notes -->
                 <View
                     android:layout_height="@dimen/inputBorderThickness"

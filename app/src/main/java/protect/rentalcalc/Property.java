@@ -7,11 +7,13 @@ import android.util.Log;
 import com.google.common.base.Charsets;
 import com.google.common.collect.ImmutableMap;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.StringReader;
 import java.lang.reflect.Field;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.Map;
 
 class Property
@@ -53,6 +55,7 @@ class Property
     int landValue;
     int incomeTaxRate;
     String notes;
+    LinkedList<File> pictures;
 
     private static String toBlankIfNull(final String string)
     {
@@ -107,6 +110,7 @@ class Property
         sellingCosts = 6; // 6% of sale price
         landValue = 0; // cost of the land
         incomeTaxRate = 25; // 25% tax rate
+        pictures = new LinkedList<>();
     }
 
     Property(final Property original)
@@ -129,6 +133,7 @@ class Property
         purchaseCostsItemized = new HashMap<>(original.purchaseCostsItemized);
         repairRemodelCostsItemized = new HashMap<>(original.repairRemodelCostsItemized);
         expensesItemized = new HashMap<>(original.expensesItemized);
+        pictures = new LinkedList<>(original.pictures);
     }
 
     static Property toProperty(Cursor cursor)
@@ -168,6 +173,32 @@ class Property
         property.landValue = cursor.getInt(cursor.getColumnIndexOrThrow(DBHelper.PropertyDbIds.LAND_VALUE));
         property.incomeTaxRate = cursor.getInt(cursor.getColumnIndexOrThrow(DBHelper.PropertyDbIds.INCOME_TAX_RATE));
         property.notes = cursor.getString(cursor.getColumnIndexOrThrow(DBHelper.PropertyDbIds.NOTES));
+
+        {
+            String jsonText = cursor.getString(cursor.getColumnIndexOrThrow(DBHelper.PropertyDbIds.PICTURES));
+            if(jsonText != null)
+            {
+                StringReader reader = new StringReader(jsonText);
+                JsonReader parser = new JsonReader(reader);
+
+                try
+                {
+                    parser.beginArray();
+
+                    while(parser.hasNext())
+                    {
+                        property.pictures.addLast(new File(parser.nextString()));
+                    }
+
+                    parser.endArray();
+                }
+                catch(IOException e)
+                {
+                    Log.w("RentalCalc", "Failed to parse pictures", e);
+                }
+
+            }
+        }
 
         // All the itemizations are stored as a JSON string in the database. They need to be extracted
         // into a map.
