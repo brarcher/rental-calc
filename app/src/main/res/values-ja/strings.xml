@@ -7,6 +7,7 @@
     <string name="overviewTitle">概要</string>
     <string name="worksheetTitle">ワークシート</string>
     <string name="notesTitle">メモ</string>
+    <string name="picturesTitle">写真</string>
     <string name="summaryTitle">サマリー</string>
     <string name="projectionsTitle">投影</string>
 
@@ -14,11 +15,23 @@
     <string name="about">アプリについて</string>
     <string name="delete">削除</string>
     <string name="done">完了</string>
+    <string name="share">共有</string>
 
     <string name="ok">OK</string>
     <string name="save">保存</string>
     <string name="cancel">キャンセル</string>
     <string name="confirm">確認</string>
+
+    <string name="addNewPhotoTitle">新しい写真を追加</string>
+    <string name="importExistingPhoto">既存の写真をインポート</string>
+    <string name="captureNewPhoto">新しい写真を撮影</string>
+    <string name="selectPhotoTitle">写真を選択</string>
+    <string name="pictureCaptureError">写真を撮影またはインポートできません</string>
+    <string name="savingPicture">写真の保存中</string>
+    <string name="noCameraPermissionError">カメラのアクセス許可がないと写真を撮影できません</string>
+    <string name="deletePictureTitle">写真を削除</string>
+    <string name="deletePictureConfirmation">写真の削除をご確認ください。</string>
+
 
     <string name="name">名前</string>
     <string name="value">値</string>
@@ -106,6 +119,7 @@
     <string name="zoning">地区制</string>
     <string name="mlsNumberField">不動産情報番号(MLS):</string>
     <string name="mlsNumber">不動産情報番号(MLS)</string>
+    <string name="pictures">絵画/写真</string>
     <string name="worksheet">ワークシート</string>
     <string name="notes">メモ</string>
     <string name="analysisTitle">分析</string>
