@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'findbugs'
 
 android {
-    compileSdkVersion 23
+    compileSdkVersion 25
     buildToolsVersion "25.0.2"
     defaultConfig {
         applicationId "protect.rentalcalc"
@@ -30,8 +30,8 @@ android.testOptions.unitTests.all {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:23.1.1'
-    compile 'com.android.support:design:23.1.1'
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support:design:25.3.1'
     compile group: 'com.google.guava', name: 'guava', version: '20.0'
     compile 'io.github.kexanie.library:MathView:0.0.6'
     compile 'com.github.bumptech.glide:glide:3.8.0'
