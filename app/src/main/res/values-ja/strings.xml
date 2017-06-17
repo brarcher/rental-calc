@@ -16,6 +16,7 @@
     <string name="delete">削除</string>
     <string name="done">完了</string>
     <string name="share">共有</string>
+    <!-- Needs Translated --><string name="startIntro">Start Intro</string>
 
     <string name="ok">OK</string>
     <string name="save">保存</string>
@@ -220,4 +221,18 @@
     <string name="repairCostsItemizeHelp">塗装、床材、電気器具、クリーニング、更新などの修理費用を追加してください。 注: 名前は一意にする必要があります。</string>
     <string name="expensesItemizeTitle">費用の明細</string>
     <string name="expensesItemizeHelp">資産税、保険、第三者の保証、芝生のメンテナンスなど、1 か月あたりの費用を追加してください。 注: 名前は一意にする必要があります。</string>
+
+    <!-- Needs Translated --><string name="intro1Title">Welcome to Rental Calc\n</string>
+    <!-- Needs Translated --><string name="intro1Description">Analyze rental properties to determine the best investment!\n\n</string>
+    <!-- Needs Translated --><string name="intro2Title">Adding Properties\n</string>
+    <!-- Needs Translated --><string name="intro2Description">Add a new property by touching the plus from the property list.\n\nEnter a nickname, address, and any other information you want.</string>
+    <!-- Needs Translated --><string name="intro3Title">Worksheet\n</string>
+    <!-- Needs Translated --><string name="intro3Description">Touch Worksheet to enter details, including purchase price, financing, repair/remodel costs, monthly rent, and other information.</string>
+    <!-- Needs Translated --><string name="intro4Title">Summary / Projections\n</string>
+    <!-- Needs Translated --><string name="intro4Description">After filling out the worksheet, touch Summary to see details on the deal, including cash needed, first year\'s operation, and returns. \n\nTouch Projections to see future operations and returns.</string>
+    <!-- Needs Translated --><string name="intro5Title">Other Information\n</string>
+    <!-- Needs Translated --><string name="intro5Description">Images of the property can be captured on the Pictures page, and notes can be recorded on the Notes page.</string>
+    <!-- Needs Translated --><string name="intro6Title">Feedback\n</string>
+    <!-- Needs Translated --><string name="intro6Description">This app is free and open source. See details by touching About in the menu on the main page.\n\nPlease leave feedback in the app store! (:</string>
+
 </resources>

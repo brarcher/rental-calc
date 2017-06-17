@@ -8,6 +8,10 @@
         android:title="@string/add"
         app:showAsAction="always"/>
     <item
+        android:id="@+id/action_intro"
+        android:title="@string/startIntro"
+        app:showAsAction="never"/>
+    <item
         android:id="@+id/action_about"
         android:title="@string/about"
         app:showAsAction="never"/>
