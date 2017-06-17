@@ -2,7 +2,9 @@ package protect.rentalcalc;
 
 import android.app.Activity;
 import android.content.ComponentName;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
@@ -32,6 +34,7 @@ import static org.robolectric.Shadows.shadowOf;
 public class PropertiesListActivityTest
 {
     private DBHelper db;
+    private SharedPreferences prefs;
 
     @Before
     public void setUp()
@@ -39,6 +42,10 @@ public class PropertiesListActivityTest
         // Output logs emitted during tests so they may be accessed
         ShadowLog.stream = System.out;
         db = new DBHelper(RuntimeEnvironment.application);
+
+        prefs = RuntimeEnvironment.application.getSharedPreferences("protect.rentalcalc", Context.MODE_PRIVATE);
+        // Assume that this is not the first launch
+        prefs.edit().putBoolean("firstrun", false).commit();
     }
 
     @After
@@ -119,5 +126,27 @@ public class PropertiesListActivityTest
 
         View list = activity.findViewById(R.id.list);
         assertEquals(View.GONE, list.getVisibility());
+    }
+
+    @Test
+    public void testFirstRunStartsIntro()
+    {
+        prefs.edit().remove("firstrun").commit();
+
+        ActivityController controller = Robolectric.buildActivity(PropertiesListActivity.class).create();
+        Activity activity = (Activity)controller.get();
+
+        assertTrue(activity.isFinishing() == false);
+
+        Intent next = shadowOf(activity).getNextStartedActivity();
+
+        ComponentName componentName = next.getComponent();
+        String name = componentName.flattenToShortString();
+        assertEquals("protect.rentalcalc/.IntroActivity", name);
+
+        Bundle extras = next.getExtras();
+        assertNull(extras);
+
+        assertEquals(false, prefs.getBoolean("firstrun", true));
     }
 }

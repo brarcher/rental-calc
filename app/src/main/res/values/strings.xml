@@ -16,6 +16,7 @@
     <string name="delete">Delete</string>
     <string name="done">Done</string>
     <string name="share">Share</string>
+    <string name="startIntro">Start Intro</string>
 
     <string name="ok">OK</string>
     <string name="save">Save</string>
@@ -220,4 +221,18 @@
     <string name="repairCostsItemizeHelp">Add any repair costs, which may include paint, flooring, appliances, cleaning, and updates. Note: the names must be unique.</string>
     <string name="expensesItemizeTitle">Itemize Expenses</string>
     <string name="expensesItemizeHelp">Add any expenses per month, which may include property tax, insurance, 3rd party warranties, and lawn maintenance. Note: the names must be unique.</string>
+
+    <string name="intro1Title">Welcome to Rental Calc\n</string>
+    <string name="intro1Description">Analyze rental properties to determine the best investment!\n\n</string>
+    <string name="intro2Title">Adding Properties\n</string>
+    <string name="intro2Description">Add a new property by touching the plus from the property list.\n\nEnter a nickname, address, and any other information you want.</string>
+    <string name="intro3Title">Worksheet\n</string>
+    <string name="intro3Description">Touch Worksheet to enter details, including purchase price, financing, repair/remodel costs, monthly rent, and other information.</string>
+    <string name="intro4Title">Summary / Projections\n</string>
+    <string name="intro4Description">After filling out the worksheet, touch Summary to see details on the deal, including cash needed, first year\'s operation, and returns. \n\nTouch Projections to see future operations and returns.</string>
+    <string name="intro5Title">Other Information\n</string>
+    <string name="intro5Description">Images of the property can be captured on the Pictures page, and notes can be recorded on the Notes page.</string>
+    <string name="intro6Title">Feedback\n</string>
+    <string name="intro6Description">This app is free and open source. See details by touching About in the menu on the main page.\n\nPlease leave feedback in the app store! (:</string>
+
 </resources>

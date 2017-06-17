@@ -17,7 +17,7 @@
         android:textColor="#ffffff"
         android:paddingRight="32dp"
         android:textSize="28sp"
-        android:text="@string/intro1Title"/>
+        android:text="@string/intro2Title"/>
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -32,7 +32,7 @@
             android:layout_gravity="center"
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
-            android:src="@drawable/app_icon_intro"/>
+            android:src="@drawable/intro2_image"/>
     </LinearLayout>
     <TextView
         android:layout_width="wrap_content"
@@ -44,7 +44,7 @@
         android:paddingLeft="64dp"
         android:paddingRight="64dp"
         android:textSize="16sp"
-        android:text="@string/intro1Description"/>
+        android:text="@string/intro2Description"/>
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="64dp" />

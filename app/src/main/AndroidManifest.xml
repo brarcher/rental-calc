@@ -74,5 +74,9 @@
             android:name=".PictureViewActivity"
             android:label=""
             android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".IntroActivity"
+            android:label=""
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 </manifest>

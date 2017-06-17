@@ -17,7 +17,7 @@
         android:textColor="#ffffff"
         android:paddingRight="32dp"
         android:textSize="28sp"
-        android:text="@string/intro1Title"/>
+        android:text="@string/intro6Title"/>
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -44,7 +44,7 @@
         android:paddingLeft="64dp"
         android:paddingRight="64dp"
         android:textSize="16sp"
-        android:text="@string/intro1Description"/>
+        android:text="@string/intro6Description"/>
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="64dp" />

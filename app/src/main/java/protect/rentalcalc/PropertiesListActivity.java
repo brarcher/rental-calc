@@ -2,6 +2,7 @@ package protect.rentalcalc;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
@@ -38,6 +39,12 @@ public class PropertiesListActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
 
         _db = new DBHelper(this);
+
+        SharedPreferences prefs = getSharedPreferences("protect.rentalcalc", MODE_PRIVATE);
+        if (prefs.getBoolean("firstrun", true)) {
+            startIntro();
+            prefs.edit().putBoolean("firstrun", false).commit();
+        }
     }
 
     @Override
@@ -105,6 +112,12 @@ public class PropertiesListActivity extends AppCompatActivity
             return true;
         }
 
+        if(id == R.id.action_intro)
+        {
+            startIntro();
+            return true;
+        }
+
         if(id == R.id.action_about)
         {
             displayAboutDialog();
@@ -120,7 +133,8 @@ public class PropertiesListActivity extends AppCompatActivity
         (
             "Guava", "https://github.com/google/guava",
             "MathView", "https://github.com/kexanie/MathView",
-            "Glide", "https://github.com/bumptech/glide"
+            "Glide", "https://github.com/bumptech/glide",
+            "AppIntro", "https://github.com/apl-devs/AppIntro"
         );
 
         final Map<String, String> USED_ASSETS = ImmutableMap.of
@@ -207,6 +221,12 @@ public class PropertiesListActivity extends AppCompatActivity
                     }
                 })
                 .show();
+    }
+
+    private void startIntro()
+    {
+        Intent intent = new Intent(this, IntroActivity.class);
+        startActivity(intent);
     }
 
     @Override
