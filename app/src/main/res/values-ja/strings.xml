@@ -16,7 +16,7 @@
     <string name="delete">削除</string>
     <string name="done">完了</string>
     <string name="share">共有</string>
-    <!-- Needs Translated --><string name="startIntro">Start Intro</string>
+    <string name="startIntro">紹介を始める</string>
 
     <string name="ok">OK</string>
     <string name="save">保存</string>
@@ -131,11 +131,11 @@
     <string name="totalCashNeededField">必要総現金:</string>
     <string name="valuationTitle">評価</string>
     <string name="pricePerSquareFootField">平方フィート当たりの価格:</string>
-    <string name="operationFirstYearTitle">稼働 (最初の年)</string>
-    <string name="operationTitle">営業</string>
-    <string name="operatingIncomeField">営業収入:</string>
-    <string name="operatingExpensesField">営業経費:</string>
-    <string name="netOperatingIncomeField">営業純利益:</string>
+    <string name="operationFirstYearTitle">運用 (最初の年)</string>
+    <string name="operationTitle">運用</string>
+    <string name="operatingIncomeField">運用収入:</string>
+    <string name="operatingExpensesField">運用経費:</string>
+    <string name="netOperatingIncomeField">運用純利益:</string>
     <string name="mortgageField">住宅ローン:</string>
     <string name="cashFlowField">キャッシュフロー:</string>
     <string name="afterTaxCashFlowField">税引後キャッシュフロー:</string>
@@ -166,11 +166,11 @@
     <string name="grossRentDefinition">テナントから集められたすべての賃料の合計額。 空室や経費は考慮しません。</string>
     <string name="otherIncomeHelpTitle">その他収入</string>
     <string name="otherIncomeDefinition">賃貸料以外の収入。\n\n庭の整備、家の清掃、光熱費、コインランドリーや自動販売機の収入など、テナントに提供されるその他のサービスも含まれます。</string>
-    <string name="operatingExpensesHelpTitle">営業経費</string>
+    <string name="operatingExpensesHelpTitle">運用経費</string>
     <string name="operatingExpensesDefinition">資産を借りる間に支払うすべての経費。\n\n例には、保険、第三者の保証、メンテナンス、固定資産税、光熱費が含まれます。</string>
     <string name="vacancyHelpTitle">空室</string>
     <string name="vacancyDefinition">資産が賃貸されないと予想される時間の割合。\n\n理想的には、資産は常に賃貸されます。 ただし、資産はテナントの間または修理や更新で空室になる可能性があります。\n\n例: 資産が年に 1 ヶ月空いていると予想される場合は、1/12=8.3%</string>
-    <string name="vacancyFormula">$$\\text{Vacancy} = \\frac{\\text{time not rented}}{\\text{total time}}$$</string>
+    <string name="vacancyFormula">$$\\text{空室} = \\frac{\\text{賃貸されない時間}}{\\text{合計時間}}$$</string>
     <string name="appreciationHelpTitle">値上がり</string>
     <string name="appreciationDefinition">資産の価値の毎年の増加。 \n\nこれは、需要の増加や供給の減少、インフレなど、さまざまな理由によります。</string>
     <string name="incomeIncreaseHelpTitle">収入の増加</string>
@@ -183,33 +183,33 @@
     <string name="landValueDefinition">土地だけの価値、つまり住居や他の建物の価値を除いた資産の価値。\n\nこれは資産の減価償却費の計算に使用されます。</string>
     <string name="totalCashNeededTitle">必要総現金</string>
     <string name="totalCashNeededDefinition">資産を購入し、修理し、更新するのに必要な現金の総額。</string>
-    <string name="totalCashNeededFormula">$$\\text{Total Cash Needed} = \\text{Down Payment} + \\text{Purchase Costs} + \\text{Repair and Update Costs}$$</string>
-    <string name="operatingIncomeHelpTitle">営業収入</string>
+    <string name="totalCashNeededFormula">$$\\text{必要総現金} = \\text{頭金} + \\text{購入費用} + \\text{修理および更新費用}$$</string>
+    <string name="operatingIncomeHelpTitle">運用収入</string>
     <string name="operatingIncomeDefinition">資産を借りることによって生じるすべての収入、空室は除きます。</string>
-    <string name="operatingIncomeFormula">$$\\text{Operating Income} = \\text{Gross Rent} + \\text{Other Income} - \\text{Vacancies}$$</string>
-    <string name="netOperatingIncomeHelpTitle">営業純利益</string>
-    <string name="netOperatingIncomeDefinition">資産を借りることによって生じるすべての収入、営業経費は除きます。\n\nこれは、ローンの支払いを考慮しません。 このため、営業純利益は、資金調達とは無関係に資産を比較するために使用することができます。</string>
-    <string name="netOperatingIncomeFormula">$$\\text{Net Operating Income} = \\text{Operating Income} - \\text{Operating Expenses}$$</string>
+    <string name="operatingIncomeFormula">$$\\text{運用収入} = \\text{総賃料} + \\text{その他収入} - \\text{空室}$$</string>
+    <string name="netOperatingIncomeHelpTitle">運用純利益</string>
+    <string name="netOperatingIncomeDefinition">資産を借りることによって生じるすべての収入、運用経費は除きます。\n\nこれは、ローンの支払いを考慮しません。 このため、運用純利益は、資金調達とは無関係に資産を比較するために使用することができます。</string>
+    <string name="netOperatingIncomeFormula">$$\\text{運用純利益} = \\text{運用収入} - \\text{運用経費}$$</string>
     <string name="cashFlowHelpTitle">キャッシュフロー</string>
     <string name="cashFlowDefinition">収入として賃貸資産から受け取った金額。\n\nこれはすべての収入源と、ローン支払いを含むすべての経費を考慮したものです。</string>
-    <string name="cashFlowFormula">$$\\text{Cash Flow} = \\text{Net Operating Income} - \\text{Loan Payment}$$</string>
+    <string name="cashFlowFormula">$$\\text{キャッシュフロー} = \\text{運用純利益} - \\text{ローン支払い}$$</string>
     <string name="capitalizationRateHelpTitle">資本化率</string>
-    <string name="capitalizationRateDefinition">毎年の営業純利益と購入価格を比較する賃貸資産の収益率。\n\nこれはローンの支払いを考慮していません。 このため、資本化率は、資金調達とは無関係に資産を比較するために使用できます。</string>
-    <string name="capitalizationRateFormula">$$\\text{Capitalization Rate} = \\frac{\\text{Yearly Net Operating Income}}{\\text{Purchase Price}}$$</string>
+    <string name="capitalizationRateDefinition">毎年の運用純利益と購入価格を比較する賃貸資産の収益率。\n\nこれはローンの支払いを考慮していません。 このため、資本化率は、資金調達とは無関係に資産を比較するために使用できます。</string>
+    <string name="capitalizationRateFormula">$$\\text{資本化率} = \\frac{\\text{毎年の運用純利益}}{\\text{購入価格}}$$</string>
     <string name="cashOnCashHelpTitle">キャッシュオンキャッシュ</string>
     <string name="cashOnCashDefinition">年間キャッシュフローと総投資現金を比較する賃貸資産の収益率。\n\nこれは投資した現金の年間収益率を表します。</string>
-    <string name="cashOnCashFormula">$$\\text{Cash On Cash} = \\frac{\\text{Yearly Cash Flow}}{\\text{Total Invested Cash}}$$</string>
+    <string name="cashOnCashFormula">$$\\text{キャッシュオンキャッシュ} = \\frac{\\text{年間キャッシュフロー}}{\\text{総投資現金}}$$</string>
     <string name="rentToValueHelpTitle">賃貸価値</string>
-    <string name="rentToValueDefinition">月額総賃料と資産の市場価値を比較する賃貸資産の収益率。</string>
-    <string name="rentToValueFormula">$$\\text{Rent To Value} = \\frac{\\text{Monthly Gross Rent}}{\\text{Market Value}}$$</string>
+    <string name="rentToValueDefinition">月間総賃料と資産の市場価値を比較する賃貸資産の収益率。</string>
+    <string name="rentToValueFormula">$$\\text{賃貸価値} = \\frac{\\text{月間総賃料}}{\\text{市場価値}}$$</string>
     <string name="grossRentMultiplierHelpTitle">総賃貸乗数</string>
     <string name="grossRentMultiplierDefinition">資産の購入価格と毎月の総賃貸料を比較する賃貸資産の収益率。\n\nこれは、年間総賃料が購入価格に加算される年数を表します。</string>
-    <string name="grossRentMultiplierFormula">$$\\text{Gross Rent Multiplier} = \\frac{\\text{Purchase Price}}{\\text{Monthly Gross Rent}}$$</string>
+    <string name="grossRentMultiplierFormula">$$\\text{総賃貸乗数} = \\frac{\\text{購入価格}}{\\text{月間総賃料}}$$</string>
     <string name="propertyValueHelpHelpTitle">資産価値</string>
     <string name="propertyValueHelpDefinition">資産の現在の価値。\n\n資産が割引で購入された可能性、修理または更新された可能性、資産が値上がりしたなどがあるため、購入価格と同じではない場合があります。</string>
     <string name="totalEquityHelpTitle">合計エクイティ</string>
     <string name="totalEquityHelpDefinition">所有する資産の市場価値の部分。 ローンを使用する場合、これはローンの残高によって異なります。 ローンが支払われ、財産の価値が高まるにつれて、エクイティが増加します。</string>
-    <string name="totalEquityHelpFormula">$$\\text{Equity} = \\text{Market Price} - \\text{Loan Balance}$$</string>
+    <string name="totalEquityHelpFormula">$$\\text{エクイティ} = \\text{市場価値} - \\text{ローン残高}$$</string>
     <string name="depreciationHelpTitle">減価償却</string>
     <string name="depreciationHelpDefinition">1 年で不動産を購入する費用をすべて差し引くのではなく、多くの国では、賃貸資産の有効な耐用年数で資産の費用を引き継ぐことが求められています。\n\n米国では、資産の有効な耐用年数は 27.5 年と見なされます。 米国の場合は、賃貸不動産償却規則に関する地方税法を確認してください。</string>
     <string name="mortgageInterestHelpTitle">住宅ローン金利</string>
@@ -222,17 +222,17 @@
     <string name="expensesItemizeTitle">費用の明細</string>
     <string name="expensesItemizeHelp">資産税、保険、第三者の保証、芝生のメンテナンスなど、1 か月あたりの費用を追加してください。 注: 名前は一意にする必要があります。</string>
 
-    <!-- Needs Translated --><string name="intro1Title">Welcome to Rental Calc\n</string>
-    <!-- Needs Translated --><string name="intro1Description">Analyze rental properties to determine the best investment!\n\n</string>
-    <!-- Needs Translated --><string name="intro2Title">Adding Properties\n</string>
-    <!-- Needs Translated --><string name="intro2Description">Add a new property by touching the plus from the property list.\n\nEnter a nickname, address, and any other information you want.</string>
-    <!-- Needs Translated --><string name="intro3Title">Worksheet\n</string>
-    <!-- Needs Translated --><string name="intro3Description">Touch Worksheet to enter details, including purchase price, financing, repair/remodel costs, monthly rent, and other information.</string>
-    <!-- Needs Translated --><string name="intro4Title">Summary / Projections\n</string>
-    <!-- Needs Translated --><string name="intro4Description">After filling out the worksheet, touch Summary to see details on the deal, including cash needed, first year\'s operation, and returns. \n\nTouch Projections to see future operations and returns.</string>
-    <!-- Needs Translated --><string name="intro5Title">Other Information\n</string>
-    <!-- Needs Translated --><string name="intro5Description">Images of the property can be captured on the Pictures page, and notes can be recorded on the Notes page.</string>
-    <!-- Needs Translated --><string name="intro6Title">Feedback\n</string>
-    <!-- Needs Translated --><string name="intro6Description">This app is free and open source. See details by touching About in the menu on the main page.\n\nPlease leave feedback in the app store! (:</string>
+    <string name="intro1Title">Rental Calc へようこそ\n</string>
+    <string name="intro1Description">賃貸資産を分析して、最適な投資を決定しましょう!\n\n</string>
+    <string name="intro2Title">資産の追加\n</string>
+    <string name="intro2Description">資産リストからプラスをタッチして、新しい資産を追加します。\n\nニックネーム、住所ス、その他必要な情報を入力します。</string>
+    <string name="intro3Title">ワークシート\n</string>
+    <string name="intro3Description">ワークシートをタッチして、購入価格、資金調達、修理/改造費用、月額賃料などの詳細を入力します。</string>
+    <string name="intro4Title">サマリー / 投影\n</string>
+    <string name="intro4Description">ワークシートに記入した後、サマリーをタッチすると、必要な現金、初年度の運用、および収益を含む取引の詳細が表示されます。 \n\n将来の運用と収益を確認するには、投影をタッチします。</string>
+    <string name="intro5Title">その他の情報\n</string>
+    <string name="intro5Description">資産の画像は写真ページで撮影し、メモはメモページに記録することができます。</string>
+    <string name="intro6Title">フィードバック\n</string>
+    <string name="intro6Description">このアプリはフリーのオープンソースです。 メインページのメニューのアプリについてをタッチすると詳細が表示されます。\n\nアプリストアにフィードバックを入れてください! (:</string>
 
 </resources>
