@@ -26,6 +26,25 @@ If there is any interest in improving this project, kindly submit a pull request
 [<img src="https://cloud.githubusercontent.com/assets/5264535/25881830/484dfbe8-350d-11e7-9c76-d95f85a01a78.png" width=250>](https://cloud.githubusercontent.com/assets/5264535/25881830/484dfbe8-350d-11e7-9c76-d95f85a01a78.png)
 [<img src="https://cloud.githubusercontent.com/assets/5264535/25881831/49596194-350d-11e7-9a4a-2c7f9036ac59.png" width=250>](https://cloud.githubusercontent.com/assets/5264535/25881831/49596194-350d-11e7-9a4a-2c7f9036ac59.png)
 
+# Building
+
+To build, use the gradle wrapper scripts provided in the top level directory of the project. The following will
+compile the application and run all unit tests:
+
+GNU/Linux, OSX, UNIX:
+```
+./gradlew build
+```
+
+Windows:
+```
+./gradlew.bat build
+```
+
+# Translating
+
+If you are interested in translating this application to another language, create a pull request with changes or find the project listing on  [Transifex](https://www.transifex.com/na-243/rental-calc).
+
 # Thanks
 
 This application uses the following images:
