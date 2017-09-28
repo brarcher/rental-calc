@@ -51,7 +51,7 @@
 
                     <EditText
                         android:id="@+id/nickname"
-                        android:inputType="text"
+                        android:inputType="textCapWords"
                         android:hint="@string/nickname"
                         android:layout_height="wrap_content"
                         android:layout_width="match_parent"
@@ -104,7 +104,7 @@
 
                     <EditText
                         android:id="@+id/street"
-                        android:inputType="text"
+                        android:inputType="textCapWords"
                         android:hint="@string/street"
                         android:layout_height="wrap_content"
                         android:layout_width="match_parent"
@@ -135,7 +135,7 @@
 
                     <EditText
                         android:id="@+id/city"
-                        android:inputType="text"
+                        android:inputType="textCapWords"
                         android:hint="@string/city"
                         android:layout_height="wrap_content"
                         android:layout_width="match_parent"
@@ -171,7 +171,7 @@
                         android:layout_height="wrap_content">
                         <EditText
                             android:id="@+id/state"
-                            android:inputType="text"
+                            android:inputType="textCapWords"
                             android:layout_weight="1"
                             android:hint="@string/stateOrRegion"
                             android:layout_height="wrap_content"
@@ -187,7 +187,7 @@
 
                         <EditText
                             android:id="@+id/zip"
-                            android:inputType="text"
+                            android:inputType="textCapWords"
                             android:layout_weight="1"
                             android:hint="@string/zip"
                             android:layout_height="wrap_content"
@@ -586,7 +586,7 @@
 
                         <EditText
                             android:id="@+id/zoning"
-                            android:inputType="text"
+                            android:inputType="textCapWords"
                             android:hint="@string/zoning"
                             android:gravity="end"
                             android:layout_height="wrap_content"
