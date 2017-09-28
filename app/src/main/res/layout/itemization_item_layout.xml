@@ -35,9 +35,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:padding="@dimen/inputPadding">
-            <TextView
-                android:id="@+id/currency"
-                android:text="$"
+            <protect.rentalcalc.view.CurrencyTextView
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
                 android:layout_weight="0"

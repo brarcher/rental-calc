@@ -32,7 +32,6 @@ class ItemizationAdapter extends ArrayAdapter<Itemization>
     {
         EditText field;
         TextWatcher fieldWatcher;
-        TextView currency;
         EditText value;
         TextWatcher valueWatcher;
         ImageView deleteIcon;
@@ -66,7 +65,6 @@ class ItemizationAdapter extends ArrayAdapter<Itemization>
 
             holder = new ViewHolder();
             holder.field = (EditText) convertView.findViewById(R.id.field);
-            holder.currency = (TextView) convertView.findViewById(R.id.currency);
             holder.value = (EditText) convertView.findViewById(R.id.value);
             holder.deleteIcon = (ImageView) convertView.findViewById(R.id.deleteIcon);
             convertView.setTag(holder);
@@ -104,8 +102,6 @@ class ItemizationAdapter extends ArrayAdapter<Itemization>
 
         holder.field.setText(item != null ? item.name : "");
         holder.field.addTextChangedListener(holder.fieldWatcher);
-
-        holder.currency.setText("$");
 
         // Remove the value watcher, if it exists, before continuing
         holder.value.removeTextChangedListener(holder.valueWatcher);

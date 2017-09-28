@@ -120,9 +120,7 @@
                                 android:paddingTop="@dimen/inputPadding"
                                 android:paddingBottom="@dimen/inputPadding"
                                 android:minWidth="@dimen/minValueWidth">
-                                <TextView
-                                    android:id="@+id/rentValueCurrency"
-                                    android:text="$"
+                                <protect.rentalcalc.view.CurrencyTextView
                                     android:layout_height="wrap_content"
                                     android:layout_width="wrap_content"
                                     android:textSize="@dimen/inputSize"
@@ -215,9 +213,7 @@
                                 android:paddingTop="@dimen/inputPadding"
                                 android:paddingBottom="@dimen/inputPadding"
                                 android:minWidth="@dimen/minValueWidth">
-                                <TextView
-                                    android:id="@+id/vancancyValueCurrency"
-                                    android:text="$"
+                                <protect.rentalcalc.view.CurrencyTextView
                                     android:layout_height="wrap_content"
                                     android:layout_width="wrap_content"
                                     android:textSize="@dimen/inputSize"
@@ -310,9 +306,7 @@
                                 android:paddingTop="@dimen/inputPadding"
                                 android:paddingBottom="@dimen/inputPadding"
                                 android:minWidth="@dimen/minValueWidth">
-                                <TextView
-                                    android:id="@+id/operatingIncomeValueCurrency"
-                                    android:text="$"
+                                <protect.rentalcalc.view.CurrencyTextView
                                     android:layout_height="wrap_content"
                                     android:layout_width="wrap_content"
                                     android:textSize="@dimen/inputSize"
@@ -405,9 +399,7 @@
                                 android:paddingTop="@dimen/inputPadding"
                                 android:paddingBottom="@dimen/inputPadding"
                                 android:minWidth="@dimen/minValueWidth">
-                                <TextView
-                                    android:id="@+id/operatingExpensesValueCurrency"
-                                    android:text="$"
+                                <protect.rentalcalc.view.CurrencyTextView
                                     android:layout_height="wrap_content"
                                     android:layout_width="wrap_content"
                                     android:textSize="@dimen/inputSize"
@@ -500,9 +492,7 @@
                                 android:paddingTop="@dimen/inputPadding"
                                 android:paddingBottom="@dimen/inputPadding"
                                 android:minWidth="@dimen/minValueWidth">
-                                <TextView
-                                    android:id="@+id/netOperatingIncomeValueCurrency"
-                                    android:text="$"
+                                <protect.rentalcalc.view.CurrencyTextView
                                     android:layout_height="wrap_content"
                                     android:layout_width="wrap_content"
                                     android:textSize="@dimen/inputSize"
@@ -582,9 +572,7 @@
                                 android:paddingTop="@dimen/inputPadding"
                                 android:paddingBottom="@dimen/inputPadding"
                                 android:minWidth="@dimen/minValueWidth">
-                                <TextView
-                                    android:id="@+id/mortgageValueCurrency"
-                                    android:text="$"
+                                <protect.rentalcalc.view.CurrencyTextView
                                     android:layout_height="wrap_content"
                                     android:layout_width="wrap_content"
                                     android:textSize="@dimen/inputSize"
@@ -677,9 +665,7 @@
                                 android:paddingTop="@dimen/inputPadding"
                                 android:paddingBottom="@dimen/inputPadding"
                                 android:minWidth="@dimen/minValueWidth">
-                                <TextView
-                                    android:id="@+id/cashFlowValueCurrency"
-                                    android:text="$"
+                                <protect.rentalcalc.view.CurrencyTextView
                                     android:layout_height="wrap_content"
                                     android:layout_width="wrap_content"
                                     android:textSize="@dimen/inputSize"
@@ -752,9 +738,7 @@
                                 android:paddingTop="@dimen/inputPadding"
                                 android:paddingBottom="@dimen/inputPadding"
                                 android:minWidth="@dimen/minValueWidth">
-                                <TextView
-                                    android:id="@+id/afterTaxCashFlowValueCurrency"
-                                    android:text="$"
+                                <protect.rentalcalc.view.CurrencyTextView
                                     android:layout_height="wrap_content"
                                     android:layout_width="wrap_content"
                                     android:textSize="@dimen/inputSize"
@@ -856,9 +840,7 @@
                                 android:paddingTop="@dimen/inputPadding"
                                 android:paddingBottom="@dimen/inputPadding"
                                 android:minWidth="@dimen/minValueWidth">
-                                <TextView
-                                    android:id="@+id/propertyValueCurrency"
-                                    android:text="$"
+                                <protect.rentalcalc.view.CurrencyTextView
                                     android:layout_height="wrap_content"
                                     android:layout_width="wrap_content"
                                     android:textSize="@dimen/inputSize"
@@ -946,9 +928,7 @@
                                 android:paddingTop="@dimen/inputPadding"
                                 android:paddingBottom="@dimen/inputPadding"
                                 android:minWidth="@dimen/minValueWidth">
-                                <TextView
-                                    android:id="@+id/loanBalanceCurrency"
-                                    android:text="$"
+                                <protect.rentalcalc.view.CurrencyTextView
                                     android:layout_height="wrap_content"
                                     android:layout_width="wrap_content"
                                     android:textSize="@dimen/inputSize"
@@ -1043,9 +1023,7 @@
                                 android:paddingTop="@dimen/inputPadding"
                                 android:paddingBottom="@dimen/inputPadding"
                                 android:minWidth="@dimen/minValueWidth">
-                                <TextView
-                                    android:id="@+id/totalEquityCurrency"
-                                    android:text="$"
+                                <protect.rentalcalc.view.CurrencyTextView
                                     android:layout_height="wrap_content"
                                     android:layout_width="wrap_content"
                                     android:textSize="@dimen/inputSize"
@@ -1150,9 +1128,7 @@
                                 android:paddingTop="@dimen/inputPadding"
                                 android:paddingBottom="@dimen/inputPadding"
                                 android:minWidth="@dimen/minValueWidth">
-                                <TextView
-                                    android:id="@+id/depreciationCurrency"
-                                    android:text="$"
+                                <protect.rentalcalc.view.CurrencyTextView
                                     android:layout_height="wrap_content"
                                     android:layout_width="wrap_content"
                                     android:textSize="@dimen/inputSize"
@@ -1234,9 +1210,7 @@
                                 android:paddingTop="@dimen/inputPadding"
                                 android:paddingBottom="@dimen/inputPadding"
                                 android:minWidth="@dimen/minValueWidth">
-                                <TextView
-                                    android:id="@+id/mortgageInterestCurrency"
-                                    android:text="$"
+                                <protect.rentalcalc.view.CurrencyTextView
                                     android:layout_height="wrap_content"
                                     android:layout_width="wrap_content"
                                     android:textSize="@dimen/inputSize"
