@@ -24,6 +24,7 @@
             <EditText
                 android:id="@+id/field"
                 android:hint="@string/name"
+                android:inputType="textCapSentences"
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
                 android:textSize="@dimen/inputSize"/>
