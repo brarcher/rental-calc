@@ -145,25 +145,93 @@ public class PropertyWorksheetActivity extends AppCompatActivity
         };
         _financing.setOnCheckedChangeListener(listener);
 
-        _price.setText(String.format(Locale.US, "%d", _property.purchasePrice));
-        _afterRepairsValue.setText(String.format(Locale.US, "%d", _property.afterRepairsValue));
+        if(_property.purchasePrice > 0)
+        {
+            _price.setText(String.format(Locale.US, "%d", _property.purchasePrice));
+        }
+
+        if(_property.afterRepairsValue > 0)
+        {
+            _afterRepairsValue.setText(String.format(Locale.US, "%d", _property.afterRepairsValue));
+        }
+
         _financing.setChecked(_property.useLoan);
         listener.onCheckedChanged(_financing, _property.useLoan);
-        _downPayment.setText(String.format(Locale.US, "%d", _property.downPayment));
-        _interestRate.setText(String.format(Locale.US, "%.3f", _property.interestRate));
-        _loanDuration.setText(String.format(Locale.US, "%d", _property.loanDuration));
-        _purchaseCost.setText(String.format(Locale.US, "%d", _property.purchaseCosts));
-        _repairCost.setText(String.format(Locale.US, "%d", _property.repairRemodelCosts));
-        _rent.setText(String.format(Locale.US, "%d", _property.grossRent));
-        _otherIncome.setText(String.format(Locale.US, "%d", _property.otherIncome));
-        _totalExpenses.setText(String.format(Locale.US, "%d", _property.expenses));
-        _vacancy.setText(String.format(Locale.US, "%d", _property.vacancy));
-        _appreciation.setText(String.format(Locale.US, "%d", _property.appreciation));
-        _incomeIncrease.setText(String.format(Locale.US, "%d", _property.incomeIncrease));
-        _expensesIncrease.setText(String.format(Locale.US, "%d", _property.expenseIncrease));
-        _sellingCosts.setText(String.format(Locale.US, "%d", _property.sellingCosts));
-        _landValue.setText(String.format(Locale.US, "%d", _property.landValue));
-        _incomeTaxRate.setText(String.format(Locale.US, "%d", _property.incomeTaxRate));
+
+        if(_property.downPayment > 0)
+        {
+            _downPayment.setText(String.format(Locale.US, "%d", _property.downPayment));
+        }
+
+        if(_property.interestRate > 0)
+        {
+            _interestRate.setText(String.format(Locale.US, "%.3f", _property.interestRate));
+        }
+
+        if(_property.loanDuration > 0)
+        {
+            _loanDuration.setText(String.format(Locale.US, "%d", _property.loanDuration));
+        }
+
+        if(_property.purchaseCosts > 0)
+        {
+            _purchaseCost.setText(String.format(Locale.US, "%d", _property.purchaseCosts));
+        }
+
+        if(_property.repairRemodelCosts > 0)
+        {
+            _repairCost.setText(String.format(Locale.US, "%d", _property.repairRemodelCosts));
+        }
+
+        if(_property.grossRent > 0)
+        {
+            _rent.setText(String.format(Locale.US, "%d", _property.grossRent));
+        }
+
+        if(_property.otherIncome > 0)
+        {
+            _otherIncome.setText(String.format(Locale.US, "%d", _property.otherIncome));
+        }
+
+        if(_property.expenses > 0)
+        {
+            _totalExpenses.setText(String.format(Locale.US, "%d", _property.expenses));
+        }
+
+        if(_property.vacancy > 0)
+        {
+            _vacancy.setText(String.format(Locale.US, "%d", _property.vacancy));
+        }
+
+        if(_property.appreciation > 0)
+        {
+            _appreciation.setText(String.format(Locale.US, "%d", _property.appreciation));
+        }
+
+        if(_property.incomeIncrease > 0)
+        {
+            _incomeIncrease.setText(String.format(Locale.US, "%d", _property.incomeIncrease));
+        }
+
+        if(_property.expenseIncrease > 0)
+        {
+            _expensesIncrease.setText(String.format(Locale.US, "%d", _property.expenseIncrease));
+        }
+
+        if(_property.sellingCosts > 0)
+        {
+            _sellingCosts.setText(String.format(Locale.US, "%d", _property.sellingCosts));
+        }
+
+        if(_property.landValue > 0)
+        {
+            _landValue.setText(String.format(Locale.US, "%d", _property.landValue));
+        }
+
+        if(_property.incomeTaxRate > 0)
+        {
+            _incomeTaxRate.setText(String.format(Locale.US, "%d", _property.incomeTaxRate));
+        }
 
         // Once the price is set, if the after repairs value is not yet populated,
         // fill it in with the price. It is a good first guess.
@@ -176,7 +244,7 @@ public class PropertyWorksheetActivity extends AppCompatActivity
                 {
                     String price = _price.getText().toString();
                     if(price.isEmpty() == false && price.equals("0") == false &&
-                            _afterRepairsValue.getText().toString().equals("0"))
+                            _afterRepairsValue.getText().toString().isEmpty())
                     {
                         _afterRepairsValue.setText(price);
                     }
