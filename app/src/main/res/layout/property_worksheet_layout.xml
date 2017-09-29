@@ -83,9 +83,7 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"/>
 
-                        <TextView
-                            android:id="@+id/priceCurrency"
-                            android:text="$"
+                        <protect.rentalcalc.view.CurrencyTextView
                             android:layout_height="wrap_content"
                             android:layout_width="wrap_content"
                             android:layout_weight="0"
@@ -160,9 +158,7 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"/>
 
-                        <TextView
-                            android:id="@+id/afterRepairsValueCurrency"
-                            android:text="$"
+                        <protect.rentalcalc.view.CurrencyTextView
                             android:layout_height="wrap_content"
                             android:layout_width="wrap_content"
                             android:layout_weight="0"
@@ -581,9 +577,8 @@
                                 android:layout_alignParentBottom="true"/>
                         </RelativeLayout>
 
-                        <TextView
+                        <protect.rentalcalc.view.CurrencyTextView
                             android:id="@+id/purchaseCostItemizeCurrency"
-                            android:text="$"
                             android:layout_height="wrap_content"
                             android:layout_width="wrap_content"
                             android:layout_weight="0"
@@ -734,9 +729,7 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"/>
 
-                        <TextView
-                            android:id="@+id/repairCostCurrency"
-                            android:text="$"
+                        <protect.rentalcalc.view.CurrencyTextView
                             android:layout_height="wrap_content"
                             android:layout_width="wrap_content"
                             android:layout_weight="0"
@@ -899,9 +892,7 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"/>
 
-                        <TextView
-                            android:id="@+id/rentCurrency"
-                            android:text="$"
+                        <protect.rentalcalc.view.CurrencyTextView
                             android:layout_height="wrap_content"
                             android:layout_width="wrap_content"
                             android:layout_weight="0"
@@ -991,9 +982,7 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"/>
 
-                        <TextView
-                            android:id="@+id/otherIncomeCurrency"
-                            android:text="$"
+                        <protect.rentalcalc.view.CurrencyTextView
                             android:layout_height="wrap_content"
                             android:layout_width="wrap_content"
                             android:layout_weight="0"
@@ -1133,9 +1122,8 @@
                                 android:layout_alignParentBottom="true"/>
                         </RelativeLayout>
 
-                        <TextView
+                        <protect.rentalcalc.view.CurrencyTextView
                             android:id="@+id/totalExpensesItemizeCurrency"
-                            android:text="$"
                             android:layout_height="wrap_content"
                             android:layout_width="wrap_content"
                             android:layout_weight="0"
@@ -1711,9 +1699,7 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"/>
 
-                        <TextView
-                            android:id="@+id/landValueCurrency"
-                            android:text="$"
+                        <protect.rentalcalc.view.CurrencyTextView
                             android:layout_height="wrap_content"
                             android:layout_width="wrap_content"
                             android:layout_weight="0"

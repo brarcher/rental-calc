@@ -40,7 +40,6 @@ public class PropertyProjectionsActivity extends AppCompatActivity
     private TextView _rentToValueValue;
     private TextView _grossRentMultiplierValue;
     private TextView _projectionText;
-    private SeekBar _yearSeeker;
     private List<PropertyCalculation> _calculations;
 
     @Override
@@ -105,8 +104,8 @@ public class PropertyProjectionsActivity extends AppCompatActivity
         _projectionText = (TextView)findViewById(R.id.projectionText);
         updateDisplay(0);
 
-        _yearSeeker = (SeekBar)findViewById(R.id.yearSeeker);
-        _yearSeeker.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener()
+        SeekBar yearSeeker = (SeekBar)findViewById(R.id.yearSeeker);
+        yearSeeker.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener()
         {
             @Override
             public void onProgressChanged(SeekBar seekBar, int position, boolean fromUser)
