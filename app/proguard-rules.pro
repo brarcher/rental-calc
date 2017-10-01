@@ -20,6 +20,9 @@
 # debugging stack traces.
 -keepattributes SourceFile,LineNumberTable
 
+# This keep the class and method names the same, for debugging stack traces
+-dontobfuscate
+
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
