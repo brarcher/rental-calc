@@ -3,7 +3,6 @@ apply plugin: 'findbugs'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "25.0.2"
     defaultConfig {
         applicationId "protect.rentalcalc"
         minSdkVersion 16
@@ -24,6 +23,14 @@ android {
     }
     lintOptions {
         disable "MissingTranslation"
+    }
+
+    // Starting with Android Studio 3 Robolectric is unable to find resources.
+    // The following allows it to find the resources.
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+        }
     }
 }
 
