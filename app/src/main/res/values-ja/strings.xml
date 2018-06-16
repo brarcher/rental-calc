@@ -47,7 +47,6 @@
 
     <string name="noProperties">現在資産はありません。 上部の "+" (プラス) ボタンをクリックして、始めましょう。\n\nRental Calc は資産を作成して、その投資の潜在力を判断するのに役立ちます。</string>
 
-
     <string name="commercial">商店</string>
     <string name="condo">マンション</string>
     <string name="house">家</string>
@@ -71,7 +70,6 @@
     <string name="financingTitle">資金調達</string>
     <string name="useALoanField">ローンを使う:</string>
     <string name="downPaymentField">頭金:</string>
-
     <string name="interestRateField">金利:</string>
     <string name="loanDurationField">ローン期間:</string>
     <string name="yearsUnit">年数</string>
@@ -120,8 +118,8 @@
     <string name="zoning">地区制</string>
     <string name="mlsNumberField">不動産情報番号(MLS):</string>
     <string name="mlsNumber">不動産情報番号(MLS)</string>
-    <string name="pictures">絵画/写真</string>
     <string name="worksheet">ワークシート</string>
+    <string name="pictures">絵画/写真</string>
     <string name="notes">メモ</string>
     <string name="analysisTitle">分析</string>
     <string name="summary">サマリー</string>
