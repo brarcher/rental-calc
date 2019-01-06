@@ -1,4 +1,214 @@
 <resources
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    </resources>
+    <string name="app_name">Verhuurcalculator</string>
+
+    <string name="addPropertyTitle">Vastgoed toevoegen</string>
+    <string name="overviewTitle">Overzicht</string>
+    <string name="worksheetTitle">Werkblad</string>
+    <string name="notesTitle">Notities</string>
+    <string name="picturesTitle">Afbeeldingen</string>
+    <string name="summaryTitle">Samenvatting</string>
+    <string name="projectionsTitle">Prognoses</string>
+
+    <string name="add">Toevoegen</string>
+    <string name="about">Over</string>
+    <string name="delete">Verwijderen</string>
+    <string name="done">Klaar</string>
+    <string name="share">Delen</string>
+    <string name="startIntro">Introductie starten</string>
+
+    <string name="ok">Oké</string>
+    <string name="save">Opslaan</string>
+    <string name="cancel">Annuleren</string>
+    <string name="confirm">Bevestigen</string>
+
+    <string name="addNewPhotoTitle">Nieuwe foto toevoegen</string>
+    <string name="importExistingPhoto">Bestaande foto kiezen</string>
+    <string name="captureNewPhoto">Nieuwe foto maken</string>
+    <string name="selectPhotoTitle">Foto selecteren</string>
+    <string name="pictureCaptureError">De foto kan niet worden gemaakt of gekozen</string>
+    <string name="savingPicture">Bezig met opslaan van afbeelding...</string>
+    <string name="noCameraPermissionError">Foto\'s kunnen niet worden gemaakt zonder de camera-machtiging</string>
+    <string name="deletePictureTitle">Afbeelding verwijderen</string>
+    <string name="deletePictureConfirmation">Bevestig dat je deze foto wilt verwijderen.</string>
+
+
+    <string name="name">Naam</string>
+    <string name="value">Waarde</string>
+
+    <string name="app_copyright_fmt">Copyright 2017-<xliff:g>%d</xliff:g> Branden Archer</string>
+    <string name="app_license">Uitgebracht onder de GPLv3-licentie.</string>
+    <string name="about_title_fmt">Over <xliff:g id="app_name">%s</xliff:g></string>
+    <string name="debug_version_fmt">Versie: <xliff:g id="version">%s</xliff:g></string>
+    <string name="app_revision_fmt">Versie-informatie: <xliff:g id="app_revision_url">%s</xliff:g></string>
+    <string name="app_libraries"><xliff:g id="app_name">%s</xliff:g> gebruikt de volgende bibliotheken van derde partijen: <xliff:g id="app_libraries_list">%s</xliff:g></string>
+    <string name="app_resources"><xliff:g id="app_name">%s</xliff:g> gebruikt de volgende bronnen van derde partijen: <xliff:g id="app_resources_list">%s</xliff:g></string>
+
+    <string name="noProperties">Je hebt momenteel geen eigendommen. Klik op de \"+\" (plus)-knop om te beginnen.\n\nVerhuurcalculator stelt je in staat om vastgoed vast te leggen zodat je hun potentie kunt bepalen.</string>
+
+    <string name="commercial">Commercieel</string>
+    <string name="condo">Appartement</string>
+    <string name="house">Huis</string>
+    <string name="land">Terrein</string>
+    <string name="multifamily">Meerdere gezinnen</string>
+    <string name="manufactured">Gefabriceerd</string>
+    <string name="other">Overig</string>
+    <string name="carport">Carport</string>
+    <string name="garage">Garage</string>
+    <string name="offstreet">Eigen terrein</string>
+    <string name="onstreet">Openbare weg</string>
+    <string name="none">Geen</string>
+    <string name="privatelot">Privéparkeerplaats</string>
+
+    <string name="deletePropertyTitle">Vastgoed verwijderen</string>
+    <string name="deletePropertyConfirmation">Bevestig dat je dit vastgoed wilt verwijderen.</string>
+
+    <string name="purchasePriceField">Aankoopprijs:</string>
+    <string name="afterRepairsValueField">Waarde na reparaties:</string>
+    <string name="afterRepairsValueHelp">Als er geen reparaties nodig zijn, dan is dit hetzelfde als de aankoopprijs.</string>
+    <string name="financingTitle">FINANCIERING</string>
+    <string name="useALoanField">Gebruikmakend van een lening:</string>
+    <string name="downPaymentField">Onderpand:</string>
+    <string name="interestRateField">Rente:</string>
+    <string name="loanDurationField">Duur van de lening:</string>
+    <string name="yearsUnit">jaar</string>
+    <string name="purchaseCostsTitle">AANSCHAFKOSTEN</string>
+    <string name="purchaseCostsField">Aanschafkosten:</string>
+    <string name="totalField">Totaal:</string>
+    <string name="itemize">Specificeren</string>
+    <string name="percentOfPriceUnit">% van de prijs</string>
+    <string name="repairRemodelCostsTitle">REPARATIE-/VERBOUWKOSTEN</string>
+    <string name="repairRemodelCostsField">Reparatie-/verbouwkosten:</string>
+    <string name="incomeTitle">INKOMSTEN</string>
+    <string name="grossRentField">Bruto huur:</string>
+    <string name="perMonthUnit">per maand</string>
+    <string name="otherIncomeField">Overige inkomsten:</string>
+    <string name="expensesTitle">UITGAVEN</string>
+    <string name="percentOfRentUnit">% van de huur</string>
+    <string name="assumptionsTitle">PROGNOSES</string>
+    <string name="vacancyField">Leegstand:</string>
+    <string name="appreciationField">Waardering:</string>
+    <string name="percentPerYearUnit">% per jaar</string>
+    <string name="incomeIncreaseField">Inkomstenverhoging:</string>
+    <string name="expensesIncreaseField">Uitgavenverhoging:</string>
+    <string name="incomeTaxRateField">Inkomstenbelasting:</string>
+    <string name="incomeTaxRateValueHelp">Voer het verwachte belastingpercentage in.</string>
+    <string name="sellingCostsField">Verkoopkosten:</string>
+    <string name="percentOfSalePriceUnit">% van de verkoopprijs</string>
+    <string name="landValueField">Terreinwaarde:</string>
+    <string name="nickname">Bijnaam</string>
+    <string name="addressTitle">ADRES</string>
+    <string name="street">Straatnaam</string>
+    <string name="city">Stad</string>
+    <string name="stateOrRegion">Provincie/Regio</string>
+    <string name="zip">Postcode</string>
+    <string name="detailsTitle">DETAILS</string>
+    <string name="propertyTypeField">Vastgoedtype:</string>
+    <string name="bedsField">Aantal bedden:</string>
+    <string name="bathsField">Aantal baden:</string>
+    <string name="squareFootageField">Aantal vierkante meters:</string>
+    <string name="squareFeet">Vierkante meter</string>
+    <string name="lotSizeField">Terreingrootte:</string>
+    <string name="lotSize">Terreingrootte</string>
+    <string name="yearBuiltField">Bouwjaar:</string>
+    <string name="yearBuilt">Bouwjaar</string>
+    <string name="parkingField">Parkeergelegenheid:</string>
+    <string name="zoningField">Zonering:</string>
+    <string name="zoning">Zonering</string>
+    <string name="mlsNumberField">MLS-nummer:</string>
+    <string name="mlsNumber">MLS-nummer</string>
+    <string name="worksheet">Werkblad</string>
+    <string name="pictures">Afbeeldingen</string>
+    <string name="notes">Notities</string>
+    <string name="analysisTitle">ANALYSE</string>
+    <string name="summary">Samenvatting</string>
+    <string name="projections">Prognoses</string>
+    <string name="purchaseRepairRemodelTitle">AANSCHAF, REPARATIE, VERBOUWING</string>
+    <string name="financedField">Gefinancierd:</string>
+    <string name="totalCashNeededField">Benodigd totaalbedrag:</string>
+    <string name="valuationTitle">SCHATTING</string>
+    <string name="pricePerSquareFootField">Prijs per vierkante meter:</string>
+    <string name="operationFirstYearTitle">OPERATIEKOSTEN (EERSTE JAAR)</string>
+    <string name="operationTitle">OPERATIEKOSTEN</string>
+    <string name="operatingIncomeField">Inkomsten:</string>
+    <string name="operatingExpensesField">Uitgaven:</string>
+    <string name="netOperatingIncomeField">Netto-inkomsten:</string>
+    <string name="mortgageField">Hypotheek:</string>
+    <string name="cashFlowField">Kasstroom:</string>
+    <string name="afterTaxCashFlowField">Na kasstroom-belasting:</string>
+    <string name="equityTitle">EIGEN VERMOGEN</string>
+    <string name="propertyValueField">Vastgoedwaarde</string>
+    <string name="loanBalanceField">Saldo van lening</string>
+    <string name="totalEquityField">Totaal eigen vermogen</string>
+    <string name="taxAdvantagesTitle">BELASTINGVOORDELEN</string>
+    <string name="depreciationField">Veroudering</string>
+    <string name="mortgageInterestField">Hypotheekrente</string>
+    <string name="projectionText">Jaar: <xliff:g id="number">%d</xliff:g></string>
+
+    <!-- Dictionary lookups -->
+    <string name="purchasePriceHelpTitle">Aankoopprijs</string>
+    <string name="purchasePriceDefinition">De prijs van het vastgoed.\n\nDit is exclusief de aankoopprijs en de reparatie-/verbouwkosten.</string>
+    <string name="afterRepairsValueHelpTitle">Waarde na reparaties</string>
+    <string name="afterRepairsValueDefinition">De geschatte marktwaarde van het vastgoed ná reparaties en verbouwingen.</string>
+    <string name="purchaseCostsHelpTitle">Aanschafkosten</string>
+    <string name="purchaseCostsDefinition">De kosten en toeslagen die gepaard gaan met het aanschaffen van het vastgoed.\n\nVoorbeelden hiervan zijn: keuring, vastgoedinspectie, ongedierte-inspectie en de verzekeringskosten voor het eerste jaar.</string>
+    <string name="repairRemodelHelpTitle">Reparatie-/verbouwkosten</string>
+    <string name="repairRemodelDefinition">De reparatie- en verbouwkosten.\n\nVoorbeelden hiervan zijn: verven, leggen van een vloer, installeren van apparaten en schoonmaken.</string>
+    <string name="grossRentHelpTitle">Bruto huur</string>
+    <string name="grossRentDefinition">De totale waarde van de opgehaalde huren. Exclusief leegstand en uitgaven.</string>
+    <string name="otherIncomeHelpTitle">Overige inkomsten</string>
+    <string name="otherIncomeDefinition">Overige inkomsten, buiten de huur om.\n\nDit kunnen bijv. servicekosten zijn, maar ook terreinonderhoud, woningschoonmaak en gebruik van nutsvoorzieningen.</string>
+    <string name="operatingExpensesHelpTitle">Operatiekosten</string>
+    <string name="operatingExpensesDefinition">Alle bijkomende huurkosten.\n\nVoorbeelden hiervan zijn: verzekeringen (bij derden), onderhoud, eigendomsbelasting en nutsvoorzieningen.</string>
+    <string name="vacancyHelpTitle">Leegstand</string>
+    <string name="vacancyDefinition">Het tijdspercentage waarbinnen het vastgoed niet verhuurd gaat worden.\n\nIdealiter wordt het altijd verhuurd, maar het kan zijn dat het leegstaat tijdens het veranderen van huurder of tijdens het repareren, dan wel verbouwen.\n\nVoorbeeld: als de verwachte leegstandsduur één maand per jaar is, dan is dat 1/12=8.3%</string>
+    <string name="vacancyFormula">$$\\tekst{Vacancy} = \\frac{\\tekst{duur van leegstand}}{\\tekst{totaalduur}}$$</string>
+    <string name="appreciationHelpTitle">Waardering</string>
+    <string name="appreciationDefinition">De jaarlijkse waardestijging.\n\nDit kan komen door bijv. een verhoogde vraag, een verlaagd aanbod of inflatie.</string>
+    <string name="incomeIncreaseHelpTitle">Inkomstenverhoging</string>
+    <string name="incomeIncreaseDefinition">De jaarlijkse inkomstenstijging die gegenereerd worden door het vastgoed.\n\nInflatie is meestal de reden hiervoor. Dit beïnvloedt zowel de huur als andere inkomsten.</string>
+    <string name="expensesIncreaseHelpTitle">Uitgavenverhoging</string>
+    <string name="expensesIncreaseDefinition">De jaarlijkse uitgavenstijging tijdens het huren van vastgoed.\n\nInflatie is meestal de reden hiervoor. Dit beïnvloedt alle uitgaven.</string>
+    <string name="sellingCostsHelpTitle">Verkoopkosten</string>
+    <string name="sellingCostsDefinition">De kosten en toeslagen die gepaard gaan bij het verkopen van vastgoed.\n\nVoorbeelden hiervan zijn: makelaarsprovisie, overdrachtsbelasting, onderpand en borgtoeslagen.</string>
+    <string name="landValueHelpTitle">Terreinwaarde</string>
+    <string name="landValueDefinition">Alleen de terreinwaarde en niet alles wat zich op het terrein bevindt.\n\nDit wordt gebruikt om de verouderingsaftrek van het vastgoed te berekenen.</string>
+    <string name="totalCashNeededTitle">Benodigd totaalbedrag</string>
+    <string name="totalCashNeededDefinition">Het totaalbedrag om het vastgoed te kopen, repareren en verbouwen.</string>
+    <string name="operatingIncomeHelpTitle">Operatie-inkomsten</string>
+    <string name="operatingIncomeDefinition">Alle inkomsten die gegenereerd worden door het verhuren, minus leegstand.</string>
+    <string name="netOperatingIncomeHelpTitle">Netto-inkomsten</string>
+    <string name="netOperatingIncomeDefinition">Alle inkomsten die gegenereerd worden door het verhuren, minus operationele kosten.\n\nLeningen vallen hier niet onder. Het netto-inkomen kan worden gebruikt om vastgoed te vergelijken, los van financiering.</string>
+    <string name="cashFlowHelpTitle">Kasstroom</string>
+    <string name="cashFlowDefinition">Het geld dat wordt ontvangen als inkomsten uit een huurpand.\n\nAlle inkomstenbronnen vallen hieronder, evenals alle uitgaven, inclusief leningen.</string>
+    <string name="propertyValueHelpHelpTitle">Vastgoedwaarde</string>
+    <string name="propertyValueHelpDefinition">De huidige waarde van het vastgoed.\n\nDit hoeft niet hetzelfde te zijn als de aankoopprijs omdat het gekocht kan zijn met korting, er later reparaties of verbouwingen zijn geweest, de vraag is gestegen, etc.</string>
+    <string name="totalEquityHelpTitle">Totaal eigen vermogen</string>
+    <string name="totalEquityHelpDefinition">Het aandeel van de marktwaarde dat jij bezit. Als je een lening hebt lopen, dan hangt het af van het saldo. Het eigen vermogen stijgt tijdens het afbetalen van de lening en zodra de vraag stijgt.</string>
+    <string name="depreciationHelpTitle">Veroudering</string>
+    <string name="depreciationHelpDefinition">In plaats van het aftrekken van de aanschafkosten van vastgoed in één jaar, hebben veel landen opgenomen in de wet dat de kosten worden berekend over de gemiddelde levensduur.\n\nIn Nederland is dit bijv. 120 jaar voor woningen. Controleer in het buitenland de daar geldende wetten.</string>
+    <string name="mortgageInterestHelpTitle">Hypotheekrente</string>
+    <string name="mortgageInterestHelpDefinition">Het deel van de hypotheekrente dat dient als rentepercentage van de lening.\n\nIn sommige landen kan dit worden afgetrokken van de belasting. Controleer de lokaal geldende wetten voor meer informatie hierover.</string>
+
+    <string name="purchaseCostsItemizeTitle">Specificatie van aanschafkosten</string>
+    <string name="purchaseCostsItemizeHelp">Voeg alle aanschafkosten en -toeslagen toe, dus ook keuringskosten, inspectiekosten, ongedierte-inspectiekosten en de verzekering voor het eerste jaar. Let op: de namen moeten uniek zijn.</string>
+    <string name="repairCostsItemizeTitle">Specificatie van reparatiekosten</string>
+    <string name="repairCostsItemizeHelp">Voeg alle reparatiekosten toe, zoals verven, het leggen van een vloer, het installeren van apparaten, schoonmaken en verbouwingen. Let op: de namen moeten uniek zijn.</string>
+    <string name="expensesItemizeTitle">Uitgavenspecificatie</string>
+    <string name="expensesItemizeHelp">Voeg alle maandelijkse uitgaven toe. Dit omvat vastgoedbelasting, verzekeringen (van derden) en tuinonderhoud. Let op: de namen moeten uniek zijn.</string>
+
+    <string name="intro1Title">Welkom bij Verhuurcalculator\n</string>
+    <string name="intro1Description">Analyseer vastgoed om de juiste investering te bepalen!\n\n</string>
+    <string name="intro2Title">Vastgoed toevoegen\n</string>
+    <string name="intro2Description">Voeg nieuw vastgoed toe door te drukken op de plus-knop in de vastgoedlijst.\n\nVoeg een bijnaam, adres en overige informatie in.</string>
+    <string name="intro3Title">Werkblad\n</string>
+    <string name="intro3Description">Druk op het werkblad om gegevens in te vullen, zoals de aanschafprijs, reparatie- en verbouwkosten, de maandelijkse huur en overige informatie.</string>
+    <string name="intro4Title">Samenvatting/Prognoses\n</string>
+    <string name="intro4Description">Druk, na het invullen van het werkblad, op Samenvatting om de details te bekijken, zoals het benodigd totaalbedrag, de operatiekosten van het eerste jaar en winst. \n\nDruk op Prognoses om toekomstige kosten en winst te bekijken.</string>
+    <string name="intro5Title">Overige informatie\n</string>
+    <string name="intro5Description">Afbeeldingen kunnen worden vastgelegd in de Afbeeldingen-sectie en notities in de Notities-sectie.</string>
+    <string name="intro6Title">Feedback\n</string>
+    <string name="intro6Description">Deze app is gratis en open-source. Bekijk de details door in het menu op de hoofdsectie te drukken op Over.\n\nLaat feedback achter in de app-winkel! (:</string>
+
+</resources>

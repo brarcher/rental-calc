@@ -2,11 +2,11 @@ apply plugin: 'com.android.application'
 apply plugin: 'findbugs'
 
 android {
-    compileSdkVersion 25
+    compileSdkVersion 27
     defaultConfig {
         applicationId "protect.rentalcalc"
         minSdkVersion 16
-        targetSdkVersion 23
+        targetSdkVersion 27
         versionCode 5
         versionName "0.5"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -44,8 +44,8 @@ android.testOptions.unitTests.all {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:25.3.1'
-    compile 'com.android.support:design:25.3.1'
+    compile 'com.android.support:appcompat-v7:27.0.2'
+    compile 'com.android.support:design:27.0.2'
     compile group: 'com.google.guava', name: 'guava', version: '20.0'
     compile 'io.github.kexanie.library:MathView:0.0.6'
     compile 'com.github.bumptech.glide:glide:3.8.0'
@@ -64,7 +64,7 @@ task findbugs(type: FindBugs, dependsOn: 'assembleDebug') {
     description 'Run findbugs'
     group 'verification'
 
-    classes = fileTree('build/intermediates/classes/debug/')
+    classes = fileTree('build/intermediates/javac/debug/compileDebugJavaWithJavac/classes')
     source = fileTree('src/main/java')
     classpath = files()
 
