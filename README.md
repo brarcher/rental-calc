@@ -39,10 +39,6 @@ Windows:
 ./gradlew.bat build
 ```
 
-# Translating
-
-If you are interested in translating this application to another language, create a pull request with changes or find the project listing on  [Transifex](https://www.transifex.com/na-243/rental-calc).
-
 # Thanks
 
 This application uses the following images:
